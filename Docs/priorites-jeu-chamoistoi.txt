@@ -1,0 +1,19 @@
+Pour le projet Chamois&Toi :
+
+Priorités : 
+
+- Finir de gérer la couleur des éléments en fonction du rôle joué (la gestion des éléments à activer / désactiver en fct du rôle se trouve dans le fichier "playerType.cs")
+- peupler la carte (on met les objets correspondant à chaque rôle dans les objets "OptimisationWorld" pour chaque rôle)
+- ajouter les nouveaux personnages de faune et créer leurs animations (les sprites sont déjà découpés, dupliquer les animations des autres faunes et remplacer les sprites pour l'animation)
+- corriger la carte michelin, Loriane nous a fourni les nouvelles cartes, et je me suis rensigné auprès de martin pour corriger la map, il faudrait apparemment que cette dernière soit 2x plus petite que la carte de jeu, il faut aussi que les coins "haut gauche" des 2 cartes soient à la même position)
+- les randonnées sont actuellement placées à des endroits aléatoire, peut être il faudrait ne laisser que les randonnées qui correspondent au morceau de la carte développé car certaines des randonnées correspondent à des endroits qui ne sont plus représentés dans le jeu
+- une fois la ligne ci-dessus traitée, il faudrait aussi adapter les aides directionelles que donne le pnj de randonnée ainsi que les aides directionelles que donnent les drapeaux checkpoint, car ils sont encore adaptés à l'ancienne carte
+- il faudrait changer les polices d'écriture des éléments contenant encore l'ancienne police. La nouvelle police est : AmaticSC-Bold. Les éléments dont la police est a changer sont : l'encyclopédie, le texte des jauges, le guide de jeu, le bouton rafraichir (je crois que c'est tout)
+- ajouter les nouveau sprites pour les pnj humains
+- pour le calcul du pourcentage du brouillard de guerre, il faudrait trouver un calcul plus optimisé afin de pouvoir calculer automatiquement cette valeur, sans que la qualité de jeu en soit pour autant affectée
+- trouver une correction au problème de l'inventaire (se trouvant dans une scène à part)
+- éventuellement réorganiser l'architecture du projet (elle avait été faite au début du stage, mais depuis, il y a forcément des éléments pouvant être regroupés dans des dossiers, certains scripts ne doivent pas être classés non plus. Pour les objets de la scène game, normalement tout avait été rangé, j'avais pris le temps de le faire)
+
+En termes de fonctionnalités :
+- reproduction du chamois
+- adapter la chasse photographique à la faune (et aussi faire en sorte qu'on prenne des photos à des endroits réalistes car actuellement les zones définies sont arbitraires)

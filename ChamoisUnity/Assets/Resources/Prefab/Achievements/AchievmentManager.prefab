@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5474025989148010547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5474025989148010545}
+  - component: {fileID: 5474025989148010546}
+  m_Layer: 0
+  m_Name: AchievmentManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5474025989148010545
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5474025989148010547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 384.68112, y: 380.166, z: -79.03565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5474025989148010546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5474025989148010547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4740e241b7e37143bf412759d0e395c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  achievmentPrefab: {fileID: 8327690041201943835, guid: aea324c574535274ebf1f91fadc55197,
+    type: 3}
+  sprites:
+  - {fileID: 21300000, guid: d85d3201a92b63b459a5ef6335626d4e, type: 3}
+  - {fileID: 21300000, guid: 2f5c8f5a2e5bbb8428e95071725af2b8, type: 3}
+  - {fileID: 21300000, guid: 4bb67680ebaa7634da5959a0fe8907ec, type: 3}
+  - {fileID: 21300000, guid: 53d5cb7dc87d0834093ab632f4cac29e, type: 3}
+  - {fileID: 21300000, guid: 005dd79338296fc418ba41cf1f450dfb, type: 3}
+  - {fileID: 21300000, guid: 7fdc801df63e98d40b086355dba41823, type: 3}
+  - {fileID: 21300000, guid: 8ed99c02c96874d42990bcfd9aa5b8c8, type: 3}
+  - {fileID: 21300000, guid: e5ec9ba7906df444ea01e33bf7e3f23b, type: 3}
+  scrollRect: {fileID: 0}
+  achievmentMenu: {fileID: 5157798649763198977, guid: 75a65732391679f4097a91922d9adc76,
+    type: 3}
+  visualAchievment: {fileID: 1970234408254262912, guid: b5281ad039fb5f94196ff1a6287ec717,
+    type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 6efb984847137e24fa9ff8423282cdf7, type: 3}
+  textPoints: {fileID: 0}

@@ -1,0 +1,422 @@
+fileFormatVersion: 2
+guid: 6ffa23fa69da135469fa74ddb26344db
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6387084580669063448
+    second: oiseaubleu_0
+  - first:
+      213: 805040609998203654
+    second: oiseaubleu_1
+  - first:
+      213: 56793262807378605
+    second: oiseaubleu_2
+  - first:
+      213: 4610065581441916740
+    second: oiseaubleu_3
+  - first:
+      213: 5231483197778108365
+    second: oiseaubleu_4
+  - first:
+      213: -7941679997282571986
+    second: oiseaubleu_5
+  - first:
+      213: -708854750407558204
+    second: oiseaubleu_6
+  - first:
+      213: 5140504266323395752
+    second: oiseaubleu_7
+  - first:
+      213: 4812797388838023445
+    second: oiseaubleu_8
+  - first:
+      213: -1998575047663125977
+    second: oiseaubleu_9
+  - first:
+      213: -7890931200152719114
+    second: oiseaubleu_10
+  - first:
+      213: 4194065376938345745
+    second: oiseaubleu_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: oiseaubleu_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 811872df59b73a850800000000000000
+      internalID: 6387084580669063448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaubleu_1
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60be4b46b241c2b00800000000000000
+      internalID: 805040609998203654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaubleu_2
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daae44feb25c9c000800000000000000
+      internalID: 56793262807378605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaubleu_3
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44f991d983e3aff30800000000000000
+      internalID: 4610065581441916740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaubleu_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf1df33046f99840800000000000000
+      internalID: 5231483197778108365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaubleu_5
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e29a52a8e1c79c190800000000000000
+      internalID: -7941679997282571986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaubleu_6
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cbfb943c54a926f0800000000000000
+      internalID: -708854750407558204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaubleu_7
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a40698056db65740800000000000000
+      internalID: 5140504266323395752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaubleu_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5113e91d9bd7ac240800000000000000
+      internalID: 4812797388838023445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaubleu_9
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72a74134592a344e0800000000000000
+      internalID: -1998575047663125977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaubleu_10
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f0b9d3a1e7cd7290800000000000000
+      internalID: -7890931200152719114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaubleu_11
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 115cc2d3d30543a30800000000000000
+      internalID: 4194065376938345745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      oiseaubleu_0: 6387084580669063448
+      oiseaubleu_2: 56793262807378605
+      oiseaubleu_10: -7890931200152719114
+      oiseaubleu_7: 5140504266323395752
+      oiseaubleu_9: -1998575047663125977
+      oiseaubleu_5: -7941679997282571986
+      oiseaubleu_4: 5231483197778108365
+      oiseaubleu_1: 805040609998203654
+      oiseaubleu_3: 4610065581441916740
+      oiseaubleu_6: -708854750407558204
+      oiseaubleu_11: 4194065376938345745
+      oiseaubleu_8: 4812797388838023445
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

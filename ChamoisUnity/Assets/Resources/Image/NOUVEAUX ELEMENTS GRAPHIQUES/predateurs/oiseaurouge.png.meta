@@ -1,0 +1,422 @@
+fileFormatVersion: 2
+guid: 88c209d0a75b7674ab9051e0f2727d2a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4329065054069760954
+    second: oiseaurouge_0
+  - first:
+      213: -4828474501248292042
+    second: oiseaurouge_1
+  - first:
+      213: 2737532831054602257
+    second: oiseaurouge_2
+  - first:
+      213: -2691974843820365438
+    second: oiseaurouge_3
+  - first:
+      213: 1511035194303692698
+    second: oiseaurouge_4
+  - first:
+      213: -5662541660317784059
+    second: oiseaurouge_5
+  - first:
+      213: 4357327626723219089
+    second: oiseaurouge_6
+  - first:
+      213: 6869993332927029183
+    second: oiseaurouge_7
+  - first:
+      213: 679961849452620310
+    second: oiseaurouge_8
+  - first:
+      213: 4059461293224065584
+    second: oiseaurouge_9
+  - first:
+      213: -6332610035563557536
+    second: oiseaurouge_10
+  - first:
+      213: 774008370497223783
+    second: oiseaurouge_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: oiseaurouge_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3a265fabde31c30800000000000000
+      internalID: 4329065054069760954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaurouge_1
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b60120600ddfcb0800000000000000
+      internalID: -4828474501248292042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaurouge_2
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 110aaf31b9badf520800000000000000
+      internalID: 2737532831054602257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaurouge_3
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289acc9642f24aad0800000000000000
+      internalID: -2691974843820365438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaurouge_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9fb59fd08648f410800000000000000
+      internalID: 1511035194303692698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaurouge_5
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50868e28c5c9a61b0800000000000000
+      internalID: -5662541660317784059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaurouge_6
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19655d0f366587c30800000000000000
+      internalID: 4357327626723219089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaurouge_7
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbfda6a998e175f50800000000000000
+      internalID: 6869993332927029183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaurouge_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ae07113b5bf6900800000000000000
+      internalID: 679961849452620310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaurouge_9
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a711ac98a165830800000000000000
+      internalID: 4059461293224065584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaurouge_10
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d092969bc0e18a0800000000000000
+      internalID: -6332610035563557536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiseaurouge_11
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c7aa81384ddba00800000000000000
+      internalID: 774008370497223783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      oiseaurouge_7: 6869993332927029183
+      oiseaurouge_5: -5662541660317784059
+      oiseaurouge_8: 679961849452620310
+      oiseaurouge_3: -2691974843820365438
+      oiseaurouge_2: 2737532831054602257
+      oiseaurouge_1: -4828474501248292042
+      oiseaurouge_6: 4357327626723219089
+      oiseaurouge_9: 4059461293224065584
+      oiseaurouge_10: -6332610035563557536
+      oiseaurouge_0: 4329065054069760954
+      oiseaurouge_4: 1511035194303692698
+      oiseaurouge_11: 774008370497223783
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

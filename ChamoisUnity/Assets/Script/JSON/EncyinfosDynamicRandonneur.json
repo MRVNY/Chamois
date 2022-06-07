@@ -1,0 +1,371 @@
+    {
+      "encyinfos":
+      [
+        {
+          "hint": "rando1",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Forêt des Chutes d'Eau.\nDifficulté : Très facile\nType : Forêt\nLongueur : 4.2km\n\nDirigez vous vers le Nord de Chambéry pour démarrer la randonnée...",
+          "taille": 6
+        },
+        {
+          "hint": "rando2",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Chemin des Chamois.\nDifficulté : Facile\nType : Plaine, légère montagne\nLongueur : 7.2km\n\nDirigez vous vers l'Est de Chambéry pour démarrer la randonnée...",
+          "taille": 6
+        },
+        {
+          "hint": "rando3",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Côte des Cailloux.\nDifficulté : Moyenne\nType : Montagne légèrement escarpée\nLongueur : 9.7km\n\nDirigez vous vers le Nord-Est d'Aix les Bains pour démarrer la randonnée...",
+          "taille": 6
+        },
+        {
+          "hint": "rando4",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Montée du Vertige.\nDifficulté : Difficile\nType : Montagne Escarpée\nLongueur : 12.6km\n\nDirigez vous vers le Sud-Ouest d'Albertville pour démarrer la randonnée...",
+          "taille": 6
+        },
+        {
+          "hint": "rando5",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Escursion de l'escalade.\nDifficulté : Très Difficile\nType : Montagne très escarpée\nLongueur : 14.8km\n\nDirigez vous vers l'Sud de Annecy pour démarrer la randonnée...",
+          "taille": 6
+        },
+        {
+          "hint": "startrando1",
+          "texte": "Vous avez commencé la randonnée : Forêt des Chutes d'Eau",
+          "taille": 2
+        },
+        {
+          "hint": "suiterando1",
+          "texte": "Vous avez atteint le checkpoint de la randonnée, dirigez-vous vers le sud pour gravir le mont Peney...",
+          "taille": 2
+        },
+        {
+          "hint": "endrando1",
+          "texte": "Vous avez terminé la randonnée : Forêt des Chutes d'Eau",
+          "taille": 2
+        },
+        {
+          "hint": "startrando2",
+          "texte": "Vous avez commencé la randonnée : Chemin des Chamois",
+          "taille": 2
+        },
+        {
+          "hint": "endrando2",
+          "texte": "Vous avez terminé la randonnée : Chemin des Chamois",
+          "taille": 2
+        },
+        {
+          "hint": "startrando3",
+          "texte": "Vous avez commencé la randonnée : Côte des Cailloux",
+          "taille": 2
+        },
+        {
+          "hint": "endrando3",
+          "texte": "Vous avez terminé la randonnée : Côte des Cailloux",
+          "taille": 2
+        },
+        {
+          "hint": "startrando4",
+          "texte": "Vous avez commencé la randonnée : Montée du Vertige",
+          "taille": 2
+        },
+        {
+          "hint": "endrando4",
+          "texte": "Vous avez terminé la randonnée : Montée du Vertige",
+          "taille": 2
+        },
+        {
+          "hint": "startrando5",
+          "texte": "Vous avez commencé la randonnée : Escursion de l'escalade",
+          "taille": 2
+        },
+        {
+          "hint": "endrando5",
+          "texte": "Vous avez terminé la randonnée : Escursion de l'escalade",
+          "taille": 2
+        },
+        {
+          "hint": "reglementationVehicules",
+          "texte": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, les véhicules terrestres motorisés et non motorisés sont interdits, sauf pour les services, les propriétaires et les ayants droits",
+          "taille": 6
+        },
+        {
+          "hint": "reglementationSurvol",
+          "texte": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, le survol est interdit à moins de 300 mètres du sol, cela comprend notamment les sports de vol libre, comme le parapente par exemple, ou encore l'utilisation de drones",
+          "taille": 6
+        },
+        {
+          "hint": "reglementationChiens",
+          "texte": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, les chiens sont interdits, sauf sous autorisation, comme par exemple dans le cas des chiens guides ou les chiens de service",
+          "taille": 6
+        },
+        {
+          "hint": "reglementationAppareils",
+          "texte": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, les appareils sonores et lumineux sont interdits, dans le but de respecter la quiétude des lieux",
+          "taille": 5
+        },
+        {
+          "hint": "reglementationCamping",
+          "texte": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, le camping et le bivouac sont interdits",
+          "taille": 2
+        },
+        {
+          "hint": "reglementationFeu",
+          "texte": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, les feux sont interdits",
+          "taille": 2
+        },
+        {
+          "hint": "reglementationDerangementFaune",
+          "texte": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, le dérangement de la faune est interdit",
+          "taille": 2
+        },
+        {
+          "hint": "reglementationRespect",
+          "texte": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, le non-respect de la réglementation est passible d'un timbre-amende ou d'un procès-verbal selon la nature de l'infraction constatée",
+          "taille": 6
+        },
+        {
+          "hint": "reglementationSentiersBalise",
+          "texte": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, il est interdit de sortir des sentiers balisés dans les 3 zones de recherche : le secteur d'Armenaz, de Charbonnet et de Coutarse",
+          "taille": 6
+        },
+        {
+          "hint": "recommandationFaune",
+          "texte": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, il est recommandé de respecter la faune et la flore",
+          "taille": 2
+        },
+        {
+          "hint": "recommandationBalise",
+          "texte": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, il est recommandé de privilégier les sentiers balisés",
+          "taille": 2
+        },
+        {
+          "hint": "conseilPrevenir",
+          "texte": "Avant d'effectuer une randonnée dans le Massif des Bauges, il est conseillé de prévenir ses proches de son itinéraire, afin de réagir au plus vite en cas de problème",
+          "taille": 5
+        },
+        {
+          "hint": "poubelles",
+          "texte": "Il n'y a pas de poubelles sur les sentiers, vous devez vous organiser et gérer vos déchets seul",
+          "taille": 2
+        },
+        {
+          "hint": "randoEpion",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Randonnée de l'Épion.                      \nDifficulté : Facile       \nDénivelé : 500m     \nTemps : 3h30      \nLongueur : 7.5km     \n\nDirigez vous vers le Sud-Est du Massif des Bauges pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
+          "taille": 6
+        },
+        {
+          "hint": "randoBatterie",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Randonnée du Fort de la Batterie.          \nDifficulté : Facile       \nDénivelé : 650m     \nTemps : 3h30      \nLongueur : 5.6km     \n\nDirigez vous vers le Nord d'Albertville pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
+          "taille": 6
+        },
+        {
+          "hint": "randoDentPortes",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Randonnée de la Dent des Portes.           \nDifficulté : Moyen        \nDénivelé : 900m     \nTemps : 7h        \nLongueur : 16km      \n\nDirigez vous vers l'Est de Lescheraines pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
+          "taille": 6
+        },
+        {
+          "hint": "randoGrandRoc",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Randonnée du Grand Roc.                    \nDifficulté : Moyen        \nDénivelé : 1140m    \nTemps : 4h30      \nLongueur : 11km      \n\nDirigez vous vers le Sud-Ouest d'Albertville pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
+          "taille": 6
+        },
+        {
+          "hint": "randoPointeChaurionde",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Randonnée de la Pointe de la Chaurionde.   \nDifficulté : Moyen        \nDénivelé : 1300m    \nTemps : 1 jour    \nLongueur : 16km      \n\nDirigez vous vers l'Ouest d'Albertville pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
+          "taille": 6
+        },
+        {
+          "hint": "randoMorbier",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Randonnée du Mont Morbier.                 \nDifficulté : Moyen        \nDénivelé : 690m     \nTemps : 4h30      \nLongueur : 11km      \n\nDirigez vous vers le Sud du Massif des Bauges pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
+          "taille": 6
+        },
+        {
+          "hint": "randoNivolet",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Randonnée de la Croix du Nivolet.          \nDifficulté : Moyen        \nDénivelé : 620m     \nTemps : 4h        \nLongueur : 9km       \n\nDirigez vous vers le Nord de Chambéry pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
+          "taille": 6
+        },
+        {
+          "hint": "randoGaloppaz",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Randonnée de la Pointe de la Galoppaz.     \nDifficulté : Moyen        \nDénivelé : 762m     \nTemps : 5h        \nLongueur : 11km      \n\nDirigez vous vers le Nord-Est de Chambéry pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
+          "taille": 6
+        },
+        {
+          "hint": "randoColombier",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Randonnée du Mont Colombier.               \nDifficulté : Difficile    \nDénivelé : 1500m    \nTemps : 10h       \nLongueur : 18km      \n\nDirigez vous vers le Sud de Lescheraines pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
+          "taille": 6
+        },
+        {
+          "hint": "randoArcalod",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Randonnée de la Pointe de l'Arcalod.       \nDifficulté : Difficile    \nDénivelé : 1220m    \nTemps : 1 jour    \nLongueur : 16.5km    \n\nDirigez vous vers le Sud de Faverges pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
+          "taille": 6
+        },
+        {
+          "hint": "randoTrelod",
+          "texte": "Informations sur la randonnée choisie :\n\nNom : Randonnée du Mont Trélod.                  \nDifficulté : Difficile    \nDénivelé : 1400m    \nTemps : 1 jour    \nLongueur : 14km      \n\nDirigez vous vers l'Est de Lescheraines pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
+          "taille": 6
+        },
+        {
+          "hint": "startEpion",
+          "texte": "Vous avez commencé la randonnée : Randonnée de l'Épion\n Arrivée dans 2 points de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "startBatterie",
+          "texte": "Vous avez commencé la randonnée : Randonnée du Fort de la Batterie\n Arrivée dans 2 points de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "startDentPortes",
+          "texte": "Vous avez commencé la randonnée : Randonnée de la Dent des Portes\n Arrivée dans 2 points de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "startGrandRoc",
+          "texte": "Vous avez commencé la randonnée : Randonnée du Grand Roc\n Arrivée dans 2 points de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "startPointeChaurionde",
+          "texte": "Vous avez commencé la randonnée : Randonnée de la Pointe de la Chaurionde\n Arrivée dans 2 points de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "startMorbier",
+          "texte": "Vous avez commencé la randonnée : Randonnée du Mont Morbier\n Arrivée dans 2 points de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "startNivolet",
+          "texte": "Vous avez commencé la randonnée : Randonnée de la Croix du Nivolet\n Arrivée dans 2 points de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "startGaloppaz",
+          "texte": "Vous avez commencé la randonnée : Randonnée de la Pointe de la Galoppaz\n Arrivée dans 2 points de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "startColombier",
+          "texte": "Vous avez commencé la randonnée : Randonnée du Mont Colombier\n Arrivée dans 2 points de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "startArcalod",
+          "texte": "Vous avez commencé la randonnée : Randonnée de la Pointe de l'Arcalod\n Arrivée dans 2 points de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "startTrelod",
+          "texte": "Vous avez commencé la randonnée : Randonnée du Mont Trélod\n Arrivée dans 2 points de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "suiteEpion",
+          "texte": "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "suiteBatterie",
+          "texte": "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "suiteDentPortes",
+          "texte": "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "suiteGrandRoc",
+          "texte": "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "suitePointeChaurionde",
+          "texte": "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "suiteMorbier",
+          "texte": "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "suiteNivolet",
+          "texte": "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "suiteGaloppaz",
+          "texte": "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "suiteColombier",
+          "texte": "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "suiteArcalod",
+          "texte": "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "suiteTrelod",
+          "texte": "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
+          "taille": 2
+        },
+        {
+          "hint": "endEpion",
+          "texte": "Vous avez terminé la randonnée : Randonnée de l'Épion",
+          "taille": 2
+        },
+        {
+          "hint": "endBatterie",
+          "texte": "Vous avez terminé la randonnée : Randonnée du Fort de la Batterie",
+          "taille": 2
+        },
+        {
+          "hint": "endDentPortes",
+          "texte": "Vous avez terminé la randonnée : Randonnée de la Dent des Portes",
+          "taille": 2
+        },
+        {
+          "hint": "endGrandRoc",
+          "texte": "Vous avez terminé la randonnée : Randonnée du Grand Roc",
+          "taille": 2
+        },
+        {
+          "hint": "endPointeChaurionde",
+          "texte": "Vous avez terminé la randonnée : Randonnée de la Pointe de la Chaurionde",
+          "taille": 2
+        },
+        {
+          "hint": "endMorbier",
+          "texte": "Vous avez terminé la randonnée : Randonnée du Mont Morbier",
+          "taille": 2
+        },
+        {
+          "hint": "endNivolet",
+          "texte": "Vous avez terminé la randonnée : Randonnée de la Croix du Nivolet",
+          "taille": 2
+        },
+        {
+          "hint": "endGaloppaz",
+          "texte": "Vous avez terminé la randonnée : Randonnée de la Pointe de la Galoppaz",
+          "taille": 2
+        },
+        {
+          "hint": "endColombier",
+          "texte": "Vous avez terminé la randonnée : Randonnée du Mont Colombier",
+          "taille": 2
+        },
+        {
+          "hint": "endArcalod",
+          "texte": "Vous avez terminé la randonnée : Randonnée de la Pointe de l'Arcalod",
+          "taille": 2
+        },
+        {
+          "hint": "endTrelod",
+          "texte": "Vous avez terminé la randonnée : Randonnée du Mont Trélod",
+          "taille": 2
+        }
+      ]
+    }
+      

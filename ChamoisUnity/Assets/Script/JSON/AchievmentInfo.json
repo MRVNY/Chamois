@@ -1,0 +1,396 @@
+    {
+      "achievmentinfos":
+      [
+        {
+          "joueur": "Chamois",
+          "nomAch": "Survivre I",
+          "descAch": "Survivre 1 minute",
+          "points": 10,
+          "image": 1,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chamois",
+          "nomAch": "Survivre II",
+          "descAch": "Survivre 3 minutes",
+          "points": 20,
+          "image": 1,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chamois",
+          "nomAch": "Survivre III",
+          "descAch": "Survivre 5 minutes",
+          "points": 30,
+          "image": 1,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chamois",
+          "nomAch": "Survivre IV",
+          "descAch": "Survivre 10 minutes",
+          "points": 40,
+          "image": 1,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chamois",
+          "nomAch": "Heureux Évènement I",
+          "descAch": "Faire naître 1 chamois",
+          "points": 20,
+          "image": 7,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chamois",
+          "nomAch": "Heureux Évènement II",
+          "descAch": "Faire naître 2 chamois",
+          "points": 40,
+          "image": 7,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chamois",
+          "nomAch": "Score Chamois I",
+          "descAch": "Finir une partie avec au moins 1 000 de score",
+          "points": 10,
+          "image": 11,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chamois",
+          "nomAch": "Score Chamois II",
+          "descAch": "Finir une partie avec au moins 3 000 de score",
+          "points": 30,
+          "image": 11,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+                {
+          "joueur": "Chamois",
+          "nomAch": "Score Chamois III",
+          "descAch": "Finir une partie avec au moins 5 000 de score",
+          "points": 50,
+          "image": 11,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chamois",
+          "nomAch": "Alimentation I",
+          "descAch": "Manger 15 fois dans la même partie",
+          "points": 10,
+          "image": 0,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chamois",
+          "nomAch": "Alimentation II",
+          "descAch": "Manger 30 fois dans la même partie",
+          "points": 20,
+          "image": 0,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chamois",
+          "nomAch": "Connaissances en Chamois I",
+          "descAch": "Obtenir 5 entrées dans l'encyclopédie (hors quêtes)",
+          "points": 30,
+          "image": 2,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chamois",
+          "nomAch": "Connaissances en Chamois II",
+          "descAch": "Obtenir 10 entrées dans l'encyclopédie (hors quêtes)",
+          "points": 50,
+          "image": 2,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Quête Chasse I",
+          "descAch": "Effectuer une quête",
+          "points": 10,
+          "image": 9,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Chasse Photographique I",
+          "descAch": "Effectuer 5 photos différentes",
+          "points": 30,
+          "image": 8,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Chasse Photographique II",
+          "descAch": "Effectuer 10 photos différentes",
+          "points": 50,
+          "image": 8,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Chasse Photographique III",
+          "descAch": "Effectuer 15 photos différentes",
+          "points": 10,
+          "image": 8,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Prélèvement I",
+          "descAch": "Abattre 1 cible demandée",
+          "points": 20,
+          "image": 4,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Prélèvement II",
+          "descAch": "Abattre 2 cibles demandées",
+          "points": 30,
+          "image": 4,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Prélèvement III",
+          "descAch": "Abattre 3 cibles demandées",
+          "points": 40,
+          "image": 4,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Score Chasseur I",
+          "descAch": "Finir une partie avec au moins 1 000 de score",
+          "points": 10,
+          "image": 11,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Score Chasseur II",
+          "descAch": "Finir une partie avec au moins 3 000 de score",
+          "points": 30,
+          "image": 11,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Score Chasseur III",
+          "descAch": "Finir une partie avec au moins 5 000 de score",
+          "points": 50,
+          "image": 11,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Connaissances en Chasse I",
+          "descAch": "Obtenir 5 entrées dans l'encyclopédie (hors quêtes)",
+          "points": 30,
+          "image": 2,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Chasseur",
+          "nomAch": "Connaissances en Chasse II",
+          "descAch": "Obtenir 10 entrées dans l'encyclopédie (hors quêtes)",
+          "points": 50,
+          "image": 2,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Jambes Solides I",
+          "descAch": "Faire 1 randonnée",
+          "points": 10,
+          "image": 3,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Jambes Solides II",
+          "descAch": "Faire 5 randonnées dans la même partie",
+          "points": 50,
+          "image": 3,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Randonneur Aguéri I",
+          "descAch": "Effectuer une randonnée Difficile",
+          "points": 50,
+          "image": 6,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Ami de la Nature I",
+          "descAch": "Nettoyer 10 déchets",
+          "points": 20,
+          "image": 10,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Ami de la Nature II",
+          "descAch": "Nettoyer 20 déchets",
+          "points": 40,
+          "image": 10,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Randonnée Parfaite I",
+          "descAch": "Effectuer une randonnée avec au moins 5 000 points",
+          "points": 10,
+          "image": 5,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Randonnée Parfaite II",
+          "descAch": "Effectuer une randonnée avec au moins 7 500 points",
+          "points": 20,
+          "image": 5,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Randonnée Parfaite III",
+          "descAch": "Effectuer une randonnée avec au moins 9 000 points",
+          "points": 40,
+          "image": 5,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Randonnée Parfaite IV",
+          "descAch": "Effectuer une randonnée avec au moins 9 500 points",
+          "points": 60,
+          "image": 5,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Connaissances en Randonnée I",
+          "descAch": "Obtenir 5 entrées dans l'encyclopédie (hors quêtes)",
+          "points": 30,
+          "image": 2,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Connaissances en Randonnée II",
+          "descAch": "Obtenir 10 entrées dans l'encyclopédie (hors quêtes)",
+          "points": 50,
+          "image": 2,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Score Randonneur I",
+          "descAch": "Finir une partie avec au moins 1 000 de score",
+          "points": 10,
+          "image": 11,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Score Randonneur II",
+          "descAch": "Finir une partie avec au moins 3 000 de score",
+          "points": 30,
+          "image": 11,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        },
+        {
+          "joueur": "Randonneur",
+          "nomAch": "Score Randonneur III",
+          "descAch": "Finir une partie avec au moins 5 000 de score",
+          "points": 50,
+          "image": 11,
+          "dependance1": "",
+          "dependance2": "",
+          "dependance3": ""
+        }
+      ]
+    }
+      

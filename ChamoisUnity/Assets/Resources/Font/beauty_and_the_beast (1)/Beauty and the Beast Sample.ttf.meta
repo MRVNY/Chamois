@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ebe919e16eee7a945b5134a3cca6c083
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Beauty and the Beast
+  fontNames:
+  - Beauty and the Beast
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 9b7f3a7002254e3408daab208e896d5b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

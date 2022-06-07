@@ -1,0 +1,422 @@
+fileFormatVersion: 2
+guid: 6b06f9e1cb142bb41ae423bb89b5c89c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1946342893130861045
+    second: cornecasseclair_0
+  - first:
+      213: -4286798674376072112
+    second: cornecasseclair_1
+  - first:
+      213: -1912426276169273816
+    second: cornecasseclair_2
+  - first:
+      213: 286674556280376893
+    second: cornecasseclair_3
+  - first:
+      213: 3140384204434248291
+    second: cornecasseclair_4
+  - first:
+      213: 8265058195706986033
+    second: cornecasseclair_5
+  - first:
+      213: 7354844570190200007
+    second: cornecasseclair_6
+  - first:
+      213: -2247562412005664091
+    second: cornecasseclair_7
+  - first:
+      213: 5815376129444213221
+    second: cornecasseclair_8
+  - first:
+      213: 5736483787782398950
+    second: cornecasseclair_9
+  - first:
+      213: -4622887511381679197
+    second: cornecasseclair_10
+  - first:
+      213: -961317205930258916
+    second: cornecasseclair_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cornecasseclair_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0634db63733df4e0800000000000000
+      internalID: -1946342893130861045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornecasseclair_1
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054e23e615b3284c0800000000000000
+      internalID: -4286798674376072112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornecasseclair_2
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82eaecd2f62b575e0800000000000000
+      internalID: -1912426276169273816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornecasseclair_3
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e0c357df87af300800000000000000
+      internalID: 286674556280376893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornecasseclair_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3621d83abc2e49b20800000000000000
+      internalID: 3140384204434248291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornecasseclair_5
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ebb0b83a263b270800000000000000
+      internalID: 8265058195706986033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornecasseclair_6
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ccb5604b28a11660800000000000000
+      internalID: 7354844570190200007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornecasseclair_7
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aad1e5f4ed0fc0e0800000000000000
+      internalID: -2247562412005664091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornecasseclair_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1fece47cd54b050800000000000000
+      internalID: 5815376129444213221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornecasseclair_9
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e3ae8e9c951c9f40800000000000000
+      internalID: 5736483787782398950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornecasseclair_10
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3618f2d4438dfb0800000000000000
+      internalID: -4622887511381679197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cornecasseclair_11
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e4e003817b8a2f0800000000000000
+      internalID: -961317205930258916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      cornecasseclair_7: -2247562412005664091
+      cornecasseclair_9: 5736483787782398950
+      cornecasseclair_2: -1912426276169273816
+      cornecasseclair_1: -4286798674376072112
+      cornecasseclair_3: 286674556280376893
+      cornecasseclair_10: -4622887511381679197
+      cornecasseclair_8: 5815376129444213221
+      cornecasseclair_5: 8265058195706986033
+      cornecasseclair_0: -1946342893130861045
+      cornecasseclair_4: 3140384204434248291
+      cornecasseclair_6: 7354844570190200007
+      cornecasseclair_11: -961317205930258916
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

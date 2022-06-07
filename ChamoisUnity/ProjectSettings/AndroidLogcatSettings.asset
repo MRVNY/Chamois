@@ -1,0 +1,239 @@
+{
+    "m_SelectedDeviceId": "39V4C19A24027580",
+    "m_SelectedPackage": {
+        "deviceId": "39V4C19A24027580",
+        "name": "com.ChamoisToi",
+        "processId": 8666,
+        "exited": false
+    },
+    "m_SelectedPriority": 0,
+    "m_KnownPackagesForSerialization": [
+        {
+            "deviceId": "RZ8M82P70AB",
+            "name": "com.DefaultCompany.ChamoisUnity",
+            "processId": 28727,
+            "exited": true
+        },
+        {
+            "deviceId": "RZ8M82P70AB",
+            "name": "com.DefaultCompany.ChamoisUnity",
+            "processId": 32246,
+            "exited": true
+        },
+        {
+            "deviceId": "RZ8M82P70AB",
+            "name": "com.DefaultCompany.ChamoisUnity",
+            "processId": 2500,
+            "exited": true
+        },
+        {
+            "deviceId": "RZ8M82P70AB",
+            "name": "com.DefaultCompany.ChamoisUnity",
+            "processId": 3874,
+            "exited": true
+        },
+        {
+            "deviceId": "RZ8M82P70AB",
+            "name": "com.DefaultCompany.ChamoisUnity",
+            "processId": 5910,
+            "exited": true
+        },
+        {
+            "deviceId": "RZ8M82P70AB",
+            "name": "com.sec.android.app.launcher",
+            "processId": 8998,
+            "exited": false
+        },
+        {
+            "deviceId": "RZ8M82P70AB",
+            "name": "com.DefaultCompany.ChamoisUnity",
+            "processId": 7198,
+            "exited": true
+        },
+        {
+            "deviceId": "RZ8M82P70AB",
+            "name": "com.ChamoisGroup.ChamoisUnity",
+            "processId": 6469,
+            "exited": true
+        },
+        {
+            "deviceId": "RZ8M82P70AB",
+            "name": "com.ChamoisGroup.ChamoisUnity",
+            "processId": 15038,
+            "exited": true
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 31751,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 2520,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 6642,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 7593,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 11588,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 19530,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 31371,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 17426,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 10654,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 13543,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 17151,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 18598,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 20242,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 5167,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 11216,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 15684,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 32241,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 8183,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 11343,
+            "exited": false
+        },
+        {
+            "deviceId": "39V4C19A24027580",
+            "name": "com.ChamoisToi",
+            "processId": 8666,
+            "exited": false
+        }
+    ],
+    "m_Tags": {
+        "m_Entries": [
+            {
+                "m_Name": "Filter by all listed tags",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "No Filter",
+                "m_Selected": true
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Tag Control...",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "Unity",
+                "m_Selected": false
+            },
+            {
+                "m_Name": "CRASH",
+                "m_Selected": false
+            }
+        ]
+    },
+    "m_MemoryViewerState": {
+        "MemoryWindowHeight": 300.0,
+        "MemoryWindowWidth": 170.0,
+        "MemoryTypeEnabled": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "MemoryGroup": 1,
+        "Behavior": 1
+    },
+    "m_Filter": "",
+    "m_FilterIsRegularExpression": false,
+    "m_SymbolPaths": []
+}
