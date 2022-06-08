@@ -8,12 +8,14 @@ using UnityEngine;
 /// </summary>
 public class wolf : ia_aggro
 {
-    public Rigidbody2D myRigidbody;
-    public Transform target;
+
     public float chaseRadius;
     public float attackRadius;
     public Transform homePosition;
-    private Animator animator;
+    
+    protected Rigidbody2D myRigidbody;
+    protected Transform target;
+    protected Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +72,7 @@ public class wolf : ia_aggro
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
                 
                 
-                //ChangeAnim(temp - transform.position);
+                ChangeAnim(temp - transform.position);
                 myRigidbody.MovePosition(temp);
                 ChangeState(EnemyState.walk);
             }
@@ -90,7 +92,7 @@ public class wolf : ia_aggro
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, -moveSpeed * Time.deltaTime);
 
 
-                //ChangeAnim(temp - transform.position);
+                ChangeAnim(temp - transform.position);
                 myRigidbody.MovePosition(temp);
                 ChangeState(EnemyState.walk);
             }
@@ -130,6 +132,14 @@ public class wolf : ia_aggro
             {
                 SetAnimFloat(Vector2.down);
             }
+        }
+        if(direction.x == 0 && direction.y == 0)
+        {
+            animator.SetBool("Moving", false);
+        }
+        else
+        {
+            animator.SetBool("Moving", true);
         }
     }
     /// <summary>

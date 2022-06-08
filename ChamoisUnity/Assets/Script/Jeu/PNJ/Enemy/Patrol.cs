@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Move between patrol points
 public class Patrol : wolf
 {
     public Transform[] path;
-    public int currentPoint;
-    public Transform currentGoal;
     public float roundingDistance;
+    
+    private int currentPoint = 0;
+    private Transform currentGoal;
 
     public override void CheckDistanceFuite()
     {
