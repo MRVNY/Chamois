@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIManager : MonoBehaviour
+public class DebugManager : MonoBehaviour
 {
 
     public GameObject guide;
@@ -10,27 +11,36 @@ public class UIManager : MonoBehaviour
     public GameObject achi;
     public GameObject fog;
     public GameObject decor;
-    public GameObject dayNight;
     public GameObject npc;
     public GameObject map;
     public GameObject chamoisMap;
     public GameObject chasseurMap;
     public GameObject randonneurMap;
+    public GameObject miniMap;
 
-
+    public SpriteRenderer dayNight;
+    public RawImage fogImage;
+    public SpriteRenderer fogRed;
+    public SpriteRenderer fogBlue;
+    
     void Awake()
     {
-        guide.SetActive(true);
+        guide.SetActive(false);
         ency.SetActive(true);
         achi.SetActive(true);
         fog.SetActive(true);
         decor.SetActive(true);
-        dayNight.SetActive(true);
         npc.SetActive(true);
         map.SetActive(true);
         chamoisMap.SetActive(true);
         chasseurMap.SetActive(true);
         randonneurMap.SetActive(true);
+        miniMap.SetActive(true);
+
+        dayNight.enabled = false;
+        fogImage.enabled = false;
+        fogRed.enabled = false;
+        fogBlue.enabled = false;
 
     }
 

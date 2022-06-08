@@ -13,6 +13,7 @@ TagManager:
   - Faune
   - Pnj
   - PnjImportant
+  - BlockView
   layers:
   - Default
   - TransparentFX
@@ -49,6 +50,9 @@ TagManager:
   m_SortingLayers:
   - name: Map
     uniqueID: 397190345
+    locked: 0
+  - name: PlayerBehind
+    uniqueID: 2975778059
     locked: 0
   - name: Default
     uniqueID: 0

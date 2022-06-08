@@ -28,3 +28,7 @@ Speed up walking animation
 
 ## Keyboard controller
 Added keyboard control
+
+# 08/06/2022
+Wolf animation
+Sorting layer

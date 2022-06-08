@@ -2,33 +2,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class LayerSorter : MonoBehaviour
 {
-    private SpriteRenderer parentRenderer;
+    public SpriteRenderer renderer;
+    private Collider2D layerSorter;
 
     // Start is called before the first frame update
     void Start()
     {
-        parentRenderer = transform.parent.GetComponent<SpriteRenderer>();
+        layerSorter = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Obstacle")
+        float myRoot = layerSorter.bounds.center.y - layerSorter.bounds.size.y / 2;
+        float otherRoot = collision.bounds.center.y - collision.bounds.size.y / 2;
+        if (collision.tag == "Obstacle" && myRoot > otherRoot)
         {
-            parentRenderer.sortingOrder = collision.GetComponent<SpriteRenderer>().sortingOrder - 1;
+            renderer.sortingOrder = 0;
+        }
+        else
+        {
+            renderer.sortingOrder = 100;
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        parentRenderer.sortingOrder = 200;
+        renderer.sortingOrder = 100;
     }
 }
