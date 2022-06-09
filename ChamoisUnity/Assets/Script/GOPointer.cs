@@ -14,6 +14,8 @@ public class GOPointer : MonoBehaviour
     public GameObject _OptimisationWorldChamois;
     public GameObject _OptimisationWorldChasseur;
     public GameObject _OptimisationWorldRandonneur;
+    public GameObject _MiniMap;
+    public GameObject _ItemActivatorObject;
 
     public GameObject _Ouvre;
     public GameObject _OuvreChamois;
@@ -27,6 +29,8 @@ public class GOPointer : MonoBehaviour
 
     public GameObject _EncyclopedieManager;
     public GameObject _MenuManager;
+    public GameObject _GameManager;
+    public GameObject _Controllers;
 
     public GameObject _ListeChamoisSauvages;
     public GameObject _NPCCollection;
@@ -46,6 +50,8 @@ public class GOPointer : MonoBehaviour
     public static GameObject OptimisationWorldChamois;
     public static GameObject OptimisationWorldChasseur;
     public static GameObject OptimisationWorldRandonneur;
+    public static GameObject MiniMap;
+    public static GameObject ItemActivatorObject;
 
     public static GameObject Ouvre;
     public static GameObject OuvreChamois;
@@ -59,6 +65,8 @@ public class GOPointer : MonoBehaviour
 
     public static GameObject EncyclopedieManager;
     public static GameObject MenuManager;
+    public static GameObject GameManager;
+    public static GameObject Controllers;
 
     public static GameObject ListeChamoisSauvages;
     public static GameObject NPCCollection;
@@ -77,6 +85,8 @@ public class GOPointer : MonoBehaviour
         OptimisationWorldChamois = _OptimisationWorldChamois;
         OptimisationWorldChasseur = _OptimisationWorldChasseur;
         OptimisationWorldRandonneur = _OptimisationWorldRandonneur;
+        MiniMap = _MiniMap;
+        ItemActivatorObject = _ItemActivatorObject;
 
         Ouvre = _Ouvre;
         OuvreChamois = _OuvreChamois;
@@ -90,6 +100,8 @@ public class GOPointer : MonoBehaviour
 
         EncyclopedieManager = _EncyclopedieManager;
         MenuManager = _MenuManager;
+        GameManager = _GameManager;
+        Controllers = _Controllers;
 
         ListeChamoisSauvages = _ListeChamoisSauvages;
         NPCCollection = _NPCCollection;

@@ -83,7 +83,7 @@ public class Experience : JaugesController
     {
         if (!activateOnce)
         {
-            EncycloContentChamois ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentChamois>();
+            EncycloContentChamois ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>();
             ency.addInfoToList("gainNiveau", ency.pagesDynamic);
             activateOnce = true;
         }

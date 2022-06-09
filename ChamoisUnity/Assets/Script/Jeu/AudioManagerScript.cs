@@ -7,13 +7,13 @@ public class AudioManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject.Find("Controllers").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("volume");
+        GOPointer.Controllers.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("volume");
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject.Find("Controllers").GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("volume");
+        GOPointer.Controllers.GetComponent<AudioSource>().volume = PlayerPrefs.GetFloat("volume");
 
     }
 }

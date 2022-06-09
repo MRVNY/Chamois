@@ -5,7 +5,7 @@ using UnityEngine;
 public class Joystick_Link : MonoBehaviour
 {
 
-    private float speed = 100f;
+    public float speed = 100f;
 
     public GameObject gm;
     protected Joystick joystick;
@@ -28,14 +28,24 @@ public class Joystick_Link : MonoBehaviour
         if (Input.GetKey("left")) hori = -1;
         if (Input.GetKey("right")) hori = 1;
 
-        rigidbody.velocity = new Vector2(hori * 6, verti * 6);
+        if (Global.sliding)
+            rigidbody.velocity = new Vector2(hori * 6, verti * 6) 
+                                 + Vector2.down * Global.difficulty;
+        else
+            rigidbody.velocity = new Vector2(hori * 6, verti * 6);
 
 
         if(joystick.Horizontal != 0 || joystick.Vertical != 0)
         {
-            rigidbody.velocity = new Vector2(joystick.Horizontal * speed,
-                joystick.Vertical * speed);
+            if(Global.sliding)
+                rigidbody.velocity = new Vector2(joystick.Horizontal * speed,joystick.Vertical * speed) 
+                                     + Vector2.down * Global.difficulty;
+            else 
+                rigidbody.velocity = new Vector2(joystick.Horizontal * speed, joystick.Vertical * speed);
         }
+        
+        if(hori==0 && verti==0 && joystick.Horizontal == 0 && joystick.Vertical == 0 && Global.sliding)
+            rigidbody.velocity = Vector2.down * Global.difficulty;
     }
 
     /// <summary>

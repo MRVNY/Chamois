@@ -168,7 +168,7 @@ public class randonneurRando : MonoBehaviour
             data2.Add(encyinfo);
         }
 
-        ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentRandonneur>();
+        ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentRandonneur>();
         GameObject.Find("RandoEpion").SetActive(false);
         GameObject.Find("RandoFortBatterie").SetActive(false);
         GameObject.Find("RandoDentPortes").SetActive(false);

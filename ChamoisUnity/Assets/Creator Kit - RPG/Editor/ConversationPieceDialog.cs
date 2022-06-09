@@ -100,7 +100,7 @@ namespace RPGM.Gameplay
         {
             if (!activateOnce)
             {
-                EncycloContentChamois ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentChamois>();
+                EncycloContentChamois ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>();
                 ency.addInfoToList("informations", ency.pagesDynamic);
                 activateOnce = true;
             }

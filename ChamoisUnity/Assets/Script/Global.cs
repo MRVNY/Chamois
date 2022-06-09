@@ -5,6 +5,8 @@ public static class Global
 
     private static string personnageJoue;
     public static Dictionary<string, string> guide = new Dictionary<string, string>();
+    public static bool sliding = false;
+    public static int difficulty = 1;
 
 
     static Global()

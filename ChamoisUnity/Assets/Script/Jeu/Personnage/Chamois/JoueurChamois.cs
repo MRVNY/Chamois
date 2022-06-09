@@ -136,7 +136,7 @@ public class JoueurChamois : Joueur
     {
         if (!activateOnce2)
         {
-            EncycloContentChamois ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentChamois>();
+            EncycloContentChamois ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>();
             ency.addInfoToList("fatigue", ency.pagesDynamic);
             activateOnce2 = true;
         }

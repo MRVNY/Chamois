@@ -62,7 +62,7 @@ public class randonneurQueteScript : MonoBehaviour
             data2.Add(encyinfo);
         }
 
-        ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentRandonneur>();
+        ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentRandonneur>();
         // Initial items of NPC conversation array
         var initialdonneurDRando = donneurDeRando.GetComponent<ConversationScript>().items;
         var initialstartRando1 = startRando1.GetComponent<ConversationScript>().items;

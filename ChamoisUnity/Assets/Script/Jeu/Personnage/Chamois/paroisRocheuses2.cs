@@ -6,17 +6,14 @@ public class paroisRocheuses2 : MonoBehaviour
 {
     /*public GameObject zone1;
    public GameObject zone2;*/
-    [SerializeField] public GameObject ColliderChamois;
 
-    public int difficulté;
+    public int difficulty;
 
     /*PolygonCollider2D z1;
     PolygonCollider2D z2;*/
-    CircleCollider2D c;
 
     void Start()
     {
-        c = ColliderChamois.GetComponent<CircleCollider2D>();
         if (Global.Personnage != "Chamois")
         {
             this.GetComponent<PolygonCollider2D>().isTrigger = false;
@@ -34,21 +31,23 @@ public class paroisRocheuses2 : MonoBehaviour
         z2 = zone2.GetComponent<PolygonCollider2D>();*/
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collider)
     {
-        if ( /*(collider == z1) || (collider == z2)*/ (collider == c.GetComponent<CircleCollider2D>()) && (Global.Personnage == "Chamois"))
+        if (collider.CompareTag("Player") && (Global.Personnage == "Chamois"))
         {
-            Debug.Log("vitesse moins");
-            GOPointer.PlayerChamois.GetComponent<JoueurChamois>().vitesse -= difficulté;
+            Global.sliding = true;
+            Global.difficulty = difficulty;
+            //collider.GetComponentInParent<Rigidbody2D>().velocity = Vector2.down * difficulty;
         }
+        // else (collider.transform.parent.CompareTag("Player"))
+        // {
+        //     Global.sliding = false;
+        // }
+        print(Global.sliding);
     }
 
     private void OnTriggerExit2D(Collider2D collider)
     {
-    if ( /*(collider == z1) || (collider == z2)*/ collider == c.GetComponent<CircleCollider2D>() && (Global.Personnage == "Chamois"))
-            {
-                Debug.Log("vitesse plus");
-                GOPointer.PlayerChamois.GetComponent<JoueurChamois>().vitesse += difficulté;
-            }
+        Global.sliding = false;
     }
 }

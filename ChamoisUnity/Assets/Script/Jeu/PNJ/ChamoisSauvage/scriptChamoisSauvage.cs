@@ -19,6 +19,6 @@ public class scriptChamoisSauvage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        GameObject.Find("ListeChamoisSauvages").GetComponent<ListChamois>().isProie(gameObject);
+        GOPointer.ListeChamoisSauvages.GetComponent<ListChamois>().isProie(gameObject);
     }
 }

@@ -45,7 +45,7 @@ public class chasseurInfosPNJ : MonoBehaviour
             data2.Add(encyinfo);
         }
 
-        ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentChasseur>();
+        ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChasseur>();
 
         //infosLoupRegulation;
         ConversationOption o1 = new ConversationOption() { text = data[0].branche1Reponse, targetId = data[0].branche1ID };

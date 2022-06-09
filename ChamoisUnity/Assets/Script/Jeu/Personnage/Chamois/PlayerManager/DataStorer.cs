@@ -75,7 +75,7 @@ public class DataStorer : MonoBehaviour
 
     void Update()
     {
-        carteActive = GameObject.Find("Game Map").GetComponent<SwitchPlayerMap>().isActive;
+        carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
 
         tempsSurvecu += Time.deltaTime;
         tempsInf += Time.deltaTime;

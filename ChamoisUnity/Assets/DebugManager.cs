@@ -35,7 +35,7 @@ public class DebugManager : MonoBehaviour
         chamoisMap.SetActive(true);
         chasseurMap.SetActive(true);
         randonneurMap.SetActive(true);
-        miniMap.SetActive(true);
+        miniMap.SetActive(false);
 
         dayNight.enabled = false;
         fogImage.enabled = false;

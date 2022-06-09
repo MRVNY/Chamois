@@ -44,7 +44,7 @@ public class chasseurQueteScript : MonoBehaviour
         }
         
 
-        ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentChasseur>();
+        ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChasseur>();
         // Initial items of NPC conversation array
         var initialdonneurDeQuete = donneurDeQuete.GetComponent<ConversationScript>().items;
         var initialGardeForestier = gardeForestier.GetComponent<ConversationScript>().items;

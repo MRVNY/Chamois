@@ -20,7 +20,7 @@ public class RegroupementMenu : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("soundEffects") == 1)
             {
-                GameObject.Find("MenuManager").GetComponent<AudioSource>().Play();
+                GOPointer.MenuManager.GetComponent<AudioSource>().Play();
             }
             Unactivate();
         }
@@ -35,7 +35,7 @@ public class RegroupementMenu : MonoBehaviour
         menuOuvre = true;
         if (PlayerPrefs.GetInt("soundEffects") == 1)
         {
-            GameObject.Find("MenuManager").GetComponent<AudioSource>().Play();
+            GOPointer.MenuManager.GetComponent<AudioSource>().Play();
         }
     }
     
@@ -43,7 +43,7 @@ public class RegroupementMenu : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("soundEffects") == 1)
         {
-            GameObject.Find("MenuManager").GetComponent<AudioSource>().Play();
+            GOPointer.MenuManager.GetComponent<AudioSource>().Play();
         }
 
         for (int i = 0; i < ListeBoutons.Count; i++)

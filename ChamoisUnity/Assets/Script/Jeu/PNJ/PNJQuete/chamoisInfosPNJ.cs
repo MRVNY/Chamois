@@ -45,7 +45,7 @@ public class chamoisInfosPNJ : MonoBehaviour
             data2.Add(encyinfo);
         }
 
-        ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentChamois>();
+        ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>();
 
         //infosDeplacementRandonneur;
         ConversationOption o1 = new ConversationOption() { text = data[0].branche1Reponse, targetId = data[0].branche1ID };

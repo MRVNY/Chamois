@@ -72,13 +72,13 @@ public class ListChamois : MonoBehaviour
     
     void estUneProie()
     {
-        GameObject.Find("GameManager").GetComponent<FinPartie>().receiveDataChasseurBonChamois(h);
+        GOPointer.GameManager.GetComponent<FinPartie>().receiveDataChasseurBonChamois(h);
         Debug.Log("Tu es une proie");
     }
 
     void estPasBon()
     {
-        GameObject.Find("GameManager").GetComponent<FinPartie>().receiveDataChasseurMauvaisChamois(h);
+        GOPointer.GameManager.GetComponent<FinPartie>().receiveDataChasseurMauvaisChamois(h);
         Debug.Log("Tu n'es pas le bon chamois");
     }
     

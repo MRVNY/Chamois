@@ -13,7 +13,7 @@ public class Photographier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentChasseur>();
+        ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChasseur>();
     }
 
     // Update is called once per frame

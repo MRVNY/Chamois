@@ -104,7 +104,7 @@ public class AchievmentManager : MonoBehaviour
     void Update()
     {
         //PlayerPrefs.DeleteAll();
-        carteActive = GameObject.Find("Game Map").GetComponent<SwitchPlayerMap>().isActive;
+        carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
         // Dans un autre script, pour obtenir un achievment, utiliser : 
         // AchievmentManager.Instance.EarnAchievment(achievmentName);
 
@@ -226,7 +226,7 @@ public class AchievmentManager : MonoBehaviour
     {
         if (!activateOnceChasseur)
         {
-            EncycloContentChasseur ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentChasseur>();
+            EncycloContentChasseur ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChasseur>();
             ency.addInfoToList("hautFait", ency.pagesDynamic);
             activateOnceChasseur = true;
         }
@@ -236,7 +236,7 @@ public class AchievmentManager : MonoBehaviour
     {
         if (!activateOnceChamois)
         {
-            EncycloContentChamois ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentChamois>();
+            EncycloContentChamois ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>();
             ency.addInfoToList("hautFait", ency.pagesDynamic);
             activateOnceChamois = true;
         }
@@ -246,7 +246,7 @@ public class AchievmentManager : MonoBehaviour
     {
         if (!activateOnceRandonneur)
         {
-            EncycloContentRandonneur ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentRandonneur>();
+            EncycloContentRandonneur ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentRandonneur>();
             ency.addInfoToList("hautFait", ency.pagesDynamic);
             activateOnceRandonneur = true;
         }

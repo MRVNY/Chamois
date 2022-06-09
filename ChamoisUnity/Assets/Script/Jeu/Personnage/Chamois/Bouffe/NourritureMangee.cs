@@ -57,7 +57,7 @@ public class NourritureMangee : MonoBehaviour
     {
         if (!activateOnce)
         {
-            EncycloContentChamois ency = GameObject.Find("EncyclopedieManager").GetComponent<EncycloContentChamois>();
+            EncycloContentChamois ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>();
             ency.addInfoToList("mange", ency.pagesDynamic);
             activateOnce = true;
         }
