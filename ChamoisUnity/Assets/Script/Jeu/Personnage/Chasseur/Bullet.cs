@@ -45,8 +45,8 @@ public class Bullet : MonoBehaviour
 
             if(col.gameObject.GetComponent<Killable>().typeTuable == "PnjImportant" && PlayerPrefs.GetInt("inGameHelp") == 1)
             {
-                GameObject.Find("CanvasGuideJeu").GetComponent<Canvas>().enabled = true;
-                GameObject.Find("CanvasGuideJeu").GetComponent<GuideManager>().guideText.SetText("Vous venez d'abattre froidement un être-humain, qui était important dans le déroulement de votre quête, peut-être devriez-vous recommencer une partie ?");
+                GOPointer.CanvasGuideJeu.GetComponent<Canvas>().enabled = true;
+                GOPointer.CanvasGuideJeu.GetComponent<GuideManager>().guideText.SetText("Vous venez d'abattre froidement un être-humain, qui était important dans le déroulement de votre quête, peut-être devriez-vous recommencer une partie ?");
 
             }
 

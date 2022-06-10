@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DebugManager : MonoBehaviour
 {
 
+    public bool showColliders;
     public GameObject guide;
     public GameObject ency;
     public GameObject achi;
@@ -30,7 +32,7 @@ public class DebugManager : MonoBehaviour
         achi.SetActive(true);
         fog.SetActive(true);
         decor.SetActive(true);
-        npc.SetActive(true);
+        npc.SetActive(false);
         map.SetActive(true);
         chamoisMap.SetActive(true);
         chasseurMap.SetActive(true);
@@ -41,12 +43,12 @@ public class DebugManager : MonoBehaviour
         fogImage.enabled = false;
         fogRed.enabled = false;
         fogBlue.enabled = false;
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

@@ -42,8 +42,8 @@ public class GuideManager : MonoBehaviour
 
     public async void fermerGuide()
     {
-        GameObject.Find("CanvasGuideJeu").GetComponent<Canvas>().enabled = false;
-        //GameObject.Find("CanvasGuideJeu").SetActive(false);
+        GOPointer.CanvasGuideJeu.GetComponent<Canvas>().enabled = false;
+        //GOPointer.CanvasGuideJeu.SetActive(false);
         //wait(1000);
         await Task.Delay(2000);
         Time.timeScale = 1;

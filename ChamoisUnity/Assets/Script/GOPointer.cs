@@ -26,6 +26,7 @@ public class GOPointer : MonoBehaviour
     public GameObject _FogOfWarCanvas;
     public GameObject _ButtonMap;
     public GameObject _CanvasButtonAchievment;
+    public GameObject _CanvasGuideJeu;
 
     public GameObject _EncyclopedieManager;
     public GameObject _MenuManager;
@@ -62,6 +63,7 @@ public class GOPointer : MonoBehaviour
     public static GameObject FogOfWarCanvas;
     public static GameObject ButtonMap;
     public static GameObject CanvasButtonAchievment;
+    public static GameObject CanvasGuideJeu;
 
     public static GameObject EncyclopedieManager;
     public static GameObject MenuManager;
@@ -97,6 +99,7 @@ public class GOPointer : MonoBehaviour
         FogOfWarCanvas = _FogOfWarCanvas;
         ButtonMap = _ButtonMap;
         CanvasButtonAchievment = _CanvasButtonAchievment;
+        CanvasGuideJeu = _CanvasGuideJeu;
 
         EncyclopedieManager = _EncyclopedieManager;
         MenuManager = _MenuManager;

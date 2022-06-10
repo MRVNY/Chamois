@@ -7,7 +7,7 @@ public class paroisRocheuses2 : MonoBehaviour
     /*public GameObject zone1;
    public GameObject zone2;*/
 
-    public int difficulty;
+    public int difficulty = 2;
 
     /*PolygonCollider2D z1;
     PolygonCollider2D z2;*/
@@ -43,7 +43,6 @@ public class paroisRocheuses2 : MonoBehaviour
         // {
         //     Global.sliding = false;
         // }
-        print(Global.sliding);
     }
 
     private void OnTriggerExit2D(Collider2D collider)
