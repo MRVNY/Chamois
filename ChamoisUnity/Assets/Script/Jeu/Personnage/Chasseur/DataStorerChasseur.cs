@@ -66,7 +66,7 @@ public class DataStorerChasseur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        carteActive = GameObject.Find("Game Map").GetComponent<SwitchPlayerMap>().isActive;
+        carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
 
         if (Global.Personnage == "Chasseur")
         {
@@ -190,7 +190,7 @@ public class DataStorerChasseur : MonoBehaviour
             h.Add("bonChamois", bonChamois);
             h.Add("scbonChamois", scbonChamois);
 
-            GameObject.Find("GameManager").GetComponent<FinPartie>().receiveData(h);
+            GOPointer.GameManager.GetComponent<FinPartie>().receiveData(h);
             enabled = false;
     }
     

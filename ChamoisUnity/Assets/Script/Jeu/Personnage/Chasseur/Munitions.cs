@@ -26,7 +26,7 @@ public class Munitions : MonoBehaviour
     {
         if (nbBalles == 0)
         {
-            GameObject.Find("GameManager").GetComponent<FinPartie>().receiveDataChasseur(h);
+            GOPointer.GameManager.GetComponent<FinPartie>().receiveDataChasseur(h);
 
             return false;
         }

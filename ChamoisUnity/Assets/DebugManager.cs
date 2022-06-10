@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class DebugManager : MonoBehaviour
 {
 
-    public bool showColliders;
     public GameObject guide;
     public GameObject ency;
     public GameObject achi;
@@ -27,12 +26,12 @@ public class DebugManager : MonoBehaviour
     
     void Awake()
     {
-        guide.SetActive(false);
+        guide.SetActive(true);
         ency.SetActive(true);
         achi.SetActive(true);
         fog.SetActive(true);
         decor.SetActive(true);
-        npc.SetActive(false);
+        npc.SetActive(true);
         map.SetActive(true);
         chamoisMap.SetActive(true);
         chasseurMap.SetActive(true);

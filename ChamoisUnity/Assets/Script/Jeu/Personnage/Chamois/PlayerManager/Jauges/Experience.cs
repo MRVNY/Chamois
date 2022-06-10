@@ -73,7 +73,7 @@ public class Experience : JaugesController
     {
         while (true)
         {
-            //GameObject.Find("Jauges").GetComponent<Experience>().addExperience(GameObject.Find("Jauges").GetComponent<Experience>().palierExp);
+            //GOPointer.Jauges.GetComponent<Experience>().addExperience(GOPointer.Jauges.GetComponent<Experience>().palierExp);
             addExperience(palierExp);
             yield return new WaitForSeconds(WaitTimerExp);
         }

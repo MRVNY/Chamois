@@ -218,7 +218,7 @@ public class DataStorer : MonoBehaviour
         h.Add("scBlessure", scBlessure);
         h.Add("scoreTps", scoreTps);
 
-        GameObject.Find("GameManager").GetComponent<FinPartie>().receiveData(h);
+        GOPointer.GameManager.GetComponent<FinPartie>().receiveData(h);
         enabled = false;
     }
 

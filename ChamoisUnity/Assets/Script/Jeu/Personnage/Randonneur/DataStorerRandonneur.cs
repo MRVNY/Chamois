@@ -97,7 +97,7 @@ public class DataStorerRandonneur : MonoBehaviour
     {
         meilleureRando = PlayerPrefs.GetInt("meilleureRando");
 
-        carteActive = GameObject.Find("Game Map").GetComponent<SwitchPlayerMap>().isActive;
+        carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
 
         scoreTotal = epionScore + batterieScore + dentPortesScore + grandRocScore + pointesChauriondeScore + morbierScore + nivoletScore + galoppazScore + colombierScore + arcalodScore + trelodScore;
 
@@ -251,7 +251,7 @@ public class DataStorerRandonneur : MonoBehaviour
         h.Add("trelodScore", trelodScore);
         h.Add("scoreTotal", scoreTotal);
 
-        GameObject.Find("GameManager").GetComponent<FinPartie>().receiveDataRandonneur(h);
+        GOPointer.GameManager.GetComponent<FinPartie>().receiveDataRandonneur(h);
         enabled = false;
     }
 

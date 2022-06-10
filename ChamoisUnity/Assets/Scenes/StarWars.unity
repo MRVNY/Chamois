@@ -263,10 +263,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Projet Humani (Financement ANR)\n\nLECA\nRNCFS\n\nDevelopers : \nYoan
-    Ameloot\nMartin Folliet\nBertrand Passieux\nRobin Wagner\n\nGraphisms :\nLoriane
-    Kah\n\nLead Development :\nThibault Carron\nDavid Wayntal\n\nMusic :\nFabian
-    Measures - Hanami Matsuri\nfreemusicarchive.org\n\nSound Effects :\nwww.zapsplat.com\n\n\n\n"
+  m_text: "Projet Humani (Financement ANR)\n\nLECA\nRNCFS\n\nDevelopers : \n\nPhase
+    I :\nYoan Ameloot\nMartin Folliet\nBertrand Passieux\nRobin Wagner\n\nPhase II
+    :\nQingyuan Yao\n\nGraphisms :\nLoriane Kah\n\nLead Development :\nThibault Carron\nDavid
+    Wayntal\n\nMusic :\nFabian Measures - Hanami Matsuri\nfreemusicarchive.org\n\nSound
+    Effects :\nwww.zapsplat.com\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 35fb6280eb71fe14096655f3d1d8d09b, type: 2}
   m_sharedMaterial: {fileID: 4177652984541623312, guid: 35fb6280eb71fe14096655f3d1d8d09b,

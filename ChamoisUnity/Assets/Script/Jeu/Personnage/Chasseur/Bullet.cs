@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
             Destroy(col.gameObject);
             if (gameObject.GetComponent<ListChamois>().rdn == gameObject.GetComponent<scriptChamoisSauvage>().id)
             {
-                GameObject.Find("GameManager").GetComponent<FinPartie>().receiveDataChasseur(h);
+                GOPointer.GameManager.GetComponent<FinPartie>().receiveDataChasseur(h);
             }
         }*/
 

@@ -57,11 +57,11 @@ public class EncycloContentChasseur : Encyclopedie
         base.addInfoToList(action, liste, dynamicInfo);
         if (Global.Personnage == "Chasseur")
         {
-            GameObject.Find("GameControl").GetComponent<GameControlScript>().setTrue();
+            GOPointer.GameControl.GetComponent<GameControlScript>().setTrue();
         }
         else
         {
-            GameObject.Find("GameControl").GetComponent<GameControlScript>().setFalse();
+            GOPointer.GameControl.GetComponent<GameControlScript>().setFalse();
         }
     }
 

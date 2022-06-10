@@ -14,6 +14,6 @@ public class BoutonFinContinuerMauvaisChamois : MonoBehaviour
 
     void TaskOnClick()
     {
-        GameObject.Find("GameManager").GetComponent<FinPartie>().setChasseur(false);
+        GOPointer.GameManager.GetComponent<FinPartie>().setChasseur(false);
     }
 }

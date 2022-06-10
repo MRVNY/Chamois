@@ -22,7 +22,7 @@ public class CaracNouriture : MonoBehaviour
     void Start()
     {
         enabled = false;
-        playerManagement = GameObject.Find("Jauges");
+        playerManagement = GOPointer.Jauges;
 
         if (playerManagement != null)
         {

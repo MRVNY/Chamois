@@ -32,11 +32,11 @@ public class EncycloContentRandonneur : Encyclopedie
         base.addInfoToList(action, liste, dynamicInfo);
         if (Global.Personnage == "Randonneur")
         {
-            GameObject.Find("GameControl").GetComponent<GameControlScript>().setTrue();
+            GOPointer.GameControl.GetComponent<GameControlScript>().setTrue();
         }
         else
         {
-            GameObject.Find("GameControl").GetComponent<GameControlScript>().setFalse();
+            GOPointer.GameControl.GetComponent<GameControlScript>().setFalse();
         }
     }
 

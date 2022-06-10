@@ -48,7 +48,7 @@ public class DayNight : MonoBehaviour
         moisText.SetText(mois);
         anneeText.SetText("{}", nbAnnees);
 
-        /*if (GameObject.Find("GameManager").GetComponent<FinPartie>().fin  == true && finPartie == false)
+        /*if (GOPointer.GameManager.GetComponent<FinPartie>().fin  == true && finPartie == false)
         {
             Debug.Log("C'est la fin");
             StopCoroutine(changerDate());
@@ -58,14 +58,14 @@ public class DayNight : MonoBehaviour
 
     IEnumerator changerDate()
     {
-        while (GameObject.Find("GameManager").GetComponent<FinPartie>().fin == false)
+        while (GOPointer.GameManager.GetComponent<FinPartie>().fin == false)
         {
             yield return new WaitForSeconds(3.0f);
             jour++;
             nbJours++;
-            if(Global.Personnage == "Chamois" && GameObject.Find("GameManager").GetComponent<FinPartie>().fin == false)
+            if(Global.Personnage == "Chamois" && GOPointer.GameManager.GetComponent<FinPartie>().fin == false)
             {
-                //GameObject.Find("Jauges").GetComponent<Experience>().addExperience(GameObject.Find("Jauges").GetComponent<Experience>().palierExp);
+                //GOPointer.Jauges.GetComponent<Experience>().addExperience(GOPointer.Jauges.GetComponent<Experience>().palierExp);
             }
         }
     }

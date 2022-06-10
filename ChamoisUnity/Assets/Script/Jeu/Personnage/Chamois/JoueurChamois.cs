@@ -26,7 +26,7 @@ public class JoueurChamois : Joueur
 
         Physics2D.IgnoreLayerCollision(8,9, true);
         base.Start();
-        stress = GameObject.Find("Jauges").GetComponent<Stress>();
+        stress = GOPointer.Jauges.GetComponent<Stress>();
 
         //Load();
     }
@@ -38,7 +38,7 @@ public class JoueurChamois : Joueur
 
         if (hit)
         {
-            faim = GameObject.Find("Jauges").GetComponent<Faim>();
+            faim = GOPointer.Jauges.GetComponent<Faim>();
             if(activateOnce)
             {
                 vitesse *= boost;

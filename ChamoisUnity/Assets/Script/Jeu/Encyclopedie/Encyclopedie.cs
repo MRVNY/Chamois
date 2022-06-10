@@ -19,10 +19,10 @@ public class Encyclopedie : MonoBehaviour
     {
         enabled = false;
         pagesStatic = new List<ContenuPages>();
-        pG = GameObject.Find("PageGauche");
-        pD = GameObject.Find("PageDroite");
+        pG = GOPointer.PageGauche;
+        pD = GOPointer.PageDroite;
 
-        GameObject.Find("Livre").SetActive(false);
+        GOPointer.Livre.SetActive(false);
     }
 
     protected void setPageStatic(List<EncycloInfos> pages)

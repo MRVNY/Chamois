@@ -29,9 +29,15 @@ public class GOPointer : MonoBehaviour
     public GameObject _CanvasGuideJeu;
 
     public GameObject _EncyclopedieManager;
+    public GameObject _PageGauche;
+    public GameObject _PageDroite;
+    public GameObject _Livre;
+
     public GameObject _MenuManager;
     public GameObject _GameManager;
+    public GameObject _GameControl;
     public GameObject _Controllers;
+    public GameObject _Jauges;
 
     public GameObject _ListeChamoisSauvages;
     public GameObject _NPCCollection;
@@ -66,9 +72,15 @@ public class GOPointer : MonoBehaviour
     public static GameObject CanvasGuideJeu;
 
     public static GameObject EncyclopedieManager;
+    public static GameObject PageGauche;
+    public static GameObject PageDroite;
+    public static GameObject Livre;
+
     public static GameObject MenuManager;
     public static GameObject GameManager;
+    public static GameObject GameControl;
     public static GameObject Controllers;
+    public static GameObject Jauges;
 
     public static GameObject ListeChamoisSauvages;
     public static GameObject NPCCollection;
@@ -102,9 +114,14 @@ public class GOPointer : MonoBehaviour
         CanvasGuideJeu = _CanvasGuideJeu;
 
         EncyclopedieManager = _EncyclopedieManager;
+        PageGauche = _PageGauche;
+        PageDroite = _PageDroite;
+        Livre = _Livre;
         MenuManager = _MenuManager;
         GameManager = _GameManager;
+        GameControl = _GameControl;
         Controllers = _Controllers;
+        Jauges = _Jauges;
 
         ListeChamoisSauvages = _ListeChamoisSauvages;
         NPCCollection = _NPCCollection;

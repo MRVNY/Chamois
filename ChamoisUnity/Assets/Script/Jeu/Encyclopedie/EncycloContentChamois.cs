@@ -30,11 +30,11 @@ public class EncycloContentChamois : Encyclopedie
         base.addInfoToList(action, liste, dynamicInfo);
         if (Global.Personnage == "Chamois")
         {
-            GameObject.Find("GameControl").GetComponent<GameControlScript>().setTrue();
+            GOPointer.GameControl.GetComponent<GameControlScript>().setTrue();
         }
         else
         {
-            GameObject.Find("GameControl").GetComponent<GameControlScript>().setFalse();
+            GOPointer.GameControl.GetComponent<GameControlScript>().setFalse();
         }
     }
 
@@ -116,6 +116,9 @@ public class EncycloContentChamois : Encyclopedie
     public void onChapterSelected(string chapitre)
     {
         this.chapitre = chapitre;
+        
+        
+        
         switch (chapitre)
         {
             case "statique":

@@ -99,7 +99,7 @@ public class chasseurQueteScript : MonoBehaviour
     public void donnerQuete()
     {
         ency.addInfoToList(data2[0].hint, ency.quete);
-        //GameObject.Find("GameControl").GetComponent<GameControlScript>().setTrue();
+        //GOPointer.GameControl.GetComponent<GameControlScript>().setTrue();
         //SELF
         donneurDeQuete.GetComponent<ConversationScript>().items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[11].ID, text = data[11].texte, options = new List<ConversationOption>(), hint = data[11].hint };
