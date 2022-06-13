@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
@@ -32,14 +33,19 @@ public static class SaveLoad
     /// <typeparam name="T"> T qui peux être n'importe quel type de variable</typeparam>
     public static T Load<T>(string key)
     {
-        string path = Application.persistentDataPath + "/saves/";
-        BinaryFormatter formatter = new BinaryFormatter();
-        T returnValue = default(T);
-        using (FileStream fileStream = new FileStream(path + key + ".txt", FileMode.Open))
+        if (SaveExists(key))
         {
-            returnValue = (T)formatter.Deserialize(fileStream);
+            string path = Application.persistentDataPath + "/saves/";
+            BinaryFormatter formatter = new BinaryFormatter();
+            T returnValue = default(T);
+            using (FileStream fileStream = new FileStream(path + key + ".txt", FileMode.Open))
+            {
+                returnValue = (T)formatter.Deserialize(fileStream);
+            }
+
+            return returnValue;
         }
-        return returnValue;
+        else return default(T);
     }
 
     /// <summary>
@@ -60,5 +66,34 @@ public static class SaveLoad
         DirectoryInfo dir = new DirectoryInfo(path);
         dir.Delete(true);
         Directory.CreateDirectory(path); 
+    }
+
+    public static void SaveState()
+    {
+        List<float> posChamois = new List<float>();
+        List<float> posChasseur = new List<float>();
+        List<float> posRandonneur = new List<float>();
+        
+        posChamois.Add(GOPointer.PlayerChamois.transform.position.x);
+        posChamois.Add(GOPointer.PlayerChamois.transform.position.y);
+        posChasseur.Add(GOPointer.PlayerChasseur.transform.position.x);
+        posChasseur.Add(GOPointer.PlayerChasseur.transform.position.y);
+        posRandonneur.Add(GOPointer.PlayerRandonneur.transform.position.x);
+        posRandonneur.Add(GOPointer.PlayerRandonneur.transform.position.y);
+        
+        Save<List<float>>(posChamois, "posChamois");
+        Save<List<float>>(posChasseur, "posChasseur");
+        Save<List<float>>(posRandonneur, "posRandonneur");
+    }
+
+    public static void LoadState()
+    {
+        List<float> posChamois = Load<List<float>>("posChamois");
+        List<float> posChasseur = Load<List<float>>("posChasseur");
+        List<float> posRandonneur = Load<List<float>>("posRandonneur");
+        
+        if(posChamois!=null) GOPointer.PlayerChamois.transform.position = new Vector3(posChamois[0], posChamois[1], 0);
+        if(posChasseur!=null) GOPointer.PlayerChasseur.transform.position = new Vector3(posChasseur[0], posChasseur[1], 0);
+        if(posRandonneur!=null) GOPointer.PlayerRandonneur.transform.position = new Vector3(posRandonneur[0], posRandonneur[1], 0);
     }
 }

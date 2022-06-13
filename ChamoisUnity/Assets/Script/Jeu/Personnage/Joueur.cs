@@ -96,7 +96,7 @@ public class Joueur : MonoBehaviour
         }
         animator.SetFloat("Speed", currentSpeed);
         
-        if(Global.Personnage == "Chamois")
+        if (Global.Personnage == "Chamois")
         {
             if (v != Vector2.zero)
             {

@@ -7,7 +7,7 @@
     public class CameraControllerJoy : MonoBehaviour
     {
         [Header("transform of player gameobject")]
-        public Transform focus;
+        private Transform focus = null;
 
         public float smoothTime = 2;
 
@@ -41,14 +41,26 @@
         public Vector2 minPosition;
 
 
-        void Awake()
-        {
-            transform.position = new Vector3(focus.position.x, focus.position.y, -10);
-            offset = focus.position - transform.position;
-        }
+        // void Awake()
+        // {
+        //     if(Global.Personnage=="Chamois") focus = GOPointer.PlayerChamois.transform;
+        //     else if(Global.Personnage=="Chasseur") focus = GOPointer.PlayerChasseur.transform;
+        //     else if(Global.Personnage=="Randonndeur") focus = GOPointer.PlayerRandonneur.transform;
+        //     
+        //     transform.position = new Vector3(focus.position.x, focus.position.y, -10);
+        //     //offset = focus.position - transform.position;
+        // }
 
         void Start()
         {
+            if(Global.Personnage=="Chamois") focus = GOPointer.PlayerChamois.transform;
+            else if(Global.Personnage=="Chasseur") focus = GOPointer.PlayerChasseur.transform;
+            else if(Global.Personnage=="Randonneur") focus = GOPointer.PlayerRandonneur.transform;
+            
+            transform.position = new Vector3(focus.position.x, focus.position.y, -10);
+            offset = focus.position - transform.position;
+            print(offset);
+            
             cam = gameObject.GetComponent<Camera>();
             joystick = gm.GetComponent<Joystick>();
 

@@ -24,7 +24,7 @@ Save mechanism
 DialogController replaced by VisualNovel 
 Add trees and other props
 
+If time allows: 
+start game design
 DisableIfFarAway (done)
 Reduce Awake()
-
-If time allows: start game design

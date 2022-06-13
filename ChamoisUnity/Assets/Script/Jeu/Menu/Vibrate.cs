@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Vibrate : MonoBehaviour
 {
-    public void vibration()
+    public static void vibration()
     {
         if(PlayerPrefs.GetInt("vibrations") == 1)
         {
             // TC: à réactiver pour compilation smartphone
-            //Handheld.Vibrate();  
+            Handheld.Vibrate();  
         }
     }
 }

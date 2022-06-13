@@ -10,6 +10,9 @@ public class playerType : MonoBehaviour
     void Start()
     {
         gameObject.GetComponent<FinPartie>().enabled = false;
+
+        GOPointer.EncyButton.SetActive(false);
+
         switch (Global.Personnage)
         {
             case "Chasseur":
@@ -20,8 +23,6 @@ public class playerType : MonoBehaviour
                 GOPointer.JoystickCanvasRandonneur.SetActive((false));
 
                 GOPointer.EncyclopedieManager.GetComponent<EncycloContentChasseur>().initList();
-                GOPointer.OuvreChamois.SetActive(false);
-                GOPointer.OuvreRandonneur.SetActive(false);
 
                 GOPointer.CameraFogOfWar.SetActive(false);
                 GOPointer.FogOfWarCanvas.SetActive(false);
@@ -29,11 +30,9 @@ public class playerType : MonoBehaviour
                 //GOPointer.CameraFogOfWarChamois.SetActive(false);
                 //GOPointer.FogOfWarCanvasChamois.SetActive(false);
 
-                GOPointer.MenuManager.SetActive(false);
+                GOPointer.MenuManager.SetActive(true);
                 GOPointer.ButtonMap.SetActive(false);
-                GOPointer.Ouvre.SetActive(false);
-                GOPointer.CanvasButtonAchievment.SetActive(false);
-                GOPointer.OptimisationWorldChamois.SetActive(false);
+                //GOPointer.OptimisationWorldChamois.SetActive(false);
                 GOPointer.OptimisationWorldRandonneur.SetActive(false);
 
 
@@ -48,13 +47,10 @@ public class playerType : MonoBehaviour
                 GOPointer.JoystickCanvasChasseur.SetActive((false));
 
                 GOPointer.EncyclopedieManager.GetComponent<EncycloContentRandonneur>().initList();
-                GOPointer.OuvreChasseur.SetActive(false);
-                GOPointer.OuvreChamois.SetActive(false);
-                GOPointer.MenuManager.SetActive(false);
+                GOPointer.MenuManager.SetActive(true);
                 GOPointer.ButtonMap.SetActive(false);
-                GOPointer.Ouvre.SetActive(false);
                 GOPointer.ListeChamoisSauvages.SetActive(false);
-                GOPointer.CanvasButtonAchievment.SetActive(false);
+                //GOPointer.CanvasButtonAchievment.SetActive(false);
                 GOPointer.OptimisationWorldChamois.SetActive(false);
                 GOPointer.OptimisationWorldChasseur.SetActive(false);
 
@@ -80,13 +76,10 @@ public class playerType : MonoBehaviour
                 GOPointer.JoystickCanvasRandonneur.SetActive((false));
 
                 GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>().initList();
-                GOPointer.OuvreChasseur.SetActive(false);
-                GOPointer.OuvreRandonneur.SetActive(false);
-                GOPointer.MenuManager.SetActive(false);
+                GOPointer.MenuManager.SetActive(true);
                 GOPointer.ButtonMap.SetActive(false);
-                GOPointer.Ouvre.SetActive(false);
                 GOPointer.ListeChamoisSauvages.SetActive(false);
-                GOPointer.CanvasButtonAchievment.SetActive(false);
+                //GOPointer.CanvasButtonAchievment.SetActive(false);
                 GOPointer.OptimisationWorldChasseur.SetActive(false);
                 GOPointer.OptimisationWorldRandonneur.SetActive(false);
                 

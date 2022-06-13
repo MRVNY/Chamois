@@ -42,3 +42,14 @@ Correct zone by zone
 
 # 10/06/2022
 Rest of zones
+Little fix to Achievements UI
+
+# 13/06/2022
+Adapt for hunter
+
+Menu 
+Button auto spacing
+Changer structure: all buttons now belong to Menu
+Switch perso
+Better Pause
+Save pos of each perso

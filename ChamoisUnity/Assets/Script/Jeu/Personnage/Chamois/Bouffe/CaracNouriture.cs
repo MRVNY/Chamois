@@ -54,7 +54,7 @@ public class CaracNouriture : MonoBehaviour
 
     private void onTimeToGrow()
     {
-        if (this != null)
+        if (this != null && Global.Personnage=="Chamois")
         {
             if (compteur_sprite > 0)
             {
@@ -66,7 +66,7 @@ public class CaracNouriture : MonoBehaviour
 
     private void onFoodEaten(int id)
     {
-        if (id.Equals(this.id))
+        if (id.Equals(this.id) && Global.Personnage=="Chamois")
         {
             j.setJauges(h);
             compteur_sprite++;
@@ -99,7 +99,7 @@ public class CaracNouriture : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll) 
      {
-        if (coll.gameObject.tag == "Player" && !isEaten)
+        if (coll.gameObject.tag == "Player" && !isEaten && Global.Personnage=="Chamois")
          {
             GameEvents.onFoodEaten(id);
             isEaten = true;
@@ -108,7 +108,7 @@ public class CaracNouriture : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Player")
+        if (coll.gameObject.tag == "Player" && Global.Personnage=="Chamois")
         {
             isEaten = false;
         }

@@ -12,12 +12,12 @@ public class GameControlScript : MonoBehaviour
     {
         if(Time.timeScale == 1)
         {
-            if ((notifEnabledEncyclopedie) && (RegroupementMenu.menuOuvre == false))
+            if ((notifEnabledEncyclopedie) && (Menu.menuOuvre == false))
             {
                 notifToEnableMenuDeroulant.SetActive(true);
                 notifToEnableEncyclopedie.SetActive(false);
             }
-            else if ((notifEnabledEncyclopedie) && (RegroupementMenu.menuOuvre))
+            else if ((notifEnabledEncyclopedie) && (Menu.menuOuvre))
             {
                 notifToEnableMenuDeroulant.SetActive(true);
                 notifToEnableEncyclopedie.SetActive(true);

@@ -19,33 +19,36 @@ public class Joystick_Link : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var rigidbody = GetComponent<Rigidbody2D>();
-
-        var hori = 0;
-        var verti = 0;
-        if (Input.GetKey("up")) verti = 1;
-        if (Input.GetKey("down")) verti = -1;
-        if (Input.GetKey("left")) hori = -1;
-        if (Input.GetKey("right")) hori = 1;
-
-        if (Global.sliding)
-            rigidbody.velocity = new Vector2(hori * 6, verti * 6) 
-                                 + Vector2.down * Global.difficulty;
-        else
-            rigidbody.velocity = new Vector2(hori * 6, verti * 6);
-
-
-        if(joystick.Horizontal != 0 || joystick.Vertical != 0)
+        if (!Global.pause)
         {
-            if(Global.sliding)
-                rigidbody.velocity = new Vector2(joystick.Horizontal * speed,joystick.Vertical * speed) 
+            var rigidbody = GetComponent<Rigidbody2D>();
+
+            var hori = 0;
+            var verti = 0;
+            if (Input.GetKey("up")) verti = 1;
+            if (Input.GetKey("down")) verti = -1;
+            if (Input.GetKey("left")) hori = -1;
+            if (Input.GetKey("right")) hori = 1;
+
+            if (Global.sliding)
+                rigidbody.velocity = new Vector2(hori * 6, verti * 6)
                                      + Vector2.down * Global.difficulty;
-            else 
-                rigidbody.velocity = new Vector2(joystick.Horizontal * speed, joystick.Vertical * speed);
+            else
+                rigidbody.velocity = new Vector2(hori * 6, verti * 6);
+
+
+            if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+            {
+                if (Global.sliding)
+                    rigidbody.velocity = new Vector2(joystick.Horizontal * speed, joystick.Vertical * speed)
+                                         + Vector2.down * Global.difficulty;
+                else
+                    rigidbody.velocity = new Vector2(joystick.Horizontal * speed, joystick.Vertical * speed);
+            }
+
+            if (hori == 0 && verti == 0 && joystick.Horizontal == 0 && joystick.Vertical == 0 && Global.sliding)
+                rigidbody.velocity = Vector2.down * Global.difficulty;
         }
-        
-        if(hori==0 && verti==0 && joystick.Horizontal == 0 && joystick.Vertical == 0 && Global.sliding)
-            rigidbody.velocity = Vector2.down * Global.difficulty;
     }
 
     /// <summary>
@@ -61,19 +64,24 @@ public class Joystick_Link : MonoBehaviour
     /// </summary>
     public Vector2 getPosition()
     {
-        if(joystick.Horizontal != 0 || joystick.Vertical != 0)
-            return new Vector2(joystick.Vertical, joystick.Horizontal);
+        if (!Global.pause)
+        {
+            if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+                return new Vector2(joystick.Vertical, joystick.Horizontal);
 
-        else{
-            var hori = 0;
-            var verti = 0;
-            if (Input.GetKey("up")) verti = 1;
-            if (Input.GetKey("down")) verti = -1;
-            if (Input.GetKey("left")) hori = -1;
-            if (Input.GetKey("right")) hori = 1;
+            else
+            {
+                var hori = 0;
+                var verti = 0;
+                if (Input.GetKey("up")) verti = 1;
+                if (Input.GetKey("down")) verti = -1;
+                if (Input.GetKey("left")) hori = -1;
+                if (Input.GetKey("right")) hori = 1;
 
-            return new Vector2(verti,hori);
+                return new Vector2(verti, hori);
+            }
         }
+        else return new Vector2(0, 0);
     }
 
     void Pause()

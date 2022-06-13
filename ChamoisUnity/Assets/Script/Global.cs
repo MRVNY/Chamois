@@ -7,11 +7,12 @@ public static class Global
     public static Dictionary<string, string> guide = new Dictionary<string, string>();
     public static bool sliding = false;
     public static int difficulty = 1;
+    public static bool pause = false;
 
 
     static Global()
     {
-        personnageJoue = "Chasseur";
+        personnageJoue = "Chamois";
         guide.Add("Chasseur", "En tant que chasseur, votre objectif principal est d'aider à la régulation des espèces. N'hésitez pas à converser avec tous les perosnnages afin d'obtenir des informations ou d'obtenir des quêtes de chasse.");
         guide.Add("Chamois", "En tant que chamois, votre objectif principal est de survivre le plus longtemps possible. " +
                    // "Pour ce faire, faites en sorte que votre barre de santé (barre rouge en haut à gauche) ne tombe pas à 0. 

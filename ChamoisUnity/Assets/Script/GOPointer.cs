@@ -21,10 +21,7 @@ public class GOPointer : MonoBehaviour
     public GameObject _MiniMap;
 
 
-    public GameObject _Ouvre;
-    public GameObject _OuvreChamois;
-    public GameObject _OuvreChasseur;
-    public GameObject _OuvreRandonneur;
+    public GameObject _EncyButton;
 
     public GameObject _CameraFogOfWar;
     public GameObject _FogOfWarCanvas;
@@ -69,10 +66,7 @@ public class GOPointer : MonoBehaviour
     public static GameObject ItemActivatorObjectRandonneur;
     public static GameObject MiniMap;
     
-    public static GameObject Ouvre;
-    public static GameObject OuvreChamois;
-    public static GameObject OuvreChasseur;
-    public static GameObject OuvreRandonneur;
+    public static GameObject EncyButton;
 
     public static GameObject CameraFogOfWar;
     public static GameObject FogOfWarCanvas;
@@ -116,10 +110,7 @@ public class GOPointer : MonoBehaviour
         ItemActivatorObjectRandonneur = _ItemActivatorObjectRandonneur;
         MiniMap = _MiniMap;
 
-        Ouvre = _Ouvre;
-        OuvreChamois = _OuvreChamois;
-        OuvreChasseur = _OuvreChasseur;
-        OuvreRandonneur = _OuvreRandonneur;
+        EncyButton = _EncyButton;
 
         CameraFogOfWar = _CameraFogOfWar;
         FogOfWarCanvas = _FogOfWarCanvas;
