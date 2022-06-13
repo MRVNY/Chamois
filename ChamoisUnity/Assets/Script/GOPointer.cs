@@ -14,8 +14,12 @@ public class GOPointer : MonoBehaviour
     public GameObject _OptimisationWorldChamois;
     public GameObject _OptimisationWorldChasseur;
     public GameObject _OptimisationWorldRandonneur;
+    public GameObject _ItemActivatorObjectChamois;
+    public GameObject _ItemActivatorObjectChasseur;
+    public GameObject _ItemActivatorObjectRandonneur;
+    
     public GameObject _MiniMap;
-    public GameObject _ItemActivatorObject;
+
 
     public GameObject _Ouvre;
     public GameObject _OuvreChamois;
@@ -29,6 +33,7 @@ public class GOPointer : MonoBehaviour
     public GameObject _CanvasGuideJeu;
 
     public GameObject _EncyclopedieManager;
+    public GameObject _AchievementManager;
     public GameObject _PageGauche;
     public GameObject _PageDroite;
     public GameObject _Livre;
@@ -43,6 +48,8 @@ public class GOPointer : MonoBehaviour
     public GameObject _NPCCollection;
 
     public GameObject _RandoDecouverteText;
+    
+    public GameObject _Pew;
 
 
     //Static
@@ -57,9 +64,11 @@ public class GOPointer : MonoBehaviour
     public static GameObject OptimisationWorldChamois;
     public static GameObject OptimisationWorldChasseur;
     public static GameObject OptimisationWorldRandonneur;
+    public static GameObject ItemActivatorObjectChamois;
+    public static GameObject ItemActivatorObjectChasseur;
+    public static GameObject ItemActivatorObjectRandonneur;
     public static GameObject MiniMap;
-    public static GameObject ItemActivatorObject;
-
+    
     public static GameObject Ouvre;
     public static GameObject OuvreChamois;
     public static GameObject OuvreChasseur;
@@ -72,6 +81,7 @@ public class GOPointer : MonoBehaviour
     public static GameObject CanvasGuideJeu;
 
     public static GameObject EncyclopedieManager;
+    public static GameObject AchievementManager;
     public static GameObject PageGauche;
     public static GameObject PageDroite;
     public static GameObject Livre;
@@ -86,6 +96,8 @@ public class GOPointer : MonoBehaviour
     public static GameObject NPCCollection;
 
     public static GameObject RandoDecouverteText;
+    
+    public static GameObject Pew;
 
     void Awake(){
         PlayerChamois = _PlayerChamois;
@@ -99,8 +111,10 @@ public class GOPointer : MonoBehaviour
         OptimisationWorldChamois = _OptimisationWorldChamois;
         OptimisationWorldChasseur = _OptimisationWorldChasseur;
         OptimisationWorldRandonneur = _OptimisationWorldRandonneur;
+        ItemActivatorObjectChamois = _ItemActivatorObjectChamois;
+        ItemActivatorObjectChasseur = _ItemActivatorObjectChasseur;
+        ItemActivatorObjectRandonneur = _ItemActivatorObjectRandonneur;
         MiniMap = _MiniMap;
-        ItemActivatorObject = _ItemActivatorObject;
 
         Ouvre = _Ouvre;
         OuvreChamois = _OuvreChamois;
@@ -114,6 +128,7 @@ public class GOPointer : MonoBehaviour
         CanvasGuideJeu = _CanvasGuideJeu;
 
         EncyclopedieManager = _EncyclopedieManager;
+        AchievementManager = _AchievementManager;
         PageGauche = _PageGauche;
         PageDroite = _PageDroite;
         Livre = _Livre;
@@ -127,6 +142,8 @@ public class GOPointer : MonoBehaviour
         NPCCollection = _NPCCollection;
 
         RandoDecouverteText = _RandoDecouverteText;
+        
+        Pew = _Pew;
     }
 
 }

@@ -24,7 +24,7 @@ public class CaracNouriture : MonoBehaviour
         enabled = false;
         playerManagement = GOPointer.Jauges;
 
-        if (playerManagement != null)
+        if (playerManagement != null && Global.Personnage=="Chamois")
         {
             j = playerManagement.GetComponent<JaugesController>();
 

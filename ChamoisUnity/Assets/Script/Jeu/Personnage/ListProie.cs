@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ListProie : MonoBehaviour
 {
-    public int rdn; 
+    public int rdn;
     public List<GameObject>listDeProie;
     void Start()
     {
@@ -32,11 +32,11 @@ public class ListProie : MonoBehaviour
 
     void estUneProie()
     {
-        Debug.Log("Tu es une proie");
+        //Debug.Log("Tu es une proie");
     }
 
     void estPasBon()
     {
-        Debug.Log("Tu n'es pas la bonne proie");
+        //Debug.Log("Tu n'es pas la bonne proie");
     }
 }

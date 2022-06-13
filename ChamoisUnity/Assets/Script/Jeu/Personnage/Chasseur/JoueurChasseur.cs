@@ -35,7 +35,7 @@ public class JoueurChasseur : Joueur
         munitions = gameObject.GetComponent<Munitions>();
         crossSprite = crosshair.GetComponent<Renderer>();
         crossSprite.enabled = false;
-        pew = GameObject.Find("Pew");
+        pew = GOPointer.Pew;
         pew.SetActive(false);
     }
 
@@ -86,7 +86,7 @@ public class JoueurChasseur : Joueur
         }
         if (PlayerPrefs.GetInt("soundEffects") == 1)
         {
-            GameObject.Find("Pew").GetComponent<AudioSource>().Play();
+            GOPointer.Pew.GetComponent<AudioSource>().Play();
         }
     }
 

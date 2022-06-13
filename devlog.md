@@ -32,3 +32,13 @@ Added keyboard control
 # 08/06/2022
 Wolf animation
 Sorting layer
+
+# 09/06/2022
+Wrong player collision with the map
+- [x] Separate colliders by zone
+- [x] Slide on slopes
+Correct zone by zone
+- [x] zone 1 - 6 & 11
+
+# 10/06/2022
+Rest of zones

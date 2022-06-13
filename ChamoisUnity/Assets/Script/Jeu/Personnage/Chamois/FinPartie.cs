@@ -57,7 +57,7 @@ public class FinPartie : MonoBehaviour
         {
             if (GOPointer.PlayerChamois.GetComponent<DataStorer>().score > 1000)
             {
-                GameObject.Find("AchievmentManager").GetComponent<AchievmentManager>().EarnAchievment("Score Chamois I");
+                GOPointer.AchievementManager.GetComponent<AchievmentManager>().EarnAchievment("Score Chamois I");
                 score1000 = true;
             }
         }
@@ -66,7 +66,7 @@ public class FinPartie : MonoBehaviour
         {
             if (GOPointer.PlayerChamois.GetComponent<DataStorer>().score > 3000)
             {
-                GameObject.Find("AchievmentManager").GetComponent<AchievmentManager>().EarnAchievment("Score Chamois II");
+                GOPointer.AchievementManager.GetComponent<AchievmentManager>().EarnAchievment("Score Chamois II");
                 score3000 = true;
             }
         }
@@ -75,7 +75,7 @@ public class FinPartie : MonoBehaviour
         {
             if (GOPointer.PlayerChamois.GetComponent<DataStorer>().score > 5000)
             {
-                GameObject.Find("AchievmentManager").GetComponent<AchievmentManager>().EarnAchievment("Score Chamois III");
+                GOPointer.AchievementManager.GetComponent<AchievmentManager>().EarnAchievment("Score Chamois III");
                 score5000 = true;
             }
         }
@@ -84,7 +84,7 @@ public class FinPartie : MonoBehaviour
         {
             if (GOPointer.PlayerChamois.GetComponent<DataStorer>().nourritureMangee > 14)
             {
-                GameObject.Find("AchievmentManager").GetComponent<AchievmentManager>().EarnAchievment("Alimentation I");
+                GOPointer.AchievementManager.GetComponent<AchievmentManager>().EarnAchievment("Alimentation I");
                 nourriture15 = true;
             }
         }
@@ -93,7 +93,7 @@ public class FinPartie : MonoBehaviour
         {
             if (GOPointer.PlayerChamois.GetComponent<DataStorer>().nourritureMangee > 29)
             {
-                GameObject.Find("AchievmentManager").GetComponent<AchievmentManager>().EarnAchievment("Alimentation II");
+                GOPointer.AchievementManager.GetComponent<AchievmentManager>().EarnAchievment("Alimentation II");
                 nourriture30 = true;
             }
         }
@@ -102,7 +102,7 @@ public class FinPartie : MonoBehaviour
         {
             if (GOPointer.PlayerChamois.GetComponent<DataStorer>().nbInfos > 4)
             {
-                GameObject.Find("AchievmentManager").GetComponent<AchievmentManager>().EarnAchievment("Connaissances en Chamois I");
+                GOPointer.AchievementManager.GetComponent<AchievmentManager>().EarnAchievment("Connaissances en Chamois I");
                 infos5 = true;
             }
         }
@@ -111,7 +111,7 @@ public class FinPartie : MonoBehaviour
         {
             if (GOPointer.PlayerChamois.GetComponent<DataStorer>().nbInfos > 9)
             {
-                GameObject.Find("AchievmentManager").GetComponent<AchievmentManager>().EarnAchievment("Connaissances en Chamois II");
+                GOPointer.AchievementManager.GetComponent<AchievmentManager>().EarnAchievment("Connaissances en Chamois II");
                 infos10 = true;
             }
         }
