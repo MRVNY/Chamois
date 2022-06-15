@@ -26,6 +26,7 @@ public class DebugManager : MonoBehaviour
     
     void Awake()
     {
+        SaveLoad.DeleteAllSaveFiles();
         guide.SetActive(true);
         ency.SetActive(true);
         achi.SetActive(true);
@@ -39,9 +40,9 @@ public class DebugManager : MonoBehaviour
         miniMap.SetActive(false);
 
         dayNight.enabled = false;
-        fogImage.enabled = false;
-        fogRed.enabled = false;
-        fogBlue.enabled = false;
+        fogImage.enabled = true;
+        fogRed.enabled = true;
+        fogBlue.enabled = true;
         
 
     }
@@ -49,5 +50,11 @@ public class DebugManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public void clearSave()
+    {
+        SaveLoad.DeleteAllSaveFiles();
+        print("Save files deleted");
     }
 }

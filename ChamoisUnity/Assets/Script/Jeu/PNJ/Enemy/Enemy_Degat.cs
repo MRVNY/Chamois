@@ -38,7 +38,7 @@ public class Enemy_Degat : Enemy
             rb = gameObject.GetComponent<Rigidbody2D>();
             
             vie = pm.GetComponentInChildren<Vie>();
-            joueur = GameObject.FindWithTag("Player").GetComponent<JoueurChamois>();
+            joueur = GOPointer.PlayerChamois.GetComponent<JoueurChamois>();
             data = pm.GetComponent<DataStorer>();
         }
     }

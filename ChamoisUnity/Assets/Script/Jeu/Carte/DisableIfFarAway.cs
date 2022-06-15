@@ -23,6 +23,6 @@ public class DisableIfFarAway : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         
-        _activationScript.ActivatorItems.Add(new ActivatorItem {Item = this.gameObject, ItemPos = transform.position});
+        _activationScript.ActivatorItems.Add(new ActivatorItem {Item = this.gameObject, ItemPos = transform.position + new Vector3(50,-50,0)});
     }
 }

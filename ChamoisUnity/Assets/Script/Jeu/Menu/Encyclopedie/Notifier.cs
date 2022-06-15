@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameControlScript : MonoBehaviour
+public class Notifier : MonoBehaviour
 {
     public GameObject notifToEnableEncyclopedie;
     public GameObject notifToEnableMenuDeroulant;

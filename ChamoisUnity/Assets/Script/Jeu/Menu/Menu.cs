@@ -118,7 +118,7 @@ public class Menu : MonoBehaviour
     {
         Vibrate.vibration();
         //GOPointer.Ouvre.SetActive(false);
-        GOPointer.GameControl.GetComponent<GameControlScript>().setFalse();
+        GOPointer.GameControl.GetComponent<Notifier>().setFalse();
         if (ChapitreChamois.activeSelf || ChapitreChassuer.activeSelf || ChapitreRandonner.activeSelf)
         {
             ChapitreChamois.SetActive(false);

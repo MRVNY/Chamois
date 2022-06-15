@@ -7,8 +7,8 @@ using Object = System.Object;
 
 public class ItemActivator : MonoBehaviour
 {
-   [SerializeField] 
-   private int distanceFromPlayer = 0;
+   //[SerializeField] 
+   private int distanceFromPlayer = 150;
    
    private GameObject _player;
 

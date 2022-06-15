@@ -66,8 +66,8 @@ public class playerType : MonoBehaviour
                 GOPointer.PlayerChasseur.SetActive(false);
                 GOPointer.JoystickCanvasChasseur.SetActive((false));
 
-                //GOPointer.CameraFogOfWar.SetActive(false);
-                //GOPointer.FogOfWarCanvas.SetActive(false);
+                GOPointer.CameraFogOfWar.SetActive(false);
+                GOPointer.FogOfWarCanvas.SetActive(false);
 
                 //GOPointer.CameraFogOfWarChamois.SetActive(false);
                 //GOPointer.FogOfWarCanvasChamois.SetActive(false);
