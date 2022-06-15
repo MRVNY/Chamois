@@ -18,6 +18,7 @@ public class GuideManager : MonoBehaviour
         //Debug.Log("boolean help : " + PlayerPrefs.GetFloat("inGameHelp"));
         if(PlayerPrefs.GetInt("inGameHelp") == 1 && !SaveLoad.SaveExists("pos"+Global.Personnage))
         {
+            GOPointer.MenuManager.GetComponent<PauseMenu>().Pause();
             guideCanvas.SetActive(true);
             Time.timeScale = 0;
             guideText.SetText(Global.guide[Global.Personnage]);
@@ -42,6 +43,7 @@ public class GuideManager : MonoBehaviour
 
     public async void fermerGuide()
     {
+        GOPointer.MenuManager.GetComponent<PauseMenu>().Resume();
         GOPointer.CanvasGuideJeu.GetComponent<Canvas>().enabled = false;
         //GOPointer.CanvasGuideJeu.SetActive(false);
         //wait(1000);

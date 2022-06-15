@@ -69,3 +69,6 @@ TagManager:
   - name: FogOfWar
     uniqueID: 3135663013
     locked: 0
+  - name: Visual Novel
+    uniqueID: 1797918471
+    locked: 0

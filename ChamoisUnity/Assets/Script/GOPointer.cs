@@ -7,9 +7,8 @@ public class GOPointer : MonoBehaviour
     public GameObject _PlayerChasseur;
     public GameObject _PlayerRandonneur;
 
-    public GameObject _JoystickCanvasChamois;
-    public GameObject _JoystickCanvasChasseur;
-    public GameObject _JoystickCanvasRandonneur;
+    public GameObject _JoystickCanvas;
+    public GameObject _CameraReg;
 
     public GameObject _OptimisationWorldChamois;
     public GameObject _OptimisationWorldChasseur;
@@ -47,6 +46,8 @@ public class GOPointer : MonoBehaviour
     public GameObject _RandoDecouverteText;
     
     public GameObject _Pew;
+    
+    public GameObject _VisualNovel;
 
 
     //Static
@@ -54,9 +55,8 @@ public class GOPointer : MonoBehaviour
     public static GameObject PlayerChasseur;
     public static GameObject PlayerRandonneur;
 
-    public static GameObject JoystickCanvasChamois;
-    public static GameObject JoystickCanvasChasseur;
-    public static GameObject JoystickCanvasRandonneur;
+    public static GameObject JoystickCanvas;
+    public static GameObject CameraReg;
 
     public static GameObject OptimisationWorldChamois;
     public static GameObject OptimisationWorldChasseur;
@@ -92,19 +92,21 @@ public class GOPointer : MonoBehaviour
     public static GameObject RandoDecouverteText;
     
     public static GameObject Pew;
+    
+    public static GameObject VisualNovel;
 
     void Awake(){
         PlayerChamois = _PlayerChamois;
         PlayerChasseur = _PlayerChasseur;
         PlayerRandonneur = _PlayerRandonneur;
 
-        JoystickCanvasChamois = _JoystickCanvasChamois;
-        JoystickCanvasChasseur = _JoystickCanvasChasseur;
-        JoystickCanvasRandonneur = _JoystickCanvasRandonneur;
+        JoystickCanvas = _JoystickCanvas;
+        CameraReg = _CameraReg;
 
         OptimisationWorldChamois = _OptimisationWorldChamois;
         OptimisationWorldChasseur = _OptimisationWorldChasseur;
         OptimisationWorldRandonneur = _OptimisationWorldRandonneur;
+        
         ItemActivatorObjectChamois = _ItemActivatorObjectChamois;
         ItemActivatorObjectChasseur = _ItemActivatorObjectChasseur;
         ItemActivatorObjectRandonneur = _ItemActivatorObjectRandonneur;
@@ -135,6 +137,8 @@ public class GOPointer : MonoBehaviour
         RandoDecouverteText = _RandoDecouverteText;
         
         Pew = _Pew;
+        
+        VisualNovel = _VisualNovel;
     }
 
 }

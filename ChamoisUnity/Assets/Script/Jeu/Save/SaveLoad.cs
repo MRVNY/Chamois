@@ -24,7 +24,7 @@ public static class SaveLoad
             formatter.Serialize(fileStream, objectToSave);
         }
 
-        Debug.Log("Sauvegarde réussie!");
+        //Debug.Log("Sauvegarde réussie!");
     }
 
     /// <summary>

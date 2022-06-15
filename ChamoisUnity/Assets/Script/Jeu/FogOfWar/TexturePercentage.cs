@@ -27,10 +27,16 @@ public class TexturePercentage : MonoBehaviour
     Texture2D createTex(RectTransform rt)
     {
         
-        Rect rect = rt.rect;
+        Vector2 pos = rt.position;
+        
         Texture2D tex = new Texture2D(rdTex.width/6, rdTex.height/6, TextureFormat.RGB24, false);
+        //Texture2D tex = new Texture2D(rdTex.width, rdTex.height, TextureFormat.RGB24, false);
+        
         RenderTexture.active = rdTex;
-        tex.ReadPixels(rect, 0, 0);
+        
+        tex.ReadPixels(new Rect(pos.x*rdTex.width/600,(600+pos.y-100)*rdTex.height/600,rdTex.width/6,rdTex.height/6), 0, 0);
+        //tex.ReadPixels(new Rect(0,0,rdTex.width,rdTex.height), 0, 0);
+        
         tex.Apply();
         return tex;
     }
@@ -40,7 +46,6 @@ public class TexturePercentage : MonoBehaviour
         print("Refresh");
 
         Texture2D tex = createTex(rt);
-        print("Refresh 2");
         int ttalPixels = 0;
         int transparentPixels = 0;
 
@@ -62,12 +67,13 @@ public class TexturePercentage : MonoBehaviour
         }
 
         rectsPrc[rt] = (int)(transparentPixels * 100 / ttalPixels);
+        //print(rectsPrc[rt]);
+        //print(rectsPrc.Count);
         
-        prc = rectsPrc.Values.Sum() / (rectsPrc.Count*100);
+        prc = rectsPrc.Values.Sum() / rectsPrc.Count;
         text.SetText("Découverte de la carte : {0}%", prc);
-        print(rectsPrc);
-        print(tex);
-        
+        //print(prc);
+
         //yield return new WaitForSecondsRealtime(1f);
     }
 

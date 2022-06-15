@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build.Content;
@@ -26,8 +27,10 @@ public class DebugManager : MonoBehaviour
     
     void Awake()
     {
-        SaveLoad.DeleteAllSaveFiles();
-        guide.SetActive(true);
+        //SaveLoad.DeleteAllSaveFiles();
+        //Global.Personnage = "Chamois";
+
+        guide.SetActive(false);
         ency.SetActive(true);
         achi.SetActive(true);
         fog.SetActive(true);
@@ -43,8 +46,12 @@ public class DebugManager : MonoBehaviour
         fogImage.enabled = true;
         fogRed.enabled = true;
         fogBlue.enabled = true;
-        
 
+    }
+
+    private void Start()
+    {
+        GOPointer.VisualNovel.SetActive(false);
     }
 
     // Update is called once per frame

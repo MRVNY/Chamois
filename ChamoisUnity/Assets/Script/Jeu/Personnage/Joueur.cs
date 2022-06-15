@@ -10,7 +10,6 @@ public class Joueur : MonoBehaviour
     public float vitesse;
 
     [Header("Caméra du personnage")]
-    public GameObject CameraJoueur;
 
     [Header("Zoom Caméra si un évennement est appelé")]
     //zoom de la camera si et ssi un bouton est appuyé
@@ -50,7 +49,7 @@ public class Joueur : MonoBehaviour
     {
         GameEvents.Pause += Pause;
 
-        camerascript = CameraJoueur.GetComponent<CameraControllerJoy>();
+        camerascript = GOPointer.CameraReg.GetComponentInChildren<CameraControllerJoy>();
         joystick = gameObject.GetComponent<Joystick_Link>();
         rb2d = gameObject.GetComponent<Rigidbody2D>();
 

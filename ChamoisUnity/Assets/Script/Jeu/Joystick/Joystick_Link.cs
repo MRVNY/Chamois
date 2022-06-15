@@ -7,12 +7,11 @@ public class Joystick_Link : MonoBehaviour
 
     public float speed = 100f;
 
-    public GameObject gm;
     protected Joystick joystick;
     // Start is called before the first frame update
     void Start()
     {
-        joystick = gm.GetComponent<Joystick>();
+        joystick = GOPointer.JoystickCanvas.GetComponentInChildren<Joystick>();
         GameEvents.Pause += Pause;
     }
 
@@ -23,12 +22,8 @@ public class Joystick_Link : MonoBehaviour
         {
             var rigidbody = GetComponent<Rigidbody2D>();
 
-            var hori = 0;
-            var verti = 0;
-            if (Input.GetKey("up")) verti = 1;
-            if (Input.GetKey("down")) verti = -1;
-            if (Input.GetKey("left")) hori = -1;
-            if (Input.GetKey("right")) hori = 1;
+            var hori = Input.GetAxis("Horizontal");
+            var verti = Input.GetAxis("Vertical");
 
             if (Global.sliding)
                 rigidbody.velocity = new Vector2(hori * 6, verti * 6)
@@ -71,12 +66,8 @@ public class Joystick_Link : MonoBehaviour
 
             else
             {
-                var hori = 0;
-                var verti = 0;
-                if (Input.GetKey("up")) verti = 1;
-                if (Input.GetKey("down")) verti = -1;
-                if (Input.GetKey("left")) hori = -1;
-                if (Input.GetKey("right")) hori = 1;
+                var hori = Input.GetAxis("Horizontal");
+                var verti = Input.GetAxis("Vertical");
 
                 return new Vector2(verti, hori);
             }

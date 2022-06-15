@@ -59,7 +59,6 @@
             
             transform.position = new Vector3(focus.position.x, focus.position.y, -10);
             offset = focus.position - transform.position;
-            print(offset);
             
             cam = gameObject.GetComponent<Camera>();
             joystick = gm.GetComponent<Joystick>();

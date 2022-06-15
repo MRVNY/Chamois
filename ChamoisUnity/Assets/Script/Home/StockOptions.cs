@@ -54,4 +54,9 @@ public class StockOptions : MonoBehaviour
         PlayerPrefs.SetInt("vibrations", (enableVibrations ? 1 : 0));
         PlayerPrefs.Save();
     }
+
+    public void clearSave()
+    {
+        SaveLoad.DeleteAllSaveFiles();
+    }
 }

@@ -17,10 +17,7 @@ public class playerType : MonoBehaviour
         {
             case "Chasseur":
                 GOPointer.PlayerChamois.SetActive(false);
-                GOPointer.JoystickCanvasChamois.SetActive((false));
-
                 GOPointer.PlayerRandonneur.SetActive(false);
-                GOPointer.JoystickCanvasRandonneur.SetActive((false));
 
                 GOPointer.EncyclopedieManager.GetComponent<EncycloContentChasseur>().initList();
 
@@ -41,10 +38,7 @@ public class playerType : MonoBehaviour
 
             case "Randonneur":
                 GOPointer.PlayerChamois.SetActive(false);
-                GOPointer.JoystickCanvasChamois.SetActive((false));
-
                 GOPointer.PlayerChasseur.SetActive(false);
-                GOPointer.JoystickCanvasChasseur.SetActive((false));
 
                 GOPointer.EncyclopedieManager.GetComponent<EncycloContentRandonneur>().initList();
                 GOPointer.MenuManager.SetActive(true);
@@ -64,8 +58,6 @@ public class playerType : MonoBehaviour
             case "Chamois":
                 print(GOPointer.PlayerChasseur);
                 GOPointer.PlayerChasseur.SetActive(false);
-                GOPointer.JoystickCanvasChasseur.SetActive((false));
-
                 GOPointer.CameraFogOfWar.SetActive(false);
                 GOPointer.FogOfWarCanvas.SetActive(false);
 
@@ -73,7 +65,6 @@ public class playerType : MonoBehaviour
                 //GOPointer.FogOfWarCanvasChamois.SetActive(false);
 
                 GOPointer.PlayerRandonneur.SetActive(false);
-                GOPointer.JoystickCanvasRandonneur.SetActive((false));
 
                 GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>().initList();
                 GOPointer.MenuManager.SetActive(true);

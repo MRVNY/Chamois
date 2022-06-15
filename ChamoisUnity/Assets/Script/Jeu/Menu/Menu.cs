@@ -39,6 +39,7 @@ public class Menu : MonoBehaviour
         }
         
         Deactivate();
+        pause.Resume();
     }
 
     public void activeMain()
@@ -46,6 +47,7 @@ public class Menu : MonoBehaviour
         NotifMenuDeroulant.SetActive(false);
         if (menuIcon.enabled)
         {
+            pause.Pause();
             Activate();
         }
         else
@@ -55,13 +57,12 @@ public class Menu : MonoBehaviour
                 GOPointer.MenuManager.GetComponent<AudioSource>().Play();
             }
             Deactivate();
+            pause.Resume();
         }
     }
     
     public void Activate()
     {
-        pause.Pause();
-        
         resume.SetActive(true);
         menuIcon.enabled = false;
         pasueIcon.SetActive(true);
@@ -80,8 +81,6 @@ public class Menu : MonoBehaviour
     
     public void Deactivate()
     {
-        pause.Resume();
-        
         resume.SetActive(false);
         menuIcon.enabled = true;
         pasueIcon.SetActive(false);

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Area : MonoBehaviour
 {
     public TexturePercentage texture;
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("Player") && Global.Personnage == "Randonneur")
         {

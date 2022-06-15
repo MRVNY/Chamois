@@ -14,13 +14,19 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject notifEncy = null;
     private bool notifActive;
 
+    private void Start()
+    {
+        joystick = GOPointer.JoystickCanvas;
+        //boutonTir = GOPointer.;
+    }
+
     public void Pause()
     {
         SaveLoad.SaveState();
         Time.timeScale = 0;
         Global.pause = true;
         
-        joystick.SetActive(false);
+        GOPointer.JoystickCanvas.SetActive(false);
         boutonTir.SetActive(false);
 
         // Debug.Log("notifRegroup : " + notifRegroup.activeSelf);
