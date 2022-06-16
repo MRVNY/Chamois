@@ -20,7 +20,6 @@ public class Stress : JaugesController
     public TextMeshProUGUI stressText;
 
     private bool dangerProxi;
-    public GameObject guide;
 
     static Boolean activateOnce = false;
 
@@ -30,7 +29,10 @@ public class Stress : JaugesController
     new void Start()
     {
         base.Start();
-        guide = GOPointer.CanvasGuideJeu;
+        
+        stress = gameObject.GetComponent<Stress>();
+        faim = gameObject.GetComponent<Faim>();
+        vie = gameObject.GetComponent<Vie>();
 
     }
 

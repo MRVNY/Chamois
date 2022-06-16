@@ -11,19 +11,22 @@ public class Menu : MonoBehaviour
     public GameObject resume;
     public Image menuIcon;
     public GameObject pasueIcon;
-    public PauseMenu pause;
+    private PauseMenu pause;
     
     public GameObject NotifMenuDeroulant ;
     public List<GameObject> ListeBoutons;
     public static bool menuOuvre = false;
 
     public GameObject ChapitreChamois;
-    public GameObject ChapitreChassuer;
-    public GameObject ChapitreRandonner;
+    public GameObject ChapitreChasseur;
+    public GameObject ChapitreRandonneur;
 
     private void Awake()
     {
         SaveLoad.LoadState();
+        ChapitreChamois = GOPointer.ChapitreChamois;
+        ChapitreChasseur = GOPointer.ChapitreChasseur;
+        ChapitreRandonneur = GOPointer.ChapitreRandonneur;
     }
 
     private void Start()
@@ -57,7 +60,6 @@ public class Menu : MonoBehaviour
                 GOPointer.MenuManager.GetComponent<AudioSource>().Play();
             }
             Deactivate();
-            pause.Resume();
         }
     }
     
@@ -86,8 +88,8 @@ public class Menu : MonoBehaviour
         pasueIcon.SetActive(false);
 
         ChapitreChamois.SetActive(false);
-        ChapitreChassuer.SetActive(false);
-        ChapitreRandonner.SetActive(false);
+        ChapitreChasseur.SetActive(false);
+        ChapitreRandonneur.SetActive(false);
         
         if (PlayerPrefs.GetInt("soundEffects") == 1)
         {
@@ -100,6 +102,7 @@ public class Menu : MonoBehaviour
         }
 
         menuOuvre = false;
+        pause.Resume();
     }
     
     public void Home()
@@ -118,19 +121,25 @@ public class Menu : MonoBehaviour
         Vibrate.vibration();
         //GOPointer.Ouvre.SetActive(false);
         GOPointer.GameControl.GetComponent<Notifier>().setFalse();
-        if (ChapitreChamois.activeSelf || ChapitreChassuer.activeSelf || ChapitreRandonner.activeSelf)
+        if (ChapitreChamois.activeSelf || ChapitreChasseur.activeSelf || ChapitreRandonneur.activeSelf)
         {
             ChapitreChamois.SetActive(false);
-            ChapitreChassuer.SetActive(false);
-            ChapitreRandonner.SetActive(false);
+            ChapitreChasseur.SetActive(false);
+            ChapitreRandonneur.SetActive(false);
             pasueIcon.SetActive(true);
         }
         else
         {
             if (Global.Personnage=="Chamois") ChapitreChamois.SetActive(true);
-            else if (Global.Personnage=="Chasseur") ChapitreChassuer.SetActive(true);
-            else if(Global.Personnage=="Randonneur") ChapitreRandonner.SetActive(true);
+            else if (Global.Personnage=="Chasseur") ChapitreChasseur.SetActive(true);
+            else if(Global.Personnage=="Randonneur") ChapitreRandonneur.SetActive(true);
             pasueIcon.SetActive(false);
         }
+    }
+
+    public void endEncy()
+    {
+        NotifMenuDeroulant.SetActive(false);
+        Deactivate();
     }
 }

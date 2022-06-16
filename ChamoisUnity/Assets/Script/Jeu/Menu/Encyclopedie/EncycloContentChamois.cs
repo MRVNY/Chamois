@@ -5,24 +5,9 @@ using System.Collections;
 
 public class EncycloContentChamois : Encyclopedie
 {
-    private static Dictionary<string, EncycloInfos> dynamicInfo
-        = new Dictionary<string, EncycloInfos>();
-
-    private List<EncycloInfos> staticInfo
-        = new List<EncycloInfos>();
-
-    public List<ContenuPages> pagesDynamic = new List<ContenuPages>();
-
-    private string chapitre;
-
-    public TextAsset jsonFile;
-    public ArrayList data = new ArrayList();
-    public EncyInfo info;
-
-
     new void Start()
     {
-        enabled = false;
+        base.Start();
     }
 
     public void addInfoToList(string action, List<ContenuPages> liste) 
@@ -80,58 +65,4 @@ public class EncycloContentChamois : Encyclopedie
         setPageStatic(staticInfo);
     }
     
-
-    public void onClickGauche()
-    {
-        switch (chapitre)
-        {
-            case "statique":
-                if (pagesStatic.Count > 0)
-                    base.onClickGauche(pagesStatic);
-            break;
-
-            case "dynamique":
-                if (pagesDynamic.Count > 0)
-                    base.onClickGauche(pagesDynamic);
-            break;
-        }
-    }
-
-        public void onClickDroite()
-    {
-        switch (chapitre)
-        {
-            case "statique":
-                if (pagesStatic.Count > 0)
-                    base.onClickDroite(pagesStatic);
-            break;
-
-            case "dynamique":
-                if (pagesDynamic.Count > 0)
-                    base.onClickDroite(pagesDynamic);
-            break;
-        }
-    }
-
-    public void onChapterSelected(string chapitre)
-    {
-        this.chapitre = chapitre;
-        
-        
-        
-        switch (chapitre)
-        {
-            case "statique":
-                if (pagesStatic.Count > 0)
-                    base.onChapterSelected(pagesStatic);
-
-            break;
-
-            case "dynamique":
-                if (pagesDynamic.Count > 0)
-                    base.onChapterSelected(pagesDynamic);
-            break;
-        }
-        
-    }
 }

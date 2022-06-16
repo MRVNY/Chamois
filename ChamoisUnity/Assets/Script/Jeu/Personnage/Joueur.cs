@@ -54,7 +54,7 @@ public class Joueur : MonoBehaviour
         rb2d = gameObject.GetComponent<Rigidbody2D>();
 
         camerascript.infrontOf = inFrontOf;
-        champ_de_vision_collider.radius = champ_de_vision;
+        //champ_de_vision_collider.radius = champ_de_vision;
     }
 
 

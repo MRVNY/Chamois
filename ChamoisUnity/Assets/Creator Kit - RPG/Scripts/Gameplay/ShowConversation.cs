@@ -19,6 +19,11 @@ namespace RPGM.Events
         public ConversationScript conversation;
         public string conversationItemKey;
 
+        private DataStorerRandonneur dataStorer;
+
+        public ShowConversation(){
+            dataStorer = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
+        }
 
         public override void Execute()
         {
@@ -255,51 +260,51 @@ namespace RPGM.Events
                             break;
                         case "infoRegVehicule":
                             script.vehicule();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         case "infoRegSurvol":
                             script.survol();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         case "infoRegChiens":
                             script.chien();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         case "infoRegAppareil":
                             script.appareils();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         case "infoRegCamping":
                             script.camping();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         case "infoRegFeux":
                             script.feux();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         case "infoRegDerangementFaune":
                             script.derangementFaune();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         case "infoRegRespect":
                             script.respect();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         case "infoRegSentierBalise":
                             script.sentierBalise();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         case "infoRecFaune":
                             script.recommandationFaune();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         case "infoRecBalise":
                             script.recommandationBalise();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         case "infoConsPrevenir":
                             script.conseilPrevenir();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbInfos += 1;
+                            dataStorer.nbInfos += 1;
                             break;
                         // randonnées réelles
 
@@ -316,8 +321,8 @@ namespace RPGM.Events
                             break;
                         case "endEpion":
                             script2.terminerEpion();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandos += 1;
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandosMemePartie += 1;
+                            dataStorer.nbRandos += 1;
+                            dataStorer.nbRandosMemePartie += 1;
                             PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
                             break;
 
@@ -334,8 +339,8 @@ namespace RPGM.Events
                             break;
                         case "endBatterie":
                             script2.terminerBatterie();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandos += 1;
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandosMemePartie += 1;
+                            dataStorer.nbRandos += 1;
+                            dataStorer.nbRandosMemePartie += 1;
                             PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
                             break;
 
@@ -352,8 +357,8 @@ namespace RPGM.Events
                             break;
                         case "endDentPortes":
                             script2.terminerDentPortes();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandos += 1;
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandosMemePartie += 1;
+                            dataStorer.nbRandos += 1;
+                            dataStorer.nbRandosMemePartie += 1;
                             PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
                             break;
 
@@ -370,8 +375,8 @@ namespace RPGM.Events
                             break;
                         case "endGrandRoc":
                             script2.terminerGrandRoc();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandos += 1;
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandosMemePartie += 1;
+                            dataStorer.nbRandos += 1;
+                            dataStorer.nbRandosMemePartie += 1;
                             PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
                             break;
 
@@ -388,8 +393,8 @@ namespace RPGM.Events
                             break;
                         case "endPointeChaurionde":
                             script2.terminerPointeChaurionde();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandos += 1;
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandosMemePartie += 1;
+                            dataStorer.nbRandos += 1;
+                            dataStorer.nbRandosMemePartie += 1;
                             PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
                             break;
 
@@ -406,8 +411,8 @@ namespace RPGM.Events
                             break;
                         case "endMorbier":
                             script2.terminerMorbier();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandos += 1;
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandosMemePartie += 1;
+                            dataStorer.nbRandos += 1;
+                            dataStorer.nbRandosMemePartie += 1;
                             PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
                             break;
 
@@ -424,8 +429,8 @@ namespace RPGM.Events
                             break;
                         case "endNivolet":
                             script2.terminerNivolet();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandos += 1;
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandosMemePartie += 1;
+                            dataStorer.nbRandos += 1;
+                            dataStorer.nbRandosMemePartie += 1;
                             PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
                             break;
 
@@ -442,8 +447,8 @@ namespace RPGM.Events
                             break;
                         case "endGaloppaz":
                             script2.terminerGaloppaz();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandos += 1;
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandosMemePartie += 1;
+                            dataStorer.nbRandos += 1;
+                            dataStorer.nbRandosMemePartie += 1;
                             PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
                             break;
 
@@ -460,8 +465,8 @@ namespace RPGM.Events
                             break;
                         case "endColombier":
                             script2.terminerColombier();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandos += 1;
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandosMemePartie += 1;
+                            dataStorer.nbRandos += 1;
+                            dataStorer.nbRandosMemePartie += 1;
                             PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
                             break;
 
@@ -478,8 +483,8 @@ namespace RPGM.Events
                             break;
                         case "endArcalod":
                             script2.terminerArcalod();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandos += 1;
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandosMemePartie += 1;
+                            dataStorer.nbRandos += 1;
+                            dataStorer.nbRandosMemePartie += 1;
                             PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
                             break;
 
@@ -496,8 +501,8 @@ namespace RPGM.Events
                             break;
                         case "endTrelod":
                             script2.terminerTrelod();
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandos += 1;
-                            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().nbRandosMemePartie += 1;
+                            dataStorer.nbRandos += 1;
+                            dataStorer.nbRandosMemePartie += 1;
                             PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
                             break;
 

@@ -1,28 +1,55 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Encyclopedie : MonoBehaviour
 {
-    public List<ContenuPages> pagesStatic;
+    public List<ContenuPages> pagesStatic = new List<ContenuPages>();
+    public List<ContenuPages> pagesDynamic = new List<ContenuPages>();
+    public List<ContenuPages> quete = new List<ContenuPages>();
+
+    private Encyclopedie showing;
+
     protected ContenuPages page;
+    protected string chapitre;
+    
+    protected static Dictionary<string, EncycloInfos> dynamicInfo = new Dictionary<string, EncycloInfos>();
+    protected List<EncycloInfos> staticInfo = new List<EncycloInfos>();
+    
+    public TextAsset jsonFile;
+    public ArrayList data = new ArrayList();
+    public EncyInfo info;
 
     protected int pageActuelle = 0;
 
     protected GameObject pG;
-    protected GameObject pD; 
+    protected GameObject pD;
 
     public Font font;
+    public GameObject encyButtons;
+    private GameObject leftButton;
+    private GameObject rightButton;
+    
 
     protected void Start()
     {
-        enabled = false;
-        pagesStatic = new List<ContenuPages>();
         pG = GOPointer.PageGauche;
         pD = GOPointer.PageDroite;
 
         GOPointer.Livre.SetActive(false);
+        updateShowing();
+        
+        leftButton = encyButtons.transform.Find("Gauche").gameObject;
+        rightButton = encyButtons.transform.Find("Droite").gameObject;
+    }
+
+    protected void updateShowing()
+    {
+        if (Global.Personnage == "Chamois") showing = gameObject.GetComponent<EncycloContentChamois>();
+        else if(Global.Personnage == "Chasseur") showing = gameObject.GetComponent<EncycloContentChasseur>();
+        else if(Global.Personnage == "Randonneur") showing = gameObject.GetComponent<EncycloContentRandonneur>();
     }
 
     protected void setPageStatic(List<EncycloInfos> pages)
@@ -39,25 +66,28 @@ public class Encyclopedie : MonoBehaviour
                page.Add(i);
             }
             pagesStatic.Add(page);
+            pagesStatic.Add(page);
     }
 
-    protected void CurrentPage(int pageGauche, List<ContenuPages> pages)
+    protected void CurrentPage(int pageActuelle, List<ContenuPages> pages)
     {
-        if (pages.Count <= pageGauche + 1)
+        int pageGauche = pageActuelle + 1;
+        if (pages.Count <= pageGauche)
         {
             formatagePage(pageGauche, pages, pG);
         }
-        else if ( pages.Count > pageGauche + 1 )
+        else if ( pages.Count > pageGauche )
         {
             formatagePage(pageGauche, pages, pG);
-            formatagePage(pageGauche + 1, pages, pD);
+            formatagePage(pageGauche, pages, pD);
         }
-
+        leftButton.SetActive(pageActuelle >= 2);
+        rightButton.SetActive(pages.Count - pageActuelle > 2);
     }
 
     protected void formatagePage(int indexe, List<ContenuPages> pages, GameObject gm)
     {
-            ContenuPages page = pages[indexe];
+            ContenuPages page = pages[(indexe-1)];
             int id = 0;
 
             foreach(EncycloInfos i in page.getInformations())
@@ -113,9 +143,11 @@ public class Encyclopedie : MonoBehaviour
         }
     }
 
-    protected void onClickGauche(List<ContenuPages> pages)
+    public void onClickGauche()
     {
-        if (pageActuelle > 0)
+        List<ContenuPages> pages = showing.getPages();
+
+        if (pages != null && pages.Count > 0 && pageActuelle > 0)
         {
             onPageChanged(pG);
             onPageChanged(pD);
@@ -123,35 +155,69 @@ public class Encyclopedie : MonoBehaviour
             CurrentPage(pageActuelle, pages);
         }
     }
-
-    protected void onClickDroite(List<ContenuPages> pages)
+    
+    public void onClickDroite()
     {
-        if (pageActuelle +2 < pages.Count)
+        List<ContenuPages> pages = showing.getPages();
+
+        if (pages != null && pages.Count > 0 && pageActuelle +2 < pages.Count)
         {
             onPageChanged(pG);
             onPageChanged(pD);
-            pageActuelle += 2;
+            pageActuelle = Math.Min(pageActuelle+2,pages.Count);
             CurrentPage(pageActuelle, pages);
         }
+
     }
 
-    protected void onChapterSelected(List<ContenuPages> pages)
+    public void onChapterSelected(string chapitre)
     {
+        GOPointer.Livre.SetActive(true);
+        GOPointer.ChapitreChamois.SetActive(false);
+        GOPointer.ChapitreChasseur.SetActive(false);
+        GOPointer.ChapitreRandonneur.SetActive(false);
+        encyButtons.SetActive(true);
+        
         pageActuelle = 0;
+        this.chapitre = chapitre;
+        List<ContenuPages> pages = getPages();
         CurrentPage(pageActuelle, pages);
+        leftButton.SetActive(pageActuelle > 2);
+        rightButton.SetActive(pages.Count - pageActuelle > 2);
     }
 
     public void onEncyclopedieClosed()
     {
         onPageChanged(pG);
         onPageChanged(pD);
+        GOPointer.Livre.SetActive(false);
+        encyButtons.SetActive(false);
+        GOPointer.MenuManager.GetComponent<Menu>().endEncy();
     }
 
     private void onPageChanged(GameObject gm)
     {
-        foreach(Transform i in gm.transform)
+        if (gm != null)
         {
-            Destroy(i.gameObject);
+            foreach(Transform i in gm.transform)
+            {
+                Destroy(i.gameObject);
+            }
+        }
+    }
+
+    public List<ContenuPages> getPages()
+    {
+        switch (showing.chapitre)
+        {
+            case "statique":
+                return showing.pagesStatic;
+            case "dynamique":
+                return showing.pagesDynamic;
+            case "quete":
+                return showing.quete;
+            default:
+                return null;
         }
     }
 }

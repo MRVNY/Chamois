@@ -15,7 +15,7 @@ public class TexturePercentage : MonoBehaviour
     public GameObject area;
     private Dictionary<RectTransform,int> rectsPrc = new Dictionary<RectTransform, int>();
 
-    private void Start()
+    private void Awake()
     {
         RectTransform[] rects = area.GetComponentsInChildren<RectTransform>();
         foreach (var rect in rects)
@@ -43,7 +43,6 @@ public class TexturePercentage : MonoBehaviour
 
     IEnumerator percentage(RectTransform rt)
     {
-        print("Refresh");
 
         Texture2D tex = createTex(rt);
         int ttalPixels = 0;
@@ -51,7 +50,7 @@ public class TexturePercentage : MonoBehaviour
 
         for (int x = 0; x < tex.width; x++)
         {
-            yield return new WaitForSeconds(0.01f);
+            //yield return new WaitForSeconds(0.01f);
             for (int y = 0; y < tex.height; y++)
             {
                 if (tex.GetPixel(x, y).r == 1) //&& tex.GetPixel(x, y).g == 0 && tex.GetPixel(x, y).b == 0)
@@ -65,14 +64,13 @@ public class TexturePercentage : MonoBehaviour
                 }
             }
         }
+        
+        yield return new WaitForSeconds(0.01f);
 
         rectsPrc[rt] = (int)(transparentPixels * 100 / ttalPixels);
-        //print(rectsPrc[rt]);
-        //print(rectsPrc.Count);
-        
+
         prc = rectsPrc.Values.Sum() / rectsPrc.Count;
         text.SetText("Découverte de la carte : {0}%", prc);
-        //print(prc);
 
         //yield return new WaitForSecondsRealtime(1f);
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,12 +15,22 @@ public class JaugesController : MonoBehaviour
     //protected Experience experience;
 
     protected GameObject player;
+    protected GameObject guide;
 
+    void Awake()
+    {
+        if (Global.Personnage != "Chamois")
+        {
+            gameObject.SetActive(false);
+        }
+
+    }
+    
     protected void Start()
     {
+        guide = GOPointer.CanvasGuideJeu;
         if (Global.Personnage == "Chamois")
         {
-
             player = GOPointer.PlayerChamois;
             GameEvents.Pause += Pause;
             stress = gameObject.GetComponent<Stress>();
@@ -69,7 +80,6 @@ public class JaugesController : MonoBehaviour
         enabled = !enabled;
         gameObject.SetActive(enabled);
     }
-
 
 
 

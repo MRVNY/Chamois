@@ -10,23 +10,22 @@ namespace RPGM.Gameplay
    
     public class NPCController : MonoBehaviour
     {
-        //Liste des �l�ments dans le srcipt de conversation
+        //Liste des elements dans le srcipt de conversation
         public ConversationScript[] conversations;
 
-        // Quete non-utilis�
+        // Quete non-utilise
         Quest activeQuest = null;
         Quest[] quests;
 
-        //Permet d'acc�der � des fonctions, notamment dialog.Hide()
+        //Permet d'acceder a des fonctions, notamment dialog.Hide()
         GameModel model = Schedule.GetModel<GameModel>();
-
         void OnEnable()
         {
             quests = gameObject.GetComponentsInChildren<Quest>();
         }
 
         /// <summary>
-        /// Si ce qui rentre en contact avec le NPC est un joueur, on test son role et on demande l'affichage de la piece de conversation ad�quate
+        /// Si ce qui rentre en contact avec le NPC est un joueur, on test son role et on demande l'affichage de la piece de conversation adequate
         /// </summary>
         public void OnCollisionEnter2D(Collision2D collision)
         {
@@ -50,7 +49,7 @@ namespace RPGM.Gameplay
                 {
                     foo = "";
                 }
-                // On r�cup�re la conversation et on lance le script ShowConversation()
+                // On recupere la conversation et on lance le script ShowConversation()
                 var c = GetConversation();
                 if (c.isInIndex(foo))
                 {
@@ -64,7 +63,7 @@ namespace RPGM.Gameplay
         }
 
         /// <summary>
-        /// Si ce qui rentre en dans la zone du NPC est un joueur, on test son role et on demande l'affichage de la piece de conversation ad�quate
+        /// Si ce qui rentre en dans la zone du NPC est un joueur, on test son role et on demande l'affichage de la piece de conversation adequate
         /// A utiliser avec les zones de Draw2DShape
         /// </summary>
         public void OnTriggerEnter2D(Collider2D collision)
@@ -133,7 +132,7 @@ namespace RPGM.Gameplay
         }
 
         /// <summary>
-        /// Pas encore d'utilisation de quete, par d�faut retourne le premier �l�ment de la liste de dialogues
+        /// Pas encore d'utilisation de quete, par defaut retourne le premier element de la liste de dialogues
         /// </summary>
         ConversationScript GetConversation()
         {

@@ -25,9 +25,13 @@ public class Faim : JaugesController
     public float waitTimerFaim = 3f;
     private float timerIncrease = 0f;
 
-    public GameObject guide;
-
-
+    new void Start()
+    {
+        base.Start();
+        stress = gameObject.GetComponent<Stress>();
+        faim = gameObject.GetComponent<Faim>();
+        vie = gameObject.GetComponent<Vie>();
+    }
     new void Update()
     {
         base.Update();

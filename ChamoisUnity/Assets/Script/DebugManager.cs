@@ -19,16 +19,28 @@ public class DebugManager : MonoBehaviour
     public GameObject chasseurMap;
     public GameObject randonneurMap;
     public GameObject miniMap;
+    public GameObject ui;
 
     public SpriteRenderer dayNight;
     public RawImage fogImage;
     public SpriteRenderer fogRed;
     public SpriteRenderer fogBlue;
+    public SpriteRenderer fogCount;
     
     void Awake()
     {
         //SaveLoad.DeleteAllSaveFiles();
         //Global.Personnage = "Chamois";
+
+        // RectTransform[] panels = ui.GetComponentsInChildren<RectTransform>();
+        // foreach (var panel in panels)
+        // {
+        //     if (panel.transform.parent == ui.transform)
+        //     {
+        //         panel.position = ui.transform.position;
+        //     }
+        //     
+        // }
 
         guide.SetActive(false);
         ency.SetActive(true);
@@ -46,7 +58,7 @@ public class DebugManager : MonoBehaviour
         fogImage.enabled = true;
         fogRed.enabled = true;
         fogBlue.enabled = true;
-
+        fogCount.enabled = true;
     }
 
     private void Start()

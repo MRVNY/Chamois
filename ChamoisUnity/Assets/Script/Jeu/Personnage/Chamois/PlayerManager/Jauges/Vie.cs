@@ -20,7 +20,6 @@ public class Vie : JaugesController
     public float timerFaim = 2f;
 
     private float timerIncrease = 0f;
-    public GameObject guide;
 
     private Boolean activateVie50 = false;
     private Boolean activateVie30 = false;
@@ -35,6 +34,10 @@ public class Vie : JaugesController
     {
         base.Start();
         GameEvents.SaveInitiated += Save;
+        
+        stress = gameObject.GetComponent<Stress>();
+        faim = gameObject.GetComponent<Faim>();
+        vie = gameObject.GetComponent<Vie>();
 
         //guide = GOPointer.CanvasGuideJeu;
         

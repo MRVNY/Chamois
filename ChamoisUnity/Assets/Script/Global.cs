@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public static class Global
 {
 
     private static string personnageJoue;
     public static Dictionary<string, string> guide = new Dictionary<string, string>();
+    public static Dictionary<string, GameObject> encychapter = new Dictionary<string, GameObject>();
     public static bool sliding = false;
     public static int difficulty = 1;
     public static bool pause = false;
@@ -22,6 +24,9 @@ public static class Global
                    "!");
         guide.Add("Randonneur", "En tant que randonneur, votre objectif principal est de découvrir l'environnement qui vous entoure. Vous pouvez aussi rechercher des randonnées que vous pouvez effectuer afin de vous donner du challenge dans votre aventure... Cependant, essayez de découvrir en étant le moins néfaste possible pour votre environnement, afin d'effectuer la meilleure performance possible en tant que randonneur.");
 
+        encychapter.Add("Chamois", (GOPointer.ChapitreChamois));
+        encychapter.Add("Chasseur", (GOPointer.ChapitreChasseur));
+        encychapter.Add("Randonneur", (GOPointer.ChapitreRandonneur));
 
     }
 
