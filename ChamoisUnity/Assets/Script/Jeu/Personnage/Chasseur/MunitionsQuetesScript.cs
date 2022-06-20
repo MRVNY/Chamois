@@ -45,9 +45,9 @@ public class MunitionsQuetesScript : MonoBehaviour
     public void recharger()
     {
         GOPointer.PlayerChasseur.GetComponent<Munitions>().recupereMunitions();
-        if (!GameObject.Find("PlayerChasseur/Boutons/ModePewPew").activeSelf)
+        if (!GameObject.Find("UI/Chasseur/Boutons/ModePewPew").activeSelf)
         {
-            GameObject.Find("PlayerChasseur/Boutons/ModePewPew").SetActive(true);
+            GameObject.Find("UI/Chasseur/Boutons/ModePewPew").SetActive(true);
         }
     }
 }

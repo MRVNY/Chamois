@@ -55,7 +55,7 @@ namespace RPGM.UI
             var position = contextSprite.transform.position;
             position.x -= contextSprite.size.x;
             position.y -= contextSprite.size.y * 0.5f;
-            position.y += dialogLayout.spriteRenderer.size.y;
+            //position.y += dialogLayout.spriteRenderer.size.y;
             Show(position, text);
         }
 

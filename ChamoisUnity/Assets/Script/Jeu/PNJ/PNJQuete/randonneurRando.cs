@@ -9,6 +9,7 @@ public class randonneurRando : MonoBehaviour
 {
     //PnJ donneur de randonnées
     public GameObject donneurDeRando2;
+    private ConversationScript conversationScript;
     public int rnd;
     private DataStorerRandonneur dataSt;
     public Boolean randoEnCours;
@@ -132,6 +133,7 @@ public class randonneurRando : MonoBehaviour
 
     void Start()
     {
+        conversationScript = donneurDeRando2.GetComponent<ConversationScript>();
         /*epionScore = GOPointer.PlayerRandonneur.GetComponent<PlayerRandonneur>().epionScore;
         batterieScore = GOPointer.PlayerRandonneur.GetComponent<PlayerRandonneur>().batterieScore;
         dentPortesScore = GOPointer.PlayerRandonneur.GetComponent<PlayerRandonneur>().dentPortesScore;
@@ -336,10 +338,10 @@ public class randonneurRando : MonoBehaviour
     {
         ency.addInfoToList(data2[29].hint, ency.quete);
         //SELF
-        donneurDeRando2.GetComponent<ConversationScript>().items.Clear();
+        conversationScript.items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[40].ID, text = data[40].texte, options = new List<ConversationOption>(), hint = data[40].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().items.Add(c);
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.items.Add(c);
+        conversationScript.OnAfterDeserialize();
 
         //START POINT
         startEpion.GetComponent<ConversationScript>().items.Clear();
@@ -463,10 +465,10 @@ public class randonneurRando : MonoBehaviour
     {
         ency.addInfoToList(data2[30].hint, ency.quete);
         //SELF
-        donneurDeRando2.GetComponent<ConversationScript>().items.Clear();
+        conversationScript.items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[50].ID, text = data[50].texte, options = new List<ConversationOption>(), hint = data[50].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().items.Add(c);
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.items.Add(c);
+        conversationScript.OnAfterDeserialize();
 
         //START POINT
         startEndBatterie.GetComponent<ConversationScript>().items.Clear();
@@ -589,10 +591,10 @@ public class randonneurRando : MonoBehaviour
     {
         ency.addInfoToList(data2[31].hint, ency.quete);
         //SELF
-        donneurDeRando2.GetComponent<ConversationScript>().items.Clear();
+        conversationScript.items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[60].ID, text = data[60].texte, options = new List<ConversationOption>(), hint = data[60].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().items.Add(c);
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.items.Add(c);
+        conversationScript.OnAfterDeserialize();
 
         //START POINT
         startEndDentPortes.GetComponent<ConversationScript>().items.Clear();
@@ -714,10 +716,10 @@ public class randonneurRando : MonoBehaviour
     {
         ency.addInfoToList(data2[32].hint, ency.quete);
         //SELF
-        donneurDeRando2.GetComponent<ConversationScript>().items.Clear();
+        conversationScript.items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[70].ID, text = data[70].texte, options = new List<ConversationOption>(), hint = data[70].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().items.Add(c);
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.items.Add(c);
+        conversationScript.OnAfterDeserialize();
 
         //START POINT
         startEndGrandRoc.GetComponent<ConversationScript>().items.Clear();
@@ -839,10 +841,10 @@ public class randonneurRando : MonoBehaviour
     {
         ency.addInfoToList(data2[33].hint, ency.quete);
         //SELF
-        donneurDeRando2.GetComponent<ConversationScript>().items.Clear();
+        conversationScript.items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[80].ID, text = data[80].texte, options = new List<ConversationOption>(), hint = data[80].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().items.Add(c);
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.items.Add(c);
+        conversationScript.OnAfterDeserialize();
 
         //START POINT
         startEndPointeChaurionde.GetComponent<ConversationScript>().items.Clear();
@@ -964,10 +966,10 @@ public class randonneurRando : MonoBehaviour
     {
         ency.addInfoToList(data2[34].hint, ency.quete);
         //SELF
-        donneurDeRando2.GetComponent<ConversationScript>().items.Clear();
+        conversationScript.items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[90].ID, text = data[90].texte, options = new List<ConversationOption>(), hint = data[90].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().items.Add(c);
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.items.Add(c);
+        conversationScript.OnAfterDeserialize();
 
         //START POINT
         startMorbier.GetComponent<ConversationScript>().items.Clear();
@@ -1089,10 +1091,10 @@ public class randonneurRando : MonoBehaviour
     {
         ency.addInfoToList(data2[35].hint, ency.quete);
         //SELF
-        donneurDeRando2.GetComponent<ConversationScript>().items.Clear();
+        conversationScript.items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[100].ID, text = data[100].texte, options = new List<ConversationOption>(), hint = data[100].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().items.Add(c);
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.items.Add(c);
+        conversationScript.OnAfterDeserialize();
 
         //START POINT
         startNivolet.GetComponent<ConversationScript>().items.Clear();
@@ -1213,10 +1215,10 @@ public class randonneurRando : MonoBehaviour
     {
         ency.addInfoToList(data2[36].hint, ency.quete);
         //SELF
-        donneurDeRando2.GetComponent<ConversationScript>().items.Clear();
+        conversationScript.items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[110].ID, text = data[110].texte, options = new List<ConversationOption>(), hint = data[110].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().items.Add(c);
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.items.Add(c);
+        conversationScript.OnAfterDeserialize();
 
         //START POINT
         startGaloppaz.GetComponent<ConversationScript>().items.Clear();
@@ -1338,10 +1340,10 @@ public class randonneurRando : MonoBehaviour
     {
         ency.addInfoToList(data2[37].hint, ency.quete);
         //SELF
-        donneurDeRando2.GetComponent<ConversationScript>().items.Clear();
+        conversationScript.items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[120].ID, text = data[120].texte, options = new List<ConversationOption>(), hint = data[120].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().items.Add(c);
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.items.Add(c);
+        conversationScript.OnAfterDeserialize();
 
         //START POINT
         startColombier.GetComponent<ConversationScript>().items.Clear();
@@ -1463,10 +1465,10 @@ public class randonneurRando : MonoBehaviour
     {
         ency.addInfoToList(data2[38].hint, ency.quete);
         //SELF
-        donneurDeRando2.GetComponent<ConversationScript>().items.Clear();
+        conversationScript.items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[130].ID, text = data[130].texte, options = new List<ConversationOption>(), hint = data[130].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().items.Add(c);
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.items.Add(c);
+        conversationScript.OnAfterDeserialize();
 
         //START POINT
         startArcalod.GetComponent<ConversationScript>().items.Clear();
@@ -1588,10 +1590,10 @@ public class randonneurRando : MonoBehaviour
     {
         ency.addInfoToList(data2[39].hint, ency.quete);
         //SELF
-        donneurDeRando2.GetComponent<ConversationScript>().items.Clear();
+        conversationScript.items.Clear();
         ConversationPiece c = new ConversationPiece() { id = data[140].ID, text = data[140].texte, options = new List<ConversationOption>(), hint = data[140].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().items.Add(c);
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.items.Add(c);
+        conversationScript.OnAfterDeserialize();
 
         //START POINT
         startTrelod.GetComponent<ConversationScript>().items.Clear();
@@ -1716,33 +1718,33 @@ public class randonneurRando : MonoBehaviour
         c1.options.Add(o1);
         c1.options.Add(o2);
         c1.options.Add(o3);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[1].branche1Reponse, targetId = data[1].branche1ID };
         o2 = new ConversationOption() { text = data[1].branche2Reponse, targetId = data[1].branche2ID };
         c1 = new ConversationPiece() { id = data[1].ID, text = data[1].texte, options = new List<ConversationOption>(), hint = data[1].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[2].ID, text = data[2].texte, options = new List<ConversationOption>(), hint = data[2].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[3].ID, text = data[3].texte, options = new List<ConversationOption>(), hint = data[3].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[4].branche1Reponse, targetId = data[4].branche1ID };
         o2 = new ConversationOption() { text = data[4].branche2Reponse, targetId = data[4].branche2ID };
         c1 = new ConversationPiece() { id = data[4].ID, text = data[4].texte, options = new List<ConversationOption>(), hint = data[4].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[5].ID, text = data[5].texte, options = new List<ConversationOption>(), hint = data[5].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[6].ID, text = data[6].texte, options = new List<ConversationOption>(), hint = data[6].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[7].branche1Reponse, targetId = data[7].branche1ID };
         o2 = new ConversationOption() { text = data[7].branche2Reponse, targetId = data[7].branche2ID };
@@ -1751,33 +1753,33 @@ public class randonneurRando : MonoBehaviour
         c1.options.Add(o1);
         c1.options.Add(o2);
         c1.options.Add(o3);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[8].branche1Reponse, targetId = data[8].branche1ID };
         o2 = new ConversationOption() { text = data[8].branche2Reponse, targetId = data[8].branche2ID };
         c1 = new ConversationPiece() { id = data[8].ID, text = data[8].texte, options = new List<ConversationOption>(), hint = data[8].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[9].ID, text = data[9].texte, options = new List<ConversationOption>(), hint = data[9].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[10].ID, text = data[10].texte, options = new List<ConversationOption>(), hint = data[10].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[11].branche1Reponse, targetId = data[11].branche1ID };
         o2 = new ConversationOption() { text = data[11].branche2Reponse, targetId = data[11].branche2ID };
         c1 = new ConversationPiece() { id = data[11].ID, text = data[11].texte, options = new List<ConversationOption>(), hint = data[11].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[12].ID, text = data[12].texte, options = new List<ConversationOption>(), hint = data[12].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[13].ID, text = data[13].texte, options = new List<ConversationOption>(), hint = data[13].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[14].branche1Reponse, targetId = data[14].branche1ID };
         o2 = new ConversationOption() { text = data[14].branche2Reponse, targetId = data[14].branche2ID };
@@ -1786,33 +1788,33 @@ public class randonneurRando : MonoBehaviour
         c1.options.Add(o1);
         c1.options.Add(o2);
         c1.options.Add(o3);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[15].branche1Reponse, targetId = data[15].branche1ID };
         o2 = new ConversationOption() { text = data[15].branche2Reponse, targetId = data[15].branche2ID };
         c1 = new ConversationPiece() { id = data[15].ID, text = data[15].texte, options = new List<ConversationOption>(), hint = data[15].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[16].ID, text = data[16].texte, options = new List<ConversationOption>(), hint = data[16].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[17].ID, text = data[17].texte, options = new List<ConversationOption>(), hint = data[17].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[18].branche1Reponse, targetId = data[18].branche1ID };
         o2 = new ConversationOption() { text = data[18].branche2Reponse, targetId = data[18].branche2ID };
         c1 = new ConversationPiece() { id = data[18].ID, text = data[18].texte, options = new List<ConversationOption>(), hint = data[18].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[19].ID, text = data[19].texte, options = new List<ConversationOption>(), hint = data[19].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[20].ID, text = data[20].texte, options = new List<ConversationOption>(), hint = data[20].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[21].branche1Reponse, targetId = data[21].branche1ID };
         o2 = new ConversationOption() { text = data[21].branche2Reponse, targetId = data[21].branche2ID };
@@ -1821,33 +1823,33 @@ public class randonneurRando : MonoBehaviour
         c1.options.Add(o1);
         c1.options.Add(o2);
         c1.options.Add(o3);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[22].branche1Reponse, targetId = data[22].branche1ID };
         o2 = new ConversationOption() { text = data[22].branche2Reponse, targetId = data[22].branche2ID };
         c1 = new ConversationPiece() { id = data[22].ID, text = data[22].texte, options = new List<ConversationOption>(), hint = data[22].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[23].ID, text = data[23].texte, options = new List<ConversationOption>(), hint = data[23].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[24].ID, text = data[24].texte, options = new List<ConversationOption>(), hint = data[24].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[25].branche1Reponse, targetId = data[25].branche1ID };
         o2 = new ConversationOption() { text = data[25].branche2Reponse, targetId = data[25].branche2ID };
         c1 = new ConversationPiece() { id = data[25].ID, text = data[25].texte, options = new List<ConversationOption>(), hint = data[25].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[26].ID, text = data[26].texte, options = new List<ConversationOption>(), hint = data[26].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[27].ID, text = data[27].texte, options = new List<ConversationOption>(), hint = data[27].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[28].branche1Reponse, targetId = data[28].branche1ID };
         o2 = new ConversationOption() { text = data[28].branche2Reponse, targetId = data[28].branche2ID };
@@ -1856,58 +1858,58 @@ public class randonneurRando : MonoBehaviour
         c1.options.Add(o1);
         c1.options.Add(o2);
         c1.options.Add(o3);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[29].branche1Reponse, targetId = data[29].branche1ID };
         o2 = new ConversationOption() { text = data[29].branche2Reponse, targetId = data[29].branche2ID };
         c1 = new ConversationPiece() { id = data[29].ID, text = data[29].texte, options = new List<ConversationOption>(), hint = data[29].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[30].ID, text = data[30].texte, options = new List<ConversationOption>(), hint = data[30].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[31].ID, text = data[31].texte, options = new List<ConversationOption>(), hint = data[31].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[32].branche1Reponse, targetId = data[32].branche1ID };
         o2 = new ConversationOption() { text = data[32].branche2Reponse, targetId = data[32].branche2ID };
         c1 = new ConversationPiece() { id = data[32].ID, text = data[32].texte, options = new List<ConversationOption>(), hint = data[32].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[33].ID, text = data[33].texte, options = new List<ConversationOption>(), hint = data[33].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[34].ID, text = data[34].texte, options = new List<ConversationOption>(), hint = data[34].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[35].branche1Reponse, targetId = data[35].branche1ID };
         o2 = new ConversationOption() { text = data[35].branche2Reponse, targetId = data[35].branche2ID };
         c1 = new ConversationPiece() { id = data[35].ID, text = data[35].texte, options = new List<ConversationOption>(), hint = data[35].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         o1 = new ConversationOption() { text = data[36].branche1Reponse, targetId = data[36].branche1ID };
         o2 = new ConversationOption() { text = data[36].branche2Reponse, targetId = data[36].branche2ID };
         c1 = new ConversationPiece() { id = data[36].ID, text = data[36].texte, options = new List<ConversationOption>(), hint = data[36].hint };
         c1.options.Add(o1);
         c1.options.Add(o2);
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[37].ID, text = data[37].texte, options = new List<ConversationOption>(), hint = data[37].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[38].ID, text = data[38].texte, options = new List<ConversationOption>(), hint = data[38].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
         c1 = new ConversationPiece() { id = data[39].ID, text = data[39].texte, options = new List<ConversationOption>(), hint = data[39].hint };
-        donneurDeRando2.GetComponent<ConversationScript>().Add(c1);
+        conversationScript.Add(c1);
 
-        donneurDeRando2.GetComponent<ConversationScript>().OnAfterDeserialize();
+        conversationScript.OnAfterDeserialize();
 
         //textRando.SetText("Randonnées découvertes : \n{0} / 11", 11);
     }

@@ -15,7 +15,8 @@ namespace RPGM.Gameplay
     public class GameModel
     {
         public CharacterController2D player;
-        public DialogController dialog;
+        //public DialogController dialog;
+        public VisualNovel dialog;
         public InputController input;
         public InventoryController inventoryController;
         public MusicController musicController;
@@ -34,6 +35,12 @@ namespace RPGM.Gameplay
             Sprite s;
             inventorySprites.TryGetValue(name, out s);
             return s;
+        }
+
+        public VisualNovel getDialog()
+        {
+            if(dialog==null) dialog = GOPointer.VisualNovel.GetComponent<VisualNovel>();
+            return dialog;
         }
 
         public int GetInventoryCount(string name)

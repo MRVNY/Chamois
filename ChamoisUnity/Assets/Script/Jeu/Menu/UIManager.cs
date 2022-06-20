@@ -40,7 +40,6 @@ public class UIManager : MonoBehaviour
 
     public void startVisualNovel()
     {
-        pause = GOPointer.MenuManager.GetComponent<PauseMenu>();
         pause.Pause();
         GOPointer.MenuManager.SetActive(false);
         GOPointer.JoystickCanvas.SetActive(false);

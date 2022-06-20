@@ -8,10 +8,8 @@ namespace RPGM.UI
 {
     public class SpriteButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
     {
-        public SpriteRenderer spriteRenderer;
-        public TextMeshPro textMeshPro;
+        public TMP_Text textMeshPro;
 
-        public Vector2 Size => spriteRenderer.size;
         public event System.Action onClickEvent;
 
         public void Enter()
@@ -44,7 +42,6 @@ namespace RPGM.UI
 
         public void Reset()
         {
-            spriteRenderer = GetComponent<SpriteRenderer>();
             textMeshPro = GetComponentInChildren<TextMeshPro>();
         }
 

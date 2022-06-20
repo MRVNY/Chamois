@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using RPGM.Core;
 using RPGM.Gameplay;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RPGM.Gameplay
 {
@@ -10,8 +12,14 @@ namespace RPGM.Gameplay
    
     public class NPCController : MonoBehaviour
     {
+        private GameObject Buttons;
+        private GameObject actionButton;
+        private Camera camera;
+
+        public string type = "NPC";
         //Liste des elements dans le srcipt de conversation
         public ConversationScript[] conversations;
+        private string foo = "";
 
         // Quete non-utilise
         Quest activeQuest = null;
@@ -19,9 +27,36 @@ namespace RPGM.Gameplay
 
         //Permet d'acceder a des fonctions, notamment dialog.Hide()
         GameModel model = Schedule.GetModel<GameModel>();
+        //GameModel model = new GameModel();
+        
+        void Start()
+        {
+            if (type != "NPC")
+            {
+                Buttons = GOPointer.UIManager.gameObject.transform.Find("Buttons").gameObject;
+                camera = GOPointer.CameraReg.GetComponentInChildren<Camera>();
+            }
+
+            if (type == "DonneurRando")
+                actionButton = Buttons.transform.Find("Talk").gameObject;
+            if (type == "Recharge")
+                actionButton = Buttons.transform.Find("Recharge").gameObject;
+
+            if (actionButton != null)
+            {
+                actionButton.SetActive(false);
+            }
+        }
         void OnEnable()
         {
+            // Ummm... there're no Quests in any children
             quests = gameObject.GetComponentsInChildren<Quest>();
+        }
+        
+        void Update()
+        {
+            if(actionButton!=null && foo!="")
+                actionButton.transform.position = Vector3.up * 100 + camera.WorldToScreenPoint(transform.position);
         }
 
         /// <summary>
@@ -31,8 +66,6 @@ namespace RPGM.Gameplay
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                string foo;
-
                 if (Global.Personnage == "Chamois")
                 {
                     foo = "1";
@@ -50,15 +83,6 @@ namespace RPGM.Gameplay
                     foo = "";
                 }
                 // On recupere la conversation et on lance le script ShowConversation()
-                var c = GetConversation();
-                if (c.isInIndex(foo))
-                {
-                    var ev = Schedule.Add<Events.ShowConversation>();
-                    ev.conversation = c;
-                    ev.npc = this;
-                    ev.gameObject = gameObject;
-                    ev.conversationItemKey = foo;
-                }
             }
         }
 
@@ -68,34 +92,29 @@ namespace RPGM.Gameplay
         /// </summary>
         public void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (collision.CompareTag("Detector") && actionButton!=null)
             {
-                string foo;
-
+                actionButton.SetActive(true);
+                actionButton.GetComponent<Button>().onClick.AddListener(onclick);
+            }
+            
+            if (collision.gameObject.CompareTag("Detector"))
+            {
                 if (Global.Personnage == "Chamois")
                 {
-                    foo = "11";
+                    foo = "1";
                 }
                 else if (Global.Personnage == "Randonneur")
                 {
-                    foo = "22";
+                    foo = "2";
                 }
                 else if (Global.Personnage == "Chasseur")
                 {
-                    foo = "33";
+                    foo = "3";
                 }
                 else
                 {
                     foo = "";
-                }
-                var c = GetConversation();
-                if (c.isInIndex(foo))
-                {
-                    var ev = Schedule.Add<Events.ShowConversation>();
-                    ev.conversation = c;
-                    ev.npc = this;
-                    ev.gameObject = gameObject;
-                    ev.conversationItemKey = foo;
                 }
             }
         }
@@ -105,11 +124,33 @@ namespace RPGM.Gameplay
         /// </summary>
         public void OnTriggerExit2D(Collider2D collision)
         {
-            if (model.dialog) {
-                if (collision.gameObject.CompareTag("Player"))
-                {
-                    model.dialog.Hide();
-                }
+            if (collision.CompareTag("Detector") && actionButton!=null)
+            {
+                actionButton.GetComponent<Button>().onClick.RemoveAllListeners();
+                actionButton.SetActive(false);
+            }
+
+            foo = "";
+
+            // if (model.getDialog()) {
+            //     if (collision.gameObject.CompareTag("Player"))
+            //     {
+            //         model.getDialog().Hide();
+            //     }
+            // }
+        }
+
+        public void onclick()
+        {
+            var c = GetConversation();
+            if (c.isInIndex(foo))
+            {
+                GOPointer.UIManager.GetComponent<UIManager>().startVisualNovel();
+                var ev = Schedule.Add<Events.ShowConversation>();
+                ev.conversation = c;
+                ev.npc = this;
+                ev.gameObject = gameObject;
+                ev.conversationItemKey = foo;
             }
         }
 
@@ -136,6 +177,7 @@ namespace RPGM.Gameplay
         /// </summary>
         ConversationScript GetConversation()
         {
+            // There are two ways to get the conversation: 1. by conversationscrit 2. by JSON
             if (activeQuest == null){
                 return conversations[0];
             }

@@ -4,11 +4,13 @@
 ///<summary>
 /// classe qui active les bons composant de la scène pour jouer aux jeux
 ///</summary>
-public class playerType : MonoBehaviour
+public class Init : MonoBehaviour
 {
 
     void Start()
     {
+        Screen.SetResolution(1280, 720, true);
+        
         gameObject.GetComponent<FinPartie>().enabled = false;
 
         GOPointer.EncyButton.SetActive(false);

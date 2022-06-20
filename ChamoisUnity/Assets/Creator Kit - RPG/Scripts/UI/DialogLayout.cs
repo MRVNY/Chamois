@@ -113,10 +113,10 @@ namespace RPGM.UI
 
         void PositionButtons()
         {
-            var s = (Vector3)spriteRenderer.size;
-            buttonA.transform.localPosition = new Vector3(-0.1f - buttonA.Size.x * 0.5f, (-s.y * 0.5f) - buttonA.Size.y * 0.5f - 0.05f, 0);
-            buttonB.transform.localPosition = new Vector3(+0.1f + buttonB.Size.x * 0.5f, (-s.y * 0.5f) - buttonB.Size.y * 0.5f - 0.05f, 0);
-            buttonC.transform.localPosition = new Vector3(0, (-s.y * 0.5f) - buttonC.Size.y * 0.5f - 0.1f - buttonC.Size.y, 0);
+            // var s = (Vector3)spriteRenderer.size;
+            // buttonA.transform.localPosition = new Vector3(-0.1f - buttonA.Size.x * 0.5f, (-s.y * 0.5f) - buttonA.Size.y * 0.5f - 0.05f, 0);
+            // buttonB.transform.localPosition = new Vector3(+0.1f + buttonB.Size.x * 0.5f, (-s.y * 0.5f) - buttonB.Size.y * 0.5f - 0.05f, 0);
+            // buttonC.transform.localPosition = new Vector3(0, (-s.y * 0.5f) - buttonC.Size.y * 0.5f - 0.1f - buttonC.Size.y, 0);
         }
 
         void ScaleBackgroundToFitText()
