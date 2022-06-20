@@ -9,7 +9,7 @@ namespace RPGM.UI
     public class SpriteButton : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
     {
         public TMP_Text textMeshPro;
-
+        public bool clicked = false;
         public event System.Action onClickEvent;
 
         public void Enter()
@@ -20,13 +20,14 @@ namespace RPGM.UI
 
         public void Exit()
         {
+            clicked = false;
             textMeshPro.color = Color.white;
             UserInterfaceAudio.OnButtonExit();
         }
 
         public void Click()
         {
-            Debug.Log("Button click");
+            clicked = true;
             if (onClickEvent != null) onClickEvent();
             textMeshPro.color = Color.white;
             UserInterfaceAudio.OnButtonClick();
@@ -54,5 +55,7 @@ namespace RPGM.UI
         {
             onClickEvent = null;
         }
+        
+        //public void setOnclick(int i)
     }
 }

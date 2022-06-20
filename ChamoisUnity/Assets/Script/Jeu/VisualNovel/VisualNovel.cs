@@ -1,9 +1,11 @@
 using System;
+using System.Collections.Generic;
 using RPGM.Core;
 using RPGM.Gameplay;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
 
 namespace RPGM.UI
 {
@@ -26,7 +28,7 @@ namespace RPGM.UI
         SpriteButton[] buttons;
         Camera mainCamera;
         GameModel model = Schedule.GetModel<GameModel>();
-        SpriteUIElement spriteUIElement;
+        //SpriteUIElement spriteUIElement;
 
         // Start is called before the first frame update
         
@@ -34,12 +36,12 @@ namespace RPGM.UI
         {
             //dialogLayout = GetComponent<VNLayout>();
             buttons = dialogLayout.buttons;
-            for(int i=0; i<buttons.Length; i++)
+            for(int j=0; j<buttons.Length; j++)
             {
-                dialogLayout.buttons[i].onClickEvent += () => OnButton(i);
+                dialogLayout.buttons[j].onClickEvent += () => OnButton(j);
             }
             dialogLayout.gameObject.SetActive(false);
-            spriteUIElement = GetComponent<SpriteUIElement>();
+            //spriteUIElement = GetComponent<SpriteUIElement>();
             //mainCamera = GameObject.Find("Camera" + Global.Personnage).GetComponent<Camera>();
         }
         
@@ -56,13 +58,13 @@ namespace RPGM.UI
 
         public void Next()
         {
-            //ui.endVisualNovel();
+            ui.endVisualNovel();
         }
 
         public void Hide()
         {
             UserInterfaceAudio.OnHideDialog();
-            GOPointer.UIManager.GetComponent<UIManager>().endVisualNovel();
+            //GOPointer.UIManager.GetComponent<UIManager>().endVisualNovel();
 
         }
 
@@ -71,31 +73,17 @@ namespace RPGM.UI
             ui.endVisualNovel();
         }
 
-        public void Show(string text)
-        {
-            dialogLayout.gameObject.SetActive(true);
-            dialogLayout.SetText(text);
-            //model.input.ChangeState(InputController.State.DialogControl);
-            buttonCount = 0;
-            selectedButton = -1;
-        }
-
-        public void Show(string text, string[] buttons)
+        public void Show(string text, List<ConversationOption> options)
         {
             UserInterfaceAudio.OnShowDialog();
             dialogLayout.gameObject.SetActive(true);
-            dialogLayout.SetText(text, buttons);
+            dialogLayout.SetText(text);
+            dialogLayout.SetButtons(options);
             //model.input.ChangeState(InputController.State.DialogControl);
-            buttonCount = buttons.Length;
+            buttonCount = options.Count;
             selectedButton = -1;
         }
-
-        public void SetButton(int i, string text)
-        {
-            var d = dialogLayout;
-            d.SetButtonText(i, text);
-            buttonCount = Mathf.Max(buttonCount, i + 1);
-        }
+        
 
         public void SetIcon(Sprite ciImage)
         {
@@ -116,6 +104,16 @@ namespace RPGM.UI
         {
             if (onButton != null) onButton(index);
             onButton = null;
+        }
+        
+        public int getClickedButton()
+        {
+            for(int i=0; i<buttons.Length; i++)
+            {
+                if(buttons[i].clicked) return i;
+            }
+
+            return -1;
         }
     }
 }

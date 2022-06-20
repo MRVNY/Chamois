@@ -11,7 +11,7 @@ public class Munitions : MonoBehaviour
     TextMeshProUGUI text;
     void Start()
     {
-        nbBalles = 5;
+        nbBalles = nbBallesMax;
         text = GameObject.Find("Munitions/MunitionsTexte").GetComponent<TextMeshProUGUI>();
         updateView();
     }

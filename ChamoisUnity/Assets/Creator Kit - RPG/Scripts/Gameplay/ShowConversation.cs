@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.InteropServices;
 using RPGM.Core;
 using RPGM.Gameplay;
 using RPGM.UI;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace RPGM.Events
 {
@@ -20,6 +23,8 @@ namespace RPGM.Events
         public string conversationItemKey;
 
         private DataStorerRandonneur dataStorer;
+
+        private Button nextButton = GOPointer.VisualNovel.GetComponent<Button>();
 
         public ShowConversation(){
             dataStorer = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
@@ -514,23 +519,23 @@ namespace RPGM.Events
 
             //calculate a position above the player's sprite.
             //var position = gameObject.transform.position;
-            var sr = gameObject.GetComponent<SpriteRenderer>();
-            if (sr != null)
-            {
-                //position += new Vector3(0, 2 * sr.size.y + (ci.options.Count == 0 ? 0.1f : 0.2f), 0);
-            }
+            // var sr = gameObject.GetComponent<SpriteRenderer>();
+            // if (sr != null)
+            // {
+            //     //position += new Vector3(0, 2 * sr.size.y + (ci.options.Count == 0 ? 0.1f : 0.2f), 0);
+            // }
 
             //show the dialog
-            //model.getDialog().Show(position, ci.text);
-            model.getDialog().Show(ci.text);
+            VisualNovel dialog = model.getDialog();
+            dialog.Show(ci.text, ci.options);
 
-            var animator = gameObject.GetComponent<Animator>();
-            if (animator != null)
-            {
-                animator.SetBool("Talk", true);
-                var ev = Schedule.Add<StopTalking>(2);
-                ev.animator = animator;
-            }
+            // var animator = gameObject.GetComponent<Animator>();
+            // if (animator != null)
+            // {
+            //     animator.SetBool("Talk", true);
+            //     var ev = Schedule.Add<StopTalking>(2);
+            //     ev.animator = animator;
+            // }
 
             if (ci.audio != null)
             {
@@ -547,167 +552,43 @@ namespace RPGM.Events
             //setup conversation choices, if any.
             if (ci.options.Count == 0)
             {
-                //do nothing
+                nextButton.enabled = true;
             }
             else
             {
-                //Create option buttons below the dialog.
-                for (var i = 0; i < ci.options.Count; i++)
+                nextButton.enabled = false;
+                
+                for (int i = 0; i < ci.options.Count; i++)
                 {
-                    model.getDialog().SetButton(i, ci.options[i].text);
+                    //dialog.SetButton(i, ci.options[i].text);
+                    
+                    dialog.dialogLayout.buttons[i].Nullify();
+                    dialog.dialogLayout.buttons[i].onClickEvent += () =>
+                    {
+                        //hide the old text, so we can display the new.
+                        dialog.Hide();
+
+                        //This is the id of the next conversation piece.
+                        int index = dialog.getClickedButton();
+                        var next = ci.options[index].targetId;
+
+                        //Make sure it actually exists!
+                        if (conversation.ContainsKey(next))
+                        {
+                            //find the conversation piece object and setup a new event with correct parameters.
+                            var c = conversation.Get(next);
+                            var ev = Schedule.Add<ShowConversation>();
+                            ev.conversation = conversation;
+                            ev.gameObject = gameObject;
+                            ev.conversationItemKey = next;
+                        }
+                        else
+                        {
+                            Debug.LogError($"No conversation with ID:{next}");
+                        }
+                    };
                 }
-
-                switch (ci.options.Count) {
-                    default:
-                        break;
-                    case 1:
-                        model.getDialog().dialogLayout.buttons[0].Nullify();
-                        
-                        model.getDialog().dialogLayout.buttons[0].onClickEvent += () =>
-                         {//hide the old text, so we can display the new.
-                            model.getDialog().Hide();
-
-                            //This is the id of the next conversation piece.
-                            var next = ci.options[0].targetId;
-
-                            //Make sure it actually exists!
-                            if (conversation.ContainsKey(next))
-                            {
-                                //find the conversation piece object and setup a new event with correct parameters.
-                                var c = conversation.Get(next);
-                                var ev = Schedule.Add<ShowConversation>();
-                                ev.conversation = conversation;
-                                ev.gameObject = gameObject;
-                                ev.conversationItemKey = next;
-                            }
-                            else
-                            {
-                                Debug.LogError($"No conversation with ID:{next}");
-                            }
-                        };
-                        break;
-                    case 2:
-                        model.getDialog().dialogLayout.buttons[0].Nullify();
-                        model.getDialog().dialogLayout.buttons[1].Nullify();
-                        
-                        model.getDialog().dialogLayout.buttons[0].onClickEvent += () =>
-                        {//hide the old text, so we can display the new.
-                            model.getDialog().Hide();
-
-                            //This is the id of the next conversation piece.
-                            var next = ci.options[0].targetId;
-
-                            //Make sure it actually exists!
-                            if (conversation.ContainsKey(next))
-                            {
-                                //find the conversation piece object and setup a new event with correct parameters.
-                                var c = conversation.Get(next);
-                                var ev = Schedule.Add<ShowConversation>();
-                                ev.conversation = conversation;
-                                ev.gameObject = gameObject;
-                                ev.conversationItemKey = next;
-                            }
-                            else
-                            {
-                                Debug.LogError($"No conversation with ID:{next}");
-                            }
-                        };
-                        model.getDialog().dialogLayout.buttons[1].onClickEvent += () =>
-                        {//hide the old text, so we can display the new.
-                            model.getDialog().Hide();
-
-                            //This is the id of the next conversation piece.
-                            var next = ci.options[1].targetId;
-
-                            //Make sure it actually exists!
-                            if (conversation.ContainsKey(next))
-                            {
-                                //find the conversation piece object and setup a new event with correct parameters.
-                                var c = conversation.Get(next);
-                                var ev = Schedule.Add<ShowConversation>();
-                                ev.conversation = conversation;
-                                ev.gameObject = gameObject;
-                                ev.conversationItemKey = next;
-                            }
-                            else
-                            {
-                                Debug.LogError($"No conversation with ID:{next}");
-                            }
-                        };
-                        break;
-                    case 3:
-                        model.getDialog().dialogLayout.buttons[0].Nullify();
-                        model.getDialog().dialogLayout.buttons[1].Nullify();
-                        model.getDialog().dialogLayout.buttons[2].Nullify();
-                        
-                        model.getDialog().dialogLayout.buttons[0].onClickEvent += () =>
-                        {//hide the old text, so we can display the new.
-                            model.getDialog().Hide();
-
-                            //This is the id of the next conversation piece.
-                            var next = ci.options[0].targetId;
-
-                            //Make sure it actually exists!
-                            if (conversation.ContainsKey(next))
-                            {
-                                //find the conversation piece object and setup a new event with correct parameters.
-                                var c = conversation.Get(next);
-                                var ev = Schedule.Add<ShowConversation>();
-                                ev.conversation = conversation;
-                                ev.gameObject = gameObject;
-                                ev.conversationItemKey = next;
-                            }
-                            else
-                            {
-                                Debug.LogError($"No conversation with ID:{next}");
-                            }
-                        };
-                        model.getDialog().dialogLayout.buttons[1].onClickEvent += () =>
-                        {//hide the old text, so we can display the new.
-                            model.getDialog().Hide();
-
-                            //This is the id of the next conversation piece.
-                            var next = ci.options[1].targetId;
-
-                            //Make sure it actually exists!
-                            if (conversation.ContainsKey(next))
-                            {
-                                //find the conversation piece object and setup a new event with correct parameters.
-                                var c = conversation.Get(next);
-                                var ev = Schedule.Add<ShowConversation>();
-                                ev.conversation = conversation;
-                                ev.gameObject = gameObject;
-                                ev.conversationItemKey = next;
-                            }
-                            else
-                            {
-                                Debug.LogError($"No conversation with ID:{next}");
-                            }
-                        };
-                        model.getDialog().dialogLayout.buttons[2].onClickEvent += () =>
-                        {//hide the old text, so we can display the new.
-                            model.getDialog().Hide();
-
-                            //This is the id of the next conversation piece.
-                            var next = ci.options[2].targetId;
-
-                            //Make sure it actually exists!
-                            if (conversation.ContainsKey(next))
-                            {
-                                //find the conversation piece object and setup a new event with correct parameters.
-                                var c = conversation.Get(next);
-                                var ev = Schedule.Add<ShowConversation>();
-                                ev.conversation = conversation;
-                                ev.gameObject = gameObject;
-                                ev.conversationItemKey = next;
-                            }
-                            else
-                            {
-                                Debug.LogError($"No conversation with ID:{next}");
-                            }
-                        };
-                        break;
-                }
+                
 
                 /*
                 //if user pickes this option, schedule an event to show the new option.
@@ -738,7 +619,7 @@ namespace RPGM.Events
             }
 
             //if conversation has an icon associated, this will display it.
-            model.getDialog().SetIcon(ci.image);
+            //dialog.SetIcon(ci.image);
         }
 
     }

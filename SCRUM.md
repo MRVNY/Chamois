@@ -45,3 +45,12 @@ If time allows:
 
 
 # Start of week 3 (20/06/2022)
+Enhancing VisualNovel system 
+Adapt interaction button with other objects
+Understand quests and how they're added in encyclopedia
+Save more data
+Path Finding
+Game Design
+
+Keep fixing collision/sorting layer bugs
+Look into Job System / ECS ?

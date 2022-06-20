@@ -8,6 +8,7 @@ using System;
 public class MunitionsQuetesScript : MonoBehaviour
 {
     public GameObject caisseMun;
+    public GameObject modePewpew;
 
     public TextAsset jsonFile;
     public List<ConversationInfos> data;
@@ -39,15 +40,17 @@ public class MunitionsQuetesScript : MonoBehaviour
         caisseMun.GetComponent<ConversationScript>().Add(c3);
 
         caisseMun.GetComponent<ConversationScript>().OnAfterDeserialize();
+        
+        //modePewpew = GOPointer.UIManager.transform.Find("ModePewPew").gameObject;
 
     }
 
     public void recharger()
     {
         GOPointer.PlayerChasseur.GetComponent<Munitions>().recupereMunitions();
-        if (!GameObject.Find("UI/Chasseur/Boutons/ModePewPew").activeSelf)
+        if (!modePewpew.activeSelf)
         {
-            GameObject.Find("UI/Chasseur/Boutons/ModePewPew").SetActive(true);
+            modePewpew.SetActive(true);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using RPGM.Gameplay;
 using TMPro;
 using UnityEngine;
 
@@ -24,43 +25,25 @@ namespace RPGM.UI
             buttons = options.GetComponentsInChildren<SpriteButton>();
         }
 
-        public void SetIcon(Sprite icon)
+        public void SetButtons(List<ConversationOption> options)
         {
+            for(int i = 0; i < buttons.Length; i++)
+            {
+                if(i<options.Count)
+                {
+                    buttons[i].gameObject.SetActive(true);
+                    buttons[i].SetText(options[i].text);
+                }
+                else
+                {
+                    buttons[i].gameObject.SetActive(false);
+                }
+            }
         }
 
         public void SetText(string text)
         {
-            SetDialogText(text);
-            foreach (var button in buttons)
-            {
-                button.gameObject.SetActive(false);
-            }
-        }
-
-        public void SetButtonText(int index, string text)
-        {
-            buttons[index].SetText(text);
-            buttons[index].gameObject.SetActive(true);
-        }
-
-        public void SetText(string text, string[] buttonsText)
-        {
-            SetDialogText(text);
-            foreach(SpriteButton button in buttons)
-            {
-                button.gameObject.SetActive(false);
-                button.SetText(buttonsText[Array.IndexOf(buttons,button)]);
-            }
-        }
-        
-        void SetDialogText(string text)
-        {
             textMeshPro.text = text;
-        }
-
-        public float GetHeight()
-        {
-            return 0;
         }
     }
 }

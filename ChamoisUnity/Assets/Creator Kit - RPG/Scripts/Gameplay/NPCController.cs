@@ -12,7 +12,7 @@ namespace RPGM.Gameplay
    
     public class NPCController : MonoBehaviour
     {
-        private GameObject Buttons;
+        private InteractiveButtons Buttons;
         private GameObject actionButton;
         private Camera camera;
 
@@ -33,14 +33,20 @@ namespace RPGM.Gameplay
         {
             if (type != "NPC")
             {
-                Buttons = GOPointer.UIManager.gameObject.transform.Find("Buttons").gameObject;
+                Buttons = GOPointer.interactiveButtons.GetComponent<InteractiveButtons>();
                 camera = GOPointer.CameraReg.GetComponentInChildren<Camera>();
             }
 
             if (type == "DonneurRando")
-                actionButton = Buttons.transform.Find("Talk").gameObject;
-            if (type == "Recharge")
-                actionButton = Buttons.transform.Find("Recharge").gameObject;
+            {
+                actionButton = Buttons.talk;
+            }
+                
+            if (type == "Recharge" && Global.Personnage == "Chasseur")
+            {
+                actionButton = Buttons.recharge;
+            }
+               
 
             if (actionButton != null)
             {
@@ -95,7 +101,7 @@ namespace RPGM.Gameplay
             if (collision.CompareTag("Detector") && actionButton!=null)
             {
                 actionButton.SetActive(true);
-                actionButton.GetComponent<Button>().onClick.AddListener(onclick);
+                actionButton.GetComponent<Button>().onClick.AddListener(() => { onclick(); });
             }
             
             if (collision.gameObject.CompareTag("Detector"))
@@ -142,8 +148,9 @@ namespace RPGM.Gameplay
 
         public void onclick()
         {
+            Debug.Log(actionButton.GetComponent<Button>().onClick);
             var c = GetConversation();
-            if (c.isInIndex(foo))
+            if (c!=null && c.isInIndex(foo))
             {
                 GOPointer.UIManager.GetComponent<UIManager>().startVisualNovel();
                 var ev = Schedule.Add<Events.ShowConversation>();
@@ -178,7 +185,7 @@ namespace RPGM.Gameplay
         ConversationScript GetConversation()
         {
             // There are two ways to get the conversation: 1. by conversationscrit 2. by JSON
-            if (activeQuest == null){
+            if (activeQuest == null && conversations.Length > 0){
                 return conversations[0];
             }
             foreach (var q in quests)

@@ -53,6 +53,7 @@ public class GOPointer : MonoBehaviour
     public GameObject _Pew;
     
     public GameObject _VisualNovel;
+    public GameObject _interactvieButtons;
 
 
     //Static
@@ -103,6 +104,7 @@ public class GOPointer : MonoBehaviour
     public static GameObject Pew;
     
     public static GameObject VisualNovel;
+    public static GameObject interactiveButtons;
 
     void Awake(){
         PlayerChamois = _PlayerChamois;
@@ -153,6 +155,7 @@ public class GOPointer : MonoBehaviour
         Pew = _Pew;
         
         VisualNovel = _VisualNovel;
+        interactiveButtons = _interactvieButtons;
     }
 
 }

@@ -17,9 +17,10 @@ public class Menu : MonoBehaviour
     public List<GameObject> ListeBoutons;
     public static bool menuOuvre = false;
 
-    public GameObject ChapitreChamois;
-    public GameObject ChapitreChasseur;
-    public GameObject ChapitreRandonneur;
+    private GameObject ChapitreChamois;
+    private GameObject ChapitreChasseur;
+    private GameObject ChapitreRandonneur;
+    private GameObject interactiveButtons;
 
     private void Awake()
     {
@@ -27,20 +28,21 @@ public class Menu : MonoBehaviour
         ChapitreChamois = GOPointer.ChapitreChamois;
         ChapitreChasseur = GOPointer.ChapitreChasseur;
         ChapitreRandonneur = GOPointer.ChapitreRandonneur;
+        interactiveButtons = GOPointer.interactiveButtons;
     }
 
     private void Start()
     {
+        // RectTransform firstIcon = menuIcon.GetComponent<RectTransform>();
+        // Vector2 root = firstIcon.position;
+        // float length = firstIcon.rect.height;
+        //
+        // for (int i = 0; i < ListeBoutons.Count; i++)
+        // {
+        //     ListeBoutons[i].transform.position = new Vector2(root.x, root.y - (i+1) * length * 1.5f);
+        // }
+        
         pause = GetComponent<PauseMenu>();
-        RectTransform firstIcon = menuIcon.GetComponent<RectTransform>();
-        Vector2 root = firstIcon.position;
-        float length = firstIcon.rect.height;
-        
-        for (int i = 0; i < ListeBoutons.Count; i++)
-        {
-            ListeBoutons[i].transform.position = new Vector2(root.x, root.y - (i+1) * length * 1.5f);
-        }
-        
         Deactivate();
         pause.Resume();
     }
@@ -68,6 +70,7 @@ public class Menu : MonoBehaviour
         resume.SetActive(true);
         menuIcon.enabled = false;
         pasueIcon.SetActive(true);
+        interactiveButtons.SetActive(false);
         
         for (int i = 0; i < ListeBoutons.Count; i++)
         {
@@ -86,6 +89,7 @@ public class Menu : MonoBehaviour
         resume.SetActive(false);
         menuIcon.enabled = true;
         pasueIcon.SetActive(false);
+        interactiveButtons.SetActive(true);
 
         ChapitreChamois.SetActive(false);
         ChapitreChasseur.SetActive(false);
