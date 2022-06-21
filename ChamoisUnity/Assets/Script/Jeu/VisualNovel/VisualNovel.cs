@@ -4,7 +4,7 @@ using RPGM.Core;
 using RPGM.Gameplay;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 
 namespace RPGM.UI
@@ -15,15 +15,18 @@ namespace RPGM.UI
         private UIManager ui;
         public VNLayout dialogLayout;
 
-        private Image leftImg;
-        private Image rightImg;
+        [SerializeField] private SpriteRenderer ChamoisImg;
+        [SerializeField] private SpriteRenderer ChasseurImg;
+        [SerializeField] private SpriteRenderer RandonneurImg;
+        public Image leftImg;
+        public Image rightImg;
+        
         private TextMeshPro name;
         private TextMeshPro dialog;
 
         public System.Action<int> onButton;
 
         private int selectedButton = 0;
-        private int buttonCount = 0;
 
         SpriteButton[] buttons;
         Camera mainCamera;
@@ -56,16 +59,10 @@ namespace RPGM.UI
             dialogLayout.gameObject.SetActive(true);
         }
 
-        public void Next()
-        {
-            ui.endVisualNovel();
-        }
-
         public void Hide()
         {
             UserInterfaceAudio.OnHideDialog();
             //GOPointer.UIManager.GetComponent<UIManager>().endVisualNovel();
-
         }
 
         public void End()
@@ -77,10 +74,8 @@ namespace RPGM.UI
         {
             UserInterfaceAudio.OnShowDialog();
             dialogLayout.gameObject.SetActive(true);
-            dialogLayout.SetText(text);
-            dialogLayout.SetButtons(options);
+            dialogLayout.SetLayout(text, options);
             //model.input.ChangeState(InputController.State.DialogControl);
-            buttonCount = options.Count;
             selectedButton = -1;
         }
         
@@ -114,6 +109,15 @@ namespace RPGM.UI
             }
 
             return -1;
+        }
+
+        public void setImages(SpriteRenderer left)
+        {
+            if(Global.Personnage == "Chamois") rightImg.sprite = ChamoisImg.sprite;
+            if(Global.Personnage == "Chasseur") rightImg.sprite = ChasseurImg.sprite;
+            if(Global.Personnage == "Randonneur") rightImg.sprite = RandonneurImg.sprite;
+            
+            leftImg.sprite = left.sprite;
         }
     }
 }

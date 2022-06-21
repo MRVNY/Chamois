@@ -78,3 +78,15 @@ At it satisfied my OCD
 ## VisualNovel
 Did a lil marquette of the VisualNovel system
 Now I need to add a button on the top of the person to start conversation and change Image and text. A typing animation of the text would be nice. Also I need to think of some story lines
+
+17/06/2022
+Stuck in RPGM
+
+20/06/2022
+Calls with prof
+Enchanced VN
+
+21/06/2022
+Typewriter animation in VN
+3 lines max
+Change images

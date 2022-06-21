@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using RPGM.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject chasseur;
     [SerializeField] private GameObject randonneur;
     [SerializeField] private GameObject buttons;
-
+    
     private PauseMenu pause;
     
 
@@ -38,7 +40,7 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void startVisualNovel()
+    public void startVisualNovel(SpriteRenderer left)
     {
         pause.Pause();
         GOPointer.MenuManager.SetActive(false);
@@ -50,6 +52,8 @@ public class UIManager : MonoBehaviour
         buttons.SetActive(false);
         
         GOPointer.VisualNovel.SetActive(true);
+
+        GOPointer.VisualNovel.GetComponent<VisualNovel>().setImages(left);
     }
     
     public void endVisualNovel()

@@ -25,6 +25,7 @@ namespace RPGM.Events
         private DataStorerRandonneur dataStorer;
 
         private Button nextButton = GOPointer.VisualNovel.GetComponent<Button>();
+        private Image nextButtonImage = GOPointer.VisualNovel.GetComponent<Image>();
 
         public ShowConversation(){
             dataStorer = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
@@ -41,6 +42,11 @@ namespace RPGM.Events
             else
             {
                 ci = conversation.Get(conversationItemKey);
+                if (conversationItemKey.Length == 1)
+                {
+                    nextButton.enabled = false;
+                    nextButtonImage.enabled = false;
+                }
             }
 
             //if this item contains an unstarted quest, schedule a start quest event for the quest.
@@ -553,11 +559,10 @@ namespace RPGM.Events
             if (ci.options.Count == 0)
             {
                 nextButton.enabled = true;
+                nextButtonImage.enabled = true;
             }
             else
             {
-                nextButton.enabled = false;
-                
                 for (int i = 0; i < ci.options.Count; i++)
                 {
                     //dialog.SetButton(i, ci.options[i].text);

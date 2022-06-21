@@ -52,6 +52,7 @@ namespace RPGM.Gameplay
             {
                 actionButton.SetActive(false);
             }
+
         }
         void OnEnable()
         {
@@ -101,6 +102,7 @@ namespace RPGM.Gameplay
             if (collision.CompareTag("Detector") && actionButton!=null)
             {
                 actionButton.SetActive(true);
+                actionButton.GetComponent<Button>().onClick.RemoveAllListeners();
                 actionButton.GetComponent<Button>().onClick.AddListener(() => { onclick(); });
             }
             
@@ -148,11 +150,11 @@ namespace RPGM.Gameplay
 
         public void onclick()
         {
-            Debug.Log(actionButton.GetComponent<Button>().onClick);
             var c = GetConversation();
             if (c!=null && c.isInIndex(foo))
             {
-                GOPointer.UIManager.GetComponent<UIManager>().startVisualNovel();
+                SpriteRenderer myImage = gameObject.GetComponent<SpriteRenderer>();
+                GOPointer.UIManager.GetComponent<UIManager>().startVisualNovel(myImage);
                 var ev = Schedule.Add<Events.ShowConversation>();
                 ev.conversation = c;
                 ev.npc = this;
