@@ -1,8 +1,10 @@
 using System.Collections.Generic;
+using System.Linq;
 using RPGM.Core;
 using RPGM.Gameplay;
 using UnityEngine;
 using UnityEngine.UI;
+using Newtonsoft.Json.Linq;
 
 namespace RPGM.Gameplay
 {
@@ -18,8 +20,8 @@ namespace RPGM.Gameplay
 
         public string type = "NPC";
         //Liste des elements dans le srcipt de conversation
-        public ConversationScript[] conversations;
-        private string foo = "";
+        public ConversationScript conversations;
+        private string firstNode = "";
 
         // Quete non-utilise
         Quest activeQuest = null;
@@ -28,9 +30,30 @@ namespace RPGM.Gameplay
         //Permet d'acceder a des fonctions, notamment dialog.Hide()
         GameModel model = Schedule.GetModel<GameModel>();
         //GameModel model = new GameModel();
+
+        public JObject convoTree;
+        public TextAsset jsonFile;
         
         void Start()
         {
+            if(jsonFile != null){
+                convoTree = JObject.Parse(jsonFile.text);
+                conversations = gameObject.AddComponent<ConversationScript>();
+
+                foreach(JProperty obj in convoTree.OfType<JProperty>()){
+                    ConversationPiece c1 = new ConversationPiece() { id = obj.Name, text = (string)obj.Value["text"], options = new List<ConversationOption>(), hint = (string)obj.Value["hint"]};
+                    if (obj.Value["choices"] != null)
+                    {
+                        foreach (JProperty cho in obj.Value["choices"].OfType<JProperty>())
+                        {
+                            c1.options.Add(new ConversationOption() { text = (string)cho.Value, targetId = cho.Name});
+                        }
+                    }
+                    conversations.Add(c1);
+                    conversations.OnAfterDeserialize();
+                }
+            }
+
             if (type != "NPC")
             {
                 Buttons = GOPointer.interactiveButtons.GetComponent<InteractiveButtons>();
@@ -62,7 +85,7 @@ namespace RPGM.Gameplay
         
         void Update()
         {
-            if(actionButton!=null && foo!="")
+            if(actionButton!=null && firstNode!="")
                 actionButton.transform.position = Vector3.up * 100 + camera.WorldToScreenPoint(transform.position);
         }
 
@@ -73,22 +96,7 @@ namespace RPGM.Gameplay
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                if (Global.Personnage == "Chamois")
-                {
-                    foo = "1";
-                }
-                else if (Global.Personnage == "Randonneur")
-                {
-                    foo = "2";
-                }
-                else if (Global.Personnage == "Chasseur")
-                {
-                    foo = "3";
-                }
-                else
-                {
-                    foo = "";
-                }
+                firstNode = Global.persoNum[Global.Personnage];
                 // On recupere la conversation et on lance le script ShowConversation()
             }
         }
@@ -108,22 +116,7 @@ namespace RPGM.Gameplay
             
             if (collision.gameObject.CompareTag("Detector"))
             {
-                if (Global.Personnage == "Chamois")
-                {
-                    foo = "1";
-                }
-                else if (Global.Personnage == "Randonneur")
-                {
-                    foo = "2";
-                }
-                else if (Global.Personnage == "Chasseur")
-                {
-                    foo = "3";
-                }
-                else
-                {
-                    foo = "";
-                }
+                firstNode = Global.persoNum[Global.Personnage];
             }
         }
 
@@ -138,7 +131,7 @@ namespace RPGM.Gameplay
                 actionButton.SetActive(false);
             }
 
-            foo = "";
+            firstNode = "";
 
             // if (model.getDialog()) {
             //     if (collision.gameObject.CompareTag("Player"))
@@ -151,7 +144,8 @@ namespace RPGM.Gameplay
         public void onclick()
         {
             var c = GetConversation();
-            if (c!=null && c.isInIndex(foo))
+            print(c.isInIndex(firstNode));
+            if (c!=null && c.isInIndex(firstNode))
             {
                 SpriteRenderer myImage = gameObject.GetComponent<SpriteRenderer>();
                 GOPointer.UIManager.GetComponent<UIManager>().startVisualNovel(myImage);
@@ -159,7 +153,7 @@ namespace RPGM.Gameplay
                 ev.conversation = c;
                 ev.npc = this;
                 ev.gameObject = gameObject;
-                ev.conversationItemKey = foo;
+                ev.conversationItemKey = firstNode;
             }
         }
 
@@ -187,8 +181,8 @@ namespace RPGM.Gameplay
         ConversationScript GetConversation()
         {
             // There are two ways to get the conversation: 1. by conversationscrit 2. by JSON
-            if (activeQuest == null && conversations.Length > 0){
-                return conversations[0];
+            if (activeQuest == null && conversations!=null){
+                return conversations;
             }
             foreach (var q in quests)
             {

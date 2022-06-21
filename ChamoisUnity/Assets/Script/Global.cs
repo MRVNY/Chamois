@@ -7,6 +7,11 @@ public static class Global
     private static string personnageJoue;
     public static Dictionary<string, string> guide = new Dictionary<string, string>();
     public static Dictionary<string, GameObject> encychapter = new Dictionary<string, GameObject>();
+    public static Dictionary<string, string> persoNum = new Dictionary<string, string>(){
+        {"Chamois", "1"},
+        {"Chasseur", "3"},
+        {"Randonneur", "2"}
+    };
     public static bool sliding = false;
     public static int difficulty = 1;
     public static bool pause = false;

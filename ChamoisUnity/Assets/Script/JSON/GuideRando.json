@@ -1,0 +1,201 @@
+
+{
+    "2" : {
+        "text": "Coucou, cher ami randonneur, je suis un guide de rando, qu'est-ce que tu veux faire aujourd'hui ?",
+        
+        "choices" : {
+            "2.12" : "Je veux faire un rando !",
+            "2.0" : "Rien"
+        }
+    },
+
+    "2.0" : {
+        "text": "OK A bientôt !"
+    },
+    
+
+    "2.12" : {
+        "text": "1 - Randonnée de l'Épion \n2 - Randonnée du Fort de la Batterie",
+        "choices": {
+            "2.1" : "Je veux faire le 1",
+            "2.2" : "Je veux faire le 2",
+            "2.34" : "Il y en a autres ?"
+        }
+    },
+    "2.34": {
+        "text": "3 - Randonnée de la Dent des Portes \n4 - Randonnée du Grand Roc",
+        "choices" : {
+            "2.3" : "3",
+            "2.4" : "4",
+            "2.56" : "Autre"
+        }
+    },
+    "2.56": {
+        "text": "5 - Randonnée de la Pointe de la Chaurionde \n6 - Randonnée du Mont Morbier",
+        "choices" : {
+            "2.5" : "5",
+            "2.6" : "6",
+            "2.78" : "Autre"
+        }
+    },
+    "2.78": {
+        "text": "7 - Randonnée de la Croix du Nivolet \n8 - Randonnée de la Pointe de la Galoppaz",
+        "choices" : {
+            "2.7" : "7",
+            "2.8" : "8",
+            "2.910" : "Autre"
+        }
+    },
+    "2.910": {
+        "text": "9 - Randonnée du Mont Colombier \n10 - Randonnée de la Pointe de l'Arcalod",
+        "choices" : {
+            "2.9" : "9",
+            "2.10" : "10",
+            "2.1112" : "Autre"
+        }
+    },
+    "2.1112": {
+        "text": "11 - Randonnée du Mont Trélod",
+        "choices": {
+            "2.11" : "11",
+            "2.0" : "Aucune"
+        }
+    },
+    
+
+    "2.1" : {
+        "text": "Nom : Randonnée de l'Epion \nDifficulté : Facile \nDénivelé : 500m \nTemps : 3h30 \nLongueur : 7.5km",
+        "choices" : {
+            "2.1.1" : "Accepter",
+            "2.0" : "Refuser"
+        }
+    },
+    "2.1.1" : {
+        "hint": "randEpion",
+        "text": "Vous avez pris la randonnée : Randonnée de l'Epion\n Arrivée dans 3 points de contrôle."
+    },
+
+    "2.2" : {
+        "text": "Nom : Randonnée du Fort de la Batterie \nDifficulté : Facile \nDénivelé : 650m \nTemps : 3h30 \nLongueur : 5.6km",
+        "choices" : {
+            "2.2.1" : "Accepter",
+            "2.0" : "Refuser"
+        }
+    },
+    "2.2.1" : {
+        "hint": "randBatterie",
+        "text": "Vous avez pris la randonnée : Randonnée du Fort de la Batterie\n Arrivée dans 3 points de contrôle"
+    },
+
+
+    "2.3" : {
+        "text": "Nom : Randonnée de la Dent des Portes \nDifficulté : Moyen \nDénivelé : 900m \nTemps : 7h \nLongueur : 16km",
+        "choices" : {
+            "2.3.1" : "Accepter",
+            "2.0" : "Refuser"
+        }
+    },
+    "2.3.1" : {
+        "hint": "randDentPortes",
+        "text": "Vous avez pris la randonnée : Randonnée de la Dent des Portes\n Arrivée dans 3 points de contrôle"
+    },
+
+    "2.4" : {
+        "text": "Nom : Randonnée du Grand Roc \nDifficulté : Moyen \nDénivelé : 1140m \nTemps : 4h30 \nLongueur : 11km",
+        "choices" : {
+            "2.4.1" : "Accepter",
+            "2.0" : "Refuser"
+        }
+    },
+    "2.4.1" : {
+        "hint": "randGrandRoc",
+        "text": "Vous avez pris la randonnée : Randonnée du Grand Roc\n Arrivée dans 3 points de contrôle"
+    },
+    
+    "2.5" : {
+        "text": "Nom : Randonnée de la Pointe de la Chaurionde \nDifficulté : Moyen \nDénivelé : 1300m \nTemps : 1 jour \nLongueur : 16km",
+        "choices" : {
+            "2.5.1" : "Accepter",
+            "2.0" : "Refuser"
+        }
+    },
+    "2.5.1" : {
+        "hint": "randPointeChaurionde",
+        "text": "Vous avez pris la randonnée : Randonnée de la Pointe de la Chaurionde\n Arrivée dans 3 points de contrôle"
+    },
+
+    "2.6" : {
+        "text": "Nom : Randonnée du Mont Morbier \nDifficulté : Moyen \nDénivelé : 690m \nTemps : 4h30 \nLongueur : 11km",
+        "choices" : {
+            "2.6.1" : "Accepter",
+            "2.0" : "Refuser"
+        }
+    },
+    "2.6.1" : {
+        "hint": "randMorbier",
+        "text": "Vous avez pris la randonnée : Randonnée du Mont Morbier\n Arrivée dans 3 points de contrôle"
+    },
+
+    "2.7" : {
+        "text": "Nom : Randonnée de la Croix du Nivolet \nDifficulté : Moyen \nDénivelé : 620m \nTemps : 4h \nLongueur : 9km",
+        "choices" : {
+            "2.7.1" : "Accepter",
+            "2.0" : "Refuser"
+        }
+    },
+    "2.7.1" : {
+        "hint": "randNivolet",
+        "text": "Vous avez pris la randonnée : Randonnée de la Croix du Nivolet\n Arrivée dans 3 points de contrôle"
+    },
+
+    "2.8" : {
+        "text": "Nom : Randonnée de la Pointe de la Galoppaz \nDifficulté : Moyen \nDénivelé : 762m \nTemps : 5h \nLongueur : 11km",
+        "choices" : {
+            "2.8.1" : "Accepter",
+            "2.0" : "Refuser"
+        }
+    },
+    "2.8.1" : {
+        "hint": "randGaloppaz",
+        "text": "Vous avez pris la randonnée : Randonnée de la Pointe de la Galoppaz\n Arrivée dans 3 points de contrôle"
+    },
+
+    "2.9" : {
+        "text": "Nom : Randonnée du Mont Colombier \nDifficulté : Difficile \nDénivelé : 1500m \nTemps : 10h \nLongueur : 18km",
+        "choices" : {
+            "2.9.1" : "Accepter",
+            "2.0" : "Refuser"
+        }
+    },
+    "2.9.1" : {
+        "hint": "randColombier",
+        "text": "Vous avez pris la randonnée : Randonnée du Mont Colombier\n Arrivée dans 3 points de contrôle"
+    },
+
+    "2.10" : {
+        "text": "Nom : Randonnée de la Pointe de l'Arcalod \nDifficulté : Difficile \nDénivelé : 1220m \nTemps : 1 jour \nLongueur : 16.5km",
+        "choices" : {
+            "2.10.1" : "Accepter",
+            "2.0" : "Refuser"
+        }
+    },
+    "2.10.1" : {
+        "hint": "randArcalod",
+        "text": "Vous avez pris la randonnée : Randonnée de la Pointe de l'Arcalod\n Arrivée dans 3 points de contrôle"
+    },
+    "2.11": {
+        "text": "Nom : Randonnée du Mont Trélod \nDifficulté : Difficile \nDénivelé : 1400m \nTemps : 1 jour \nLongueur : 14km",
+        "choices" : {
+            "2.11.1" : "Accepter",
+            "2.0" : "Refuser"
+        }
+    },
+    "2.11.1" : {
+        "hint": "randTrelod",
+        "text": "Vous avez pris la randonnée : Randonnée du Mont Trélod\n Arrivée dans 3 points de contrôle"
+    },
+    
+    "2.0.1" : {
+        "text": "Vous avez déjà pris un randonée. \nConsultez votre encyclopédie..."
+    }
+}
