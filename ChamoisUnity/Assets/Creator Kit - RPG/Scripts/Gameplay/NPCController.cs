@@ -12,29 +12,14 @@ namespace RPGM.Gameplay
     /// Main class for implementing NPC game objects & starting dialogs
     /// </summary>
    
-    public class NPCController : MonoBehaviour
+    public class NPCController : InteractableController
     {
-        private InteractiveButtons Buttons;
-        private GameObject actionButton;
-        private Camera camera;
-
-        public string type = "NPC";
-        //Liste des elements dans le srcipt de conversation
         public ConversationScript conversations;
-        private string firstNode = "";
-
-        // Quete non-utilise
-        Quest activeQuest = null;
-        Quest[] quests;
-
-        //Permet d'acceder a des fonctions, notamment dialog.Hide()
-        GameModel model = Schedule.GetModel<GameModel>();
-        //GameModel model = new GameModel();
-
-        public JObject convoTree;
+        public string firstNode = "";
+        private JObject convoTree;
         public TextAsset jsonFile;
-        
-        void Start()
+
+        new void Start()
         {
             if(jsonFile != null){
                 convoTree = JObject.Parse(jsonFile.text);
@@ -54,35 +39,9 @@ namespace RPGM.Gameplay
                 conversations.OnAfterDeserialize();
             }
 
-            if (type != "NPC")
-            {
-                Buttons = GOPointer.interactiveButtons.GetComponent<InteractiveButtons>();
-                camera = GOPointer.CameraReg.GetComponentInChildren<Camera>();
-            }
-
-            if (type == "DonneurRando")
-            {
-                actionButton = Buttons.talk;
-            }
-                
-            if (type == "Recharge" && Global.Personnage == "Chasseur")
-            {
-                actionButton = Buttons.recharge;
-            }
-               
-
-            if (actionButton != null)
-            {
-                actionButton.SetActive(false);
-            }
-
+            base.Start();
         }
-        void OnEnable()
-        {
-            // Ummm... there're no Quests in any children
-            quests = gameObject.GetComponentsInChildren<Quest>();
-        }
-        
+
         void Update()
         {
             if(actionButton!=null && firstNode!="")
@@ -90,22 +49,10 @@ namespace RPGM.Gameplay
         }
 
         /// <summary>
-        /// Si ce qui rentre en contact avec le NPC est un joueur, on test son role et on demande l'affichage de la piece de conversation adequate
-        /// </summary>
-        public void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                firstNode = Global.persoNum[Global.Personnage];
-                // On recupere la conversation et on lance le script ShowConversation()
-            }
-        }
-
-        /// <summary>
         /// Si ce qui rentre en dans la zone du NPC est un joueur, on test son role et on demande l'affichage de la piece de conversation adequate
         /// A utiliser avec les zones de Draw2DShape
         /// </summary>
-        public void OnTriggerEnter2D(Collider2D collision)
+        void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Detector") && actionButton!=null)
             {
@@ -123,7 +70,7 @@ namespace RPGM.Gameplay
         /// <summary>
         /// Si le joueur quitte le rayon du NPC, on cache le dialogue
         /// </summary>
-        public void OnTriggerExit2D(Collider2D collision)
+        void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.CompareTag("Detector") && actionButton!=null)
             {
@@ -132,19 +79,11 @@ namespace RPGM.Gameplay
             }
 
             firstNode = "";
-
-            // if (model.getDialog()) {
-            //     if (collision.gameObject.CompareTag("Player"))
-            //     {
-            //         model.getDialog().Hide();
-            //     }
-            // }
         }
 
-        public void onclick()
+        void onclick()
         {
             var c = GetConversation();
-            print(c.isInIndex(firstNode));
             if (c!=null && c.isInIndex(firstNode))
             {
                 SpriteRenderer myImage = gameObject.GetComponent<SpriteRenderer>();
@@ -155,24 +94,6 @@ namespace RPGM.Gameplay
                 ev.gameObject = gameObject;
                 ev.conversationItemKey = firstNode;
             }
-        }
-
-        public void CompleteQuest(Quest q)
-        {
-            if (activeQuest != q) throw new System.Exception("Completed quest is not the active quest.");
-            foreach (var i in activeQuest.requiredItems)
-            {
-                model.RemoveInventoryItem(i.item, i.count);
-            }
-            activeQuest.RewardItemsToPlayer();
-            activeQuest.OnFinishQuest();
-            activeQuest = null;
-        }
-
-        public void StartQuest(Quest q)
-        {
-            if (activeQuest != null) throw new System.Exception("Only one quest should be active.");
-            activeQuest = q;
         }
 
         /// <summary>

@@ -49,6 +49,7 @@ public class GOPointer : MonoBehaviour
     public GameObject _NPCCollection;
 
     public GameObject _RandoDecouverteText;
+    public RandoManager _RandoManager;
     
     public GameObject _Pew;
     
@@ -100,6 +101,7 @@ public class GOPointer : MonoBehaviour
     public static GameObject NPCCollection;
 
     public static GameObject RandoDecouverteText;
+    public static RandoManager RandoManager;
     
     public static GameObject Pew;
     
@@ -151,6 +153,7 @@ public class GOPointer : MonoBehaviour
         NPCCollection = _NPCCollection;
 
         RandoDecouverteText = _RandoDecouverteText;
+        RandoManager = _RandoManager;
         
         Pew = _Pew;
         

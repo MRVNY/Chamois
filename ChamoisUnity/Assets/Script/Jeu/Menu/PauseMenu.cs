@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour
         
         GOPointer.JoystickCanvas.SetActive(false);
         boutonTir.SetActive(false);
+        GOPointer.interactiveButtons.SetActive(false);
 
         // Debug.Log("notifRegroup : " + notifRegroup.activeSelf);
         // Debug.Log("notifActive : " + notifActive);
@@ -66,5 +67,7 @@ public class PauseMenu : MonoBehaviour
 
         joystick.SetActive(true);
         boutonTir.SetActive(true);
+        GOPointer.interactiveButtons.SetActive(true);
+
     }
 }

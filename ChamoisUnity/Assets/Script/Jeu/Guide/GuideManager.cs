@@ -44,10 +44,18 @@ public class GuideManager : MonoBehaviour
     public async void fermerGuide()
     {
         GOPointer.MenuManager.GetComponent<PauseMenu>().Resume();
-        GOPointer.CanvasGuideJeu.GetComponent<Canvas>().enabled = false;
+        guideCanvas.SetActive(false);
         //GOPointer.CanvasGuideJeu.SetActive(false);
         //wait(1000);
         await Task.Delay(2000);
         Time.timeScale = 1;
+    }
+
+    public void showGuide(string text)
+    {
+        GOPointer.MenuManager.GetComponent<PauseMenu>().Pause();
+        GOPointer.CanvasGuideJeu.SetActive(true);
+        guideCanvas.SetActive(true);
+        guideText.SetText(text);
     }
 }

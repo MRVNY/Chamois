@@ -19,7 +19,7 @@ public class Encyclopedie : MonoBehaviour
     protected List<EncycloInfos> staticInfo = new List<EncycloInfos>();
     
     public TextAsset jsonFile;
-    public ArrayList data = new ArrayList();
+    //public ArrayList data = new ArrayList();
     public EncyInfo info;
 
     protected int pageActuelle = 0;

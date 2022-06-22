@@ -42,7 +42,7 @@ public class DebugManager : MonoBehaviour
         //     
         // }
 
-        guide.SetActive(false);
+        guide.SetActive(true);
         ency.SetActive(true);
         achi.SetActive(true);
         fog.SetActive(true);

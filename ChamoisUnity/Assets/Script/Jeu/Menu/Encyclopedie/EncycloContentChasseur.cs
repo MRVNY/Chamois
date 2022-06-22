@@ -78,7 +78,7 @@ public class EncycloContentChasseur : Encyclopedie
         {
             dynamicInfo.Add(encyinfo.hint, new EncycloInfos(null, encyinfo.texte, int.Parse(encyinfo.taille)));
 
-            data.Add(encyinfo);
+            //data.Add(encyinfo);
         }
 
         // infos pour la quete du chasseur

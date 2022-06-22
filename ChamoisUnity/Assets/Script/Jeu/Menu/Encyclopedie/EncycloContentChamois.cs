@@ -52,7 +52,7 @@ public class EncycloContentChamois : Encyclopedie
         {
             dynamicInfo.Add(encyinfo.hint, new EncycloInfos(null, encyinfo.texte, int.Parse(encyinfo.taille)));
 
-            data.Add(encyinfo);
+            //data.Add(encyinfo);
         }
 
 

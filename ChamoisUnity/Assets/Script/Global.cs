@@ -12,6 +12,19 @@ public static class Global
         {"Chasseur", "3"},
         {"Randonneur", "2"}
     };
+    public static Dictionary<string, int> randoNum = new Dictionary<string, int>(){
+        {"Epion", 1},
+        {"Batterie", 2},
+        {"DentPortes", 3},
+        {"GrandRoc", 4},
+        {"PointeChaurionde", 5},
+        {"Morbier", 6},
+        {"Nivolet", 7},
+        {"Galoppaz", 8},
+        {"Colombier", 9},
+        {"Arcalod", 10},
+        {"Trelod", 11}
+    };
     public static bool sliding = false;
     public static int difficulty = 1;
     public static bool pause = false;
