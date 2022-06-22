@@ -54,6 +54,7 @@ namespace RPGM.UI
         public void Nullify()
         {
             onClickEvent = null;
+            clicked = false;
         }
         
         //public void setOnclick(int i)

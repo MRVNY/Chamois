@@ -50,8 +50,8 @@ namespace RPGM.Gameplay
                         }
                     }
                     conversations.Add(c1);
-                    conversations.OnAfterDeserialize();
                 }
+                conversations.OnAfterDeserialize();
             }
 
             if (type != "NPC")
