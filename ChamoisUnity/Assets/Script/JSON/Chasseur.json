@@ -425,8 +425,8 @@
 
     "DonneurDeQuete" : {
         "3" : {
+        "text": "Hey ! Vous êtes chasseur ?",
         "choices" : {
-            "text" : "Hey ! Vous êtes chasseur ?",
             "3.2" : "Non.",
             "3.1" : "Oui !?"
         }
@@ -467,7 +467,9 @@
         },
         "3.1" : {
             "text" : "Vraiment ? Bien. Un randonneur nous a informé la présence d'un animal semblant vraiment malade, il faudrait en apprendre plus.",
+            "choices" : {
             "3.1.1" : "comment le reconnaitre ?"
+            }
         },
         "3.2" : {
             "text" : "Normal, il fait jour, vous êtes un peu bizarre non ?"
@@ -487,15 +489,21 @@
     "Randonneur" : {
         "3" : {
             "text" : "Je me demande bien quelle randonnée je vais faire aujourd'hui...",
+            "choices" : {
             "3.1" : "Excusez-moi ?!"
+            }
         },
         "3.1" : {
             "text" : "Hein !? Euuuh... que voulez-vous ?",
+            "choices" : {
             "3.1.1" : "Auriez-vous des informations sur l'animal malade ?"
+            }
         },
         "3.1.1" : {
             "text" : "Cet animal est un chamois. Il semblerait qu'il possiédait des blessures béantes et infectées.",
+            "choices" : {
             "3.1.1.1" : "Ou se trouverait-il ?"
+            }
         },
         "3.1.1.1" : {
             "hint" : "suiteRandonneur",
@@ -513,7 +521,9 @@
     "Photographe" : {
         "3" : {
             "text" : "Quel panorama...",
+            "choices" : {
             "3.1" : "En effet, est-ce que..."
+            }
         },
         "3.1" : {
             "hint" : "suitePhotographe",
@@ -553,7 +563,9 @@
         },
         "3.1" : {
             "text" : "Vraiment ? Bien. Un randonneur nous a informé la présence d'un animal semblant vraiment malade, il faudrait en apprendre plus.",
+            "choices" : {
             "3.1.1" : "comment le reconnaitre ?"
+            }
         },
         "3.2" : {
             "text" : "Normal, il fait jour, vous êtes un peu bizarre non ?"
@@ -571,15 +583,21 @@
     "Randonneur2" : {
         "3" : {
             "text" : "Je me demande bien quelle randonnée je vais faire aujourd'hui...",
+            "choices" : {
             "3.1" : "Excusez-moi ?!"
+            }
         },
         "3.1" : {
             "text" : "Hein !? Euuuh... que voulez-vous ?",
+            "choices" : {
             "3.1.1" : "Auriez-vous des informations sur l'animal malade ?"
+            }
         },
         "3.1.1" : {
             "text" : "Cet animal est un chamois. Il semblerait qu'il possiédait des blessures béantes et infectées.",
+            "choices" : {
             "3.1.1.1" : "Ou se trouverait-il ?"
+            }
         },
         "3.1.1.1" : {
             "hint" : "suiteRandonneur",
@@ -594,7 +612,9 @@
     "Photographe2" : {
         "3" : {
             "text" : "Quel panorama...",
+            "choices" : {
             "3.1" : "En effet, est-ce que..."
+            }
         },
         "3.1" : {
             "hint" : "suitePhotographe",

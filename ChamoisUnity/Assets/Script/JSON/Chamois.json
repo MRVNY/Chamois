@@ -1,8 +1,8 @@
 {
-    "DonneurInfo1" : {
+    "ChamoisInfo1" : {
 
         "1" : {
-          "texte": "Eh toi !?",
+          "text": "Eh toi !?",
         "choices" : {
           "1.1" : "Oui ?",
           "1.2" : "Non..."
@@ -11,21 +11,21 @@
         
         "1.1" : {
           "hint": "deplacementRandonneur",
-          "texte": "Nous, les chamois, on adapte nos déplacements en fonction de la présence de randonneurs"
+          "text": "Nous, les chamois, on adapte nos déplacements en fonction de la présence de randonneurs"
         },
         
         "1.2" : {
-          "texte": "Reviens !?"
+          "text": "Reviens !?"
         },
 
         "1.0": {
-            "texte": "Les déplacements des chamois sont influencés par la présence de randonneurs."
+            "text": "Les déplacements des chamois sont influencés par la présence de randonneurs."
         }
     },
 
-    "DonneurInfo2" : {
+    "ChamoisInfo2" : {
         "1" : {
-          "texte": "Le savais-tu ?",
+          "text": "Le savais-tu ?",
         "choices" : {
           "1.1" : "De ?",
           "1.2" : "Je le sais déjà !"
@@ -34,21 +34,21 @@
         
         "1.1" : {
           "hint": "brucellose",
-          "texte": "La séroprévalence a la brucellose dépend de la structuration spatiale des femelles."
+          "text": "La séroprévalence a la brucellose dépend de la structuration spatiale des femelles."
         },
         
         "1.2" : {
-          "texte": "Il est si fort..."
+          "text": "Il est si fort..."
         },
 
         "1.0": {
-            "texte": "La séroprévalence a la brucellose dépend de la structuration spatiale des femelles."
+            "text": "La séroprévalence a la brucellose dépend de la structuration spatiale des femelles."
         }
     },
 
-    "DonneurInfo3" : {
+    "ChamoisInfo3" : {
         "1" : {
-          "texte": "Tu veux apprendre un truc ?",
+          "text": "Tu veux apprendre un truc ?",
         "choices" : {
           "1.1" : "Ouais !",
           "1.2" : "Je préfère dormir."
@@ -57,21 +57,21 @@
         
         "1.1" : {
           "hint": "vitesseSentiers",
-          "texte": "La vitesse de déplacement des membres de notre espèce est influencée par la proximité des sentiers, même s'il n'y a pas d'humains"
+          "text": "La vitesse de déplacement des membres de notre espèce est influencée par la proximité des sentiers, même s'il n'y a pas d'humains"
         },
         
         "1.2" : {
-          "texte": "*pleure*"
+          "text": "*pleure*"
         },
 
         "1.0": {
-            "texte": "La vitesse de déplacement des chamois est influencée par la proximité des sentiers m^émes en l'absence de randonneurs."
+            "text": "La vitesse de déplacement des chamois est influencée par la proximité des sentiers m^émes en l'absence de randonneurs."
         }
     },
 
-    "DonneurInfo4" : {
+    "ChamoisInfo4" : {
         "1" : {
-          "texte": "Soumets-toi à ma question !",
+          "text": "Soumets-toi à ma question !",
         "choices" : {
           "1.1" : "Euuuh, ok !?",
           "1.2" : "C'est non !"
@@ -79,7 +79,7 @@
         },
         
         "1.1" : {
-          "texte": "Combien de grammes un chamois doit prendre par jour pour sa survie ?",
+          "text": "Combien de grammes un chamois doit prendre par jour pour sa survie ?",
         "choices" : {
           "1.1.1" : "50g",
           "1.1.2" : "100g",
@@ -88,30 +88,30 @@
         },
         
         "1.2" : {
-          "texte": "Allez steplé..."
+          "text": "Allez steplé..."
         },
         
         "1.1.1" : {
           "hint": "challengeChamois",
-          "texte": "Bonne réponse, bien joué !"
+          "text": "Bonne réponse, bien joué !"
         },
         
         "1.1.2" : {
-          "texte": "C'est faux..."
+          "text": "C'est faux..."
         },
         
         "1.1.3" : {
-          "texte": "C'est faux..."
+          "text": "C'est faux..."
         },
 
         "1.0": {
-            "texte": "Le challenge, pour un chamois est de gagner 10kg en 200 jours, soit 50g par jour."
+            "text": "Le challenge, pour un chamois est de gagner 10kg en 200 jours, soit 50g par jour."
         }
     },
 
-    "DonneurInfo5" : {
+    "ChamoisInfo5" : {
         "1" : {
-          "texte": "J'ai des infos croustillantes...",
+          "text": "J'ai des infos croustillantes...",
         "choices" : {
           "1.1" : "Ah bon ?",
           "1.2" : "C'est non !"
@@ -120,21 +120,21 @@
         
         "1.1" : {
           "hint": "barriereComportementale",
-          "texte": "Les barrières comportementales pour le chamois sont : les routes, les pistes carrossables, les chemins de randonnées, les crêtes, les talwegs ou les lisières de forêts"
+          "text": "Les barrières comportementales pour le chamois sont : les routes, les pistes carrossables, les chemins de randonnées, les crêtes, les talwegs ou les lisières de forêts"
         },
         
         "1.2" : {
-          "texte": "Très bien alors."
+          "text": "Très bien alors."
         },
 
         "1.0": {
-            "texte": "Les barrières comportementales pour le chamois sont : les routes, les pistes carrossables, les chemins de randonnées, les crêtes, les talwegs ou les lisières de forêts"
+            "text": "Les barrières comportementales pour le chamois sont : les routes, les pistes carrossables, les chemins de randonnées, les crêtes, les talwegs ou les lisières de forêts"
         }
     },
 
-    "DonneurInfo6" : {
+    "ChamoisInfo6" : {
         "1" : {
-          "texte": "Tu veux apprendre un truc ?",
+          "text": "Tu veux apprendre un truc ?",
         "choices" : {
           "1.1" : "Oui",
           "1.2" : "Non"
@@ -143,21 +143,21 @@
         
         "1.1" : {
           "hint": "alimentationEspeces",
-          "texte": "Les espèces se servent dans le même buffet naturel, mais n'ont pas les mêmes préférences, car ils ont des systèmes digestifs différents"
+          "text": "Les espèces se servent dans le même buffet naturel, mais n'ont pas les mêmes préférences, car ils ont des systèmes digestifs différents"
         },
         
         "1.2" : {
-          "texte": "C'est bien dommage..."
+          "text": "C'est bien dommage..."
         },
 
         "1.0": {
-            "texte": "Les espèces se servent dans le même buffet naturel, mais n'ont pas les mêmes préférences, car ils ont des systèmes digestifs différents"
+            "text": "Les espèces se servent dans le même buffet naturel, mais n'ont pas les mêmes préférences, car ils ont des systèmes digestifs différents"
         }
     },
 
-    "DonneurInfo7" : {
+    "ChamoisInfo7" : {
         "1" : {
-          "texte": "Le savais-tu...",
+          "text": "Le savais-tu...",
         "choices" : {
           "1.1" : "Oui ?",
           "1.2" : "Non !"
@@ -166,21 +166,21 @@
         
         "1.1" : {
           "hint": "plantesBuffet",
-          "texte": "La plupart des plantes sur le buffet ne sont pas intéressantes pour les ongulés sauvages"
+          "text": "La plupart des plantes sur le buffet ne sont pas intéressantes pour les ongulés sauvages"
         },
         
         "1.2" : {
-          "texte": "Au revoir."
+          "text": "Au revoir."
         },
 
         "1.0": {
-            "texte": "La plupart des plantes sur le buffet ne sont pas intéressantes pour les ongulés sauvages"
+            "text": "La plupart des plantes sur le buffet ne sont pas intéressantes pour les ongulés sauvages"
         }
     },
 
-    "DonneurInfo8" : {
+    "ChamoisInfo8" : {
         "1" : {
-          "texte": "J'ai des infos croustillantes...",
+          "text": "J'ai des infos croustillantes...",
         "choices" : {
           "1.1" : "Ah bon ?",
           "1.2" : "C'est non !"
@@ -189,21 +189,21 @@
         
         "1.1" : {
           "hint": "vigilance",
-          "texte": "Pour un chamois, être plus vigilant signifie effectuer plus de mouvements, et donc moins de temps pour s'alimenter"
+          "text": "Pour un chamois, être plus vigilant signifie effectuer plus de mouvements, et donc moins de temps pour s'alimenter"
         },
         
         "1.2" : {
-          "texte": "A bientôt..."
+          "text": "A bientôt..."
         },
 
         "1.0": {
-            "texte": "Pour un chamois, être plus vigilant signifie effectuer plus de mouvements, et donc moins de temps pour s'alimenter."
+            "text": "Pour un chamois, être plus vigilant signifie effectuer plus de mouvements, et donc moins de temps pour s'alimenter."
         }
     },
 
-    "DonneurInfo9" : {
+    "ChamoisInfo9" : {
         "1" : {
-          "texte": "Tiens, j'ai quelque chose a te dire...",
+          "text": "Tiens, j'ai quelque chose a te dire...",
         "choices" : {
           "1.1" : "Ah bon ?",
           "1.2" : "J'ai pas le temps..."
@@ -212,21 +212,21 @@
         
         "1.1" : {
           "hint": "deplacements",
-          "texte": "Le jour, les chamois vont adopter des déplacement moins sinueux, car il se sentent plus en danger en présence d'humains. La nuit, ils le sont moins, car les chamois s'alimentent"
+          "text": "Le jour, les chamois vont adopter des déplacement moins sinueux, car il se sentent plus en danger en présence d'humains. La nuit, ils le sont moins, car les chamois s'alimentent"
         },
         
         "1.2" : {
-          "texte": "Tu sais pas ce que tu manques."
+          "text": "Tu sais pas ce que tu manques."
         },
 
         "1.0": {
-            "texte": "Le jour, les chamois vont adopter des déplacement moins sinueux, car il se sentent plus en danger en présence d'humains. La nuit, ils le sont moins, car les chamois s'alimentent."
+            "text": "Le jour, les chamois vont adopter des déplacement moins sinueux, car il se sentent plus en danger en présence d'humains. La nuit, ils le sont moins, car les chamois s'alimentent."
         }
     },
 
-    "DonneurInfo10" : {
+    "ChamoisInfo10" : {
         "1" : {
-          "texte": "C'est l'heure de la question !",
+          "text": "C'est l'heure de la question !",
         "choices" : {
           "1.1" : "Oui",
           "1.2" : "C'est non !"
@@ -234,7 +234,7 @@
         },
         
         "1.1" : {
-          "texte": "Combien de jours dure la gestation d'un chamois ?",
+          "text": "Combien de jours dure la gestation d'un chamois ?",
         "choices" : {
           "1.1.1" : "150",
           "1.1.2" : "160",
@@ -243,30 +243,30 @@
         },
         
         "1.2" : {
-          "texte": "Tu aurais pu devenir riche..."
+          "text": "Tu aurais pu devenir riche..."
         },
         
         "1.1.1" : {
-          "texte": "Faux"
+          "text": "Faux"
         },
         
         "1.1.2" : {
-          "texte": "Faux"
+          "text": "Faux"
         },
         
         "1.1.3" : {
           "hint": "gestationChamois",
-          "texte": "Vrai ! Bien joué !"
+          "text": "Vrai ! Bien joué !"
         },
 
         "1.0": {
-            "texte": "Le temps de gestation du chamois est d'environ 170 jours."
+            "text": "Le temps de gestation du chamois est d'environ 170 jours."
         }
     },
 
-    "DonneurInfo11" : {
+    "ChamoisInfo11" : {
         "1" : {
-          "texte": "C'est l'heure du challenge !",
+          "text": "C'est l'heure du challenge !",
         "choices" : {
           "1.1" : "Accepter",
           "1.2" : "Refuser"
@@ -274,7 +274,7 @@
         },
         
         "1.1" : {
-          "texte": "A combien de km/h s'élève la vitesse de course du chamois ?",
+          "text": "A combien de km/h s'élève la vitesse de course du chamois ?",
         "choices" : {
           "1.1.1" : "40",
           "1.1.2" : "50",
@@ -283,30 +283,30 @@
         },
         
         "1.2" : {
-          "texte": "A plus..."
+          "text": "A plus..."
         },
         
         "1.1.1" : {
-          "texte": "Tu t'es trompé..."
+          "text": "Tu t'es trompé..."
         },
         
         "1.1.2" : {
           "hint": "vitesseCourse",
-          "texte": "Bien joué !"
+          "text": "Bien joué !"
         },
         
         "1.1.3" : {
-          "texte": "Tu t'es trompé..."
+          "text": "Tu t'es trompé..."
         },
 
         "1.0": {
-            "texte": "La vitesse de course du chamois est de 50 km/h."
+            "text": "La vitesse de course du chamois est de 50 km/h."
         }
     },
 
-    "DonneurInfo12" : {
+    "ChamoisInfo12" : {
         "1" : {
-          "texte": "VOICI UN DEFI POUR TOI !",
+          "text": "VOICI UN DEFI POUR TOI !",
         "choices" : {
           "1.1" : "Super",
           "1.2" : "Pas envie..."
@@ -314,7 +314,7 @@
         },
         
         "1.1" : {
-          "texte": "Laquelle de ces moyennes d'espérence de vie du chamois est la bonne ?",
+          "text": "Laquelle de ces moyennes d'espérence de vie du chamois est la bonne ?",
         "choices" : {
           "1.1.1" : "10 ans",
           "1.1.2" : "20 ans",
@@ -323,96 +323,96 @@
         },
         
         "1.2" : {
-          "texte": "*se met a pleurer*"
+          "text": "*se met a pleurer*"
         },
         
         "1.1.1" : {
-          "texte": "Tu as tord"
+          "text": "Tu as tord"
         },
         
         "1.1.2" : {
           "hint": "dureeVie",
-          "texte": "Tu as raison !"
+          "text": "Tu as raison !"
         },
         
         "1.1.3" : {
-          "texte": "Tu as tord"
+          "text": "Tu as tord"
         },
 
         "1.0": {
-            "texte": "L'esperance de vie d'un chamois va de 14 à 25 ans."
+            "text": "L'esperance de vie d'un chamois va de 14 à 25 ans."
         }
     },
 
-    "DonneurInfo1bis" : {
+    "ChamoisInfo1bis" : {
         "1" : {
-          "texte": "Les déplacements des chamois sont influencés par la présence de randonneurs."
+          "text": "Les déplacements des chamois sont influencés par la présence de randonneurs."
         }
     },
 
-    "DonneurInfo2bis" : {
+    "ChamoisInfo2bis" : {
         "1" : {
-          "texte": "La séroprévalence a la brucellose dépend de la structuration spatiale des femelles."
+          "text": "La séroprévalence a la brucellose dépend de la structuration spatiale des femelles."
         }
     },
 
-    "DonneurInfo3bis" : {
+    "ChamoisInfo3bis" : {
         "1" : {
-          "texte": "La vitesse de déplacement des chamois est influencée par la proximité des sentiers m^émes en l'absence de randonneurs."
+          "text": "La vitesse de déplacement des chamois est influencée par la proximité des sentiers m^émes en l'absence de randonneurs."
         }
     },
 
-    "DonneurInfo4bis" : {
+    "ChamoisInfo4bis" : {
         "1" : {
-          "texte": "Le challenge, pour un chamois est de gagner 10kg en 200 jours, soit 50g par jour."
+          "text": "Le challenge, pour un chamois est de gagner 10kg en 200 jours, soit 50g par jour."
         }
     },
 
-    "DonneurInfo5bis" : {
+    "ChamoisInfo5bis" : {
         "1" : {
-          "texte": "Les barrières comportementales pour le chamois sont : les routes, les pistes carrossables, les chemins de randonnées, les crêtes, les talwegs ou les lisières de forêts"
+          "text": "Les barrières comportementales pour le chamois sont : les routes, les pistes carrossables, les chemins de randonnées, les crêtes, les talwegs ou les lisières de forêts"
         }
     },
 
-    "DonneurInfo6bis" : {
+    "ChamoisInfo6bis" : {
         "1" : {
-          "texte": "Les espèces se servent dans le même buffet naturel, mais n'ont pas les mêmes préférences, car ils ont des systèmes digestifs différents"
+          "text": "Les espèces se servent dans le même buffet naturel, mais n'ont pas les mêmes préférences, car ils ont des systèmes digestifs différents"
         }
     },
 
-    "DonneurInfo7bis" : {
+    "ChamoisInfo7bis" : {
         "1" : {
-          "texte": "La plupart des plantes sur le buffet ne sont pas intéressantes pour les ongulés sauvages"
+          "text": "La plupart des plantes sur le buffet ne sont pas intéressantes pour les ongulés sauvages"
         }
     },
 
-    "DonneurInfo8bis" : {
+    "ChamoisInfo8bis" : {
         "1" : {
-          "texte": "Pour un chamois, être plus vigilant signifie effectuer plus de mouvements, et donc moins de temps pour s'alimenter."
+          "text": "Pour un chamois, être plus vigilant signifie effectuer plus de mouvements, et donc moins de temps pour s'alimenter."
         }
     },
 
-    "DonneurInfo9bis" : {
+    "ChamoisInfo9bis" : {
         "1" : {
-          "texte": "Le jour, les chamois vont adopter des déplacement moins sinueux, car il se sentent plus en danger en présence d'humains. La nuit, ils le sont moins, car les chamois s'alimentent."
+          "text": "Le jour, les chamois vont adopter des déplacement moins sinueux, car il se sentent plus en danger en présence d'humains. La nuit, ils le sont moins, car les chamois s'alimentent."
         }
     },
 
-    "DonneurInfo10bis" : {
+    "ChamoisInfo10bis" : {
         "1" : {
-          "texte": "Le temps de gestation du chamois est d'environ 170 jours."
+          "text": "Le temps de gestation du chamois est d'environ 170 jours."
         }
     },
 
-    "DonneurInfo11bis" : {
+    "ChamoisInfo11bis" : {
         "1" : {
-          "texte": "La vitesse de course du chamois est de 50 km/h."
+          "text": "La vitesse de course du chamois est de 50 km/h."
         }
     },
 
-    "DonneurInfo12bis" : {
+    "ChamoisInfo12bis" : {
         "1" : {
-          "texte": "L'esperance de vie d'un chamois va de 14 à 25 ans."
+          "text": "L'esperance de vie d'un chamois va de 14 à 25 ans."
         }
     }
 }

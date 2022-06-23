@@ -60,16 +60,15 @@ public class Encyclopedie : MonoBehaviour
         page = new ContenuPages();
  
         foreach(EncycloInfos i in pages)
+       {
+           if (page.getPoidsActuel() >= page.getPoidsMax())
            {
-               if (page.getPoidsActuel() >= page.getPoidsMax())
-               {
-                   pagesStatic.Add(page);
-                   page = new ContenuPages();
-               }
-               page.Add(i);
-            }
-            pagesStatic.Add(page);
-            pagesStatic.Add(page);
+               pagesStatic.Add(page);
+               page = new ContenuPages();
+           }
+           page.Add(i);
+        }
+        pagesStatic.Add(page);
     }
 
     protected void CurrentPage(int pageActuelle, List<ContenuPages> pages)
@@ -180,14 +179,17 @@ public class Encyclopedie : MonoBehaviour
         GOPointer.ChapitreChasseur.SetActive(false);
         GOPointer.ChapitreRandonneur.SetActive(false);
         encyButtons.SetActive(true);
-        
+
         pageActuelle = 0;
         this.chapitre = chapitre;
         List<ContenuPages> pages = getPages();
-        CurrentPage(pageActuelle, pages);
+        if(pages != null && pages.Count > 0)
+        {
+            CurrentPage(pageActuelle, pages);
+        }
         leftButton.SetActive(pageActuelle > 2);
         rightButton.SetActive(pages.Count - pageActuelle > 2);
-    }
+}
 
     public void onEncyclopedieClosed()
     {
