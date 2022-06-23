@@ -96,7 +96,6 @@ GameObject:
   - component: {fileID: 8835582639856596523}
   - component: {fileID: 8835582639856596521}
   - component: {fileID: 2140298296249417611}
-  - component: {fileID: 353955888}
   - component: {fileID: 1684751971549762096}
   m_Layer: 0
   m_Name: NPC
@@ -212,28 +211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: NPC
-  conversations:
-  - {fileID: 353955888}
---- !u!114 &353955888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8835582639856596533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acd99916876a6405980838d7635b65cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items:
-  - id: A1
-    text: Hello!
-    image: {fileID: 0}
-    audio: {fileID: 0}
-    quest: {fileID: 0}
-    options: []
-    hint: 
+  conversations: {fileID: 0}
+  jsonFile: {fileID: 0}
 --- !u!114 &1684751971549762096
 MonoBehaviour:
   m_ObjectHideFlags: 0

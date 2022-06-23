@@ -17,7 +17,7 @@ namespace RPGM.Gameplay
         protected InteractiveButtons Buttons;
         protected GameObject actionButton;
         protected Camera camera;
-        private bool isTarget = false;
+        protected bool isTarget = false;
 
         public string type = "NPC";
 
@@ -30,7 +30,7 @@ namespace RPGM.Gameplay
         //Permet d'acceder a des fonctions, notamment dialog.Hide()
         protected GameModel model = Schedule.GetModel<GameModel>();
     
-        protected void Start()
+        void Start()
         {
             if (type != "NPC")
             {
@@ -38,11 +38,6 @@ namespace RPGM.Gameplay
                 camera = GOPointer.CameraReg.GetComponentInChildren<Camera>();
             }
 
-            if (type == "DonneurRando")
-            {
-                actionButton = Buttons.talk;
-            }
-                
             if (type == "Recharge" && Global.Personnage == "Chasseur")
             {
                 actionButton = Buttons.recharge;
@@ -52,8 +47,7 @@ namespace RPGM.Gameplay
             {
                 actionButton = Buttons.validate;
             }
-               
-
+            
             if (actionButton != null)
             {
                 actionButton.SetActive(false);
@@ -66,7 +60,7 @@ namespace RPGM.Gameplay
             quests = gameObject.GetComponentsInChildren<Quest>();
         }
         
-        void Update()
+        protected void Update()
         {
             if(actionButton!=null && isTarget){
                 actionButton.transform.position = Vector3.up * 100 + camera.WorldToScreenPoint(transform.position);

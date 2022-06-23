@@ -2,6 +2,8 @@
  using UnityEngine;
  using System.Collections.Generic;
 using System.Collections;
+ using Newtonsoft.Json.Linq;
+ using System.Linq;
 
 public class EncycloContentChasseur : Encyclopedie
 {
@@ -72,13 +74,11 @@ public class EncycloContentChasseur : Encyclopedie
         dynamicInfo.Add("hautFait", new EncycloInfos(null, "Vous venez de gagner un haut-fait. Les haut-faits sont des objectifs secondaires de jeu vous aidant à découvrir tous les aspects du jeu. Les haut-faits vous octroient des points, composant votre score de découverte du jeu.", 6));
 
         // Récupération des données dans le JSON, lié dans le GameObject "Encyclopédie Manager"
-        EncyInfoList infosInJson = JsonUtility.FromJson<EncyInfoList>(jsonFile.text);
+        JObject objs = (JObject)JObject.Parse(jsonFile.text)["Chasseur"];
 
-        foreach (EncyInfo encyinfo in infosInJson.encyinfos)
+        foreach (JProperty obj in objs.OfType<JProperty>())
         {
-            dynamicInfo.Add(encyinfo.hint, new EncycloInfos(null, encyinfo.texte, int.Parse(encyinfo.taille)));
-
-            //data.Add(encyinfo);
+            dynamicInfo.Add(obj.Name, new EncycloInfos(null, (string)obj.Value, ((string)obj.Value).Length/50+1));
         }
 
         // infos pour la quete du chasseur

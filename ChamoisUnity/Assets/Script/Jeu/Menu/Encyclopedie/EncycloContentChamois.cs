@@ -2,6 +2,8 @@
  using System.Collections.Generic;
  using System;
 using System.Collections;
+ using Newtonsoft.Json.Linq;
+ using System.Linq;
 
 public class EncycloContentChamois : Encyclopedie
 {
@@ -46,13 +48,11 @@ public class EncycloContentChamois : Encyclopedie
 
 
         // Récupération des données dans le JSON, lié dans le GameObject "Encyclopédie Manager"
-        EncyInfoList infosInJson = JsonUtility.FromJson<EncyInfoList>(jsonFile.text);
+        JObject objs = (JObject)JObject.Parse(jsonFile.text)["Chamois"];
 
-        foreach (EncyInfo encyinfo in infosInJson.encyinfos)
+        foreach (JProperty obj in objs.OfType<JProperty>())
         {
-            dynamicInfo.Add(encyinfo.hint, new EncycloInfos(null, encyinfo.texte, int.Parse(encyinfo.taille)));
-
-            //data.Add(encyinfo);
+            dynamicInfo.Add(obj.Name, new EncycloInfos(null, (string)obj.Value, ((string)obj.Value).Length/50+1));
         }
 
 

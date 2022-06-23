@@ -14,38 +14,24 @@ namespace RPGM.Gameplay
    
     public class NPCController : InteractableController
     {
-        public ConversationScript conversations;
-        public string firstNode = "";
+        private ConversationScript conversations;
+        private string firstNode;
         private JObject convoTree;
         public TextAsset jsonFile;
 
-        new void Start()
+        void Start()
         {
+            camera = GOPointer.CameraReg.GetComponentInChildren<Camera>();
+            actionButton = GOPointer.interactiveButtons.GetComponent<InteractiveButtons>().talk;
+            
             if(jsonFile != null){
                 convoTree = JObject.Parse(jsonFile.text);
-                conversations = gameObject.AddComponent<ConversationScript>();
-
-                foreach(JProperty obj in convoTree.OfType<JProperty>()){
-                    ConversationPiece c1 = new ConversationPiece() { id = obj.Name, text = (string)obj.Value["text"], options = new List<ConversationOption>(), hint = (string)obj.Value["hint"]};
-                    if (obj.Value["choices"] != null)
-                    {
-                        foreach (JProperty cho in obj.Value["choices"].OfType<JProperty>())
-                        {
-                            c1.options.Add(new ConversationOption() { text = (string)cho.Value, targetId = cho.Name});
-                        }
-                    }
-                    conversations.Add(c1);
-                }
-                conversations.OnAfterDeserialize();
+                constructConvoTree();
             }
-
-            base.Start();
-        }
-
-        void Update()
-        {
-            if(actionButton!=null && firstNode!="")
-                actionButton.transform.position = Vector3.up * 100 + camera.WorldToScreenPoint(transform.position);
+            
+            actionButton.SetActive(false);
+            
+            firstNode = Global.persoNum[Global.Personnage];
         }
 
         /// <summary>
@@ -63,7 +49,7 @@ namespace RPGM.Gameplay
             
             if (collision.gameObject.CompareTag("Detector"))
             {
-                firstNode = Global.persoNum[Global.Personnage];
+                isTarget = true;
             }
         }
 
@@ -77,8 +63,7 @@ namespace RPGM.Gameplay
                 actionButton.GetComponent<Button>().onClick.RemoveAllListeners();
                 actionButton.SetActive(false);
             }
-
-            firstNode = "";
+            isTarget = false;
         }
 
         void onclick()
@@ -118,6 +103,44 @@ namespace RPGM.Gameplay
                 }
             }
             return null;
+        }
+
+        public void setConvo(JObject convo)
+        {
+            convoTree = convo;
+            constructConvoTree();
+        }
+        
+        public void setFirstNode(string node)
+        {
+            firstNode = node;
+        }
+
+        private void constructConvoTree()
+        {
+            if (convoTree != null)
+            {
+                conversations = gameObject.AddComponent<ConversationScript>();
+                foreach (JProperty obj in convoTree.OfType<JProperty>())
+                {
+                    ConversationPiece c1 = new ConversationPiece()
+                    {
+                        id = obj.Name, text = (string)obj.Value["text"], options = new List<ConversationOption>(),
+                        hint = (string)obj.Value["hint"]
+                    };
+                    if (obj.Value["choices"] != null)
+                    {
+                        foreach (JProperty cho in obj.Value["choices"].OfType<JProperty>())
+                        {
+                            c1.options.Add(new ConversationOption() { text = (string)cho.Value, targetId = cho.Name });
+                        }
+                    }
+
+                    conversations.Add(c1);
+                }
+
+                conversations.OnAfterDeserialize();
+            }
         }
     }
 }

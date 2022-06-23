@@ -31,7 +31,7 @@ public class EncycloContentRandonneur : Encyclopedie
         staticInfo = new List<EncycloInfos>();
 
         // Récupération des données dans le JSON, lié dans le GameObject "Encyclopédie Manager"
-        JObject objs = JObject.Parse(jsonFile.text);
+        JObject objs = (JObject)JObject.Parse(jsonFile.text)["Rando"];
 
         foreach (JProperty obj in objs.OfType<JProperty>())
         {

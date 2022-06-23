@@ -120,6 +120,10 @@ public class RandoManager : MonoBehaviour
                 player.epionCurrent = 0;
             }
         }
+
+        // dataSt.nbRandos += 1;
+        // dataSt.nbRandosMemePartie += 1;
+        // PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
     }
 
 }
