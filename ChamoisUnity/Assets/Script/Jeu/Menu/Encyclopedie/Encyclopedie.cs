@@ -12,6 +12,8 @@ public class Encyclopedie : MonoBehaviour
 
     private Encyclopedie showing;
 
+    protected Notifier notifier;
+
     protected ContenuPages page;
     protected string chapitre;
     
@@ -35,6 +37,7 @@ public class Encyclopedie : MonoBehaviour
 
     protected void Start()
     {
+        notifier = GOPointer.GameControl.GetComponent<Notifier>();
         pG = GOPointer.PageGauche;
         pD = GOPointer.PageDroite;
 

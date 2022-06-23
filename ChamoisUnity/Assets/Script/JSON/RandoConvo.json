@@ -1,0 +1,290 @@
+{
+    "PNJTest" : {
+            "2" : {
+            "hint": "coucou",
+            "text": "Ceci est un test pour le randonneur"
+            }
+    },
+
+    "DonneurInfo1" : {
+
+        "2" : {
+            "text": "J'ai des infos croustillantes...",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Ah bon ?",
+            "branche2Reponse": "C'est non !"
+        },
+        "2.1" : {
+            "hint": "infoRegVehicule",
+            "text": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, les véhicules terrestres motorisés et non motorisés sont interdits, sauf pour les services, les propriétaires et les ayants droits"
+        },
+        "2.2" : {
+            "text": "Eh bien, restez inculte alors..."
+        }
+
+    },
+
+    "DonneurInfo2" : {
+        "2" : {
+            "text": "Hey ! Tu veux apprendre un truc de fou ?",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Oui !",
+            "branche2Reponse": "Non."
+        },
+        "2.1" : {
+            "hint": "infoRegSurvol",
+            "text": "Chasse et de Faune Sauvage des Bauges, le survol est interdit à moins de 300 mètres du sol, cela comprend notamment les sports de vol libre, comme le parapente par exemple, ou encore l'utilisation de drones"
+        },
+        "2.2" : {
+            "text": "Ah d'accord !"
+        }
+    },
+
+    "DonneurInfo3" : {
+        "2" : {
+            "text": "Salut l'ami, j'ai appris quelque chose, tu devineras jamais !",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Ah ouais !?",
+            "branche2Reponse": "Ca ne m'intéresse pas."
+        },
+        "2.1" : {
+            "hint": "infoRegChiens",
+            "text": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, les chiens sont interdits, sauf sous autorisation, comme par exemple dans le cas des chiens guides ou les chiens de service"
+        },
+        "2.2" : {
+            "text": "Sniff....."
+        }
+    },
+    
+    "DonneurInfo4" : {
+        "2" : {
+            "text": "Salut l'ami, j'ai appris quelque chose, tu devineras jamais !",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Ah ouais !?",
+            "branche2Reponse": "Ca ne m'intéresse pas."
+        },
+        "2.1" : {
+            "hint": "infoRegAppareil",
+            "text": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, les appareils sonores et lumineux sont interdits, dans le but de respecter la quiétude des lieux dans le cas des chiens guides ou les chiens de service"
+        },
+        "2.2" : {
+            "text": "Sniff....."
+        }
+    },
+    
+    "DonneurInfo5" : {
+        "2" : {
+            "text": "Salut l'ami, j'ai appris quelque chose, tu devineras jamais !",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Ah ouais !?",
+            "branche2Reponse": "Ca ne m'intéresse pas."
+        },
+        "2.1" : {
+            "hint": "infoRegCamping",
+            "text": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, le camping et le bivouac sont interdits"
+        },
+        "2.2" : {
+            "text": "Sniff....."
+        }
+    },
+    
+    "DonneurInfo6" : {
+        "2" : {
+            "text": "Salut l'ami, j'ai appris quelque chose, tu devineras jamais !",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Ah ouais !?",
+            "branche2Reponse": "Ca ne m'intéresse pas."
+        },
+        "2.1" : {
+            "hint": "infoRegFeux",
+            "text": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, les feux sont interdits"
+        },
+        "2.2" : {
+            "text": "Sniff....."
+        }
+    },
+    
+    "DonneurInfo7" : {
+        "2" : {
+            "text": "Salut l'ami, j'ai appris quelque chose, tu devineras jamais !",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Ah ouais !?",
+            "branche2Reponse": "Ca ne m'intéresse pas."
+        },
+        "2.1" : {
+            "hint": "infoRegDerangementFaune",
+            "text": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, le dérangement de la faune est interdit"
+        },
+        "2.2" : {
+            "text": "Sniff....."
+        }
+    },
+    
+    "DonneurInfo8" : {
+        "2" : {
+            "text": "Salut l'ami, j'ai appris quelque chose, tu devineras jamais !",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Ah ouais !?",
+            "branche2Reponse": "Ca ne m'intéresse pas."
+        },
+                
+        "2.1" : {
+            "hint": "infoRegRespect",
+            "text": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, le non-respect de la réglementation est passible d'un timbre-amende ou d'un procès-verbal selon la nature de l'infraction constatée"
+        },
+        "2.2" : {
+            "text": "Sniff....."
+        }
+    },
+    
+    "DonneurInfo9" : {
+        "2" : {
+            "text": "Salut l'ami, j'ai appris quelque chose, tu devineras jamais !",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Ah ouais !?",
+            "branche2Reponse": "Ca ne m'intéresse pas."
+        },
+               
+        "2.1" : {
+            "hint": "infoRegSentierBalise",
+            "text": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, il est interdit de sortir des sentiers balisés dans les 3 zones de recherche : le secteur d'Armenaz, de Charbonnet et de Coutarse"
+        },
+                
+        "2.2" : {
+            "text": "Sniff....."
+        }
+    },
+    
+    "DonneurInfo10" : {
+        "2" : {
+            "text": "Salut l'ami, j'ai appris quelque chose, tu devineras jamais !",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Ah ouais !?",
+            "branche2Reponse": "Ca ne m'intéresse pas."
+        },
+        "2.1" : {
+            "hint": "infoRecFaune",
+            "text": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, il est recommandé de respecter la faune et la flore"
+        },
+        "2.2" : {
+            "text": "Sniff....."
+        }
+    },
+    
+    "DonneurInfo11" : {
+        "2" : {
+            "text": "Salut l'ami, j'ai appris quelque chose, tu devineras jamais !",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Ah ouais !?",
+            "branche2Reponse": "Ca ne m'intéresse pas."
+        },
+        "2.1" : {
+            "hint": "infoRecBalise",
+            "text": "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, il est recommandé de privilégier les sentiers balisés"
+        },
+        "2.2" : {
+            "text": "Sniff....."
+        }
+    },
+    
+    "DonneurInfo12" : {
+        "2" : {
+            "text": "Salut l'ami, j'ai appris quelque chose, tu devineras jamais !",
+            "branche1ID": "2.1",
+            "branche2ID": "2.2",
+            "branche1Reponse": "Ah ouais !?",
+            "branche2Reponse": "Ca ne m'interesse pas."
+        },
+        "2.1" : {
+            "hint": "infoConsPrevenir",
+            "text": "Avant d'effectuer une randonnée dans le Massif des Bauges, il est conseillé de prévenir ses proches de son itinéraire, afin de réagir au plus vite en cas de problème"
+        },
+        "2.2" : {
+            "text": "Sniff....."
+        }
+    },
+    
+    "DonneurInfo1bis" : {
+        "2" : {
+            "text": "Les véhicules sont interdits dans le massif !!"
+        }
+    },
+    
+    "DonneurInfo2bis" : {
+        "2" : {
+            "text": "Survol interdit en dessous de 300m !!"
+        }
+    },
+    
+    "DonneurInfo3bis" : {
+        "2" : {
+            "text": "Ne ramènes pas ton chien en montagne hein ! N'oublie pas !!"
+        }
+    },
+    
+    "DonneurInfo4bis" : {
+        "2" : {
+            "text": "N'utilises pas tes appareils sonores et lumineux dans le massif !"
+        }
+    },
+    
+    "DonneurInfo5bis" : {
+        "2" : {
+            "text": "Prévois ta randonnée, dors dans un gîte ou une auberge, pas dans la nature !"
+        }
+    },
+    
+    "DonneurInfo6bis" : {
+        "2" : {
+            "text": "Si tu as froid en montagne, ne fais pas de feu, t'avais qu'à prévoir et prendre un pull !"
+        }
+    },
+    
+    "DonneurInfo7bis" : {
+        "2" : {
+            "text": "Déranger la faune en montagne est interdit, cela peut t'attirer des soucis..."
+        }
+    },
+    
+    "DonneurInfo8bis" : {
+        "2" : {
+            "text": "Il existe des règles en montagnes, ne pas les respecter peut t'attirer des ennuis"
+        }
+    },
+    
+    "DonneurInfo9bis" : {
+        "2" : {
+            "text": "N'oublie pas qu'il est interdit de sortir des sentiers dans les réserves"
+        }
+    },
+    
+    "DonneurInfo10bis" : {
+        "2" : {
+            "text": "Respectes la faune, fais en sorte de ne pas lui nuire !"
+        }
+    },
+    
+    "DonneurInfo11bis" : {
+        "2" : {
+            "text": "Empruntes les sentiers balisés, ils ne sont pas la pour rien"
+        }
+    },
+    
+    "DonneurInfo12bis" : {
+        "2" : {
+            "text": "Si tu pars en randonnée, préviens tes proches, en cas de problème il pourront réagir !"
+        }
+    }
+}
+        

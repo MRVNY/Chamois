@@ -41654,7 +41654,7 @@ PrefabInstance:
     - target: {fileID: 2140298296249417611, guid: 74b5c6b26f0fc4028b9aac1a7a36767d,
         type: 3}
       propertyPath: type
-      value: 
+      value: donneurQuete
       objectReference: {fileID: 0}
     - target: {fileID: 8835582639856596520, guid: 74b5c6b26f0fc4028b9aac1a7a36767d,
         type: 3}
@@ -41694,12 +41694,12 @@ PrefabInstance:
     - target: {fileID: 8835582639856596522, guid: 74b5c6b26f0fc4028b9aac1a7a36767d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.799988
+      value: 47.1
       objectReference: {fileID: 0}
     - target: {fileID: 8835582639856596522, guid: 74b5c6b26f0fc4028b9aac1a7a36767d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.100006
+      value: 15.4
       objectReference: {fileID: 0}
     - target: {fileID: 8835582639856596522, guid: 74b5c6b26f0fc4028b9aac1a7a36767d,
         type: 3}
@@ -90606,7 +90606,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1552955076}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: activeMain
+        m_MethodName: ActiveMain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -104041,7 +104041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &8835582641401192112
 SpriteRenderer:
   m_ObjectHideFlags: 0

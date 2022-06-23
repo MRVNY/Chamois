@@ -15,11 +15,11 @@ public class EncycloContentChamois : Encyclopedie
         base.addInfoToList(action, liste, dynamicInfo);
         if (Global.Personnage == "Chamois")
         {
-            GOPointer.GameControl.GetComponent<Notifier>().setTrue();
+            notifier.setTrue();
         }
         else
         {
-            GOPointer.GameControl.GetComponent<Notifier>().setFalse();
+            notifier.setFalse();
         }
     }
 

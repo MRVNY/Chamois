@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour
     public Image menuIcon;
     public GameObject pasueIcon;
     private PauseMenu pause;
+    private Notifier notifier;
     
     public GameObject NotifMenuDeroulant ;
     public List<GameObject> ListeBoutons;
@@ -33,21 +34,13 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
-        // RectTransform firstIcon = menuIcon.GetComponent<RectTransform>();
-        // Vector2 root = firstIcon.position;
-        // float length = firstIcon.rect.height;
-        //
-        // for (int i = 0; i < ListeBoutons.Count; i++)
-        // {
-        //     ListeBoutons[i].transform.position = new Vector2(root.x, root.y - (i+1) * length * 1.5f);
-        // }
-        
+        notifier = GOPointer.GameControl.GetComponent<Notifier>();
         pause = GetComponent<PauseMenu>();
         Deactivate();
         pause.Resume();
     }
 
-    public void activeMain()
+    public void ActiveMain()
     {
         NotifMenuDeroulant.SetActive(false);
         if (menuIcon.enabled)
@@ -64,8 +57,8 @@ public class Menu : MonoBehaviour
             Deactivate();
         }
     }
-    
-    public void Activate()
+
+    private void Activate()
     {
         resume.SetActive(true);
         menuIcon.enabled = false;
@@ -124,7 +117,7 @@ public class Menu : MonoBehaviour
     {
         Vibrate.vibration();
         //GOPointer.Ouvre.SetActive(false);
-        GOPointer.GameControl.GetComponent<Notifier>().setFalse();
+        notifier.setFalse();
         if (ChapitreChamois.activeSelf || ChapitreChasseur.activeSelf || ChapitreRandonneur.activeSelf)
         {
             ChapitreChamois.SetActive(false);
@@ -134,9 +127,19 @@ public class Menu : MonoBehaviour
         }
         else
         {
-            if (Global.Personnage=="Chamois") ChapitreChamois.SetActive(true);
-            else if (Global.Personnage=="Chasseur") ChapitreChasseur.SetActive(true);
-            else if(Global.Personnage=="Randonneur") ChapitreRandonneur.SetActive(true);
+            switch (Global.Personnage)
+            {
+                case "Chamois":
+                    ChapitreChamois.SetActive(true);
+                    break;
+                case "Chasseur":
+                    ChapitreChasseur.SetActive(true);
+                    break;
+                case "Randonneur":
+                    ChapitreRandonneur.SetActive(true);
+                    break;
+            }
+
             pasueIcon.SetActive(false);
         }
     }
