@@ -92,7 +92,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (tempsSurvecu > 60.0)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Survivre I");
+                    GOPointer.AchievementManager.EarnAchievment("Survivre I");
                     temps1minute = true;
                 }
             }
@@ -101,7 +101,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (tempsSurvecu > 180.0)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Survivre II");
+                    GOPointer.AchievementManager.EarnAchievment("Survivre II");
                     temps3minute = true;
                 }
             }
@@ -110,7 +110,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (tempsSurvecu > 300.0)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Survivre III");
+                    GOPointer.AchievementManager.EarnAchievment("Survivre III");
                     temps5minute = true;
                 }
             }
@@ -119,7 +119,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (tempsSurvecu > 600.0)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Survivre IV");
+                    GOPointer.AchievementManager.EarnAchievment("Survivre IV");
                     temps10minute = true;
                 }
             }
@@ -128,7 +128,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (naissance > 0)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Heureux Évènement I");
+                    GOPointer.AchievementManager.EarnAchievment("Heureux Évènement I");
                     naissance1 = true;
                 }
             }
@@ -137,7 +137,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (naissance > 1)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Heureux Évènement II");
+                    GOPointer.AchievementManager.EarnAchievment("Heureux Évènement II");
                     naissance2 = true;
                 }
             }
@@ -146,7 +146,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (nbInfos > 4)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Connaissances en Chamois I");
+                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Chamois I");
                     nbInfos5 = true;
                 }
             }
@@ -155,7 +155,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (nbInfos > 9)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Connaissances en Chamois II");
+                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Chamois II");
                     nbInfos10 = true;
                 }
             }
@@ -164,7 +164,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (score > 999)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Score Chamois I");
+                    GOPointer.AchievementManager.EarnAchievment("Score Chamois I");
                     score1000 = true;
                 }
             }
@@ -173,7 +173,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (score > 2999)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Score Chamois II");
+                    GOPointer.AchievementManager.EarnAchievment("Score Chamois II");
                     score3000 = true;
                 }
             }
@@ -182,7 +182,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (score > 4999)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Score Chamois III");
+                    GOPointer.AchievementManager.EarnAchievment("Score Chamois III");
                     score5000 = true;
                 }
             }
@@ -191,7 +191,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (nourritureMangee > 14)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Alimentation I");
+                    GOPointer.AchievementManager.EarnAchievment("Alimentation I");
                     nourriture15 = true;
                 }
             }
@@ -200,7 +200,7 @@ public class DataStorer : MonoBehaviour
             {
                 if (nourritureMangee > 29)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Alimentation II");
+                    GOPointer.AchievementManager.EarnAchievment("Alimentation II");
                     nourriture30 = true;
                 }
             }

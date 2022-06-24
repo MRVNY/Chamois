@@ -13,70 +13,65 @@ public class AchievmentManager : MonoBehaviour
 
     public Sprite[] sprites;
 
-    private AchievmentButton activeButton;
+    public AchievmentButton activeButton;
 
     public ScrollRect scrollRect;
 
-    public GameObject achievmentMenu;
+    public GameObject achievementMenu;
 
     public GameObject visualAchievment;
 
-    public Dictionary<string, Achievment> achievments = new Dictionary<string, Achievment>();
+    private Dictionary<string, Achievment> achievments = new Dictionary<string, Achievment>();
 
     public Sprite unlockedSprite;
 
     public Text textPoints;
 
-    private Boolean carteActive;
-
-    private static AchievmentManager instance;
-
+    //private Boolean carteActive;
+    
     private int fadeTime = 4;
 
     static Boolean activateOnceChamois = false;
     static Boolean activateOnceChasseur = false;
     static Boolean activateOnceRandonneur = false;
+    
+    EncycloContentChasseur encyChasseur;
+    EncycloContentChamois encyChamois;
+    EncycloContentRandonneur encyRando;
+
+
 
     public TextAsset jsonFile;
     public ArrayList data = new ArrayList();
 
-
-    public static AchievmentManager Instance 
-    {
-        get
-        {
-            if(instance == null)
-            {
-                instance = GameObject.FindObjectOfType<AchievmentManager>();
-            }
-            return AchievmentManager.instance;
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
+        encyChasseur = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChasseur>();
+        encyChamois = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>();
+        encyRando = GOPointer.EncyclopedieManager.GetComponent<EncycloContentRandonneur>();
+        
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.delete("Points");
-        activeButton = GameObject.Find("ChamoisBtn").GetComponent<AchievmentButton>();
+        //activeButton = GameObject.Find("ChamoisBtn").GetComponent<AchievmentButton>();
 
         // Récupération des données dans le JSON, lié dans le GameObject ""
         AchievmentInfoList infosInJson = JsonUtility.FromJson<AchievmentInfoList>(jsonFile.text);
 
         foreach (AchievmentInfo achievmentinfo in infosInJson.achievmentinfos)
-        {
-           if(achievmentinfo.dependance1 == "")
+        { 
+            if(string.IsNullOrEmpty(achievmentinfo.dependance1))
             {
                 CreateAchievment(achievmentinfo.joueur, achievmentinfo.nomAch, achievmentinfo.descAch, achievmentinfo.points, achievmentinfo.image);
                 data.Add(achievmentinfo);
             }
-            else if(achievmentinfo.dependance2 == "")
+            else if(string.IsNullOrEmpty(achievmentinfo.dependance2))
             {
                 CreateAchievment(achievmentinfo.joueur, achievmentinfo.nomAch, achievmentinfo.descAch, achievmentinfo.points, achievmentinfo.image, new string[] { achievmentinfo.dependance1 });
 
                 data.Add(achievmentinfo);
             }
-            else if (achievmentinfo.dependance3 == "")
+            else if (string.IsNullOrEmpty(achievmentinfo.dependance3))
             {
                 CreateAchievment(achievmentinfo.joueur, achievmentinfo.nomAch, achievmentinfo.descAch, achievmentinfo.points, achievmentinfo.image, new string[] { achievmentinfo.dependance1, achievmentinfo.dependance2 });
 
@@ -90,34 +85,28 @@ public class AchievmentManager : MonoBehaviour
             }
         }
 
-        foreach(GameObject achievmentList in GameObject.FindGameObjectsWithTag("AchievmentList"))
+        foreach(VerticalLayoutGroup achievmentList in scrollRect.GetComponentsInChildren<VerticalLayoutGroup>())
         {
-            achievmentList.SetActive(false);
+            achievmentList.gameObject.SetActive(false);
         }
 
         activeButton.Click();
 
-        achievmentMenu.SetActive(false);
+        achievementMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         //PlayerPrefs.DeleteAll();
-        carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
+        //carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
         // Dans un autre script, pour obtenir un achievment, utiliser : 
-        // AchievmentManager.Instance.EarnAchievment(achievmentName);
+        // GOPointer.AchievementManager.EarnAchievment(achievmentName);
 
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            achievmentMenu.SetActive(!achievmentMenu.activeSelf);
-        }        
-
-    }
-
-    public void openCloseAchiemvent()
-    {
-        achievmentMenu.SetActive(!achievmentMenu.activeSelf);
+        // if (Input.GetKeyDown(KeyCode.I))
+        // {
+        //     achievmentMenu.SetActive(!achievmentMenu.activeSelf);
+        // }        
 
     }
 
@@ -131,17 +120,21 @@ public class AchievmentManager : MonoBehaviour
             StartCoroutine(FadeAchievment(achievment));
             //addToEncy();
 
-            if(Global.Personnage == "Chasseur")
+      
+            if (Global.Personnage == "Chasseur" && !activateOnceChasseur)
             {
-                addToEncyChasseur();
+                encyChasseur.addInfoToList("hautFait", encyChasseur.pagesDynamic);
+                activateOnceChasseur = true;
             }
-            else if(Global.Personnage == "Chamois")
+            else if (Global.Personnage == "Chamois" && !activateOnceChamois)
             {
-                addToEncyChamois();
+                encyChamois.addInfoToList("hautFait", encyChamois.pagesDynamic);
+                activateOnceChamois = true;
             }
-            else if(Global.Personnage == "Randonneur")
+            else if (Global.Personnage == "Randonneur" && !activateOnceRandonneur)
             {
-                addToEncyRandonneur();
+                encyRando.addInfoToList("hautFait", encyRando.pagesDynamic);
+                activateOnceRandonneur = true;
             }
         }
     }
@@ -220,35 +213,5 @@ public class AchievmentManager : MonoBehaviour
             endAlpha = 0;
         }
         Destroy(achievment);
-    }
-
-    public static void addToEncyChasseur()
-    {
-        if (!activateOnceChasseur)
-        {
-            EncycloContentChasseur ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChasseur>();
-            ency.addInfoToList("hautFait", ency.pagesDynamic);
-            activateOnceChasseur = true;
-        }
-    }
-
-    public static void addToEncyChamois()
-    {
-        if (!activateOnceChamois)
-        {
-            EncycloContentChamois ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>();
-            ency.addInfoToList("hautFait", ency.pagesDynamic);
-            activateOnceChamois = true;
-        }
-    }
-
-    public static void addToEncyRandonneur()
-    {
-        if (!activateOnceRandonneur)
-        {
-            EncycloContentRandonneur ency = GOPointer.EncyclopedieManager.GetComponent<EncycloContentRandonneur>();
-            ency.addInfoToList("hautFait", ency.pagesDynamic);
-            activateOnceRandonneur = true;
-        }
     }
 }

@@ -109,7 +109,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (nbRandos > 0)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Jambes Solides I");
+                    GOPointer.AchievementManager.EarnAchievment("Jambes Solides I");
                     rando1 = true;
                 }
             }
@@ -118,7 +118,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (nbRandosMemePartie > 4)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Jambes Solides II");
+                    GOPointer.AchievementManager.EarnAchievment("Jambes Solides II");
                     rando5partie = true;
                 }
             }
@@ -127,7 +127,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (randoDif == true)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Randonneur Aguéri I");
+                    GOPointer.AchievementManager.EarnAchievment("Randonneur Aguéri I");
                     randoDifficile = true;
                 }
             }
@@ -136,7 +136,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (nbDechets > 9)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Ami de la Nature I");
+                    GOPointer.AchievementManager.EarnAchievment("Ami de la Nature I");
                     dechet10 = true;
                 }
             }
@@ -145,7 +145,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (nbDechets > 19)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Ami de la Nature II");
+                    GOPointer.AchievementManager.EarnAchievment("Ami de la Nature II");
                     dechet20 = true;
                 }
             }
@@ -154,7 +154,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (meilleureRando > 4999)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Randonnée Parfaite I");
+                    GOPointer.AchievementManager.EarnAchievment("Randonnée Parfaite I");
                     rando5000pts = true;
                 }
             }
@@ -163,7 +163,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (meilleureRando > 7499)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Randonnée Parfaite II");
+                    GOPointer.AchievementManager.EarnAchievment("Randonnée Parfaite II");
                     rando7500pts = true;
                 }
             }
@@ -172,7 +172,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (meilleureRando > 8999)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Randonnée Parfaite III");
+                    GOPointer.AchievementManager.EarnAchievment("Randonnée Parfaite III");
                     rando9000pts = true;
                 }
             }
@@ -181,7 +181,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (meilleureRando > 9499)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Randonnée Parfaite IV");
+                    GOPointer.AchievementManager.EarnAchievment("Randonnée Parfaite IV");
                     rando9500pts = true;
                 }
             }
@@ -190,7 +190,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (nbInfos > 4)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Connaissances en Randonnée I");
+                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Randonnée I");
                     nbInfos5 = true;
                 }
             }
@@ -199,7 +199,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (nbInfos > 9)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Connaissances en Randonnée II");
+                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Randonnée II");
                     nbInfos10 = true;
                 }
             }
@@ -208,7 +208,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (score > 999)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Score Randonneur I");
+                    GOPointer.AchievementManager.EarnAchievment("Score Randonneur I");
                     score1000 = true;
                 }
             }
@@ -217,7 +217,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (score > 2999)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Score Randonneur II");
+                    GOPointer.AchievementManager.EarnAchievment("Score Randonneur II");
                     score3000 = true;
                 }
             }
@@ -226,7 +226,7 @@ public class DataStorerRandonneur : MonoBehaviour
             {
                 if (score > 4999)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Score Randonneur III");
+                    GOPointer.AchievementManager.EarnAchievment("Score Randonneur III");
                     score5000 = true;
                 }
             }

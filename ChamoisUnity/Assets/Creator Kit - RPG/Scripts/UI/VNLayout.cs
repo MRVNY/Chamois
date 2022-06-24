@@ -11,7 +11,7 @@ using UnityEngine.UI;
 namespace RPGM.UI
 {
 
-    [ExecuteInEditMode]
+    //[ExecuteInEditMode]
     public class VNLayout : MonoBehaviour
     {
         public float padding = 0.25f;

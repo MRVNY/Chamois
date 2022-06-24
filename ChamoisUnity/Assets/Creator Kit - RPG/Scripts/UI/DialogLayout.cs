@@ -8,7 +8,7 @@ using UnityEngine;
 namespace RPGM.UI
 {
 
-    [ExecuteInEditMode]
+    //[ExecuteInEditMode]
     public class DialogLayout : MonoBehaviour
     {
         public float padding = 0.25f;

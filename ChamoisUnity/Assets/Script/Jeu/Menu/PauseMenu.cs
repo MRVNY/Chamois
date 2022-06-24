@@ -12,6 +12,9 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] private GameObject notifRegroup = null;
     [SerializeField] private GameObject notifEncy = null;
+    
+    [SerializeField] private GameObject date = null;
+    
     private bool notifActive;
 
     private void Start()
@@ -29,6 +32,7 @@ public class PauseMenu : MonoBehaviour
         GOPointer.JoystickCanvas.SetActive(false);
         boutonTir.SetActive(false);
         GOPointer.interactiveButtons.SetActive(false);
+        date.SetActive(false);
 
         // Debug.Log("notifRegroup : " + notifRegroup.activeSelf);
         // Debug.Log("notifActive : " + notifActive);
@@ -54,6 +58,7 @@ public class PauseMenu : MonoBehaviour
         
         // Debug.Log("notifRegroup : " + notifRegroup.activeSelf);
         // Debug.Log("notifActive : " + notifActive);
+        date.SetActive(true);
 
         if (notifActive == true)
         {

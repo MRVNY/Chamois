@@ -20,7 +20,7 @@ public class Notifier : MonoBehaviour
             else if ((notifEnabledEncyclopedie) && (Menu.menuOuvre))
             {
                 notifToEnableMenuDeroulant.SetActive(true);
-                notifToEnableEncyclopedie.SetActive(true);
+                notifToEnableEncyclopedie.SetActive(false);
             }
             else
             {

@@ -12,6 +12,7 @@ public class Achievment
     private bool unlocked;
     private int points;
     private int spriteIndex;
+    private Image background;
 
     private GameObject achievmentRef;
     private List<Achievment> dependencies = new List<Achievment>();
@@ -33,6 +34,7 @@ public class Achievment
         this.unlocked = false;
         this.spriteIndex = spriteIndex;
         this.AchievmentRef = achievmentRef;
+        background = AchievmentRef.GetComponent<Image>();
         LoadAchievment();
     }
 
@@ -45,12 +47,12 @@ public class Achievment
     {
         if (!unlocked && !dependencies.Exists(x => x.unlocked == false))
         {
-            AchievmentRef.GetComponent<Image>().sprite = AchievmentManager.Instance.unlockedSprite;
+            background.sprite = GOPointer.AchievementManager.unlockedSprite;
             SaveAchievment(true);
             
             if(child != null)
             {
-                AchievmentManager.Instance.EarnAchievment(child);
+                GOPointer.AchievementManager.EarnAchievment(child);
             }
 
             return true;
@@ -87,8 +89,8 @@ public class Achievment
 
         if (unlocked)
         {
-            AchievmentManager.Instance.textPoints.text = "Points : " + PlayerPrefs.GetInt("Points");
-            achievmentRef.GetComponent<Image>().sprite = AchievmentManager.Instance.unlockedSprite;
+            GOPointer.AchievementManager.textPoints.text = "Points : " + PlayerPrefs.GetInt("Points");
+            background.sprite = GOPointer.AchievementManager.unlockedSprite;
 
         }
     }

@@ -54,3 +54,17 @@ Game Design
 
 Keep fixing collision/sorting layer bugs
 Look into Job System / ECS ?
+
+# End of week 3 (24/06/2022)
+- [x] Enhancing VisualNovel system
+- [ ] Adapt interaction button with other objects
+- [x] Understand quests and how they're added in encyclopedia
+- [ ] Save more data
+- [ ] Path Finding (working)
+- [ ] Game Design
+
+Extras:
+- [x] Restructure json object
+- [x] Auto import from json
+- [x] Interactables Controller 
+- [x] VN for all NPC

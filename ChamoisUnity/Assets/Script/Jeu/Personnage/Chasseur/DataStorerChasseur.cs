@@ -74,7 +74,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (nbQuetes > 1)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Quête Chasse I");
+                    GOPointer.AchievementManager.EarnAchievment("Quête Chasse I");
                     quete1 = true;
                 }
             }
@@ -83,7 +83,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (nbPhotoMemePartie > 4)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Chasse Photographique I");
+                    GOPointer.AchievementManager.EarnAchievment("Chasse Photographique I");
                     photo5 = true;
                 }
             }
@@ -92,7 +92,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (nbPhotoMemePartie > 9)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Chasse Photographique II");
+                    GOPointer.AchievementManager.EarnAchievment("Chasse Photographique II");
                     photo10 = true;
                 }
             }
@@ -101,7 +101,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (nbPhotoMemePartie > 14)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Chasse Photographique III");
+                    GOPointer.AchievementManager.EarnAchievment("Chasse Photographique III");
                     photo15 = true;
                 }
             }
@@ -110,7 +110,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (abattus > 0)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Prélèvement I");
+                    GOPointer.AchievementManager.EarnAchievment("Prélèvement I");
                     abattre1 = true;
                 }
             }
@@ -119,7 +119,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (abattus > 1)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Prélèvement II");
+                    GOPointer.AchievementManager.EarnAchievment("Prélèvement II");
                     abattre2 = true;
                 }
             }
@@ -128,7 +128,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (abattus > 2)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Prélèvement III");
+                    GOPointer.AchievementManager.EarnAchievment("Prélèvement III");
                     abattre3 = true;
                 }
             }
@@ -137,7 +137,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (score > 999)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Score Chasseur I");
+                    GOPointer.AchievementManager.EarnAchievment("Score Chasseur I");
                     score1000 = true;
                 }
             }
@@ -146,7 +146,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (abattus > 2999)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Score Chasseur II");
+                    GOPointer.AchievementManager.EarnAchievment("Score Chasseur II");
                     score3000 = true;
                 }
             }
@@ -155,7 +155,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (score > 4999)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Score Chasseur III");
+                    GOPointer.AchievementManager.EarnAchievment("Score Chasseur III");
                     score5000 = true;
                 }
             }
@@ -164,7 +164,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (nbInfos > 4)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Connaissances en Chasse I");
+                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Chasse I");
                     nbInfos5 = true;
                 }
             }
@@ -173,7 +173,7 @@ public class DataStorerChasseur : MonoBehaviour
             {
                 if (nbInfos > 9)
                 {
-                    AchievmentManager.Instance.EarnAchievment("Connaissances en Chasse II");
+                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Chasse II");
                     nbInfos10 = true;
                 }
             }

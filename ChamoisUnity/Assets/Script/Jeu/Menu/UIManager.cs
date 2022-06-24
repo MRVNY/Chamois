@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject randonneur;
     [SerializeField] private GameObject buttons;
     
+    [SerializeField] private GameObject achi;
+    
     private PauseMenu pause;
     
 
@@ -20,6 +22,7 @@ public class UIManager : MonoBehaviour
     {
         foreach (var panel in panels)
         {
+            //panel.anchoredPosition = new Vector2(Screen.currentResolution.width, Screen.currentResolution.height);
             panel.position = transform.position;
         }
         
@@ -61,6 +64,31 @@ public class UIManager : MonoBehaviour
         GOPointer.MenuManager.SetActive(true);
         pause.Resume();
         GOPointer.VisualNovel.SetActive(false);
+        buttons.SetActive(true);
+        chamois.SetActive(Global.Personnage=="Chamois");
+        chasseur.SetActive(Global.Personnage=="Chasseur");
+        randonneur.SetActive(Global.Personnage=="Randonneur");
+    }
+
+    public void startAchi()
+    {
+        pause.Pause();
+        GOPointer.MenuManager.SetActive(false);
+        GOPointer.JoystickCanvas.SetActive(false);
+        
+        chamois.SetActive(false);
+        chasseur.SetActive(false);
+        randonneur.SetActive(false);
+        buttons.SetActive(false);
+        
+        achi.SetActive(true);
+    }
+    
+    public void endAchi()
+    {
+        GOPointer.MenuManager.SetActive(true);
+        //pause.Resume();
+        achi.SetActive(false);
         buttons.SetActive(true);
         chamois.SetActive(Global.Personnage=="Chamois");
         chasseur.SetActive(Global.Personnage=="Chasseur");

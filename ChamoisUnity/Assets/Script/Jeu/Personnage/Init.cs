@@ -58,7 +58,7 @@ public class Init : MonoBehaviour
                 break;
 
             case "Chamois":
-                print(GOPointer.PlayerChasseur);
+                //print(GOPointer.PlayerChasseur);
                 GOPointer.PlayerChasseur.SetActive(false);
                 GOPointer.CameraFogOfWar.SetActive(false);
                 GOPointer.FogOfWarCanvas.SetActive(false);
