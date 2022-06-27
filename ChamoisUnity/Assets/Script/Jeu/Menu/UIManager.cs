@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void startVisualNovel(SpriteRenderer left)
+    void UIPause()
     {
         pause.Pause();
         GOPointer.MenuManager.SetActive(false);
@@ -53,45 +53,52 @@ public class UIManager : MonoBehaviour
         chasseur.SetActive(false);
         randonneur.SetActive(false);
         buttons.SetActive(false);
-        
-        GOPointer.VisualNovel.SetActive(true);
+    }
 
+    void UIResume()
+    {
+        pause.Resume();
+        buttons.SetActive(true);
+        chamois.SetActive(Global.Personnage=="Chamois");
+        chasseur.SetActive(Global.Personnage=="Chasseur");
+        randonneur.SetActive(Global.Personnage=="Randonneur");
+        GOPointer.MenuManager.SetActive(true);
+        GOPointer.MenuManager.GetComponent<Menu>().Deactivate();
+    }
+    public void startVisualNovel(SpriteRenderer left)
+    {
+        GOPointer.VisualNovel.SetActive(true);
         GOPointer.VisualNovel.GetComponent<VisualNovel>().setImages(left);
     }
     
     public void endVisualNovel()
     {
-        GOPointer.MenuManager.SetActive(true);
-        pause.Resume();
         GOPointer.VisualNovel.SetActive(false);
-        buttons.SetActive(true);
-        chamois.SetActive(Global.Personnage=="Chamois");
-        chasseur.SetActive(Global.Personnage=="Chasseur");
-        randonneur.SetActive(Global.Personnage=="Randonneur");
+        UIResume();
     }
 
     public void startAchi()
     {
-        pause.Pause();
-        GOPointer.MenuManager.SetActive(false);
-        GOPointer.JoystickCanvas.SetActive(false);
-        
-        chamois.SetActive(false);
-        chasseur.SetActive(false);
-        randonneur.SetActive(false);
-        buttons.SetActive(false);
-        
+        UIPause();
         achi.SetActive(true);
     }
     
     public void endAchi()
     {
-        GOPointer.MenuManager.SetActive(true);
         //pause.Resume();
         achi.SetActive(false);
-        buttons.SetActive(true);
-        chamois.SetActive(Global.Personnage=="Chamois");
-        chasseur.SetActive(Global.Personnage=="Chasseur");
-        randonneur.SetActive(Global.Personnage=="Randonneur");
+        UIResume();
+    }
+
+    public void startMiniMap()
+    {
+        GOPointer.MiniMap.SetActive(true);
+        UIPause();
+    }
+
+    public void endMiniMap()
+    {
+        GOPointer.MiniMap.SetActive(false);
+        UIResume();
     }
 }

@@ -46,9 +46,6 @@ public class PauseMenu : MonoBehaviour
 
         // Debug.Log("notifRegroup : " + notifRegroup.activeSelf);
         // Debug.Log("notifActive : " + notifActive);
-        
-        
-
     }
 
     public void Resume()

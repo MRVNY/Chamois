@@ -97,7 +97,7 @@ public class DataStorerRandonneur : MonoBehaviour
     {
         meilleureRando = PlayerPrefs.GetInt("meilleureRando");
 
-        carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
+        //carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
 
         scoreTotal = epionScore + batterieScore + dentPortesScore + grandRocScore + pointesChauriondeScore + morbierScore + nivoletScore + galoppazScore + colombierScore + arcalodScore + trelodScore;
 

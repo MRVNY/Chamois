@@ -66,7 +66,8 @@ public class DataStorerChasseur : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
+        //carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
+        carteActive = false;
 
         if (Global.Personnage == "Chasseur")
         {

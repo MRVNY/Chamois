@@ -68,3 +68,8 @@ Extras:
 - [x] Auto import from json
 - [x] Interactables Controller 
 - [x] VN for all NPC
+
+# Start of week 4 (27/06/2022)
+Path-Finding
+Minimap
+Game Design
