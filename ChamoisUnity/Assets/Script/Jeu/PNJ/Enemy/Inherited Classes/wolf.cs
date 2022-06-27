@@ -8,7 +8,9 @@ using UnityEngine;
 /// </summary>
 public class wolf : ia_aggro
 {
-
+    protected List<Vector3> pathVectorList;
+    protected int currentPathIndex;
+    
     public float chaseRadius;
     public float attackRadius;
     public Transform homePosition;
@@ -23,16 +25,17 @@ public class wolf : ia_aggro
         currentState = EnemyState.idle;
         myRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+
         switch (Global.Personnage)
         {
             case "Chasseur":
                 target = GOPointer.PlayerChasseur.transform;
                 break;
-
+        
             case "Randonneur":
                 target = GOPointer.PlayerRandonneur.transform;
                 break;
-
+        
             case "Chamois":
                 target = GOPointer.PlayerChamois.transform;
                 break;
@@ -40,6 +43,7 @@ public class wolf : ia_aggro
             default:
                 break;
         }
+        
     }
 
     // Update is called once per frame

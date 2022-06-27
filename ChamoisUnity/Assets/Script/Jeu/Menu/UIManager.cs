@@ -67,6 +67,7 @@ public class UIManager : MonoBehaviour
     }
     public void startVisualNovel(SpriteRenderer left)
     {
+        UIPause();
         GOPointer.VisualNovel.SetActive(true);
         GOPointer.VisualNovel.GetComponent<VisualNovel>().setImages(left);
     }
