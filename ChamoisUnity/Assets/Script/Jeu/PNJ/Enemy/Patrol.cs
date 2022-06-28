@@ -18,14 +18,16 @@ public class Patrol : wolf
 
     public override void CheckDistanceFuite()
     {
+        Vector3 pivot = transform.position - distToBottom;
+
         if (Vector3.Distance(target.position,
-                               transform.position) <= chaseRadius
+                               pivot) <= chaseRadius
                && Vector3.Distance(target.position,
-                               transform.position) > attackRadius)
+                               pivot) > attackRadius)
         {
             if (currentState == EnemyState.idle || currentState == EnemyState.walk)
             {
-                Vector3 temp = Vector3.MoveTowards(transform.position, target.position, -moveSpeed * Time.deltaTime);
+                Vector3 temp = Vector3.MoveTowards(transform.position, target.position + distToBottom, -moveSpeed * Time.deltaTime);
 
 
                 ChangeAnim(temp - transform.position);
@@ -33,11 +35,11 @@ public class Patrol : wolf
             }
 
         }
-        else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
+        else if (Vector3.Distance(target.position, pivot) > chaseRadius)
         {
-            if (Vector3.Distance(transform.position, patrolPoints[currentPoint].position) > roundingDistance)
+            if (Vector3.Distance(pivot, patrolPoints[currentPoint].position) > roundingDistance)
             {
-                Vector3 temp = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed / 2 * Time.deltaTime);
+                Vector3 temp = Vector3.MoveTowards(transform.position, patrolPoints[currentPoint].position+distToBottom, moveSpeed / 2 * Time.deltaTime);
                 ChangeAnim(temp - transform.position);
                 myRigidbody.MovePosition(temp);
             }
@@ -51,14 +53,16 @@ public class Patrol : wolf
     public override void CheckDistanceAttaque()
     {
         //Enemy chases the target
+        Vector3 pivot = transform.position - distToBottom;
+
             if (Vector3.Distance(target.position,
-                            transform.position) <= chaseRadius
+                            pivot) <= chaseRadius
             && Vector3.Distance(target.position,
-                            transform.position) > attackRadius)
+                            pivot) > attackRadius)
             {
                 if (patrolling)
                 {
-                    pathVectorList = Pathfinding.Instance.FindPath(transform.position, target.position);
+                    pathVectorList = GOPointer.Pathfinding.FindPath(pivot, target.position);
                     currentPathIndex = 0;
                     
                     if (pathVectorList != null && pathVectorList.Count > 1) {
@@ -69,7 +73,7 @@ public class Patrol : wolf
                 
                 if (currentState == EnemyState.idle || currentState == EnemyState.walk)
                 {
-                    Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+                    Vector3 temp = Vector3.MoveTowards(transform.position, target.position+distToBottom, moveSpeed * Time.deltaTime);
 
 
                     ChangeAnim(temp - transform.position);
@@ -78,41 +82,43 @@ public class Patrol : wolf
 
             }
             // Enemy patrols
-            else if (Vector3.Distance(target.position, transform.position) > chaseRadius)
+            else if (Vector3.Distance(target.position, pivot) > chaseRadius)
             {   
-                if (patrolPoints == null || pathVectorList==null || !patrolling)
+                if (patrolPoints == null || pathVectorList==null || pathVectorList.Count==0 || !patrolling)
                 {
                     ChangeGoal();
                     patrolling = true;
                 }
-                
-                if(pathVectorList[pathVectorList.Count-1]!=patrolPoints[currentPoint].position)
+   
+                if (pathVectorList.Count > 0 &&
+                    pathVectorList[pathVectorList.Count - 1] != patrolPoints[currentPoint].position)
                 {
                     pathVectorList.Add(patrolPoints[currentPoint].position);
                 }
-                
+
                 // Enemy is walking towards current patrol point
-                if (Vector3.Distance(transform.position, patrolPoints[currentPoint].position) > roundingDistance)
+                if (Vector3.Distance(pivot, patrolPoints[currentPoint].position) > roundingDistance)
                 {
-                    if (Vector3.Distance(transform.position, pathVectorList[currentPathIndex]) <= 10)
+                    if (Vector3.Distance(pivot, pathVectorList[currentPathIndex]) <= 8.1)
                     {
                         currentPathIndex++;
                         //print("next point");
                     }
-                    
-                    if(currentPathIndex >= pathVectorList.Count)
+
+                    if (currentPathIndex >= pathVectorList.Count)
                     {
                         ChangeGoal();
                     }
 
-                    Vector3 temp = Vector3.MoveTowards(transform.position, pathVectorList[currentPathIndex], moveSpeed * Time.deltaTime);
-                    
+                    Vector3 temp = Vector3.MoveTowards(transform.position, pathVectorList[currentPathIndex]+distToBottom,
+                        moveSpeed * 4 * Time.deltaTime);
+
                     ChangeAnim(temp - transform.position);
                     myRigidbody.MovePosition(temp);
                     //currentPathIndex++;
-                    //print(Vector3.Distance(transform.position, patrolPoints[currentPoint].position));
+                    //print(Vector3.Distance(pivot, patrolPoints[currentPoint].position));
 
-                    //if (Vector3.Distance(temp, transform.position) <= 1) currentPathIndex++;
+                    //if (Vector3.Distance(temp, pivot) <= 1) currentPathIndex++;
                 }
                 // Enemy reaches the current patrol point, it changes his patrol point
                 else
@@ -124,6 +130,8 @@ public class Patrol : wolf
 
     private void ChangeGoal()
     {
+        Vector3 pivot = transform.position - distToBottom;
+
         int nouveau = Random.Range(0, patrolPoints.Length);
 
         while (nouveau == currentPoint)
@@ -134,7 +142,7 @@ public class Patrol : wolf
         currentPoint = nouveau;
         currentGoal = patrolPoints[nouveau];
         
-        pathVectorList = Pathfinding.Instance.FindPath(transform.position, currentGoal.position);
+        pathVectorList = GOPointer.Pathfinding.FindPath(pivot, currentGoal.position);
         currentPathIndex = 0;
 
         if (pathVectorList is { Count: > 1 }) {

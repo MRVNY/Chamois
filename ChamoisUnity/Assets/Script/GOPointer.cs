@@ -55,6 +55,8 @@ public class GOPointer : MonoBehaviour
     
     public GameObject _VisualNovel;
     public GameObject _interactvieButtons;
+    
+    public Pathfinding _Pathfinding;
 
 
     //Static
@@ -107,6 +109,8 @@ public class GOPointer : MonoBehaviour
     
     public static GameObject VisualNovel;
     public static GameObject interactiveButtons;
+    
+    public static Pathfinding Pathfinding;
 
     void Awake(){
         PlayerChamois = _PlayerChamois;
@@ -159,6 +163,8 @@ public class GOPointer : MonoBehaviour
         
         VisualNovel = _VisualNovel;
         interactiveButtons = _interactvieButtons;
+        
+        Pathfinding = _Pathfinding;
     }
 
 }

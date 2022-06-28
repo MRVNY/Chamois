@@ -18,6 +18,7 @@ public class wolf : ia_aggro
     protected Rigidbody2D myRigidbody;
     protected Transform target;
     protected Animator animator;
+    protected Vector3 distToBottom;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,18 @@ public class wolf : ia_aggro
             default:
                 break;
         }
-        
+
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        if(sprite != null)
+        {
+            distToBottom = new Vector3(0,sprite.bounds.extents.y,0);
+            //Debug.DrawLine(transform.position - new Vector3(0,distToBottom,0),transform.position,Color.blue,10f);
+        }
+        else
+        {
+            distToBottom = Vector3.zero;
+        }
+
     }
 
     // Update is called once per frame
