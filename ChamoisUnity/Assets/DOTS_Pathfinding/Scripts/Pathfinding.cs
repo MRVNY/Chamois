@@ -72,6 +72,8 @@ public class Pathfinding : MonoBehaviour {
         GetXY(startWorldPosition, out int startX, out int startY);
         GetXY(endWorldPosition, out int endX, out int endY);
         
+        //float startTime = Time.realtimeSinceStartup;
+
         FindPathJob findPathJob = new FindPathJob {
             startPosition = new int2(startX, startY),
             endPosition = new int2(endX, endY),
@@ -93,6 +95,8 @@ public class Pathfinding : MonoBehaviour {
         
         pathNodeNativeArray.Dispose();
         path.Dispose();
+        //print("Time: " + ((Time.realtimeSinceStartup - startTime) * 1000f)) ;
+
         
         if (pathList.Count > 0) return pathList;
         return null;
@@ -108,7 +112,7 @@ public class Pathfinding : MonoBehaviour {
         y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
     }
     
-    [BurstCompile]
+    //[BurstCompile]
     private struct FindPathJob : IJob {
 
         public int2 startPosition;
@@ -150,8 +154,12 @@ public class Pathfinding : MonoBehaviour {
             NativeList<int> closedList = new NativeList<int>(Allocator.Temp);
 
             openList.Add(startNode.index);
-
-            while (openList.Length > 0) {
+            
+            int cpt = 0;
+            
+            while (openList.Length > 0 && cpt<400)
+            {
+                cpt++;
                 int currentNodeIndex = GetLowestCostFNodeIndex(openList, pathNodeArray);
                 PathNode currentNode = pathNodeArray[currentNodeIndex];
 
@@ -208,7 +216,9 @@ public class Pathfinding : MonoBehaviour {
 
                 }
             }
-
+            
+            //print(cpt);
+            
             PathNode endNode = pathNodeArray[endNodeIndex];
             if (endNode.cameFromNodeIndex == -1) {
                 // Didn't find a path!
