@@ -109,7 +109,7 @@ public class Stress : JaugesController
             {
                 activateStress50 = true;
                 Time.timeScale = 0;
-                guide.GetComponent<Canvas>().enabled = true;
+                guide.SetActive(true);
 
                 //guide.SetActive(true);
                 GOPointer.CanvasGuideJeu.GetComponent<GuideManager>().guideText.SetText("Votre niveau de stress est assez haut, ce qui est dangereux pour la santé de votre chamois. S'il continue à augmenter, cela pourrait avoir un fort impact sur votre vie. Tâchez de maintenir un niveau d'alimentation haut et de vous éloigner du danger afin de le faire baisser.");
@@ -119,7 +119,7 @@ public class Stress : JaugesController
             {
                 activateStress75 = true;
                 Time.timeScale = 0;
-                guide.GetComponent<Canvas>().enabled = true;
+                guide.SetActive(true);
 
                 //guide.SetActive(true);
                 GOPointer.CanvasGuideJeu.GetComponent<GuideManager>().guideText.SetText("Attention ! Votre stress est très haut, à ce stade, il est extrêmement dangereux pour la santé de votre chamois. Tâchez de maintenir un niveau d'alimentation haut et de vous éloigner du danger afin de le faire baisser.");

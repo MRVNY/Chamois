@@ -21,7 +21,7 @@ namespace RPGM.UI
         public Image leftImg;
         public Image rightImg;
         
-        private TextMeshPro name;
+        private new TextMeshPro name;
         private TextMeshPro dialog;
 
         public System.Action<int> onButton;

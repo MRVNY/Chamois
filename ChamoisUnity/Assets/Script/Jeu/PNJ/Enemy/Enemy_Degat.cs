@@ -37,7 +37,7 @@ public class Enemy_Degat : Enemy
         {
             rb = gameObject.GetComponent<Rigidbody2D>();
             
-            vie = pm.GetComponentInChildren<Vie>();
+            vie = GOPointer.Jauges.GetComponentInChildren<Vie>();
             joueur = GOPointer.PlayerChamois.GetComponent<JoueurChamois>();
             data = pm.GetComponent<DataStorer>();
         }
@@ -60,7 +60,7 @@ public class Enemy_Degat : Enemy
                 Debug.Log("Vous avez subi une morsure grave, " + tpsMorsureGrave + " secondes de saignement");
             }
 
-            StartCoroutine(Blessure());
+            StartCoroutine("Blessure");
         }
     }
 
@@ -85,11 +85,11 @@ public class Enemy_Degat : Enemy
     /// Permet d'infliger des dégâts quand le joueur est touché
     /// </summary>
     /// <param name="coll">collider touché</param>
-     void OnCollisionEnter2D(Collision2D coll) 
+     void OnTriggerEnter2D(Collider2D coll)
      {
         if(Global.Personnage == "Chamois")
         {
-            if (coll.gameObject.tag == "Player")
+            if (coll.gameObject.CompareTag("Player"))
             {
                 if (PlayerPrefs.GetInt("soundEffects") == 1)
                 {
@@ -99,9 +99,31 @@ public class Enemy_Degat : Enemy
                 isHit = true;
                 data.setData("blessure", sc);
                 addToEncy();
+                
+                GOPointer.PlayerChamois.GetComponent<JoueurChamois>()?.Attacked(transform.position);
             }
         }
      }
+    
+    // void OnCollisionEnter2D (Collision2D coll) 
+    // {
+    //     if(Global.Personnage == "Chamois")
+    //     {
+    //         if (coll.gameObject.CompareTag("Player"))
+    //         {
+    //             if (PlayerPrefs.GetInt("soundEffects") == 1)
+    //             {
+    //                 GameObject.Find("predateurs").GetComponent<AudioSource>().Play();
+    //             }
+    //             rdn = Random.Range(0, 3);
+    //             isHit = true;
+    //             data.setData("blessure", sc);
+    //             addToEncy();
+    //             
+    //             GOPointer.PlayerChamois.GetComponent<JoueurChamois>()?.Attacked(transform.position);
+    //         }
+    //     }
+    // }
 
     int tps()
     {
@@ -121,7 +143,7 @@ public class Enemy_Degat : Enemy
                 break;
             
             default:
-                Debug.Log("tps : default");
+                print("tps : default");
                 t = 0;
             break;
         }

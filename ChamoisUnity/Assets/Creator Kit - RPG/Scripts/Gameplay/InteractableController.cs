@@ -16,7 +16,7 @@ namespace RPGM.Gameplay
     {
         protected InteractiveButtons Buttons;
         protected GameObject actionButton;
-        protected Camera camera;
+        protected new Camera camera;
         protected bool isTarget = false;
 
         public string type = "NPC";

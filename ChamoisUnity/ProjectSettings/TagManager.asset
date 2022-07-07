@@ -15,6 +15,7 @@ TagManager:
   - PnjImportant
   - BlockView
   - Detector
+  - Terrain
   layers:
   - Default
   - TransparentFX

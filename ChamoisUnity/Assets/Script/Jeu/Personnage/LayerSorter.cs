@@ -6,7 +6,7 @@ using UnityEngine.Rendering;
 
 public class LayerSorter : MonoBehaviour
 {
-    public SpriteRenderer renderer;
+    public new SpriteRenderer renderer;
     private Collider2D layerSorter;
 
     // Start is called before the first frame update

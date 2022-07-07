@@ -26,42 +26,66 @@ public class Pathfinding : MonoBehaviour {
     private const int MOVE_STRAIGHT_COST = 10;
     private const int MOVE_DIAGONAL_COST = 14;
 
-    private static int2 gridSize = new int2(600, 600);
+    private static int2 gridSize = new int2(300, 300);
     private PathNode[] PNArray = new PathNode[gridSize.x*gridSize.y];
 
-    private static float cellSize = 1f;
+    private static float cellSize = 2f;
     private static Vector3 originPosition = new Vector3(0, -600, 0);
+    public TextAsset csvPath; 
     
-    private void Start()
+    private void Awake()
     {
-        var filePath = "Assets/DOTS_Pathfinding/Scripts/Walkables.csv";
-        string[][] walkables = File.ReadLines(filePath).Select(x => x.Split(',')).ToArray();
+        string[][] walkables = new string[gridSize.y][];
+        string[] lines = csvPath.text.Split('\n');
+        for(int i = 0; i < lines.Length; i++)
+        {
+            walkables[i] = lines[i].Split(',');
+        }
+        print(walkables);
 
         //int[,] walkables = Walkables.walkables;
 
-        for (int x = 0; x < gridSize.x; x++)
-        {
-            for (int y = 0; y < gridSize.y; y++)
-            {
-                PathNode pathNode = new PathNode();
-                pathNode.x = x;
-                pathNode.y = y;
-                pathNode.gCost = 99999999;
-                pathNode.index = FindPathJob.CalculateIndex(x, y, gridSize.x);
-                pathNode.isWalkable = walkables[x][y] == "1";
-                
-                // if (walkables[x][y] == "")
-                // {
-                //     Vector3 nodePos = new Vector3(x, y, 0) * cellSize + originPosition;
-                //     Debug.DrawLine(nodePos+Vector3.left, nodePos + Vector3.right, Color.red, 100f);
-                //     Debug.DrawLine(nodePos + Vector3.up, nodePos + Vector3.down, Color.red, 100f);
-                // }
+         for (int x = 0; x < gridSize.x; x++)
+         {
+             for (int y = 0; y < gridSize.y; y++)
+             {
+                 PathNode pathNode = new PathNode();
+                 pathNode.x = x;
+                 pathNode.y = y;
+                 pathNode.gCost = 99999999;
+                 pathNode.index = FindPathJob.CalculateIndex(x, y, gridSize.x);
+                 pathNode.isWalkable = walkables[x][y] == "1";
+                 
+                 if (walkables[x][y] != "1")
+                 {
+                     Vector3 nodePos = new Vector3(x, y, 0) * cellSize + originPosition;
+                     Debug.DrawLine(nodePos+Vector3.left, nodePos + Vector3.right, Color.red, 100f);
+                     Debug.DrawLine(nodePos + Vector3.up, nodePos + Vector3.down, Color.red, 100f);
+                 }
+         
+                 pathNode.cameFromNodeIndex = -1;
+         
+                 PNArray[pathNode.index] = pathNode;
+             }
+         }
 
-                pathNode.cameFromNodeIndex = -1;
-
-                PNArray[pathNode.index] = pathNode;
-            }
-        }
+        //Baking
+    //     var s = "";
+    //     for (int x = 0; x < gridSize.x; x++)
+    //     {
+    //         for (int y = 0; y < gridSize.y; y++)
+    //         {
+    //             var nodePos = GetWorldPosition(x, y);
+    //             if (Physics2D.BoxCast(nodePos, Vector2.one*2, 0f, Vector2.zero, 0f, LayerMask.GetMask("Terrain")))
+    //             {
+    //                 s += "0,";
+    //             }
+    //             else s += "1,";
+    //         }
+    //         s += "\n";
+    //     }
+    //
+    //     print(s);
     }
 
     public List<Vector3> FindPath(Vector3 startWorldPosition, Vector3 endWorldPosition)
@@ -112,7 +136,7 @@ public class Pathfinding : MonoBehaviour {
         y = Mathf.FloorToInt((worldPosition - originPosition).y / cellSize);
     }
     
-    //[BurstCompile]
+    [BurstCompile]
     private struct FindPathJob : IJob {
 
         public int2 startPosition;
@@ -157,7 +181,7 @@ public class Pathfinding : MonoBehaviour {
             
             int cpt = 0;
             
-            while (openList.Length > 0 && cpt<400)
+            while (openList.Length > 0 && cpt<700)
             {
                 cpt++;
                 int currentNodeIndex = GetLowestCostFNodeIndex(openList, pathNodeArray);

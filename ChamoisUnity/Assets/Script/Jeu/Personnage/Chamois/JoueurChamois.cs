@@ -82,10 +82,24 @@ public class JoueurChamois : Joueur
         hit = b;
     }
 
-    void OnTriggerEnter2D(Collider2D col)
+    private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.CompareTag("Danger"))
+        {
             stress.danger(true);
+        }
+    }
+
+    public void Attacked(Vector3 col)
+    {
+        hit = true;
+        recul = true;
+
+        Vector2 t = new Vector2(transform.position.x, transform.position.y);
+
+        dir = (Vector2)col - t;
+
+        dir = -dir.normalized;
     }
 
     void OnTriggerExit2D(Collider2D col)
@@ -93,23 +107,6 @@ public class JoueurChamois : Joueur
         if (col.CompareTag("Danger") && stress.getDanger())
             stress.danger(false);
     }
-
-    void OnCollisionEnter2D(Collision2D coll) 
-     {
-         if (coll.gameObject.tag == "Danger")
-         {
-            hit = true;
-            recul = true;
-
-            Vector2 t = new Vector2(transform.position.x, transform.position.y);
-
-            dir = coll.GetContact(0).point - t;
-
-            dir = -dir.normalized;
-            
-         }
-     }
-
 
     void Save()
     {

@@ -78,7 +78,7 @@ public class Vie : JaugesController
             {
                 activateVie50 = true;
                 Time.timeScale = 0;
-                guide.GetComponent<Canvas>().enabled = true;
+                guide.SetActive(true);
 
                 //guide.SetActive(true);
                 GOPointer.CanvasGuideJeu.GetComponent<GuideManager>().guideText.SetText("Votre vie est tombée en dessous de 50%, faites attention de ne pas la laisser chuter plus, pour la restaurer, maintenez un niveau d'alimentation élevé et tâchez de ne pas vous faire attaquer par un prédateur...");
@@ -88,7 +88,7 @@ public class Vie : JaugesController
             {
                 activateVie30 = true;
                 Time.timeScale = 0;
-                guide.GetComponent<Canvas>().enabled = true;
+                guide.SetActive(true);
 
                 //guide.SetActive(true);
                 GOPointer.CanvasGuideJeu.GetComponent<GuideManager>().guideText.SetText("Attention ! Votre vie est tombée en dessous de 30%, faites attention de ne pas la laisser chuter plus, pour la restaurer, maintenez un niveau d'alimentation élevé et tâchez de ne pas vous faire attaquer par un prédateur...");
@@ -98,7 +98,7 @@ public class Vie : JaugesController
             {
                 activateVie10 = true;
                 Time.timeScale = 0;
-                guide.GetComponent<Canvas>().enabled = true;
+                guide.SetActive(true);
 
                 //guide.SetActive(true);
                 GOPointer.CanvasGuideJeu.GetComponent<GuideManager>().guideText.SetText("ATTENTION ! Votre vie est tombée en dessous de 10% ! Votre état est critique, restez donc éloigné des prédateurs, et essayez de maintenir un niveau d'alientation élevé afin de régénérer votre vie !");

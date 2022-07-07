@@ -143,7 +143,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.34
+  m_Radius: 3.64
 --- !u!114 &8837895956789145350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
   chaseRadius: 10
   attackRadius: 5
   homePosition: {fileID: 0}
-  path:
+  patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

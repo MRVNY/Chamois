@@ -58,7 +58,7 @@ public class Faim : JaugesController
             {
                 activateFaim50 = true;
                 Time.timeScale = 0;
-                guide.GetComponent<Canvas>().enabled = true;
+                guide.SetActive(true);
 
                 //guide.SetActive(true);
                 GOPointer.CanvasGuideJeu.GetComponent<GuideManager>().guideText.SetText("Votre niveau d'alimentation est tombé en dessous de 50%, faites attention de ne pas le laisser chuter plus, pour le restaurer, tentez de trouver de quoi vous nourir dans vos environs");
@@ -68,7 +68,7 @@ public class Faim : JaugesController
             {
                 activateFaim30 = true;
                 Time.timeScale = 0;
-                guide.GetComponent<Canvas>().enabled = true;
+                guide.SetActive(true);
 
                 //guide.SetActive(true);
                 GOPointer.CanvasGuideJeu.GetComponent<GuideManager>().guideText.SetText("Attention ! Votre niveau d'alimentation est tombé en dessous de 30%, faites attention de ne pas le laisser chuter plus car cela pourrait avoir des répercussions sur votre barre de santé. Pour le restaurer, tâchez de trouver de quoi vous nourir dans les environs");
@@ -78,7 +78,7 @@ public class Faim : JaugesController
             {
                 activateFaim10 = true;
                 Time.timeScale = 0;
-                guide.GetComponent<Canvas>().enabled = true;
+                guide.SetActive(true);
 
                 //guide.SetActive(true);
                 GOPointer.CanvasGuideJeu.GetComponent<GuideManager>().guideText.SetText("ATTENTION ! Votre niveau d'alimentation est tombé en dessous de 10% ! Votre état est critique car si votre faim à un impact fort sur votre santé, soit votre barre de vie. Essayez à tout prix de trouver de la nourriture afin de d'éviter plus de problèmes");
