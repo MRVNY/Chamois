@@ -4,7 +4,6 @@ using RPGM.Core;
 using RPGM.Gameplay;
 using UnityEngine;
 using UnityEngine.UI;
-using Newtonsoft.Json.Linq;
 
 namespace RPGM.Gameplay
 {

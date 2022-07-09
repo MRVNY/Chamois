@@ -19,7 +19,6 @@ using Unity.Mathematics;
 using Unity.Collections;
 using Unity.Jobs;
 using Unity.Burst;
-using CodeMonkey.Utils;
 
 public class Pathfinding : MonoBehaviour {
 
@@ -41,7 +40,6 @@ public class Pathfinding : MonoBehaviour {
         {
             walkables[i] = lines[i].Split(',');
         }
-        print(walkables);
 
         //int[,] walkables = Walkables.walkables;
 

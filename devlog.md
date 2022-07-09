@@ -90,3 +90,10 @@ Enchanced VN
 Typewriter animation in VN
 3 lines max
 Change images
+
+
+Contrast de chamois
+Encyclopedia, larger button
+Zoom map
+Food
+First quest, find group

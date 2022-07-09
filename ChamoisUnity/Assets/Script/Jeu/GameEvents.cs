@@ -4,7 +4,7 @@ using UnityEngine;
 /// <summary>
 /// classe pour les évennements
 /// </summary>
-public class GameEvents : MonoBehaviour
+public class GameEvents
 {
 
     public static System.Action         SaveInitiated;
