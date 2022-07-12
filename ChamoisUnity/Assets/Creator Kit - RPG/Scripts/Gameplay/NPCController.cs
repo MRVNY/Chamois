@@ -20,7 +20,7 @@ namespace RPGM.Gameplay
         private JObject convoTree;
         public TextAsset jsonFile;
 
-        void Start()
+        public void Start()
         {
             camera = GOPointer.CameraReg.GetComponentInChildren<Camera>();
             actionButton = GOPointer.interactiveButtons.GetComponent<InteractiveButtons>().talk;
@@ -67,7 +67,7 @@ namespace RPGM.Gameplay
             isTarget = false;
         }
 
-        void onclick()
+        public void onclick()
         {
             var c = GetConversation();
             if (c!=null && c.isInIndex(firstNode))
@@ -91,18 +91,18 @@ namespace RPGM.Gameplay
             if (activeQuest == null && conversations!=null){
                 return conversations;
             }
-            foreach (var q in quests)
-            {
-                if (q == activeQuest)
-                {
-                    if (q.IsQuestComplete())
-                    {
-                        CompleteQuest(q);
-                        return q.questCompletedConversation;
-                    }
-                    return q.questInProgressConversation;
-                }
-            }
+            // foreach (var q in quests)
+            // {
+            //     if (q == activeQuest)
+            //     {
+            //         if (q.IsQuestComplete())
+            //         {
+            //             CompleteQuest(q);
+            //             return q.questCompletedConversation;
+            //         }
+            //         return q.questInProgressConversation;
+            //     }
+            // }
             return null;
         }
 

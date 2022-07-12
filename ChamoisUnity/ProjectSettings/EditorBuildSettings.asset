@@ -8,15 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 96164d063d4468642acc83018b830fcc
-  - enabled: 0
-    path: 
-    guid: 5d8dcbbad2afeff438ad2e143012d443
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 127f58fb154d9114db2477a24902a1bb
-  - enabled: 0
-    path: 
-    guid: 98293401a9567a84fac3db1368827529
   - enabled: 1
     path: Assets/Scenes/StarWars.unity
     guid: c42412aba5e16e049befeceda6598b40

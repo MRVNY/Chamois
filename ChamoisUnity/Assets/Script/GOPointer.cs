@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using RPGM.UI;
+using TMPro;
+using UnityEngine;
 
 //[ExecuteInEditMode]
 public class GOPointer : MonoBehaviour
@@ -53,10 +56,13 @@ public class GOPointer : MonoBehaviour
     
     public GameObject _Pew;
     
-    public GameObject _VisualNovel;
+    public VisualNovel _VisualNovel;
     public GameObject _interactvieButtons;
     
     public Pathfinding _Pathfinding;
+
+    public TextMeshProUGUI _DechetsTexte;
+    public TextMeshProUGUI _MunitionsTexte;
 
 
     //Static
@@ -107,12 +113,20 @@ public class GOPointer : MonoBehaviour
     
     public static GameObject Pew;
     
-    public static GameObject VisualNovel;
+    public static VisualNovel VisualNovel;
     public static GameObject interactiveButtons;
     
     public static Pathfinding Pathfinding;
+    
+    public static TextMeshProUGUI DechetsTexte;
+    public static TextMeshProUGUI MunitionsTexte;
 
-    void Awake(){
+    // private void Awake()
+    // {
+    //     Link();
+    // }
+
+    public void Link(){
         PlayerChamois = _PlayerChamois;
         PlayerChasseur = _PlayerChasseur;
         PlayerRandonneur = _PlayerRandonneur;
@@ -165,6 +179,9 @@ public class GOPointer : MonoBehaviour
         interactiveButtons = _interactvieButtons;
         
         Pathfinding = _Pathfinding;
+        
+        DechetsTexte = _DechetsTexte;
+        MunitionsTexte = _MunitionsTexte;
     }
 
 }

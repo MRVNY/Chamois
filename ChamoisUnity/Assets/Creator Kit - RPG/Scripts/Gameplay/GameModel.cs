@@ -39,7 +39,7 @@ namespace RPGM.Gameplay
 
         public VisualNovel getDialog()
         {
-            if(dialog==null) dialog = GOPointer.VisualNovel.GetComponent<VisualNovel>();
+            if(dialog==null) dialog = GOPointer.VisualNovel;
             return dialog;
         }
 

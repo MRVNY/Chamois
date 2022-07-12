@@ -11,7 +11,7 @@ public class chasseurDechet : MonoBehaviour
     void Start()
     {
         dechetsMain = 0;
-        text = GameObject.Find("Dechets/DechetsTexte").GetComponent<TextMeshProUGUI>();
+        text = GOPointer.DechetsTexte;
         updateView();
     }
     

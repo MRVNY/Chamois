@@ -44,7 +44,19 @@ public class NPCManager : MonoBehaviour
     //Donneurs
     private NPCController[] listDonneurs;
 
-    private void Awake()
+    // private void Awake()
+    // {
+    //     GuideRando.gameObject.SetActive(false);
+    //     ChamoisInfos.SetActive(false);
+    //     DonneursInfos.SetActive(false);
+    //     foreach (var npc in ChasseurNPCList)
+    //     {
+    //         npc.gameObject.SetActive(false);
+    //     }
+    // }
+
+    // Start is called before the first frame update
+    public void loadConvo()
     {
         GuideRando.gameObject.SetActive(false);
         ChamoisInfos.SetActive(false);
@@ -53,11 +65,7 @@ public class NPCManager : MonoBehaviour
         {
             npc.gameObject.SetActive(false);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
+        
         dataRando = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
         dataChamois = GOPointer.PlayerChamois.GetComponent<DataStorer>();
         dataChasseur = GOPointer.PlayerChasseur.GetComponent<DataStorerChasseur>();

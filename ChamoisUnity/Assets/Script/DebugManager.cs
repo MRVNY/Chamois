@@ -62,7 +62,7 @@ public class DebugManager : MonoBehaviour
 
     private void Start()
     {
-        GOPointer.VisualNovel.SetActive(false);
+        GOPointer.VisualNovel.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

@@ -24,8 +24,8 @@ namespace RPGM.Events
 
         private DataStorerRandonneur dataStorer;
 
-        private Button nextButton = GOPointer.VisualNovel.GetComponent<Button>();
-        private Image nextButtonImage = GOPointer.VisualNovel.GetComponent<Image>();
+        private Button nextButton;
+        private Image nextButtonImage;
         
         NPCManager NPCManager = GOPointer.NPCCollection.GetComponent<NPCManager>();
 
@@ -35,6 +35,9 @@ namespace RPGM.Events
 
         public override void Execute()
         {
+            nextButton = GOPointer.VisualNovel.GetComponent<Button>();
+            nextButtonImage = GOPointer.VisualNovel.GetComponent<Image>();
+
             ConversationPiece ci;
             //default to first conversation item if no key is specified, else find the right conversation item.
             if (string.IsNullOrEmpty(conversationItemKey))
@@ -117,15 +120,34 @@ namespace RPGM.Events
             //if this conversation item has an id, register it in the model.
             if (!string.IsNullOrEmpty(ci.id))
                 model.RegisterConversation(gameObject, ci.id);
-
+            
             //setup conversation choices, if any.
             if (ci.options.Count == 0)
             {
                 nextButton.enabled = true;
                 nextButtonImage.enabled = true;
             }
+            else if (ci.options.Count == 1 && ci.options[0].text == "")
+            { //if there's no buttons but we need to jump to a node
+                dialog.dialogLayout.fullScreenButton.Nullify();
+                dialog.dialogLayout.fullScreenButton.onClickEvent += () =>
+                {
+                    dialog.Hide();
+                    var next = ci.options[0].targetId;
+
+                    if (conversation.ContainsKey(next))
+                    {
+                        var c = conversation.Get(next);
+                        var ev = Schedule.Add<ShowConversation>();
+                        ev.conversation = conversation;
+                        ev.gameObject = gameObject;
+                        ev.conversationItemKey = next;
+                    }
+                };
+            }
             else
             {
+                dialog.dialogLayout.fullScreenButton.Nullify();
                 for (int i = 0; i < ci.options.Count; i++)
                 {
                     //dialog.SetButton(i, ci.options[i].text);

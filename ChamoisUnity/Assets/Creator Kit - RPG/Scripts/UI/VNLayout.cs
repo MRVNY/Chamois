@@ -22,6 +22,7 @@ namespace RPGM.UI
 
         //public SpriteButton buttonA, buttonB, buttonC;
         public GameObject options;
+        public SpriteButton fullScreenButton;
 
         [NonSerialized] public SpriteButton[] buttons;
 
@@ -32,17 +33,26 @@ namespace RPGM.UI
 
         public void SetButtons()
         {
-            options.SetActive(true);
-            for(int i = 0; i < buttons.Length; i++)
+            if (optionText.Count == 1 && optionText[0].text == "")
             {
-                if(i<optionText.Count)
+                fullScreenButton.gameObject.SetActive(true);
+            }
+            else
+            {
+                fullScreenButton.gameObject.SetActive(false);
+                
+                options.SetActive(true);
+                for(int i = 0; i < buttons.Length; i++)
                 {
-                    buttons[i].gameObject.SetActive(true);
-                    buttons[i].SetText(optionText[i].text);
-                }
-                else
-                {
-                    buttons[i].gameObject.SetActive(false);
+                    if(i<optionText.Count && optionText[i].text != "")
+                    {
+                        buttons[i].gameObject.SetActive(true);
+                        buttons[i].SetText(optionText[i].text);
+                    }
+                    else
+                    {
+                        buttons[i].gameObject.SetActive(false);
+                    }
                 }
             }
         }
@@ -84,7 +94,7 @@ namespace RPGM.UI
 
         public void skip()
         {
-            if(currentText == textMeshPro.text && optionText.Count==0) GOPointer.VisualNovel.GetComponent<VisualNovel>().End();
+            if(currentText == textMeshPro.text && optionText.Count==0) GOPointer.VisualNovel.End();
             
             if (currentText != textMeshPro.text)
             {

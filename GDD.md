@@ -150,6 +150,11 @@ Hiker&Hunter2 ---> Hiker3
 Hiker&Hunter2 ---> Hunter3
 ```
 
+### Topics
+1. Humans are already a part of the nature
+2. Trophy hunting 
+3. Importance of sport?
+
 ## Contents
 ### Guides
 
@@ -161,7 +166,7 @@ The encyclopedia contains "static" and "dynamic", which means, the manual and no
 # Style
 This part talks about the envisioned style for image, music, writings, etc.
 
-# Useful links 
+# Useful Infos 
 
 ## Hunting
 Réserve Nationale de Chasse et de Faune Sauvage
@@ -171,3 +176,7 @@ https://www.parcdesbauges.com/fr/agir/que-fait-le-parc/valoriser-les-patrimoines
 https://www.onf.fr/chasse/la-chasse-en-foret/+/b78::la-chasse-un-prerequis-pour-planter-les-forets-de-demain.html
 
 https://www.onf.fr/chasse/la-chasse-en-foret/+/5a4::cerfs-chevreuils-sangliers-trop-de-grand-gibier-nuit-aux-forets.html
+
+
+## Chamois
+"An impregnated female undergoes a gestation period of 170 days, after which a single kid is usually born in May or early June"

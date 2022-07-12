@@ -73,3 +73,13 @@ Extras:
 Path-Finding
 Minimap
 Game Design
+
+# End of week 4 (08/07/2022)
+- [x] Path-Finding
+- [x] Minimap
+- [x] Game Design
+- [x] Generate .apk
+
+# Start of week 5 (11 Jul 2022)
+Game Design
+Construct 1 quest for each perso
