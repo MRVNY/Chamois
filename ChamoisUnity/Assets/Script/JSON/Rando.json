@@ -1,5 +1,62 @@
 {
     "GuideRando" : {
+        
+        "init" : {
+            "text" : "Salut ! Bienvenu au Massif des Bauges, je suis une guide qui te recommande les randonnées selon ton niveau."
+            "choices" : {
+                "init.1" : "C'est quoi mon niveau actuel ?",
+                "init.2" : "Mais tu peux pas me guider ?",
+                "init.3" : "Je veux faires des randos !"
+            }
+        },
+        
+        "init.1" : {
+            "text" : "Ton niveau actuel est débutant, je ne te donnera que les randonnées de débutant.\n\n\nT'as d'autres questions ?",
+            "choices" : {
+                "init.2" : "Mais tu peux pas me guider ?",
+                "init.3" : "Je veux faires des randos !"
+            }
+        },
+        
+        "init.2" : {
+            "text" : "Si, ça te coutera 100 euros par heure.",
+            "choices" : {
+                "init.0" : "(Je suis pauvre.)"
+            }
+        },
+        
+        "init.3" : {
+            "text" : "Quelle passion !\n\n\nMais avant de commencer, tu connais tous les règles lors de la viste ?",
+            "choices" : {
+                "init.3.1" : "Oui",
+                "init.3.2" : "Non"
+            }
+        },
+        
+        "init.0" : {
+            "text" : "T'as d'autres questions ?",
+            "choices" : {
+                "init.1" : "C'est quoi mon niveau actuel ?",
+                "init.3" : "Je veux faires des randos !"
+            }
+        },
+        
+        "init.3.1" : {
+            "text" : "De toute façon, tu peux toujours lire le manuel que j'ai glissé dans ta proche.\n\n\nAlors, t'es prêt pour le rando ?",
+            "choices" : {
+                "2.12" : "Je veux faire un rando maintenant !",
+                "2.0" : "Je veux balader un peu d'abord !"
+            }
+        },
+
+        "init.3.2" : {
+            "text" : "Ben, en gros, à chaque fois, tu prends un rendo chez moi, tu valides les points de control.\n\n\nN'hesite pas à parler avec les gens, ils sont super sympa !",
+            "choices" : {
+                "init.3.1" : ""
+            }
+        },
+        
+        
         "2" : {
             "text": "Coucou, cher ami randonneur, je suis un guide de rando, qu'est-ce que tu veux faire aujourd'hui ?",
             

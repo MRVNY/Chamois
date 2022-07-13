@@ -73,17 +73,24 @@ public static class SaveLoad
         List<float> posChamois = new List<float>();
         List<float> posChasseur = new List<float>();
         List<float> posRandonneur = new List<float>();
-        
-        posChamois.Add(GOPointer.PlayerChamois.transform.position.x);
-        posChamois.Add(GOPointer.PlayerChamois.transform.position.y);
-        posChasseur.Add(GOPointer.PlayerChasseur.transform.position.x);
-        posChasseur.Add(GOPointer.PlayerChasseur.transform.position.y);
-        posRandonneur.Add(GOPointer.PlayerRandonneur.transform.position.x);
-        posRandonneur.Add(GOPointer.PlayerRandonneur.transform.position.y);
+
+        var position1 = GOPointer.PlayerChamois.transform.position;
+        posChamois.Add(position1.x);
+        posChamois.Add(position1.y);
+
+        var position = GOPointer.PlayerChasseur.transform.position;
+        posChasseur.Add(position.x);
+        posChasseur.Add(position.y);
+
+        var position2 = GOPointer.PlayerRandonneur.transform.position;
+        posRandonneur.Add(position2.x);
+        posRandonneur.Add(position2.y);
         
         Save<List<float>>(posChamois, "posChamois");
         Save<List<float>>(posChasseur, "posChasseur");
         Save<List<float>>(posRandonneur, "posRandonneur");
+        
+        PlayerPrefs.SetInt(Global.Personnage,1);
     }
 
     public static void LoadState()

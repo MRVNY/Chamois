@@ -16,6 +16,12 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject date = null;
     
     private bool notifActive;
+    public static PauseMenu instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void Pause()
     {
@@ -64,6 +70,8 @@ public class PauseMenu : MonoBehaviour
         GOPointer.JoystickCanvas.SetActive(true);
         boutonTir.SetActive(true);
         GOPointer.interactiveButtons.SetActive(true);
+        
+        GOPointer.VisualNovel.gameObject.SetActive(false);
 
     }
 }

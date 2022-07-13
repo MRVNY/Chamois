@@ -2003,11 +2003,11 @@ GameObject:
   - component: {fileID: 7688585}
   m_Layer: 0
   m_Name: dechet1 (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8892880
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2390,7 +2390,7 @@ PrefabInstance:
     - target: {fileID: 8835582639856596533, guid: 74b5c6b26f0fc4028b9aac1a7a36767d,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
@@ -3198,7 +3198,7 @@ GameObject:
   - component: {fileID: 44755509}
   m_Layer: 0
   m_Name: DonneursInfos
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6599,7 +6599,7 @@ GameObject:
   - component: {fileID: 197}
   m_Layer: 0
   m_Name: tronc (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7737,11 +7737,11 @@ GameObject:
   - component: {fileID: 178549550}
   m_Layer: 0
   m_Name: dechet1 (6)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &178549549
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10889,11 +10889,11 @@ GameObject:
   - component: {fileID: 315091300}
   m_Layer: 0
   m_Name: dechet1 (8)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &315091299
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12489,7 +12489,7 @@ GameObject:
   - component: {fileID: 401169911}
   m_Layer: 0
   m_Name: ChamoisInfos
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12800,11 +12800,11 @@ GameObject:
   - component: {fileID: 429506324}
   m_Layer: 0
   m_Name: dechet1 (1)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &429506323
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13801,7 +13801,7 @@ GameObject:
   - component: {fileID: 194}
   m_Layer: 0
   m_Name: champignon2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15032,11 +15032,11 @@ GameObject:
   - component: {fileID: 525704355}
   m_Layer: 0
   m_Name: dechet1 (7)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &525704354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17624,11 +17624,11 @@ GameObject:
   - component: {fileID: 583055487}
   m_Layer: 0
   m_Name: dechet1 (4)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &583055486
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18717,7 +18717,7 @@ PrefabInstance:
     - target: {fileID: 8835582639856596533, guid: 74b5c6b26f0fc4028b9aac1a7a36767d,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
@@ -27823,7 +27823,7 @@ PrefabInstance:
     - target: {fileID: 8835582639856596533, guid: 74b5c6b26f0fc4028b9aac1a7a36767d,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 353955888, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
@@ -29018,11 +29018,11 @@ GameObject:
   - component: {fileID: 1015269525}
   m_Layer: 0
   m_Name: dechet1 (9)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1015269524
 RectTransform:
   m_ObjectHideFlags: 0
@@ -29441,7 +29441,7 @@ GameObject:
   - component: {fileID: 63}
   m_Layer: 0
   m_Name: arbre8
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30581,7 +30581,7 @@ GameObject:
   - component: {fileID: 49}
   m_Layer: 0
   m_Name: arbre6
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35970,7 +35970,7 @@ GameObject:
   - component: {fileID: 196}
   m_Layer: 0
   m_Name: fleur
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40681,7 +40681,7 @@ GameObject:
   - component: {fileID: 200}
   m_Layer: 0
   m_Name: sapin
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40891,7 +40891,7 @@ GameObject:
   - component: {fileID: 59}
   m_Layer: 0
   m_Name: arbre9
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44453,7 +44453,7 @@ PrefabInstance:
     - target: {fileID: 8835582639856596533, guid: 74b5c6b26f0fc4028b9aac1a7a36767d,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
@@ -44748,7 +44748,7 @@ GameObject:
   - component: {fileID: 195}
   m_Layer: 0
   m_Name: champignon
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47019,11 +47019,11 @@ GameObject:
   - component: {fileID: 1681146272}
   m_Layer: 0
   m_Name: dechet1 (3)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1681146287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47722,7 +47722,7 @@ PrefabInstance:
     - target: {fileID: 8835582639856596533, guid: 74b5c6b26f0fc4028b9aac1a7a36767d,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
@@ -47942,7 +47942,7 @@ GameObject:
   - component: {fileID: 60}
   m_Layer: 0
   m_Name: arbre7
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48088,7 +48088,7 @@ GameObject:
   - component: {fileID: 52}
   m_Layer: 0
   m_Name: sapin2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49438,11 +49438,11 @@ GameObject:
   - component: {fileID: 1760286385}
   m_Layer: 0
   m_Name: dechet1 (5)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!33 &1782389618
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -49762,7 +49762,7 @@ GameObject:
   - component: {fileID: 199}
   m_Layer: 0
   m_Name: tronc
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55714,7 +55714,7 @@ PrefabInstance:
     - target: {fileID: 8835582639856596533, guid: 74b5c6b26f0fc4028b9aac1a7a36767d,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: NPC
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74b5c6b26f0fc4028b9aac1a7a36767d, type: 3}
@@ -56623,7 +56623,7 @@ GameObject:
   - component: {fileID: 198}
   m_Layer: 0
   m_Name: rocher
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59054,7 +59054,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805154575955454233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -1.55, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -60628,11 +60628,11 @@ GameObject:
   - component: {fileID: 1363253031}
   m_Layer: 0
   m_Name: dechet1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &669229245627421376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82242,7 +82242,7 @@ GameObject:
   - component: {fileID: 48}
   m_Layer: 0
   m_Name: arbre6
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83601,7 +83601,7 @@ GameObject:
   - component: {fileID: 62}
   m_Layer: 0
   m_Name: arbre9
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85260,7 +85260,7 @@ GameObject:
   - component: {fileID: 61}
   m_Layer: 0
   m_Name: sapin2 (2)
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88987,7 +88987,7 @@ GameObject:
   - component: {fileID: 55}
   m_Layer: 0
   m_Name: sapin
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89075,7 +89075,7 @@ GameObject:
   - component: {fileID: 50}
   m_Layer: 0
   m_Name: sapin
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89441,7 +89441,7 @@ GameObject:
   - component: {fileID: 51}
   m_Layer: 0
   m_Name: sapin
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92338,7 +92338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7911917492576356858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19, y: -3.55, z: 0}
+  m_LocalPosition: {x: -0.19, y: 0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100478,7 +100478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4789172946000413360}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2023, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.2619028, y: 2.2619028, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -102787,7 +102787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 202635410406119763}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.03, y: -0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -107900,7 +107900,7 @@ GameObject:
   - component: {fileID: 185929424}
   m_Layer: 0
   m_Name: NPC (old)
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110557,7 +110557,7 @@ GameObject:
   - component: {fileID: 1813112990}
   m_Layer: 0
   m_Name: DonneurRando (old)
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

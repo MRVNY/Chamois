@@ -90,10 +90,19 @@ public class Init : MonoBehaviour
         }
         
         npcManager.loadConvo();
-        papa.gameObject.SetActive(true);
-        GOPointer.UIManager.GetComponent<UIManager>().Start();
-        papa.Start();
-        papa.onclick();
+
+        if(!PlayerPrefs.HasKey("Chasseur"))
+        {
+            papa.gameObject.SetActive(true);
+            GOPointer.UIManager.GetComponent<UIManager>().Start();
+            papa.Start();
+            papa.onclick();    
+        }
+        else
+        {
+            PauseMenu.instance.Resume();
+        }
+        
     }
 
 }

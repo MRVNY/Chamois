@@ -16,6 +16,7 @@ TagManager:
   - BlockView
   - Detector
   - Terrain
+  - NPC
   layers:
   - Default
   - TransparentFX
