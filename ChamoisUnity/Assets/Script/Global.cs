@@ -52,15 +52,8 @@ public static class Global
 
     public static string Personnage
     {
-        set
-        {
-            personnageJoue = value;
-        }
-
-        get
-        {
-            return personnageJoue;
-        }
+        set => personnageJoue = value;
+        get => personnageJoue;
     }
 
 }

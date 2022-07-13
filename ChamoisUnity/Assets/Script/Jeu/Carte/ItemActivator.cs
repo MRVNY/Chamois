@@ -16,18 +16,8 @@ public class ItemActivator : MonoBehaviour
 
    void Start()
    {
-      if (Global.Personnage == "Chamois")
-      {
-         _player = GOPointer.PlayerChamois;
-      }
-      else if (Global.Personnage == "Chasseur")
-      {
-         _player = GOPointer.PlayerChasseur; 
-      }
-      else
-      {
-         _player = GOPointer.PlayerRandonneur; 
-      }
+      _player = GOPointer.currentPlayer;
+      
       ActivatorItems = new List<ActivatorItem>();
 
       StartCoroutine("CheckActivation");

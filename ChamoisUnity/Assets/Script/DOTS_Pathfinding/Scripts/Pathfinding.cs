@@ -14,6 +14,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using Unity.Mathematics;
 using Unity.Collections;
@@ -23,7 +24,7 @@ using Unity.Burst;
 public class Pathfinding : MonoBehaviour {
 
     private const int MOVE_STRAIGHT_COST = 10;
-    private const int MOVE_DIAGONAL_COST = 14;
+    private const int MOVE_DIAGONAL_COST = 15;
 
     private static int2 gridSize = new int2(300, 300);
     private PathNode[] PNArray = new PathNode[gridSize.x*gridSize.y];
@@ -88,7 +89,7 @@ public class Pathfinding : MonoBehaviour {
     //     print(s);
     }
 
-    public List<Vector3> FindPath(Vector3 startWorldPosition, Vector3 endWorldPosition)
+    public async Task<List<Vector3>> FindPath(Vector3 startWorldPosition, Vector3 endWorldPosition)
     {
         NativeList<Vector3> path = new NativeList<Vector3>(Allocator.TempJob);
         NativeArray<PathNode> pathNodeNativeArray = new NativeArray<PathNode>(PNArray, Allocator.TempJob);
@@ -181,7 +182,7 @@ public class Pathfinding : MonoBehaviour {
             
             int cpt = 0;
             
-            while (openList.Length > 0 && cpt<700)
+            while (openList.Length > 0 && cpt<1000)
             {
                 cpt++;
                 int currentNodeIndex = GetLowestCostFNodeIndex(openList, pathNodeArray);

@@ -2,7 +2,7 @@
     "GuideRando" : {
         
         "init" : {
-            "text" : "Salut ! Bienvenu au Massif des Bauges, je suis une guide qui te recommande les randonnées selon ton niveau."
+            "text" : "Salut ! Bienvenu au Massif des Bauges, je suis une guide qui te recommande les randonnées selon ton niveau.",
             "choices" : {
                 "init.1" : "C'est quoi mon niveau actuel ?",
                 "init.2" : "Mais tu peux pas me guider ?",

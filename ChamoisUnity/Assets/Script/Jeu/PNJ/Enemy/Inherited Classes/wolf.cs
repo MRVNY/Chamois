@@ -20,6 +20,9 @@ public class wolf : ia_aggro
     protected Animator animator;
     protected Vector3 distToBottom;
 
+    protected int timeout = 0;
+    protected Vector3 lastPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,23 +30,7 @@ public class wolf : ia_aggro
         myRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        switch (Global.Personnage)
-        {
-            case "Chasseur":
-                target = GOPointer.PlayerChasseur.transform;
-                break;
-        
-            case "Randonneur":
-                target = GOPointer.PlayerRandonneur.transform;
-                break;
-        
-            case "Chamois":
-                target = GOPointer.PlayerChamois.transform;
-                break;
-            
-            default:
-                break;
-        }
+        target = GOPointer.currentPlayer.transform;
 
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         if(sprite != null)
@@ -55,25 +42,24 @@ public class wolf : ia_aggro
         {
             distToBottom = Vector3.zero;
         }
-
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Global.Personnage == "Chamois")
+        if ((target.position - transform.position).magnitude < 100)
         {
-            CheckDistanceAttaque();
+            switch (Global.Personnage)
+            {
+                case "Chamois":
+                    CheckDistanceAttaque();
+                    break;
+                case "Chasseur":
+                case "Randonneur":
+                    CheckDistanceFuite();
+                    break;
+            }
         }
-        if (Global.Personnage == "Chasseur")
-        {
-            CheckDistanceFuite();
-        }
-        if (Global.Personnage == "Randonneur")
-        {
-            CheckDistanceFuite();
-        }
-        
     }
 
     /// <summary>

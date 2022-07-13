@@ -121,6 +121,8 @@ public class GOPointer : MonoBehaviour
     public static TextMeshProUGUI DechetsTexte;
     public static TextMeshProUGUI MunitionsTexte;
 
+    public static GameObject currentPlayer;
+
     // private void Awake()
     // {
     //     Link();
@@ -182,6 +184,18 @@ public class GOPointer : MonoBehaviour
         
         DechetsTexte = _DechetsTexte;
         MunitionsTexte = _MunitionsTexte;
+        
+        switch(Global.Personnage){
+            case "Chamois":
+                currentPlayer = PlayerChamois;
+                break;
+            case "Chasseur":
+                currentPlayer = PlayerChasseur;
+                break;
+            case "Randonneur":
+                currentPlayer = PlayerRandonneur;
+                break;
+        }
     }
 
 }
