@@ -31,13 +31,12 @@ namespace RPGM.Events
 
         public ShowConversation(){
             dataStorer = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
+            nextButton = GOPointer.VisualNovel.GetComponent<Button>();
+            nextButtonImage = GOPointer.VisualNovel.GetComponent<Image>();
         }
 
         public override void Execute()
         {
-            nextButton = GOPointer.VisualNovel.GetComponent<Button>();
-            nextButtonImage = GOPointer.VisualNovel.GetComponent<Image>();
-
             ConversationPiece ci;
             //default to first conversation item if no key is specified, else find the right conversation item.
             if (string.IsNullOrEmpty(conversationItemKey))
@@ -72,7 +71,7 @@ namespace RPGM.Events
             /// <summary>
             /// Voir le script ConversationPiece, et l'utilisation de hint
             /// </summary>
-            if (ci.hint!=null && ci.hint != "")
+            if (!string.IsNullOrEmpty(ci.hint))
             {
                 if(Global.Personnage == "Chasseur")
                 {
@@ -148,6 +147,7 @@ namespace RPGM.Events
             else
             {
                 dialog.dialogLayout.fullScreenButton.Nullify();
+                dialog.dialogLayout.fullScreenButton.gameObject.SetActive(false);
                 for (int i = 0; i < ci.options.Count; i++)
                 {
                     //dialog.SetButton(i, ci.options[i].text);

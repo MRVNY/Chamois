@@ -5,7 +5,12 @@ using UnityEngine;
 
 public class Area : MonoBehaviour
 {
-    public TexturePercentage texture;
+    private FogOfWar texture;
+
+    void Start()
+    {
+        texture = GOPointer.FogOfWarCanvas.GetComponentInChildren<FogOfWar>();
+    }
     private void OnTriggerExit2D(Collider2D col)
     {
         if (col.CompareTag("Player") && Global.Personnage == "Randonneur")

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StockOptions : MonoBehaviour
@@ -58,5 +59,9 @@ public class StockOptions : MonoBehaviour
     public void clearSave()
     {
         SaveLoad.DeleteAllSaveFiles();
+        
+        PlayerPrefs.DeleteAll();
+
+        SceneManager.LoadScene("Menu");
     }
 }

@@ -81,6 +81,21 @@ namespace RPGM.Gameplay
                 ev.conversationItemKey = firstNode;
             }
         }
+        
+        public void onclick(string node)
+        {
+            var c = GetConversation();
+            if (c!=null && c.isInIndex(node))
+            {
+                SpriteRenderer myImage = gameObject.GetComponent<SpriteRenderer>();
+                GOPointer.UIManager.GetComponent<UIManager>().startVisualNovel(myImage);
+                var ev = Schedule.Add<Events.ShowConversation>();
+                ev.conversation = c;
+                ev.npc = this;
+                ev.gameObject = gameObject;
+                ev.conversationItemKey = node;
+            }
+        }
 
         /// <summary>
         /// Pas encore d'utilisation de quete, par defaut retourne le premier element de la liste de dialogues

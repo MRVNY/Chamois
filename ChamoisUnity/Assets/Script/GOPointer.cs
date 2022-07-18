@@ -122,11 +122,14 @@ public class GOPointer : MonoBehaviour
     public static TextMeshProUGUI MunitionsTexte;
 
     public static GameObject currentPlayer;
+    public static Encyclopedie currentEncy;
+    public static GameObject currentMap;
 
-    // private void Awake()
-    // {
-    //     Link();
-    // }
+    private void Awake()
+    {
+        // Link();
+        //DontDestroyOnLoad(this);
+    }
 
     public void Link(){
         PlayerChamois = _PlayerChamois;
@@ -188,12 +191,19 @@ public class GOPointer : MonoBehaviour
         switch(Global.Personnage){
             case "Chamois":
                 currentPlayer = PlayerChamois;
+                currentEncy = EncyclopedieManager.GetComponent<EncycloContentChamois>();
+                currentMap = OptimisationWorldChamois;
                 break;
+            
             case "Chasseur":
                 currentPlayer = PlayerChasseur;
+                currentEncy = EncyclopedieManager.GetComponent<EncycloContentChasseur>();
+                currentMap = OptimisationWorldChasseur;
                 break;
             case "Randonneur":
                 currentPlayer = PlayerRandonneur;
+                currentEncy = EncyclopedieManager.GetComponent<EncycloContentRandonneur>();
+                currentMap = OptimisationWorldRandonneur;
                 break;
         }
     }

@@ -25,17 +25,24 @@ public class Menu : MonoBehaviour
 
     private void Awake()
     {
-        SaveLoad.LoadState();
+        // SaveLoad.LoadState();
+        // ChapitreChamois = GOPointer.ChapitreChamois;
+        // ChapitreChasseur = GOPointer.ChapitreChasseur;
+        // ChapitreRandonneur = GOPointer.ChapitreRandonneur;
+        // interactiveButtons = GOPointer.interactiveButtons;
+        //
+        // pause = GetComponent<PauseMenu>();
+    }
+
+    private void Start()
+    {
         ChapitreChamois = GOPointer.ChapitreChamois;
         ChapitreChasseur = GOPointer.ChapitreChasseur;
         ChapitreRandonneur = GOPointer.ChapitreRandonneur;
         interactiveButtons = GOPointer.interactiveButtons;
         
         pause = GetComponent<PauseMenu>();
-    }
-
-    private void Start()
-    {
+        
         notifier = GOPointer.GameControl.GetComponent<Notifier>();
         Deactivate();
         pause.Resume();

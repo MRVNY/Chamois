@@ -35,7 +35,7 @@ public class Pathfinding : MonoBehaviour {
     
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        //DontDestroyOnLoad(this.gameObject);
         
         string[][] walkables = new string[gridSize.y][];
         string[] lines = csvPath.text.Split('\n');

@@ -6,36 +6,64 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class TexturePercentage : MonoBehaviour
+public class FogOfWar : MonoBehaviour
 {
+    //public AssetReference asset;
     public TextMeshProUGUI text;
-    public RenderTexture rdTex;
+    
+    public RawImage rawShow;
+    public RawImage rawCount;
+
+    public Camera camShow;
+    public Camera camCount;
+    
     private int prc;
 
     public GameObject area;
-    private Dictionary<RectTransform,int> rectsPrc = new Dictionary<RectTransform, int>();
+    public Dictionary<RectTransform,int> rectsPrc = new Dictionary<RectTransform, int>();
 
+    public static FogOfWar Instance;
+    
+    private RectTransform[] rects;
+    
     private void Awake()
     {
-        RectTransform[] rects = area.GetComponentsInChildren<RectTransform>();
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+    }
+
+    private void Start()
+    {
+        
+        rects = area.GetComponentsInChildren<RectTransform>();
         foreach (var rect in rects)
         {
             rectsPrc.Add(rect,0);
         }
+        
+        rawShow.enabled = true;
+        rawCount.enabled = true;
+        
+        foreach (var sprite in GOPointer.PlayerRandonneur.GetComponentsInChildren<SpriteRenderer>())
+        {
+            sprite.enabled = true;
+        }
+
+        calculateAll();
     }
 
-    Texture2D createTex(RectTransform rt)
+    public Texture2D createTex(RectTransform rt)
     {
         
         Vector2 pos = rt.position;
         
-        Texture2D tex = new Texture2D(rdTex.width/6, rdTex.height/6, TextureFormat.RGB24, false);
-        //Texture2D tex = new Texture2D(rdTex.width, rdTex.height, TextureFormat.RGB24, false);
+        Texture2D tex = new Texture2D(rawCount.texture.width/6, rawCount.texture.height/6, TextureFormat.RGBA4444, false);
         
-        RenderTexture.active = rdTex;
+        RenderTexture.active = rawCount.texture as RenderTexture;
         
-        tex.ReadPixels(new Rect(pos.x*rdTex.width/600,(600+pos.y-100)*rdTex.height/600,rdTex.width/6,rdTex.height/6), 0, 0);
-        //tex.ReadPixels(new Rect(0,0,rdTex.width,rdTex.height), 0, 0);
+        tex.ReadPixels(new Rect(pos.x*rawCount.texture.width/600,(600+pos.y-100)*rawCount.texture.height/600,rawCount.texture.width/6,rawCount.texture.height/6), 0, 0);
         
         tex.Apply();
         return tex;
@@ -78,5 +106,17 @@ public class TexturePercentage : MonoBehaviour
     public void rafraichir(RectTransform rt)
     {
         StartCoroutine(percentage(rt));
+    }
+
+    public void calculateAll()
+    {
+        if (rects != null)
+        {
+            foreach (var rect in rects)
+            {
+                rafraichir(rect);
+            }
+        }
+        
     }
 }

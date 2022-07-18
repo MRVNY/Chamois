@@ -130,8 +130,7 @@ public class Encyclopedie : MonoBehaviour
 
             if (liste[liste.Count - 1].getPoidsActuel() <= liste[liste.Count - 1].getPoidsMax())
                 liste[liste.Count - 1].Add(dico[action]);
-                
-
+            
             else
             {
                 page.Add(dico[action]);

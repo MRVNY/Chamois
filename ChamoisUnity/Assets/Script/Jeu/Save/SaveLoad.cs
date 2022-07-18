@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using UnityEditor;
+using UnityEngine.UI;
 
 public static class SaveLoad
 {
@@ -70,6 +73,7 @@ public static class SaveLoad
 
     public static void SaveState()
     {
+        //pos
         List<float> posChamois = new List<float>();
         List<float> posChasseur = new List<float>();
         List<float> posRandonneur = new List<float>();
@@ -91,10 +95,25 @@ public static class SaveLoad
         Save<List<float>>(posRandonneur, "posRandonneur");
         
         PlayerPrefs.SetInt(Global.Personnage,1);
+        
+        //fog
+        RenderTexture rtShow = FogOfWar.Instance.rawShow.texture as RenderTexture;
+        RenderTexture rtCount = FogOfWar.Instance.rawCount.texture as RenderTexture;
+        
+        Texture2D t2Show = toTexture2D(rtShow);
+        Texture2D t2Count = toTexture2D(rtCount);
+        
+        byte[] bytesShow = t2Show.EncodeToPNG();
+        byte[] bytesCount = t2Count.EncodeToPNG();
+        
+        Save<byte[]>(bytesShow, "FogShow");
+        Save<byte[]>(bytesCount, "FogCount");
+
     }
 
     public static void LoadState()
     {
+        //pos
         List<float> posChamois = Load<List<float>>("posChamois");
         List<float> posChasseur = Load<List<float>>("posChasseur");
         List<float> posRandonneur = Load<List<float>>("posRandonneur");
@@ -102,5 +121,48 @@ public static class SaveLoad
         if(posChamois!=null) GOPointer.PlayerChamois.transform.position = new Vector3(posChamois[0], posChamois[1], 0);
         if(posChasseur!=null) GOPointer.PlayerChasseur.transform.position = new Vector3(posChasseur[0], posChasseur[1], 0);
         if(posRandonneur!=null) GOPointer.PlayerRandonneur.transform.position = new Vector3(posRandonneur[0], posRandonneur[1], 0);
+        
+        //fog
+        Texture tShow = FogOfWar.Instance.rawShow.texture; //GOPointer.FogOfWarCanvas.transform.Find("RawShow").GetComponent<RawImage>().texture;
+        Texture tCount = FogOfWar.Instance.rawCount.texture; //GOPointer.FogOfWarCanvas.transform.Find("RawCount").GetComponent<RawImage>().texture;
+        
+        byte[] bytesShow = Load<byte[]>("FogShow");
+        byte[] bytesCount = Load<byte[]>("FogCount");
+        
+        if (bytesShow!=null && bytesCount!=null && tShow!=null && tCount!=null)
+        {
+            Texture2D t2Show = new Texture2D(tShow.width, tShow.height, TextureFormat.RGBA4444, false);
+            Texture2D t2Count = new Texture2D(tCount.width, tCount.height, TextureFormat.RGBA4444, false);
+
+            t2Show.LoadImage(bytesShow);
+            t2Count.LoadImage(bytesCount);
+            
+            RenderTexture rtShow = new RenderTexture(t2Show.width, t2Show.height, 0);
+            RenderTexture rtCount = new RenderTexture(t2Count.width, t2Count.height, 0);
+            
+            RenderTexture.active = rtShow;
+            Graphics.Blit(t2Show, rtShow);
+            FogOfWar.Instance.rawShow.texture = rtShow;
+            FogOfWar.Instance.camShow.targetTexture = rtShow;
+            
+            RenderTexture.active = rtCount;
+            Graphics.Blit(t2Count, rtCount);
+            FogOfWar.Instance.rawCount.texture = rtCount;
+            FogOfWar.Instance.camCount.targetTexture = rtCount;
+        }
+
+        FogOfWar.Instance.calculateAll();
+
+    }
+
+    static Texture2D toTexture2D(RenderTexture texture)
+    {
+        Texture2D texture2D = new Texture2D(texture.width, texture.height, TextureFormat.RGBA4444, false);
+        RenderTexture.active = texture;
+
+        texture2D.ReadPixels(new Rect(0, 0, texture.width, texture.height), 0, 0);
+        texture2D.Apply();
+
+        return texture2D;
     }
 }

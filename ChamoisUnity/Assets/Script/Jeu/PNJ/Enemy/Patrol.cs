@@ -173,7 +173,6 @@ public class Patrol : wolf
                 
                 if (timeout > 100)
                 {
-                    print(name +" freeze");
                     timeout = 0;
                     ChangeGoal();
                 }
@@ -227,10 +226,6 @@ public class Patrol : wolf
             nouveau = Random.Range(0, patrolPoints.Length);
         }
         
-        if (name == "loup0")
-        {
-            print("p" + nouveau);
-        }
         currentPoint = nouveau;
         currentGoal = patrolPoints[nouveau];
         

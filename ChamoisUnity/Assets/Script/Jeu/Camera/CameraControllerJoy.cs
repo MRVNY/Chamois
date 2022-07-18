@@ -51,12 +51,10 @@
         //     //offset = focus.position - transform.position;
         // }
 
-        void Start()
+        public void ManualStart()
         {
-            if(Global.Personnage=="Chamois") focus = GOPointer.PlayerChamois.transform;
-            else if(Global.Personnage=="Chasseur") focus = GOPointer.PlayerChasseur.transform;
-            else if(Global.Personnage=="Randonneur") focus = GOPointer.PlayerRandonneur.transform;
-            
+            //SaveLoad.LoadState();
+            focus = GOPointer.currentPlayer.transform;
             transform.position = new Vector3(focus.position.x, focus.position.y, -10);
             offset = focus.position - transform.position;
             
@@ -68,8 +66,8 @@
             minY = GameObject.Find("BotRight").GetComponent<Transform>().position.y;
             maxY = GameObject.Find("TopLeft").GetComponent<Transform>().position.y;*/
 
-    // mise en place de la fonction dans le gameEvent
-    GameEvents.SwitchCamera += SwitchC;
+            // mise en place de la fonction dans le gameEvent
+            //GameEvents.SwitchCamera += SwitchC;
 
             //minBounds = boundBox.bounds.min;
             //maxBounds = boundBox.bounds.max;
@@ -82,6 +80,10 @@
         */
         void LateUpdate()
         {
+            if (focus == null)
+            {
+                ManualStart();
+            }
             if (focus.position != transform.position)
             {
                 position = focus.position - offset;
