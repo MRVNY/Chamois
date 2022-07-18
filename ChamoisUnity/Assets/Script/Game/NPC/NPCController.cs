@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using RPGM.Core;
 using RPGM.Gameplay;
 using UnityEngine;
@@ -84,6 +85,7 @@ namespace RPGM.Gameplay
         
         public void onclick(string node)
         {
+            firstNode = node;
             var c = GetConversation();
             if (c!=null && c.isInIndex(node))
             {

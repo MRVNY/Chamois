@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 /// <summary>
@@ -24,8 +25,10 @@ public class wolf : ia_aggro
     protected Vector3 lastPosition;
 
     // Start is called before the first frame update
-    void Start()
+    async void Start()
     {
+        if (Init.loading!=null) await Init.loading;
+
         currentState = EnemyState.idle;
         myRigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

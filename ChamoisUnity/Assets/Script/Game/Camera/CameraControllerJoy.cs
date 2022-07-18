@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 
 
     /// <summary>
@@ -51,9 +52,10 @@
         //     //offset = focus.position - transform.position;
         // }
 
-        public void ManualStart()
+        public async void ManualStart()
         {
             //SaveLoad.LoadState();
+            if(Init.loading!=null) await Init.loading;
             focus = GOPointer.currentPlayer.transform;
             transform.position = new Vector3(focus.position.x, focus.position.y, -10);
             offset = focus.position - transform.position;

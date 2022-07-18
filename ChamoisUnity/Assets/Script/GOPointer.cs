@@ -127,7 +127,7 @@ public class GOPointer : MonoBehaviour
 
     private void Awake()
     {
-        // Link();
+        Link();
         //DontDestroyOnLoad(this);
     }
 

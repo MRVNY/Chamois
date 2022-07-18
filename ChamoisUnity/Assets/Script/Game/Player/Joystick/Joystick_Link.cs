@@ -9,8 +9,9 @@ public class Joystick_Link : MonoBehaviour
 
     protected Joystick joystick;
     // Start is called before the first frame update
-    void Start()
+    async void Start()
     {
+        if (Init.loading!=null) await Init.loading;
         joystick = GOPointer.JoystickCanvas.GetComponentInChildren<Joystick>();
         GameEvents.Pause += Pause;
     }

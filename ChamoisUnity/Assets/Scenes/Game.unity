@@ -6167,12 +6167,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 107516412}
-  - component: {fileID: 107516413}
-  - component: {fileID: 107516414}
-  - component: {fileID: 107516415}
-  - component: {fileID: 107516416}
-  - component: {fileID: 107516417}
-  - component: {fileID: 107516418}
   - component: {fileID: 107516419}
   m_Layer: 0
   m_Name: NPCManager
@@ -6206,236 +6200,6 @@ Transform:
   m_Father: {fileID: 30630497}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &107516413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107516411}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecee2349fa2c4bd48a09c43d36d3bbcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  donneurDeQuete: {fileID: 971224754}
-  gardeForestier: {fileID: 898716690}
-  randonneur: {fileID: 1188147826}
-  photographe: {fileID: 986177103}
-  jsonFile: {fileID: 4900000, guid: 605025cafa0c88c4389697e924d813ca, type: 3}
-  jsonFileEncy: {fileID: 4900000, guid: 610f5568a47b882488a54cdfdc7519bc, type: 3}
-  data: []
-  data2: []
-  info:
-    hint: 
-    texte: 
-    taille: 
---- !u!114 &107516414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107516411}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cae30823fb23d545b77fe1ac5187ec8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  caisseMun: {fileID: 8769107400158360711}
-  modePewpew: {fileID: 7617605467517710308}
-  jsonFile: {fileID: 4900000, guid: 605025cafa0c88c4389697e924d813ca, type: 3}
-  data: []
-  info:
-    hint: 
-    texte: 
-    taille: 
---- !u!114 &107516415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107516411}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1127bf47819a03044a97bbe777684ca4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  donneurDeRando: {fileID: 8835582641401192110}
-  startRando1: {fileID: 1929188043}
-  suiteRando1: {fileID: 2028837531}
-  endRando1: {fileID: 991815664}
-  startRando2: {fileID: 51054758}
-  endRando2: {fileID: 1862155666}
-  startRando3: {fileID: 1285342530}
-  endRando3: {fileID: 1040540347}
-  startRando4: {fileID: 1494343217}
-  endRando4: {fileID: 879131312}
-  startRando5: {fileID: 728025285}
-  endRando5: {fileID: 241232002}
-  donneurInfos1: {fileID: 2118841898}
-  donneurInfos2: {fileID: 351999931}
-  donneurInfos3: {fileID: 736251112}
-  donneurInfos4: {fileID: 2086236671}
-  donneurInfos5: {fileID: 23906221}
-  donneurInfos6: {fileID: 1651125681909707159}
-  donneurInfos7: {fileID: 1286924246}
-  donneurInfos8: {fileID: 664585568}
-  donneurInfos9: {fileID: 526796875}
-  donneurInfos10: {fileID: 308681404}
-  donneurInfos11: {fileID: 834733654}
-  donneurInfos12: {fileID: 1388295754}
-  pnjTest: {fileID: 8835582639950794499}
-  jsonFile: {fileID: 4900000, guid: d53c1abe0526b024c81a1fdabd0e78c5, type: 3}
-  jsonFileEncy: {fileID: 4900000, guid: 458a351c0b8aa3b4d995a0b472039541, type: 3}
-  data: []
-  data2: []
-  info:
-    hint: 
-    texte: 
-    taille: 
---- !u!114 &107516416
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107516411}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44caae38e060f7043a8f6dc923594d73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infosDeplacementRandonneur: {fileID: 1299893531}
-  infosBrucellose: {fileID: 587664025}
-  infosVitesseSentiers: {fileID: 1047392143}
-  infosChallengeChamois: {fileID: 1651125681909707146}
-  infosBarriereComportementale: {fileID: 549744539}
-  infosAlimentationEspeces: {fileID: 1074658957}
-  infosPlantesBuffet: {fileID: 821900497}
-  infosVigilance: {fileID: 1137463932}
-  infosDeplacements: {fileID: 1651125681909707145}
-  infosGestationChamois: {fileID: 1425373559}
-  infosVitesseCourse: {fileID: 2097687992}
-  infosDureeVie: {fileID: 1449289577}
-  jsonFile: {fileID: 4900000, guid: 863d3a0b7c296ac4dbd694ddafb53b1c, type: 3}
-  jsonFileEncy: {fileID: 4900000, guid: f4a0d2402568b0840ad665bfd22881cc, type: 3}
-  data: []
-  data2: []
---- !u!114 &107516417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107516411}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51628348863512b49a0c3ac7de6c2481, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  infosLoupRegulation: {fileID: 2118841898}
-  infosUtiliteChasse: {fileID: 351999931}
-  infosChasseurTelemetre: {fileID: 736251112}
-  infosFaunePresente: {fileID: 2086236671}
-  infosPoidsChamois: {fileID: 23906221}
-  infosSociabiliteChamois: {fileID: 1651125681909707159}
-  infosRegimeChamois: {fileID: 1286924246}
-  infosHabitatChamois: {fileID: 664585568}
-  infosRegulationChasseChamois: {fileID: 526796875}
-  infoPoidsChevreuil: {fileID: 308681404}
-  infoPredateursPresents: {fileID: 834733654}
-  infoPeriodeChasse: {fileID: 1388295754}
-  jsonFile: {fileID: 4900000, guid: b7f734bc40f87254eb6a1c3645356b0e, type: 3}
-  jsonFileEncy: {fileID: 4900000, guid: 610f5568a47b882488a54cdfdc7519bc, type: 3}
-  data: []
-  data2: []
-  info:
-    hint: 
-    texte: 
-    taille: 
---- !u!114 &107516418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107516411}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80a2da8c401996847880357ee0459aa4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  donneurDeRando2: {fileID: 1651125681909707158}
-  rnd: 0
-  randoEnCours: 0
-  tpsRando: 0
-  meilleureRando: 0
-  textRando: {fileID: 1808854785}
-  startEpion: {fileID: 8835582640032245426}
-  suiteEpion: {fileID: 8835582640402152067}
-  endEpion: {fileID: 8835582641336456567}
-  startEndBatterie: {fileID: 8835582641254361866}
-  suiteBatterie: {fileID: 8835582639727730573}
-  suite2Batterie: {fileID: 8835582640683552208}
-  startEndDentPortes: {fileID: 8835582641152685008}
-  suiteDentPortes: {fileID: 8835582641327046072}
-  suite2DentPortes: {fileID: 8835582639636685540}
-  startEndGrandRoc: {fileID: 8835582641331850441}
-  suiteGrandRoc: {fileID: 8835582640950609907}
-  suite2GrandRoc: {fileID: 8835582641200511169}
-  startEndPointeChaurionde: {fileID: 8835582639575521660}
-  suitePointeChaurionde: {fileID: 8835582639568701045}
-  suite2PointeChaurionde: {fileID: 8835582639566620141}
-  startMorbier: {fileID: 8835582641456151169}
-  suiteMorbier: {fileID: 8835582639842532161}
-  endMorbier: {fileID: 8835582640680009953}
-  startNivolet: {fileID: 8835582641411500490}
-  suiteNivolet: {fileID: 8835582641063942326}
-  endNivolet: {fileID: 8835582639497515345}
-  startGaloppaz: {fileID: 8835582640835014709}
-  suiteGaloppaz: {fileID: 8835582640916859137}
-  endGaloppaz: {fileID: 8835582641496652080}
-  startColombier: {fileID: 8835582640273002124}
-  suiteColombier: {fileID: 8835582641126220518}
-  endColombier: {fileID: 8835582640066708846}
-  startArcalod: {fileID: 8835582641343337847}
-  suiteArcalod: {fileID: 8835582641144863116}
-  endArcalod: {fileID: 8835582639592896830}
-  startTrelod: {fileID: 8835582639801656848}
-  suiteTrelod: {fileID: 8835582639827289267}
-  endTrelod: {fileID: 8835582641196768997}
-  epion: {fileID: 1419117332}
-  fortBatterie: {fileID: 1048002750}
-  dentPortes: {fileID: 263234718}
-  grandRoc: {fileID: 1150905101}
-  pointesChaurionde: {fileID: 1360313411}
-  morbier: {fileID: 998444130}
-  nivolet: {fileID: 780680999}
-  galoppaz: {fileID: 9476316}
-  colombier: {fileID: 427100699}
-  arcalod: {fileID: 1313848257}
-  trelod: {fileID: 1547388832}
-  actEpion: 0
-  actFortBatterie: 0
-  actDentPortes: 0
-  actGrandRoc: 0
-  actPointesChaurionde: 0
-  actMorbier: 0
-  actNivolet: 0
-  actGaloppaz: 0
-  actColombier: 0
-  actArcalod: 0
-  actTrelod: 0
-  jsonFile: {fileID: 4900000, guid: 6eedcc7c0753ace4fad1806f1a7edc57, type: 3}
-  jsonFileEncy: {fileID: 4900000, guid: 458a351c0b8aa3b4d995a0b472039541, type: 3}
-  data: []
-  data2: []
-  info:
-    hint: 
-    texte: 
-    taille: 
 --- !u!114 &107516419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6452,13 +6216,15 @@ MonoBehaviour:
   ChamoisJson: {fileID: 4900000, guid: fffb49e5a7d9b427fafd028c27f3214f, type: 3}
   ChasseurJson: {fileID: 4900000, guid: 543075b9db4ee4909a5eae335d141ad8, type: 3}
   RandoJson: {fileID: 4900000, guid: 9721e7e5441fb424db8cdc24be8954f3, type: 3}
-  GuideRando: {fileID: 1838264536}
+  randoNPCList:
+  - {fileID: 1838264536}
   ChasseurNPCList:
   - {fileID: 1567624364}
   - {fileID: 898716695}
   - {fileID: 1188147832}
   - {fileID: 986177109}
   - {fileID: 637744792}
+  chamoisNPCList: []
   ChamoisInfos: {fileID: 401169910}
   DonneursInfos: {fileID: 44755508}
 --- !u!1001 &119140788
@@ -15552,8 +15318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1435998825}
-  rdTex: {fileID: 8400000, guid: 7e52e1f7d170745d18050825c1694864, type: 2}
-  showTex: {fileID: 8400000, guid: c7a6d302297943a4bb6e85f6822e55ff, type: 2}
   rawShow: {fileID: 728386826}
   rawCount: {fileID: 545001294}
   camShow: {fileID: 1830370484}
@@ -23263,6 +23027,105 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
   m_Radius: 7.52
+--- !u!1 &840534909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 840534911}
+  - component: {fileID: 840534910}
+  - component: {fileID: 840534913}
+  - component: {fileID: 840534912}
+  m_Layer: 0
+  m_Name: Loading
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!223 &840534910
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840534909}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 1
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &840534911
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840534909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1204993999}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &840534912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840534909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &840534913
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840534909}
+  m_CullTransparentMesh: 1
 --- !u!33 &850851160
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -34721,6 +34584,141 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 100}
   m_EdgeRadius: 0
+--- !u!1 &1204993998
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1204993999}
+  - component: {fileID: 1204994001}
+  - component: {fileID: 1204994000}
+  m_Layer: 0
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1204993999
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204993998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 840534911}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.8751831, y: -0.8752136}
+  m_SizeDelta: {x: 579.5, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1204994000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204993998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Loading
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 72
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1204994001
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204993998}
+  m_CullTransparentMesh: 1
 --- !u!1 &1220965908
 GameObject:
   m_ObjectHideFlags: 0
@@ -102379,6 +102377,16 @@ PrefabInstance:
       propertyPath: guide
       value: 
       objectReference: {fileID: 1838264536}
+    - target: {fileID: 301702815391667200, guid: f09c044cc902936499d2f9f7cac37db9,
+        type: 3}
+      propertyPath: loading
+      value: 
+      objectReference: {fileID: 840534909}
+    - target: {fileID: 301702815391667200, guid: f09c044cc902936499d2f9f7cac37db9,
+        type: 3}
+      propertyPath: loadScreen
+      value: 
+      objectReference: {fileID: 840534909}
     - target: {fileID: 301702815391667200, guid: f09c044cc902936499d2f9f7cac37db9,
         type: 3}
       propertyPath: npcManager

@@ -72,8 +72,8 @@ namespace RPGM.UI
 
         public void Show(string text, List<ConversationOption> options)
         {
-            UserInterfaceAudio.OnShowDialog();
             dialogLayout.gameObject.SetActive(true);
+            UserInterfaceAudio.OnShowDialog();
             dialogLayout.SetLayout(text, options);
             //model.input.ChangeState(InputController.State.DialogControl);
             selectedButton = -1;

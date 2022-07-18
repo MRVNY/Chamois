@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine.UI;
 
@@ -71,7 +72,7 @@ public static class SaveLoad
         Directory.CreateDirectory(path); 
     }
 
-    public static void SaveState()
+    public async static Task SaveState()
     {
         //pos
         List<float> posChamois = new List<float>();
@@ -111,8 +112,13 @@ public static class SaveLoad
 
     }
 
-    public static void LoadState()
+    public static async Task LoadState()
     {
+        if (PauseMenu.saving != null)
+        {
+            await PauseMenu.saving;
+        }
+        
         //pos
         List<float> posChamois = Load<List<float>>("posChamois");
         List<float> posChasseur = Load<List<float>>("posChasseur");
@@ -152,6 +158,9 @@ public static class SaveLoad
         }
 
         FogOfWar.Instance.calculateAll();
+        
+        //NPC convo
+        
 
     }
 

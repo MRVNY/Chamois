@@ -1,4 +1,6 @@
-﻿using RPGM.Gameplay;
+﻿using System;
+using System.Threading.Tasks;
+using RPGM.Gameplay;
 using UnityEngine;
 
 
@@ -15,9 +17,12 @@ public class Init : MonoBehaviour
     public NPCController papa;
     public NPCController guide;
     public NPCController chamois;
-    
+
+    public GameObject loadScreen;
+    public static Task loading;
     void Awake()
     {
+        loadScreen.SetActive(true);
         gp.Link();
         
         GOPointer.CanvasGuideJeu.SetActive(true);
@@ -29,8 +34,15 @@ public class Init : MonoBehaviour
         
         //decor? day&night
     }
-    void Start()
+
+    private void OnEnable()
     {
+    }
+
+    async void Start()
+    {
+        loading =  SaveLoad.LoadState();
+        
         Screen.SetResolution(1280, 720, false);
         
         gameObject.GetComponent<FinPartie>().enabled = false;
@@ -75,7 +87,6 @@ public class Init : MonoBehaviour
                 break;
         }
         
-        SaveLoad.LoadState();
         GOPointer.CameraReg.GetComponentInChildren<CameraControllerJoy>().ManualStart();
         
         
@@ -110,6 +121,9 @@ public class Init : MonoBehaviour
         {
             PauseMenu.instance.Resume();
         }
+
+        if(loading!=null) await loading;
+        loadScreen.SetActive(false);
     }
 
 }

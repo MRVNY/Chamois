@@ -9,20 +9,20 @@ public class DisableIfFarAway : MonoBehaviour
     private ItemActivator _activationScript;
 
     // Start is called before the first frame update
-    void Start()
+    async void Start()
     {
         if(Global.Personnage=="Chamois") _itemActivatorObject = GOPointer.ItemActivatorObjectChamois;
         else if(Global.Personnage=="Chasseur") _itemActivatorObject = GOPointer.ItemActivatorObjectChasseur;
         else if(Global.Personnage=="Randonneur") _itemActivatorObject = GOPointer.ItemActivatorObjectRandonneur;
         _activationScript = _itemActivatorObject.GetComponent<ItemActivator>();
-
-        StartCoroutine("AddToList");
+        
+        StartCoroutine(AddToList());
     }
 
     IEnumerator AddToList()
     {
+        _activationScript.ActivatorItems.Add(new ActivatorItem {Item = gameObject, ItemPos = transform.position + new Vector3(50,-50,0)});
         yield return new WaitForSeconds(0.1f);
-        
-        _activationScript.ActivatorItems.Add(new ActivatorItem {Item = this.gameObject, ItemPos = transform.position + new Vector3(50,-50,0)});
     }
+    
 }

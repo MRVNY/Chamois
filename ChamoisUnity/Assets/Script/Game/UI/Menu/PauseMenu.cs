@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 //using System.Windows.Forms;
@@ -18,6 +19,8 @@ public class PauseMenu : MonoBehaviour
     private bool notifActive;
     public static PauseMenu instance;
 
+    public static Task saving;
+
     private void Awake()
     {
         instance = this;
@@ -25,7 +28,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        SaveLoad.SaveState();
+        saving = SaveLoad.SaveState();
         Time.timeScale = 0;
         Global.pause = true;
         

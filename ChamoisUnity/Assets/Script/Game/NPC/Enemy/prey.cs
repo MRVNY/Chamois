@@ -16,8 +16,9 @@ public class prey : ia_aggro
     private Animator animator;
 
     // Start is called before the first frame update
-    void Start()
+    async void Start()
     {
+        if (Init.loading!=null) await Init.loading;
         currentState = EnemyState.idle;
         myRigidbody = GetComponent<Rigidbody2D>();
         //animator = GetComponent<Animator>();

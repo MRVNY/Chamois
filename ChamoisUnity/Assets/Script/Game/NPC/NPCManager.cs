@@ -5,6 +5,7 @@ using RPGM.Gameplay;
 using UnityEngine;
 using Newtonsoft.Json.Linq;
 using System.Linq;
+using System.Threading.Tasks;
 
 public class NPCManager : MonoBehaviour
 {
@@ -29,17 +30,20 @@ public class NPCManager : MonoBehaviour
 
     //NPC
     //Rando
-    public NPCController GuideRando;
+    public NPCController[] randoNPCList;
 
     //Chasseur
     public NPCController[] ChasseurNPCList;
-    private string[] npcHint = new[] { "debutQuete", "suiteForestier", "suiteRandonneur", "suitePhotographe" };
+    private string[] npcHint = { "debutQuete", "suiteForestier", "suiteRandonneur", "suitePhotographe" };
 
     //Chamois
+    public NPCController[] chamoisNPCList;
     public GameObject ChamoisInfos;
     
     //Communs
     public GameObject DonneursInfos;
+    
+    [NonSerialized] public NPCController[] currentNPCList;
     
     //Donneurs
     private NPCController[] listDonneurs;
@@ -56,16 +60,24 @@ public class NPCManager : MonoBehaviour
     // }
 
     // Start is called before the first frame update
-    public void loadConvo()
+    public async Task loadConvo()
     {
-        GuideRando.gameObject.SetActive(false);
         ChamoisInfos.SetActive(false);
         DonneursInfos.SetActive(false);
+        
         foreach (var npc in ChasseurNPCList)
         {
             npc.gameObject.SetActive(false);
         }
-        
+        foreach (var npc in randoNPCList)
+        {
+            npc.gameObject.SetActive(false);
+        }
+        foreach (var npc in chamoisNPCList)
+        {
+            npc.gameObject.SetActive(false);
+        }
+
         dataRando = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
         dataChamois = GOPointer.PlayerChamois.GetComponent<DataStorer>();
         dataChasseur = GOPointer.PlayerChasseur.GetComponent<DataStorerChasseur>();
@@ -81,6 +93,12 @@ public class NPCManager : MonoBehaviour
             case "Chamois":
                 JPerso = JObject.Parse(ChamoisJson.text);
                 
+                foreach (var npc in chamoisNPCList)
+                {
+                    npc.gameObject.SetActive(true);
+                    npc.setConvo((JObject)JPerso[npc.name]);
+                }
+                
                 ChamoisInfos.SetActive(true);
                 listDonneurs = ChamoisInfos.GetComponentsInChildren<NPCController>();
                 break;
@@ -92,7 +110,6 @@ public class NPCManager : MonoBehaviour
                 {
                     npc.gameObject.SetActive(true);
                     npc.setConvo((JObject)JPerso[npc.name]);
-                    npc.setFirstNode("3.00");
                 }
                 
                 DonneursInfos.SetActive(true);
@@ -102,9 +119,13 @@ public class NPCManager : MonoBehaviour
             case "Randonneur":
                 JPerso = JObject.Parse(RandoJson.text);
                 
-                GuideRando.gameObject.SetActive(true);
-                GuideRando.setConvo((JObject)JPerso["GuideRando"]);
-                
+                foreach (var npc in randoNPCList)
+                {
+                    npc.gameObject.SetActive(true);
+                    npc.setConvo((JObject)JPerso[npc.name]);
+                    //npc.setFirstNode("3.00");
+                }
+
                 DonneursInfos.SetActive(true);
                 listDonneurs = DonneursInfos.GetComponentsInChildren<NPCController>();
                 break;

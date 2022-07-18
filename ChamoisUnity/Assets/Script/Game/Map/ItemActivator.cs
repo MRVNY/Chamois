@@ -12,13 +12,13 @@ public class ItemActivator : MonoBehaviour
    
    private GameObject _player;
 
-   public List<ActivatorItem> ActivatorItems;
+   public List<ActivatorItem> ActivatorItems = new List<ActivatorItem>();
 
    void Start()
    {
       _player = GOPointer.currentPlayer;
       
-      ActivatorItems = new List<ActivatorItem>();
+      //ActivatorItems = new List<ActivatorItem>();
 
       StartCoroutine("CheckActivation");
    }
