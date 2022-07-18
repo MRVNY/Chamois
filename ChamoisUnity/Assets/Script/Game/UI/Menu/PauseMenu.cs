@@ -18,9 +18,7 @@ public class PauseMenu : MonoBehaviour
     
     private bool notifActive;
     public static PauseMenu instance;
-
-    public static Task saving;
-
+    
     private void Awake()
     {
         instance = this;
@@ -28,7 +26,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        saving = SaveLoad.SaveState();
         Time.timeScale = 0;
         Global.pause = true;
         

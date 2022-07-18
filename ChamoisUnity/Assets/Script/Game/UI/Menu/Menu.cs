@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,6 +23,9 @@ public class Menu : MonoBehaviour
     private GameObject ChapitreChasseur;
     private GameObject ChapitreRandonneur;
     private GameObject interactiveButtons;
+    
+    public static Task saving;
+
 
 
     private void Start()
@@ -58,6 +62,8 @@ public class Menu : MonoBehaviour
 
     private void Activate()
     {
+        saving = SaveLoad.SaveState();
+
         resume.SetActive(true);
         menuIcon.enabled = false;
         pasueIcon.SetActive(true);
@@ -75,8 +81,10 @@ public class Menu : MonoBehaviour
 
     }
     
-    public void Deactivate()
+    public async void Deactivate()
     {
+        if(saving!=null) await saving;
+
         resume.SetActive(false);
         menuIcon.enabled = true;
         pasueIcon.SetActive(false);

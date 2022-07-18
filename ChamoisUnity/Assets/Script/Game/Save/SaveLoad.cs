@@ -125,9 +125,9 @@ public static class SaveLoad
 
     public static async Task LoadState()
     {
-        if (PauseMenu.saving != null)
+        if (Menu.saving != null)
         {
-            await PauseMenu.saving;
+            await Menu.saving;
         }
         
         //pos

@@ -25,6 +25,9 @@ public class UIManager : MonoBehaviour
         {
             //panel.anchoredPosition = new Vector2(Screen.currentResolution.width, Screen.currentResolution.height);
             panel.position = transform.position;
+            Vector2 offset = new Vector2(Screen.width, Screen.height);
+            //panel.
+
         }
         
         chamois.SetActive(Global.Personnage=="Chamois");

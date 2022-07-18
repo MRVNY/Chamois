@@ -47,7 +47,7 @@ public class Init : MonoBehaviour
         
         loading = SaveLoad.LoadState();
         
-        Screen.SetResolution(1280, 720, false);
+        //Screen.SetResolution(1280, 720, false);
         
         gameObject.GetComponent<FinPartie>().enabled = false;
 
