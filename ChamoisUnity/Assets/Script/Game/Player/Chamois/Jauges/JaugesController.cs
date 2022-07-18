@@ -16,27 +16,24 @@ public class JaugesController : MonoBehaviour
 
     protected GameObject player;
     protected GameObject guide;
-
-    void Awake()
+    
+    protected void Start()
     {
         if (Global.Personnage != "Chamois")
         {
             gameObject.SetActive(false);
         }
-
-    }
-    
-    protected void Start()
-    {
-        guide = GOPointer.CanvasGuideJeu;
-        if (Global.Personnage == "Chamois")
-        {
-            player = GOPointer.PlayerChamois;
-            GameEvents.Pause += Pause;
-            stress = gameObject.GetComponent<Stress>();
-            faim = gameObject.GetComponent<Faim>();
-            vie = gameObject.GetComponent<Vie>();
-            //experience = gameObject.GetComponent<Experience>();
+        else{
+            guide = GOPointer.CanvasGuideJeu;
+            if (Global.Personnage == "Chamois")
+            {
+                player = GOPointer.PlayerChamois;
+                GameEvents.Pause += Pause;
+                stress = gameObject.GetComponent<Stress>();
+                faim = gameObject.GetComponent<Faim>();
+                vie = gameObject.GetComponent<Vie>();
+                //experience = gameObject.GetComponent<Experience>();
+            }
         }
     }
      

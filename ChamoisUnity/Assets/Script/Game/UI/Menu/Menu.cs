@@ -23,16 +23,6 @@ public class Menu : MonoBehaviour
     private GameObject ChapitreRandonneur;
     private GameObject interactiveButtons;
 
-    private void Awake()
-    {
-        // SaveLoad.LoadState();
-        // ChapitreChamois = GOPointer.ChapitreChamois;
-        // ChapitreChasseur = GOPointer.ChapitreChasseur;
-        // ChapitreRandonneur = GOPointer.ChapitreRandonneur;
-        // interactiveButtons = GOPointer.interactiveButtons;
-        //
-        // pause = GetComponent<PauseMenu>();
-    }
 
     private void Start()
     {

@@ -45,7 +45,7 @@
             "text" : "De toute façon, tu peux toujours lire le manuel que j'ai glissé dans ta proche.\n\n\nAlors, t'es prêt pour le rando ?",
             "choices" : {
                 "2.12" : "Je veux faire un rando maintenant !",
-                "2.0" : "Je veux balader un peu d'abord !"
+                "init.-1" : "Je veux balader un peu d'abord !"
             }
         },
 
@@ -55,14 +55,19 @@
                 "init.3.1" : ""
             }
         },
+
+        "init.-1" : {
+            "hint" : "node,GuideRando,2",
+            "text" : "OK A bientôt !"
+        },
         
         
         "2" : {
-            "text": "Coucou, cher ami randonneur, je suis un guide de rando, qu'est-ce que tu veux faire aujourd'hui ?",
+            "text": "Alors, t'as assez balader ? Tu veux faire un rando ?",
             
             "choices" : {
-                "2.12" : "Je veux faire un rando !",
-                "2.0" : "Rien"
+                "2.12" : "Ouiiiii !",
+                "2.0" : "Pas encore"
             }
         },
 
@@ -129,7 +134,15 @@
         },
         "2.1.1" : {
             "hint": "randEpion",
-            "text": "Vous avez pris la randonnée : Randonnée de l'Epion\n Arrivée dans 3 points de contrôle."
+            "text": "Vous avez pris la randonnée : Randonnée de l'Epion\n Arrivée dans 3 points de contrôle.",
+            "choices" : {
+                "2.1.1.-1" : ""
+            }
+        },
+
+        "2.1.1.-1" : {
+            "hint": "node,GuideRando,hiking",
+            "text": "Bonne rando !"
         },
 
         "2.2" : {
@@ -254,6 +267,23 @@
         
         "2.0.1" : {
             "text": "Resalut, alors ça se passe bien ta rando ? \n\n\nSi t'es perdu, tu peux toujours consulter tes notes."
+        },
+
+
+        "hiking" : {
+            "text" : "Reviens quand tu as fini la randonnée",
+            "choices" : {
+                "hiking.1" : "J'ai mal au pieds",
+                "hiking.0" : "Kay kay"
+            }
+        },
+        
+        "hiking.1" : {
+            "text" : "Oops"
+        },
+        
+        "hiking.0" : {
+            "text" : "À bientôt !"
         }
     },
 

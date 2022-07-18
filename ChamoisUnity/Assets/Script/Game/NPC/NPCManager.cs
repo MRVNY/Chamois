@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 
 public class NPCManager : MonoBehaviour
 {
+    public static NPCManager Instance;
+    
     //JSON
-
     public TextAsset ENCY;
     
     public TextAsset ChamoisJson;
@@ -46,22 +47,32 @@ public class NPCManager : MonoBehaviour
     [NonSerialized] public NPCController[] currentNPCList;
     
     //Donneurs
-    private NPCController[] listDonneurs;
-
-    // private void Awake()
+    public NPCController[] listDonneurs;
+    
+    // Start is called before the first frame update
+    // private void Start()
     // {
-    //     GuideRando.gameObject.SetActive(false);
-    //     ChamoisInfos.SetActive(false);
-    //     DonneursInfos.SetActive(false);
-    //     foreach (var npc in ChasseurNPCList)
+    //     if(Instance == null)
     //     {
-    //         npc.gameObject.SetActive(false);
+    //         Instance = this;
+    //     }
+    //     else
+    //     {
+    //         Destroy(gameObject);
     //     }
     // }
 
-    // Start is called before the first frame update
     public async Task loadConvo()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
         ChamoisInfos.SetActive(false);
         DonneursInfos.SetActive(false);
         
@@ -92,43 +103,33 @@ public class NPCManager : MonoBehaviour
         {
             case "Chamois":
                 JPerso = JObject.Parse(ChamoisJson.text);
-                
-                foreach (var npc in chamoisNPCList)
-                {
-                    npc.gameObject.SetActive(true);
-                    npc.setConvo((JObject)JPerso[npc.name]);
-                }
-                
+                currentNPCList = chamoisNPCList;
+
                 ChamoisInfos.SetActive(true);
                 listDonneurs = ChamoisInfos.GetComponentsInChildren<NPCController>();
                 break;
             
             case "Chasseur":
                 JPerso = JObject.Parse(ChasseurJson.text);
-                
-                foreach (var npc in ChasseurNPCList)
-                {
-                    npc.gameObject.SetActive(true);
-                    npc.setConvo((JObject)JPerso[npc.name]);
-                }
-                
+                currentNPCList = ChasseurNPCList;
+
                 DonneursInfos.SetActive(true);
                 listDonneurs = DonneursInfos.GetComponentsInChildren<NPCController>();
                 break;
             
             case "Randonneur":
                 JPerso = JObject.Parse(RandoJson.text);
+                currentNPCList = randoNPCList;
                 
-                foreach (var npc in randoNPCList)
-                {
-                    npc.gameObject.SetActive(true);
-                    npc.setConvo((JObject)JPerso[npc.name]);
-                    //npc.setFirstNode("3.00");
-                }
-
                 DonneursInfos.SetActive(true);
                 listDonneurs = DonneursInfos.GetComponentsInChildren<NPCController>();
                 break;
+        }
+        
+        foreach (var npc in currentNPCList)
+        {
+            npc.gameObject.SetActive(true);
+            npc.setConvo((JObject)JPerso[npc.name]);
         }
         
         foreach (var don in listDonneurs)
@@ -175,5 +176,20 @@ public class NPCManager : MonoBehaviour
     {
         dataChamois.nbInfos++;
         encyChamois.addInfoToList(hint,encyChamois.pagesDynamic);
+    }
+
+    public void switchNode(string hint)
+    {
+        var tmp = hint.Split(",");
+        var npcName = tmp[1];
+        var node = tmp[2];
+
+        foreach (var npc in currentNPCList)
+        {
+            if(npc.isActiveAndEnabled && npc.name == npcName)
+            {
+                npc.setFirstNode(node);
+            }
+        }
     }
 }

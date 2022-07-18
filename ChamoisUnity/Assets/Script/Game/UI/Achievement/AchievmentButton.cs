@@ -11,7 +11,7 @@ public class AchievmentButton : MonoBehaviour
 
     private Image sprite;
 
-    void Awake()
+    void Start()
     {
         sprite = GetComponent<Image>();
     }
@@ -29,17 +29,5 @@ public class AchievmentButton : MonoBehaviour
             achievmentList.SetActive(false);
 
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

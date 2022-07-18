@@ -31,12 +31,37 @@ public class Pathfinding : MonoBehaviour {
 
     private static float cellSize = 2f;
     private static Vector3 originPosition = new Vector3(0, -600, 0);
-    public TextAsset csvPath; 
+    public TextAsset csvPath;
+
+    public Task reading;
     
     private void Awake()
     {
         //DontDestroyOnLoad(this.gameObject);
         
+        reading = readWalkables();
+        
+        //Baking
+        //     var s = "";
+        //     for (int x = 0; x < gridSize.x; x++)
+        //     {
+        //         for (int y = 0; y < gridSize.y; y++)
+        //         {
+        //             var nodePos = GetWorldPosition(x, y);
+        //             if (Physics2D.BoxCast(nodePos, Vector2.one*2, 0f, Vector2.zero, 0f, LayerMask.GetMask("Terrain")))
+        //             {
+        //                 s += "0,";
+        //             }
+        //             else s += "1,";
+        //         }
+        //         s += "\n";
+        //     }
+        //
+        //     print(s);
+    }
+    
+    async Task readWalkables()
+    {
         string[][] walkables = new string[gridSize.y][];
         string[] lines = csvPath.text.Split('\n');
         for(int i = 0; i < lines.Length; i++)
@@ -46,51 +71,34 @@ public class Pathfinding : MonoBehaviour {
 
         //int[,] walkables = Walkables.walkables;
 
-         for (int x = 0; x < gridSize.x; x++)
-         {
-             for (int y = 0; y < gridSize.y; y++)
-             {
-                 PathNode pathNode = new PathNode();
-                 pathNode.x = x;
-                 pathNode.y = y;
-                 pathNode.gCost = 99999999;
-                 pathNode.index = FindPathJob.CalculateIndex(x, y, gridSize.x);
-                 pathNode.isWalkable = walkables[x][y] == "1";
+        for (int x = 0; x < gridSize.x; x++)
+        {
+            for (int y = 0; y < gridSize.y; y++)
+            {
+                PathNode pathNode = new PathNode();
+                pathNode.x = x;
+                pathNode.y = y;
+                pathNode.gCost = 99999999;
+                pathNode.index = FindPathJob.CalculateIndex(x, y, gridSize.x);
+                pathNode.isWalkable = walkables[x][y] == "1";
                  
-                 if (walkables[x][y] != "1")
-                 {
-                     Vector3 nodePos = new Vector3(x, y, 0) * cellSize + originPosition;
-                     Debug.DrawLine(nodePos+Vector3.left, nodePos + Vector3.right, Color.red, 100f);
-                     Debug.DrawLine(nodePos + Vector3.up, nodePos + Vector3.down, Color.red, 100f);
-                 }
+                if (walkables[x][y] != "1")
+                {
+                    Vector3 nodePos = new Vector3(x, y, 0) * cellSize + originPosition;
+                    Debug.DrawLine(nodePos+Vector3.left, nodePos + Vector3.right, Color.red, 100f);
+                    Debug.DrawLine(nodePos + Vector3.up, nodePos + Vector3.down, Color.red, 100f);
+                }
          
-                 pathNode.cameFromNodeIndex = -1;
+                pathNode.cameFromNodeIndex = -1;
          
-                 PNArray[pathNode.index] = pathNode;
-             }
-         }
-
-        //Baking
-    //     var s = "";
-    //     for (int x = 0; x < gridSize.x; x++)
-    //     {
-    //         for (int y = 0; y < gridSize.y; y++)
-    //         {
-    //             var nodePos = GetWorldPosition(x, y);
-    //             if (Physics2D.BoxCast(nodePos, Vector2.one*2, 0f, Vector2.zero, 0f, LayerMask.GetMask("Terrain")))
-    //             {
-    //                 s += "0,";
-    //             }
-    //             else s += "1,";
-    //         }
-    //         s += "\n";
-    //     }
-    //
-    //     print(s);
+                PNArray[pathNode.index] = pathNode;
+            }
+        }
     }
 
     public async Task<List<Vector3>> FindPath(Vector3 startWorldPosition, Vector3 endWorldPosition)
     {
+        if(reading!=null) await reading;
         NativeList<Vector3> path = new NativeList<Vector3>(Allocator.TempJob);
         NativeArray<PathNode> pathNodeNativeArray = new NativeArray<PathNode>(PNArray, Allocator.TempJob);
 

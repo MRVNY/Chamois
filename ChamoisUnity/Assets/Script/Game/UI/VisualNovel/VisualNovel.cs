@@ -20,6 +20,9 @@ namespace RPGM.UI
         [SerializeField] private SpriteRenderer RandonneurImg;
         public Image leftImg;
         public Image rightImg;
+
+        public Button nextButton;
+        public Image nextButtonImage;
         
         private new TextMeshPro name;
         private TextMeshPro dialog;
@@ -37,6 +40,8 @@ namespace RPGM.UI
         
         void Awake()
         {
+            nextButton = GetComponent<Button>();
+            nextButtonImage = GetComponent<Image>();
             //dialogLayout = GetComponent<VNLayout>();
             buttons = dialogLayout.buttons;
             for(int j=0; j<buttons.Length; j++)
@@ -51,7 +56,6 @@ namespace RPGM.UI
         void Start()
         {
             ui = GOPointer.UIManager.GetComponent<UIManager>();
-            //model = Schedule.GetModel<GameModel>();
         }
 
         private void OnEnable()

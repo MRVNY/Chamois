@@ -5,8 +5,19 @@ public class ListProie : MonoBehaviour
 {
     public int rdn;
     public List<GameObject>listDeProie;
+
+    public static ListProie Instance;
     void Start()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
         rdn = Random.Range(0,(listDeProie.Count));
 //        Debug.Log("id Proie Cible = " + rdn);
         for (int i = 0; (i < listDeProie.Count); i++)

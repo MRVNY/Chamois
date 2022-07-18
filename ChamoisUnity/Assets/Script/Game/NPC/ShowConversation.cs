@@ -23,16 +23,11 @@ namespace RPGM.Events
         public string conversationItemKey;
 
         private DataStorerRandonneur dataStorer;
-
-        private Button nextButton;
-        private Image nextButtonImage;
         
         NPCManager NPCManager = GOPointer.NPCCollection.GetComponent<NPCManager>();
 
         public ShowConversation(){
             dataStorer = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
-            nextButton = GOPointer.VisualNovel.GetComponent<Button>();
-            nextButtonImage = GOPointer.VisualNovel.GetComponent<Image>();
         }
 
         public override void Execute()
@@ -48,8 +43,8 @@ namespace RPGM.Events
                 ci = conversation.Get(conversationItemKey);
                 if (conversationItemKey.Length == 1)
                 {
-                    nextButton.enabled = false;
-                    nextButtonImage.enabled = false;
+                    GOPointer.VisualNovel.nextButton.enabled = false;
+                    GOPointer.VisualNovel.nextButtonImage.enabled = false;
                 }
             }
 
@@ -73,8 +68,13 @@ namespace RPGM.Events
             /// </summary>
             if (!string.IsNullOrEmpty(ci.hint))
             {
-                if(Global.Personnage == "Chasseur")
+                if (ci.hint.Length>4 && ci.hint.Substring(0, 4)=="node")
                 {
+                    NPCManager.switchNode(ci.hint);
+                }
+                
+                if(Global.Personnage == "Chasseur")
+                { 
                     NPCManager.actionChasseur(ci.hint);
                 }
 
@@ -123,8 +123,8 @@ namespace RPGM.Events
             //setup conversation choices, if any.
             if (ci.options.Count == 0)
             {
-                nextButton.enabled = true;
-                nextButtonImage.enabled = true;
+                GOPointer.VisualNovel.nextButton.enabled = true;
+                GOPointer.VisualNovel.nextButtonImage.enabled = true;
             }
             else if (ci.options.Count == 1 && ci.options[0].text == "")
             { //if there's no buttons but we need to jump to a node

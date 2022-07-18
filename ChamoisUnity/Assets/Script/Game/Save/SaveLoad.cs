@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
+using RPGM.Gameplay;
 using UnityEditor;
 using UnityEngine.UI;
 
@@ -110,6 +111,16 @@ public static class SaveLoad
         Save<byte[]>(bytesShow, "FogShow");
         Save<byte[]>(bytesCount, "FogCount");
 
+        //NPC convo
+        foreach (var npc in NPCManager.Instance.currentNPCList)
+        {
+            Save<string>(npc.firstNode, npc.name);
+        }
+
+        foreach (var npc in NPCManager.Instance.listDonneurs)
+        {
+            Save<string>(npc.firstNode, npc.name);
+        }
     }
 
     public static async Task LoadState()
@@ -160,8 +171,25 @@ public static class SaveLoad
         FogOfWar.Instance.calculateAll();
         
         //NPC convo
+        if(Init.convo!=null) await Init.convo;
         
+        foreach (var npc in NPCManager.Instance.currentNPCList)
+        {
+            string tmp = Load<string>(npc.name);
+            if (tmp != null)
+            {
+                npc.firstNode = tmp;
+            }
+        }
 
+        foreach (var npc in NPCManager.Instance.listDonneurs)
+        {
+            string tmp = Load<string>(npc.name);
+            if (tmp != null)
+            {
+                npc.firstNode = tmp;
+            }
+        }
     }
 
     static Texture2D toTexture2D(RenderTexture texture)

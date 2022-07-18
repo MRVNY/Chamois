@@ -20,6 +20,7 @@ public class Init : MonoBehaviour
 
     public GameObject loadScreen;
     public static Task loading;
+    public static Task convo;
     void Awake()
     {
         loadScreen.SetActive(true);
@@ -41,7 +42,10 @@ public class Init : MonoBehaviour
 
     async void Start()
     {
-        loading =  SaveLoad.LoadState();
+        // Init convo if player start the character the first time
+        convo = npcManager.loadConvo();
+        
+        loading = SaveLoad.LoadState();
         
         Screen.SetResolution(1280, 720, false);
         
@@ -88,14 +92,10 @@ public class Init : MonoBehaviour
         }
         
         GOPointer.CameraReg.GetComponentInChildren<CameraControllerJoy>().ManualStart();
-        
-        
-        // Init convo if player start the character the first time
-        npcManager.loadConvo();
 
         if (!PlayerPrefs.HasKey(Global.Personnage))
-        //if(true)
         {
+            if(convo!=null) await convo;
             GOPointer.UIManager.GetComponent<UIManager>().Start();
 
             switch (Global.Personnage)
@@ -121,8 +121,7 @@ public class Init : MonoBehaviour
         {
             PauseMenu.instance.Resume();
         }
-
-        if(loading!=null) await loading;
+        
         loadScreen.SetActive(false);
     }
 

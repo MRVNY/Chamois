@@ -17,7 +17,7 @@ namespace RPGM.Gameplay
     public class NPCController : InteractableController
     {
         private ConversationScript conversations;
-        private string firstNode;
+        public string firstNode;
         private JObject convoTree;
         public TextAsset jsonFile;
 
@@ -33,7 +33,7 @@ namespace RPGM.Gameplay
             
             actionButton.SetActive(false);
             
-            firstNode = Global.persoNum[Global.Personnage];
+            //firstNode = Global.persoNum[Global.Personnage];
         }
 
         /// <summary>
