@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using RPGM.UI;
 using TMPro;
 using UnityEngine;
@@ -94,6 +95,7 @@ public class GOPointer : MonoBehaviour
     public static GameObject PageGauche;
     public static GameObject PageDroite;
     public static GameObject Livre;
+    
     public static GameObject ChapitreChamois;
     public static GameObject ChapitreChasseur;
     public static GameObject ChapitreRandonneur;
@@ -125,13 +127,30 @@ public class GOPointer : MonoBehaviour
     public static Encyclopedie currentEncy;
     public static GameObject currentMap;
 
+    public static Task linking;
+    public static GOPointer Instance;
+    
     private void Awake()
     {
+        Instance = this;
+
         Link();
         //DontDestroyOnLoad(this);
     }
 
-    public void Link(){
+    private void Start()
+    {
+        Link();
+    }
+
+    public void Link()
+    {
+        linking = LinkAync();
+    }
+    
+    public async Task LinkAync()
+    {
+        if(linking!=null) await linking;
         PlayerChamois = _PlayerChamois;
         PlayerChasseur = _PlayerChasseur;
         PlayerRandonneur = _PlayerRandonneur;

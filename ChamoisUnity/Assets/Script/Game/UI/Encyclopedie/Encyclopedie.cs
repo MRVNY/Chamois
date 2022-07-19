@@ -60,7 +60,7 @@ public class Encyclopedie : MonoBehaviour
         page = new ContenuPages();
  
         foreach(EncycloInfos i in pages)
-       {
+        {
            if (page.getPoidsActuel() >= page.getPoidsMax())
            {
                pagesStatic.Add(page);

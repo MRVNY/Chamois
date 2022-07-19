@@ -70,6 +70,8 @@ namespace RPGM.Gameplay
 
         public void onclick()
         {
+            if(firstNode=="") firstNode = Global.persoNum[Global.Personnage];
+            
             var c = GetConversation();
             if (c!=null && c.isInIndex(firstNode))
             {
@@ -80,23 +82,28 @@ namespace RPGM.Gameplay
                 ev.npc = this;
                 ev.gameObject = gameObject;
                 ev.conversationItemKey = firstNode;
+                
+                SaveLoad.SaveState();
             }
         }
         
         public void onclick(string node)
         {
+            
             firstNode = node;
-            var c = GetConversation();
-            if (c!=null && c.isInIndex(node))
-            {
-                SpriteRenderer myImage = gameObject.GetComponent<SpriteRenderer>();
-                GOPointer.UIManager.GetComponent<UIManager>().startVisualNovel(myImage);
-                var ev = Schedule.Add<Events.ShowConversation>();
-                ev.conversation = c;
-                ev.npc = this;
-                ev.gameObject = gameObject;
-                ev.conversationItemKey = node;
-            }
+            onclick();
+            
+            // var c = GetConversation();
+            // if (c!=null && c.isInIndex(node))
+            // {
+            //     SpriteRenderer myImage = gameObject.GetComponent<SpriteRenderer>();
+            //     GOPointer.UIManager.GetComponent<UIManager>().startVisualNovel(myImage);
+            //     var ev = Schedule.Add<Events.ShowConversation>();
+            //     ev.conversation = c;
+            //     ev.npc = this;
+            //     ev.gameObject = gameObject;
+            //     ev.conversationItemKey = node;
+            // }
         }
 
         /// <summary>

@@ -56,7 +56,7 @@ public class EncycloContentChasseur : Encyclopedie
         dynamicInfo  = new Dictionary<string, EncycloInfos>();
         staticInfo   = new List<EncycloInfos>();
         pagesDynamic = new List<ContenuPages>();
-        quete        = new List<ContenuPages>();
+        quete = pagesDynamic;
             
 
 

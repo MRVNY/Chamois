@@ -38,10 +38,14 @@ public class Init : MonoBehaviour
 
     private void OnEnable()
     {
+        if(gp==null) Awake();
     }
 
     async void Start()
     {
+        if(gp==null) Awake();
+        if (GOPointer.linking!=null) await GOPointer.linking;
+        
         // Init convo if player start the character the first time
         convo = npcManager.loadConvo();
         

@@ -4,9 +4,6 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
-using RPGM.Gameplay;
-using UnityEditor;
-using UnityEngine.UI;
 
 public static class SaveLoad
 {
@@ -121,6 +118,11 @@ public static class SaveLoad
         {
             Save<string>(npc.firstNode, npc.name);
         }
+        
+        //ency
+        Save<List<ContenuPages>>(GOPointer.currentEncy.pagesDynamic, "ency"+Global.Personnage);
+        
+        
     }
 
     public static async Task LoadState()
@@ -190,6 +192,14 @@ public static class SaveLoad
                 npc.firstNode = tmp;
             }
         }
+        
+        //ency 
+        var tmpEncy = Load<List<ContenuPages>>("ency"+Global.Personnage);
+        if (tmpEncy != null)
+        {
+            GOPointer.currentEncy.pagesDynamic = tmpEncy;
+        }
+        
     }
 
     static Texture2D toTexture2D(RenderTexture texture)
@@ -202,4 +212,17 @@ public static class SaveLoad
 
         return texture2D;
     }
-}
+    
+    // [BurstCompile]
+    // private struct FindPathJob : IJob {
+    //
+    //     public int2 startPosition;
+    //     public int2 endPosition;
+    //     public int2 gridSize;
+    //     public NativeList<Vector3> pathVectors;
+    //     public NativeArray<PathNode> pathNodeArray;
+    //
+    //     public void Execute()
+    //     {
+    //     }
+    }

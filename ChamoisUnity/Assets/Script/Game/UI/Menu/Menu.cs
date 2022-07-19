@@ -22,18 +22,20 @@ public class Menu : MonoBehaviour
     private GameObject ChapitreChamois;
     private GameObject ChapitreChasseur;
     private GameObject ChapitreRandonneur;
-    private GameObject interactiveButtons;
     
     public static Task saving;
 
 
 
-    private void Start()
+    async void Start()
     {
+        if(GOPointer.GameControl==null) GOPointer.Instance.Link();
+        if (Init.loading!=null) await Init.loading;
+        if (GOPointer.linking!=null) await GOPointer.linking;
+        
         ChapitreChamois = GOPointer.ChapitreChamois;
         ChapitreChasseur = GOPointer.ChapitreChasseur;
         ChapitreRandonneur = GOPointer.ChapitreRandonneur;
-        interactiveButtons = GOPointer.interactiveButtons;
         
         pause = GetComponent<PauseMenu>();
         
@@ -67,7 +69,7 @@ public class Menu : MonoBehaviour
         resume.SetActive(true);
         menuIcon.enabled = false;
         pasueIcon.SetActive(true);
-        interactiveButtons.SetActive(false);
+        InteractiveButtons.Instanace.SetActive(false);
         
         for (int i = 0; i < ListeBoutons.Count; i++)
         {
@@ -88,7 +90,7 @@ public class Menu : MonoBehaviour
         resume.SetActive(false);
         menuIcon.enabled = true;
         pasueIcon.SetActive(false);
-        interactiveButtons.SetActive(true);
+        InteractiveButtons.Instanace.SetActive(true);
 
         ChapitreChamois.SetActive(false);
         ChapitreChasseur.SetActive(false);
