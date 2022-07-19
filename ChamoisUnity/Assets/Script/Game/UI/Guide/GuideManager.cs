@@ -16,7 +16,7 @@ public class GuideManager : MonoBehaviour
     void Start()
     {
         //Debug.Log("boolean help : " + PlayerPrefs.GetFloat("inGameHelp"));
-        if(PlayerPrefs.GetInt("inGameHelp") == 1 && !SaveLoad.SaveExists("pos"+Global.Personnage))
+        if(PlayerPrefs.GetInt("inGameHelp") == 1 && PlayerPrefs.GetInt(Global.Personnage)!=1)
         {
             GOPointer.MenuManager.GetComponent<PauseMenu>().Pause();
             guideCanvas.SetActive(true);

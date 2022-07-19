@@ -93,12 +93,12 @@ public class Pathfinding : MonoBehaviour {
                 pathNode.index = FindPathJob.CalculateIndex(x, y, gridSize.x);
                 pathNode.isWalkable = walkables[x][y] == "1";
                  
-                if (walkables[x][y] != "1")
-                {
-                    Vector3 nodePos = new Vector3(x, y, 0) * cellSize + originPosition;
-                    Debug.DrawLine(nodePos+Vector3.left, nodePos + Vector3.right, Color.red, 100f);
-                    Debug.DrawLine(nodePos + Vector3.up, nodePos + Vector3.down, Color.red, 100f);
-                }
+                // if (walkables[x][y] != "1")
+                // {
+                //     Vector3 nodePos = new Vector3(x, y, 0) * cellSize + originPosition;
+                //     Debug.DrawLine(nodePos+Vector3.left, nodePos + Vector3.right, Color.red, 100f);
+                //     Debug.DrawLine(nodePos + Vector3.up, nodePos + Vector3.down, Color.red, 100f);
+                // }
          
                 pathNode.cameFromNodeIndex = -1;
          
