@@ -4,16 +4,27 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
+using Unity.Burst;
+using Unity.Collections;
+using Unity.Jobs;
+using Unity.Mathematics;
 
 public static class SaveLoad
 {
+    private static string savePath;
+    
+    static SaveLoad()
+    {
+        savePath = Application.persistentDataPath;
+    }
+    
     /// <summary>
     /// Fonction qui récupère un objet pour le sauvegarder dans un fichier clé
     /// </summary>
     public static void Save<T>(T objectToSave, string key)
     {
         // chemin du fichier de sauvegarde
-        string path = Application.persistentDataPath + "/saves/";
+        string path = savePath + "/saves/";
 
         //création du fichier si il n'existe pas
         Directory.CreateDirectory(path);
@@ -37,7 +48,7 @@ public static class SaveLoad
     {
         if (SaveExists(key))
         {
-            string path = Application.persistentDataPath + "/saves/";
+            string path = savePath + "/saves/";
             BinaryFormatter formatter = new BinaryFormatter();
             T returnValue = default(T);
             using (FileStream fileStream = new FileStream(path + key + ".txt", FileMode.Open))
@@ -55,7 +66,7 @@ public static class SaveLoad
     /// </summary>
     public static bool SaveExists(string key)
     {
-        string path = Application.persistentDataPath + "/saves/" + key + ".txt";
+        string path = savePath + "/saves/" + key + ".txt";
         return File.Exists(path);
     }
 
@@ -64,7 +75,7 @@ public static class SaveLoad
     /// </summary>
     public static void DeleteAllSaveFiles()
     {
-        string path = Application.persistentDataPath + "/saves/";
+        string path = savePath + "/saves/";
         DirectoryInfo dir = new DirectoryInfo(path);
         dir.Delete(true);
         Directory.CreateDirectory(path); 
@@ -73,40 +84,30 @@ public static class SaveLoad
     public async static Task SaveState()
     {
         //pos
-        List<float> posChamois = new List<float>();
-        List<float> posChasseur = new List<float>();
-        List<float> posRandonneur = new List<float>();
+        var vect = Joueur.currentPlayer.transform.position;
+        float pos1 = vect.x;
+        float pos2 = vect.y;
 
-        var position1 = GOPointer.PlayerChamois.transform.position;
-        posChamois.Add(position1.x);
-        posChamois.Add(position1.y);
+        Save<float>(pos1, "pos1"+Global.Personnage);
+        Save<float>(pos2, "pos2"+Global.Personnage);
 
-        var position = GOPointer.PlayerChasseur.transform.position;
-        posChasseur.Add(position.x);
-        posChasseur.Add(position.y);
-
-        var position2 = GOPointer.PlayerRandonneur.transform.position;
-        posRandonneur.Add(position2.x);
-        posRandonneur.Add(position2.y);
-        
-        Save<List<float>>(posChamois, "posChamois");
-        Save<List<float>>(posChasseur, "posChasseur");
-        Save<List<float>>(posRandonneur, "posRandonneur");
-        
         PlayerPrefs.SetInt(Global.Personnage,1);
         
         //fog
-        RenderTexture rtShow = FogOfWar.Instance.rawShow.texture as RenderTexture;
-        RenderTexture rtCount = FogOfWar.Instance.rawCount.texture as RenderTexture;
-        
-        Texture2D t2Show = toTexture2D(rtShow);
-        Texture2D t2Count = toTexture2D(rtCount);
-        
-        byte[] bytesShow = t2Show.EncodeToPNG();
-        byte[] bytesCount = t2Count.EncodeToPNG();
-        
-        Save<byte[]>(bytesShow, "FogShow");
-        Save<byte[]>(bytesCount, "FogCount");
+        if (Global.Personnage == "Randonneur")
+        {
+            RenderTexture rtShow = FogOfWar.Instance.rawShow.texture as RenderTexture;
+            RenderTexture rtCount = FogOfWar.Instance.rawCount.texture as RenderTexture;
+
+            Texture2D t2Show = toTexture2D(rtShow);
+            Texture2D t2Count = toTexture2D(rtCount);
+
+            byte[] bytesShow = t2Show.EncodeToPNG();
+            byte[] bytesCount = t2Count.EncodeToPNG();
+
+            Save<byte[]>(bytesShow, "FogShow");
+            Save<byte[]>(bytesCount, "FogCount");
+        }
 
         //NPC convo
         foreach (var npc in NPCManager.Instance.currentNPCList)
@@ -132,46 +133,69 @@ public static class SaveLoad
             await Menu.saving;
         }
         
-        //pos
-        List<float> posChamois = Load<List<float>>("posChamois");
-        List<float> posChasseur = Load<List<float>>("posChasseur");
-        List<float> posRandonneur = Load<List<float>>("posRandonneur");
+        // DateTime start = DateTime.Now;
         
-        if(posChamois!=null) GOPointer.PlayerChamois.transform.position = new Vector3(posChamois[0], posChamois[1], 0);
-        if(posChasseur!=null) GOPointer.PlayerChasseur.transform.position = new Vector3(posChasseur[0], posChasseur[1], 0);
-        if(posRandonneur!=null) GOPointer.PlayerRandonneur.transform.position = new Vector3(posRandonneur[0], posRandonneur[1], 0);
+        // LoadJob loadJob = new LoadJob();
+        // loadJob.Schedule().Complete();
+        
+        //pos
+        float pos1 = Load<float>("pos1"+Global.Personnage);
+        float pos2 = Load<float>("pos2"+Global.Personnage);
+        if(pos1!=0 && pos2!=0) Joueur.currentPlayer.transform.position = new Vector3(pos1, pos2, 0);
+        
+        //Debug.Log("Load pos: " + (DateTime.Now - start));
+        // start = DateTime.Now;
         
         //fog
-        Texture tShow = FogOfWar.Instance.rawShow.texture; //GOPointer.FogOfWarCanvas.transform.Find("RawShow").GetComponent<RawImage>().texture;
-        Texture tCount = FogOfWar.Instance.rawCount.texture; //GOPointer.FogOfWarCanvas.transform.Find("RawCount").GetComponent<RawImage>().texture;
-        
-        byte[] bytesShow = Load<byte[]>("FogShow");
-        byte[] bytesCount = Load<byte[]>("FogCount");
-        
-        if (bytesShow!=null && bytesCount!=null && tShow!=null && tCount!=null)
+        if (Global.Personnage == "Randonneur")
         {
-            Texture2D t2Show = new Texture2D(tShow.width, tShow.height, TextureFormat.RGBA4444, false);
-            Texture2D t2Count = new Texture2D(tCount.width, tCount.height, TextureFormat.RGBA4444, false);
+            Texture
+                tShow = FogOfWar.Instance.rawShow
+                    .texture; //GOPointer.FogOfWarCanvas.transform.Find("RawShow").GetComponent<RawImage>().texture;
+            Texture
+                tCount = FogOfWar.Instance.rawCount
+                    .texture; //GOPointer.FogOfWarCanvas.transform.Find("RawCount").GetComponent<RawImage>().texture;
 
-            t2Show.LoadImage(bytesShow);
-            t2Count.LoadImage(bytesCount);
-            
-            RenderTexture rtShow = new RenderTexture(t2Show.width, t2Show.height, 0);
-            RenderTexture rtCount = new RenderTexture(t2Count.width, t2Count.height, 0);
-            
-            RenderTexture.active = rtShow;
-            Graphics.Blit(t2Show, rtShow);
-            FogOfWar.Instance.rawShow.texture = rtShow;
-            FogOfWar.Instance.camShow.targetTexture = rtShow;
-            
-            RenderTexture.active = rtCount;
-            Graphics.Blit(t2Count, rtCount);
-            FogOfWar.Instance.rawCount.texture = rtCount;
-            FogOfWar.Instance.camCount.targetTexture = rtCount;
+            byte[] bytesShow = Load<byte[]>("FogShow");
+            byte[] bytesCount = Load<byte[]>("FogCount");
+
+            //Debug.Log("Load bytes: " + (DateTime.Now - start));
+            // start = DateTime.Now;
+
+            if (bytesShow != null && bytesCount != null && tShow != null && tCount != null)
+            {
+                Texture2D t2Show = new Texture2D(tShow.width, tShow.height, TextureFormat.RGBA4444, false);
+                Texture2D t2Count = new Texture2D(tCount.width, tCount.height, TextureFormat.RGBA4444, false);
+
+                t2Show.LoadImage(bytesShow);
+                t2Count.LoadImage(bytesCount);
+
+                //Debug.Log("Load image: " + (DateTime.Now - start));
+                // start = DateTime.Now;
+
+                RenderTexture rtShow = new RenderTexture(t2Show.width, t2Show.height, 0);
+                RenderTexture rtCount = new RenderTexture(t2Count.width, t2Count.height, 0);
+
+                RenderTexture.active = rtShow;
+                Graphics.Blit(t2Show, rtShow);
+                FogOfWar.Instance.rawShow.texture = rtShow;
+                FogOfWar.Instance.camShow.targetTexture = rtShow;
+
+                RenderTexture.active = rtCount;
+                Graphics.Blit(t2Count, rtCount);
+                FogOfWar.Instance.rawCount.texture = rtCount;
+                FogOfWar.Instance.camCount.targetTexture = rtCount;
+            }
+
+            //Debug.Log("t2 to rt: " + (DateTime.Now - start));
+            // start = DateTime.Now;
+
+            FogOfWar.Instance.calculateAll();
+
+            //Debug.Log("calculate: " + (DateTime.Now - start));
+            // start = DateTime.Now;
         }
 
-        FogOfWar.Instance.calculateAll();
-        
         //NPC convo
         if(Init.convo!=null) await Init.convo;
         
@@ -183,7 +207,7 @@ public static class SaveLoad
                 npc.firstNode = tmp;
             }
         }
-
+        
         foreach (var npc in NPCManager.Instance.listDonneurs)
         {
             string tmp = Load<string>(npc.name);
@@ -193,6 +217,9 @@ public static class SaveLoad
             }
         }
         
+        //Debug.Log("Load convo: " + (DateTime.Now - start));
+        // start = DateTime.Now;
+        
         //ency 
         var tmpEncy = Load<List<ContenuPages>>("ency"+Global.Personnage);
         if (tmpEncy != null)
@@ -200,6 +227,7 @@ public static class SaveLoad
             GOPointer.currentEncy.pagesDynamic = tmpEncy;
         }
         
+        //Debug.Log("Load ency: " + (DateTime.Now - start));
     }
 
     static Texture2D toTexture2D(RenderTexture texture)
@@ -212,17 +240,12 @@ public static class SaveLoad
 
         return texture2D;
     }
-    
-    // [BurstCompile]
-    // private struct FindPathJob : IJob {
-    //
-    //     public int2 startPosition;
-    //     public int2 endPosition;
-    //     public int2 gridSize;
-    //     public NativeList<Vector3> pathVectors;
-    //     public NativeArray<PathNode> pathNodeArray;
-    //
-    //     public void Execute()
-    //     {
-    //     }
+
+
+    private struct LoadJob : IJob
+    {
+        public async void Execute()
+        {
+        }
     }
+}

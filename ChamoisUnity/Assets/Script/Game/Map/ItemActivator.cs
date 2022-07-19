@@ -10,14 +10,16 @@ public class ItemActivator : MonoBehaviour
    //[SerializeField] 
    private int distanceFromPlayer = 150;
    
-   private GameObject _player;
-
    public List<ActivatorItem> ActivatorItems = new List<ActivatorItem>();
+   
+   public static ItemActivator currentActivator;
+   public static GameObject CurrentMap;
 
-   void Start()
+
+   void OnEnable()
    {
-      _player = GOPointer.currentPlayer;
-      
+      currentActivator = this;
+      CurrentMap = transform.parent.gameObject;
       //ActivatorItems = new List<ActivatorItem>();
 
       StartCoroutine("CheckActivation");
@@ -30,7 +32,7 @@ public class ItemActivator : MonoBehaviour
       {
          foreach (ActivatorItem item in ActivatorItems)
          {
-            if (Vector3.Distance(_player.transform.position, item.ItemPos) > distanceFromPlayer)
+            if (Vector3.Distance(GOPointer.currentPlayer.transform.position, item.ItemPos) > distanceFromPlayer)
             {
                if (item.Item == null)
                {

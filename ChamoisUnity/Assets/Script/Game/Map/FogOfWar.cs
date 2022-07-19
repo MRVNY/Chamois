@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -71,7 +72,6 @@ public class FogOfWar : MonoBehaviour
 
     IEnumerator percentage(RectTransform rt)
     {
-
         Texture2D tex = createTex(rt);
         int ttalPixels = 0;
         int transparentPixels = 0;
@@ -108,7 +108,7 @@ public class FogOfWar : MonoBehaviour
         StartCoroutine(percentage(rt));
     }
 
-    public void calculateAll()
+    public async Task calculateAll()
     {
         if (rects != null)
         {

@@ -24,6 +24,7 @@ public class Init : MonoBehaviour
     void Awake()
     {
         loadScreen.SetActive(true);
+        
         gp.Link();
         
         GOPointer.CanvasGuideJeu.SetActive(true);
@@ -31,7 +32,7 @@ public class Init : MonoBehaviour
         GOPointer.AchievementManager.transform.parent.gameObject.SetActive(true);
         GOPointer.FogOfWarCanvas.transform.parent.gameObject.SetActive(true);
         GOPointer.NPCCollection.SetActive(true);
-        GOPointer.currentMap.transform.parent.gameObject.SetActive(true);
+        //GOPointer.currentMap.transform.parent.gameObject.SetActive(true);
         
         //decor? day&night
     }
@@ -41,8 +42,10 @@ public class Init : MonoBehaviour
         if(gp==null) Awake();
     }
 
-    async void Start()
+    async void Start() 
     {
+        loadScreen.SetActive(true);
+        
         if(gp==null) Awake();
         if (GOPointer.linking!=null) await GOPointer.linking;
         
@@ -68,18 +71,18 @@ public class Init : MonoBehaviour
         GOPointer.PlayerRandonneur.SetActive(false);
         GOPointer.PlayerChasseur.SetActive(false);
         
-        GOPointer.OptimisationWorldChamois.SetActive(false);
-        GOPointer.OptimisationWorldChasseur.SetActive(false);
-        GOPointer.OptimisationWorldRandonneur.SetActive(false);
+        Map.Instance.MapChamois.SetActive(false);
+        Map.Instance.MapChasseur.SetActive(false);
+        Map.Instance.MapRando.SetActive(false);
 
         GOPointer.currentPlayer.SetActive(true);
-        GOPointer.currentMap.SetActive(true);
         
         switch (Global.Personnage)
         {
             case "Chasseur":
                 GOPointer.EncyclopedieManager.GetComponent<EncycloContentChasseur>().initList();
                 GOPointer.ListeChamoisSauvages.SetActive(true);
+                Map.Instance.MapChasseur.SetActive(true);
                 break;
 
             case "Randonneur":
@@ -87,11 +90,13 @@ public class Init : MonoBehaviour
                 GOPointer.ListeChamoisSauvages.SetActive(false);
                 GOPointer.CameraFogOfWar.SetActive(true);
                 GOPointer.FogOfWarCanvas.SetActive(true);
+                Map.Instance.MapRando.SetActive(true);
                 break;
 
             case "Chamois":
                 GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>().initList();
                 GOPointer.ListeChamoisSauvages.SetActive(false);
+                Map.Instance.MapChamois.SetActive(true);
                 break;
         }
         

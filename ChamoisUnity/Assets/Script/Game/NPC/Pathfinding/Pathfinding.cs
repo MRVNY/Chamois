@@ -23,6 +23,8 @@ using Unity.Burst;
 
 public class Pathfinding : MonoBehaviour {
 
+    public static Pathfinding Instance;
+    
     private const int MOVE_STRAIGHT_COST = 10;
     private const int MOVE_DIAGONAL_COST = 15;
 
@@ -37,7 +39,16 @@ public class Pathfinding : MonoBehaviour {
     
     private void Awake()
     {
-        //DontDestroyOnLoad(this.gameObject);
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
+        DontDestroyOnLoad(this.gameObject);
         
         reading = readWalkables();
         

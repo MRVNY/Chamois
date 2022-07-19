@@ -24,8 +24,22 @@ public class Menu : MonoBehaviour
     private GameObject ChapitreRandonneur;
     
     public static Task saving;
+    
+    public static Menu Instance;
 
 
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(this);
+    }
 
     async void Start()
     {
@@ -78,6 +92,7 @@ public class Menu : MonoBehaviour
         menuOuvre = true;
         if (PlayerPrefs.GetInt("soundEffects") == 1)
         {
+            if(GOPointer.MenuManager==null) GOPointer.Instance.Link();
             GOPointer.MenuManager.GetComponent<AudioSource>().Play();
         }
 
@@ -86,6 +101,7 @@ public class Menu : MonoBehaviour
     public async void Deactivate()
     {
         if(saving!=null) await saving;
+        if(GOPointer.ChapitreChamois==null) GOPointer.Instance.Link();
 
         resume.SetActive(false);
         menuIcon.enabled = true;

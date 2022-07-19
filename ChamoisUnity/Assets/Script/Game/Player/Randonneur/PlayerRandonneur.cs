@@ -46,20 +46,23 @@ public class PlayerRandonneur : Joueur
     public int colombierCurrent = 0;
     public int arcalodCurrent = 0;
     public int trelodCurrent = 0;
+    
+    private DataStorerRandonneur dataStorer;
 
     new void Start()
     {
         base.Start();
         nbRando = 0;
         //maxRando = 2;
-}
+        dataStorer = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
+    }
 
     new void Update()
     {
         base.Update();
         if(nbRando == maxRando)
         {
-            GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>().sendData();
+            dataStorer.sendData();
         }
     }
 }

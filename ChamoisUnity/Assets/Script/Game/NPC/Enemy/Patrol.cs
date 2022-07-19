@@ -229,7 +229,7 @@ public class Patrol : wolf
         currentPoint = nouveau;
         currentGoal = patrolPoints[nouveau];
         
-        task = GOPointer.Pathfinding.FindPath(pivot, currentGoal.position);
+        task = Pathfinding.Instance.FindPath(pivot, currentGoal.position);
    
     }
 }

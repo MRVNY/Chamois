@@ -15,13 +15,6 @@ public class GOPointer : MonoBehaviour
     public GameObject _JoystickCanvas;
     public GameObject _CameraReg;
 
-    public GameObject _OptimisationWorldChamois;
-    public GameObject _OptimisationWorldChasseur;
-    public GameObject _OptimisationWorldRandonneur;
-    public GameObject _ItemActivatorObjectChamois;
-    public GameObject _ItemActivatorObjectChasseur;
-    public GameObject _ItemActivatorObjectRandonneur;
-    
     public GameObject _MiniMap;
 
 
@@ -60,8 +53,6 @@ public class GOPointer : MonoBehaviour
     public VisualNovel _VisualNovel;
     public GameObject _interactvieButtons;
     
-    public Pathfinding _Pathfinding;
-
     public TextMeshProUGUI _DechetsTexte;
     public TextMeshProUGUI _MunitionsTexte;
 
@@ -73,13 +64,7 @@ public class GOPointer : MonoBehaviour
 
     public static GameObject JoystickCanvas;
     public static GameObject CameraReg;
-
-    public static GameObject OptimisationWorldChamois;
-    public static GameObject OptimisationWorldChasseur;
-    public static GameObject OptimisationWorldRandonneur;
-    public static GameObject ItemActivatorObjectChamois;
-    public static GameObject ItemActivatorObjectChasseur;
-    public static GameObject ItemActivatorObjectRandonneur;
+    
     public static GameObject MiniMap;
     
     public static GameObject EncyButton;
@@ -117,15 +102,12 @@ public class GOPointer : MonoBehaviour
     
     public static VisualNovel VisualNovel;
     public static GameObject interactiveButtons;
-    
-    public static Pathfinding Pathfinding;
-    
+        
     public static TextMeshProUGUI DechetsTexte;
     public static TextMeshProUGUI MunitionsTexte;
 
     public static GameObject currentPlayer;
     public static Encyclopedie currentEncy;
-    public static GameObject currentMap;
 
     public static Task linking;
     public static GOPointer Instance;
@@ -157,14 +139,7 @@ public class GOPointer : MonoBehaviour
 
         JoystickCanvas = _JoystickCanvas;
         CameraReg = _CameraReg;
-
-        OptimisationWorldChamois = _OptimisationWorldChamois;
-        OptimisationWorldChasseur = _OptimisationWorldChasseur;
-        OptimisationWorldRandonneur = _OptimisationWorldRandonneur;
         
-        ItemActivatorObjectChamois = _ItemActivatorObjectChamois;
-        ItemActivatorObjectChasseur = _ItemActivatorObjectChasseur;
-        ItemActivatorObjectRandonneur = _ItemActivatorObjectRandonneur;
         MiniMap = _MiniMap;
 
         EncyButton = _EncyButton;
@@ -201,9 +176,7 @@ public class GOPointer : MonoBehaviour
         
         VisualNovel = _VisualNovel;
         interactiveButtons = _interactvieButtons;
-        
-        Pathfinding = _Pathfinding;
-        
+                
         DechetsTexte = _DechetsTexte;
         MunitionsTexte = _MunitionsTexte;
         
@@ -211,18 +184,15 @@ public class GOPointer : MonoBehaviour
             case "Chamois":
                 currentPlayer = PlayerChamois;
                 currentEncy = EncyclopedieManager.GetComponent<EncycloContentChamois>();
-                currentMap = OptimisationWorldChamois;
                 break;
             
             case "Chasseur":
                 currentPlayer = PlayerChasseur;
                 currentEncy = EncyclopedieManager.GetComponent<EncycloContentChasseur>();
-                currentMap = OptimisationWorldChasseur;
                 break;
             case "Randonneur":
                 currentPlayer = PlayerRandonneur;
                 currentEncy = EncyclopedieManager.GetComponent<EncycloContentRandonneur>();
-                currentMap = OptimisationWorldRandonneur;
                 break;
         }
     }

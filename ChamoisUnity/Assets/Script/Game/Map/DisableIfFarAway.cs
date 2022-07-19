@@ -11,11 +11,7 @@ public class DisableIfFarAway : MonoBehaviour
     // Start is called before the first frame update
     async void Start()
     {
-        if(Global.Personnage=="Chamois") _itemActivatorObject = GOPointer.ItemActivatorObjectChamois;
-        else if(Global.Personnage=="Chasseur") _itemActivatorObject = GOPointer.ItemActivatorObjectChasseur;
-        else if(Global.Personnage=="Randonneur") _itemActivatorObject = GOPointer.ItemActivatorObjectRandonneur;
-        _activationScript = _itemActivatorObject.GetComponent<ItemActivator>();
-        
+        _activationScript = ItemActivator.currentActivator;
         StartCoroutine(AddToList());
     }
 

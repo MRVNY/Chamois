@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Debug = UnityEngine.Debug;
 
 public class MenuManager : MonoBehaviour
 {
@@ -11,18 +13,16 @@ public class MenuManager : MonoBehaviour
     public GameObject main;
     public GameObject options;
     public GameObject select;
+    public GameObject loading;
+    public TextMeshProUGUI percentage;
 
     void Start()
     {
-        // title = GameObject.Find("Titre");
-        // main = GameObject.Find("MainMenu");
-        // options = GameObject.Find("OptionsMenu");
-        // select = GameObject.Find("SelectionPersonnage");
-        
         title.SetActive(true);
         main.SetActive(true);
         options.SetActive(false);
         select.SetActive(false);
+        loading.SetActive(false);
     }
 
     public void clickPlay()
@@ -58,9 +58,11 @@ public class MenuManager : MonoBehaviour
         select.SetActive(false);
     }
 
-    public void PlayGame()
+    public void PlayGame(string personnage)
     {
-        SceneManager.LoadScene("Game");
+        loading.SetActive(true);
+        Global.Personnage = personnage;
+        StartCoroutine(LoadAsynchronously("Game"));
     }
 
     public void QuitGame()
@@ -71,5 +73,15 @@ public class MenuManager : MonoBehaviour
     public void sortirGenerique()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    IEnumerator LoadAsynchronously(string scene)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(scene);
+        while (!operation.isDone)
+        {
+            percentage.text = (int)(operation.progress*100/.9f) + " %";
+            yield return null;
+        }
     }
 }

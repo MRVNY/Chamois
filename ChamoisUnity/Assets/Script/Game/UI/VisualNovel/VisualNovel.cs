@@ -15,14 +15,14 @@ namespace RPGM.UI
         private UIManager ui;
         public VNLayout dialogLayout;
 
-        [SerializeField] private SpriteRenderer ChamoisImg;
-        [SerializeField] private SpriteRenderer ChasseurImg;
-        [SerializeField] private SpriteRenderer RandonneurImg;
+        [SerializeField] private Sprite ChamoisImg;
+        [SerializeField] private Sprite ChasseurImg;
+        [SerializeField] private Sprite RandonneurImg;
         public Image leftImg;
         public Image rightImg;
 
-        public Button nextButton;
-        public Image nextButtonImage;
+        [NonSerialized] public Button nextButton;
+        [NonSerialized] public Image nextButtonImage;
         
         private new TextMeshPro name;
         private TextMeshPro dialog;
@@ -117,9 +117,9 @@ namespace RPGM.UI
 
         public void setImages(SpriteRenderer left)
         {
-            if(Global.Personnage == "Chamois") rightImg.sprite = ChamoisImg.sprite;
-            if(Global.Personnage == "Chasseur") rightImg.sprite = ChasseurImg.sprite;
-            if(Global.Personnage == "Randonneur") rightImg.sprite = RandonneurImg.sprite;
+            if(Global.Personnage == "Chamois") rightImg.sprite = ChamoisImg;
+            if(Global.Personnage == "Chasseur") rightImg.sprite = ChasseurImg;
+            if(Global.Personnage == "Randonneur") rightImg.sprite = RandonneurImg;
             
             leftImg.sprite = left.sprite;
         }

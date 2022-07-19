@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
  /// <summary>
@@ -42,8 +43,13 @@ public class Joueur : MonoBehaviour
     protected float currentSpeed;
 
     protected bool lockPosition = false;
-    
 
+    public static Joueur currentPlayer;
+
+    private void OnEnable()
+    {
+        currentPlayer = this;
+    }
 
     protected void Start()
     {
