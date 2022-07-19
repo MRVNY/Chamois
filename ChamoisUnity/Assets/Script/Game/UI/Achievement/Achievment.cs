@@ -4,12 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+[Serializable]
 public class Achievment
 {
 
     private string name;
     private string description;
-    private bool unlocked;
+    public bool unlocked;
     private int points;
     private int spriteIndex;
     private Image background;

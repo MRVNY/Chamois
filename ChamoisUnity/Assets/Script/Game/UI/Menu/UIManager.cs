@@ -79,6 +79,7 @@ public class UIManager : MonoBehaviour
     
     public void endVisualNovel()
     {
+        GOPointer.EncyclopedieManager.SetActive(true);
         GOPointer.VisualNovel.gameObject.SetActive(false);
         UIResume();
     }

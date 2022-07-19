@@ -17,13 +17,11 @@ public class GOPointer : MonoBehaviour
 
     public GameObject _MiniMap;
 
-
     public GameObject _EncyButton;
 
     public GameObject _CameraFogOfWar;
     public GameObject _FogOfWarCanvas;
     public GameObject _ButtonMap;
-    public GameObject _CanvasButtonAchievement;
     public GameObject _CanvasGuideJeu;
 
     public GameObject _EncyclopedieManager;
@@ -31,10 +29,8 @@ public class GOPointer : MonoBehaviour
     public GameObject _PageGauche;
     public GameObject _PageDroite;
     public GameObject _Livre;
-    public GameObject _ChapitreChamois;
-    public GameObject _ChapitreChasseur;
-    public GameObject _ChapitreRandonneur;
-
+    public GameObject _EncyMenu;
+    
     public GameObject _UIManager;
     public GameObject _MenuManager;
     public GameObject _GameManager;
@@ -45,7 +41,6 @@ public class GOPointer : MonoBehaviour
     public GameObject _ListeChamoisSauvages;
     public GameObject _NPCCollection;
 
-    public GameObject _RandoDecouverteText;
     public RandoManager _RandoManager;
     
     public GameObject _Pew;
@@ -72,7 +67,6 @@ public class GOPointer : MonoBehaviour
     public static GameObject CameraFogOfWar;
     public static GameObject FogOfWarCanvas;
     public static GameObject ButtonMap;
-    public static GameObject CanvasButtonAchievement;
     public static GameObject CanvasGuideJeu;
 
     public static GameObject EncyclopedieManager;
@@ -80,10 +74,8 @@ public class GOPointer : MonoBehaviour
     public static GameObject PageGauche;
     public static GameObject PageDroite;
     public static GameObject Livre;
-    
-    public static GameObject ChapitreChamois;
-    public static GameObject ChapitreChasseur;
-    public static GameObject ChapitreRandonneur;
+
+    public static GameObject EncyMenu;
 
     public static GameObject UIManager;
     public static GameObject MenuManager;
@@ -95,7 +87,6 @@ public class GOPointer : MonoBehaviour
     public static GameObject ListeChamoisSauvages;
     public static GameObject NPCCollection;
 
-    public static GameObject RandoDecouverteText;
     public static RandoManager RandoManager;
     
     public static GameObject Pew;
@@ -147,18 +138,15 @@ public class GOPointer : MonoBehaviour
         CameraFogOfWar = _CameraFogOfWar;
         FogOfWarCanvas = _FogOfWarCanvas;
         ButtonMap = _ButtonMap;
-        CanvasButtonAchievement = _CanvasButtonAchievement;
         CanvasGuideJeu = _CanvasGuideJeu;
 
         EncyclopedieManager = _EncyclopedieManager;
+        EncyMenu = _EncyMenu;
         AchievementManager = _AchievementManager;
         PageGauche = _PageGauche;
         PageDroite = _PageDroite;
         Livre = _Livre;
-        ChapitreChamois = _ChapitreChamois;
-        ChapitreChasseur = _ChapitreChasseur;
-        ChapitreRandonneur = _ChapitreRandonneur;
-        
+
         UIManager = _UIManager;
         MenuManager = _MenuManager;
         GameManager = _GameManager;
@@ -169,7 +157,6 @@ public class GOPointer : MonoBehaviour
         ListeChamoisSauvages = _ListeChamoisSauvages;
         NPCCollection = _NPCCollection;
 
-        RandoDecouverteText = _RandoDecouverteText;
         RandoManager = _RandoManager;
         
         Pew = _Pew;

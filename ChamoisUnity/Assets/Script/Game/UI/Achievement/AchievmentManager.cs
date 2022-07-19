@@ -21,7 +21,7 @@ public class AchievmentManager : MonoBehaviour
 
     public GameObject visualAchievment;
 
-    private Dictionary<string, Achievment> achievments = new Dictionary<string, Achievment>();
+    public Dictionary<string, Achievment> achievments = new Dictionary<string, Achievment>();
 
     public Sprite unlockedSprite;
 
@@ -39,10 +39,10 @@ public class AchievmentManager : MonoBehaviour
     EncycloContentChamois encyChamois;
     EncycloContentRandonneur encyRando;
 
-
-
     public TextAsset jsonFile;
     public ArrayList data = new ArrayList();
+
+    private Dictionary<string, GameObject> parents;
 
     // Start is called before the first frame update
     void Start()
@@ -51,9 +51,10 @@ public class AchievmentManager : MonoBehaviour
         encyChamois = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>();
         encyRando = GOPointer.EncyclopedieManager.GetComponent<EncycloContentRandonneur>();
         
-        //PlayerPrefs.DeleteAll();
-        //PlayerPrefs.delete("Points");
-        //activeButton = GameObject.Find("ChamoisBtn").GetComponent<AchievmentButton>();
+        parents = new Dictionary<string, GameObject>();
+        parents.Add("Chamois",scrollRect.transform.Find("Chamois").gameObject);
+        parents.Add("Chasseur",scrollRect.transform.Find("Chasseur").gameObject);
+        parents.Add("Randonneur",scrollRect.transform.Find("Randonneur").gameObject);
 
         // Récupération des données dans le JSON, lié dans le GameObject ""
         AchievmentInfoList infosInJson = JsonUtility.FromJson<AchievmentInfoList>(jsonFile.text);
@@ -168,12 +169,13 @@ public class AchievmentManager : MonoBehaviour
 
     public void SetAchievmentInfo(string parent, GameObject achievment, string title)
     {
-        achievment.transform.SetParent(GameObject.Find(parent).transform);
+        achievment.transform.SetParent(parents[parent].transform);
         achievment.transform.localScale = new Vector3(1, 1, 1);
-        achievment.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = title;
-        achievment.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>().text = achievments[title].Description;
-        achievment.transform.GetChild(2).GetComponent<TMPro.TextMeshProUGUI>().text = achievments[title].Points.ToString();
-        achievment.transform.GetChild(3).GetComponent<Image>().sprite = sprites[achievments[title].SpriteIndex];
+        AchiObject pointer = achievment.GetComponent<AchiObject>();
+        pointer.title.text = title;
+        pointer.description.text = achievments[title].Description;
+        pointer.points.text = achievments[title].Points.ToString();
+        pointer.image.sprite = sprites[achievments[title].SpriteIndex];
     }
 
     public void ChangeCategory(GameObject button)

@@ -19,10 +19,6 @@ public class Menu : MonoBehaviour
     public List<GameObject> ListeBoutons;
     public static bool menuOuvre = false;
 
-    private GameObject ChapitreChamois;
-    private GameObject ChapitreChasseur;
-    private GameObject ChapitreRandonneur;
-    
     public static Task saving;
     
     public static Menu Instance;
@@ -46,11 +42,7 @@ public class Menu : MonoBehaviour
         if(GOPointer.GameControl==null) GOPointer.Instance.Link();
         if (Init.loading!=null) await Init.loading;
         if (GOPointer.linking!=null) await GOPointer.linking;
-        
-        ChapitreChamois = GOPointer.ChapitreChamois;
-        ChapitreChasseur = GOPointer.ChapitreChasseur;
-        ChapitreRandonneur = GOPointer.ChapitreRandonneur;
-        
+
         pause = GetComponent<PauseMenu>();
         
         notifier = GOPointer.GameControl.GetComponent<Notifier>();
@@ -101,16 +93,14 @@ public class Menu : MonoBehaviour
     public async void Deactivate()
     {
         if(saving!=null) await saving;
-        if(GOPointer.ChapitreChamois==null) GOPointer.Instance.Link();
+        if(GOPointer.EncyMenu==null) GOPointer.Instance.Link();
 
         resume.SetActive(false);
         menuIcon.enabled = true;
         pasueIcon.SetActive(false);
         InteractiveButtons.Instanace.SetActive(true);
 
-        ChapitreChamois.SetActive(false);
-        ChapitreChasseur.SetActive(false);
-        ChapitreRandonneur.SetActive(false);
+        GOPointer.EncyMenu.SetActive(false);
         
         if (PlayerPrefs.GetInt("soundEffects") == 1)
         {
@@ -142,28 +132,14 @@ public class Menu : MonoBehaviour
         Vibrate.vibration();
         //GOPointer.Ouvre.SetActive(false);
         notifier.setFalse();
-        if (ChapitreChamois.activeSelf || ChapitreChasseur.activeSelf || ChapitreRandonneur.activeSelf)
+        if (GOPointer.EncyMenu.activeSelf)
         {
-            ChapitreChamois.SetActive(false);
-            ChapitreChasseur.SetActive(false);
-            ChapitreRandonneur.SetActive(false);
+            GOPointer.EncyMenu.SetActive(false);
             pasueIcon.SetActive(true);
         }
         else
         {
-            switch (Global.Personnage)
-            {
-                case "Chamois":
-                    ChapitreChamois.SetActive(true);
-                    break;
-                case "Chasseur":
-                    ChapitreChasseur.SetActive(true);
-                    break;
-                case "Randonneur":
-                    ChapitreRandonneur.SetActive(true);
-                    break;
-            }
-
+            GOPointer.EncyMenu.SetActive(true);
             pasueIcon.SetActive(false);
         }
     }

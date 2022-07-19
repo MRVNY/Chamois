@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 3949477437587056297}
   - component: {fileID: 2236425402136756554}
   - component: {fileID: 1252149212840379704}
+  - component: {fileID: 1564396852819106818}
   m_Layer: 5
   m_Name: Achievment
   m_TagString: Untagged
@@ -329,6 +330,22 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
+--- !u!114 &1564396852819106818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8327690041201943835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e471a4fad457048d79bb49998e77ad40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 2162333480689057367}
+  description: {fileID: 6492093711808468837}
+  points: {fileID: 2100947306800482850}
+  image: {fileID: 1411208555355266216}
 --- !u!1 &8788713753132206397
 GameObject:
   m_ObjectHideFlags: 0

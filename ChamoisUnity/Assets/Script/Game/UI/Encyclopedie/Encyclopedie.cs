@@ -68,7 +68,7 @@ public class Encyclopedie : MonoBehaviour
            }
            page.Add(i);
         }
-        pagesStatic.Add(page);
+        //pagesStatic.Add(page);
     }
 
     protected void CurrentPage(int pageActuelle, List<ContenuPages> pages)
@@ -174,17 +174,16 @@ public class Encyclopedie : MonoBehaviour
     public void onChapterSelected(string chapitre)
     {
         GOPointer.Livre.SetActive(true);
-        GOPointer.ChapitreChamois.SetActive(false);
-        GOPointer.ChapitreChasseur.SetActive(false);
-        GOPointer.ChapitreRandonneur.SetActive(false);
+        GOPointer.EncyMenu.SetActive(false);
+
         encyButtons.SetActive(true);
 
         pageActuelle = 0;
-        this.chapitre = chapitre;
+        GOPointer.currentEncy.chapitre = chapitre;
         List<ContenuPages> pages = getPages();
         if(pages != null && pages.Count > 0)
         {
-            CurrentPage(pageActuelle, pages);
+            GOPointer.currentEncy.CurrentPage(pageActuelle, pages);
         }
         leftButton.SetActive(pageActuelle > 2);
         rightButton.SetActive(pages.Count - pageActuelle > 2);

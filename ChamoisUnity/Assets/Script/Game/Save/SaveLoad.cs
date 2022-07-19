@@ -123,7 +123,11 @@ public static class SaveLoad
         //ency
         Save<List<ContenuPages>>(GOPointer.currentEncy.pagesDynamic, "ency"+Global.Personnage);
         
-        
+        //achi
+        foreach (KeyValuePair<string, Achievment> achi in GOPointer.AchievementManager.achievments)
+        {
+            Save<bool>(achi.Value.unlocked, achi.Key);
+        }
     }
 
     public static async Task LoadState()
@@ -228,6 +232,14 @@ public static class SaveLoad
         }
         
         //Debug.Log("Load ency: " + (DateTime.Now - start));
+        
+        //achi
+        foreach (KeyValuePair<string, Achievment> achi in GOPointer.AchievementManager.achievments)
+        {
+            bool tmp = false;
+            tmp = Load<bool>(achi.Key);
+            achi.Value.unlocked = tmp;
+        }
     }
 
     static Texture2D toTexture2D(RenderTexture texture)
