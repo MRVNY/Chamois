@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Chasseur
-  m_Shader: {fileID: -6465566751694194690, guid: 835ac29c01e7f4c9896b096b5f65c1a7,
+  m_Shader: {fileID: -6465566751694194690, guid: e4b3d20cb338747d094d5ae6886833ff,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
@@ -109,7 +109,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2D:
-        m_Texture: {fileID: 2800000, guid: 95224b90872e97c4c8d6ddeeaeedfb50, type: 3}
+        m_Texture: {fileID: 2800000, guid: d47203065fd76594c98a968433629210, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -155,10 +155,11 @@ Material:
     - _ZWrite: 0
     - _Zoom: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.735849, g: 0.5473698, b: 0.2742079, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &5241806613197870416
 MonoBehaviour:
