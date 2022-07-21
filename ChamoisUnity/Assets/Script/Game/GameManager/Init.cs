@@ -65,10 +65,6 @@ public class Init : MonoBehaviour
         GOPointer.PlayerChamois.SetActive(false);
         GOPointer.PlayerRandonneur.SetActive(false);
         GOPointer.PlayerChasseur.SetActive(false);
-        
-        Map.Instance.MapChamois.SetActive(false);
-        Map.Instance.MapChasseur.SetActive(false);
-        Map.Instance.MapRando.SetActive(false);
 
         GOPointer.currentPlayer.SetActive(true);
         
@@ -77,7 +73,6 @@ public class Init : MonoBehaviour
             case "Chasseur":
                 GOPointer.EncyclopedieManager.GetComponent<EncycloContentChasseur>().initList();
                 GOPointer.ListeChamoisSauvages.SetActive(true);
-                Map.Instance.MapChasseur.SetActive(true);
                 break;
 
             case "Randonneur":
@@ -85,13 +80,11 @@ public class Init : MonoBehaviour
                 GOPointer.ListeChamoisSauvages.SetActive(false);
                 GOPointer.CameraFogOfWar.SetActive(true);
                 GOPointer.FogOfWarCanvas.SetActive(true);
-                Map.Instance.MapRando.SetActive(true);
                 break;
 
             case "Chamois":
                 GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>().initList();
                 GOPointer.ListeChamoisSauvages.SetActive(false);
-                Map.Instance.MapChamois.SetActive(true);
                 break;
         }
         

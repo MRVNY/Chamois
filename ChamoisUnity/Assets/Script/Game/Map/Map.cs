@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
+    public GameObject MainMap;
     public static Map Instance;
 
-    public GameObject MapChamois;
-    public GameObject MapChasseur;
-    public GameObject MapRando;
+    public Color green;
+    public Color blue;
+    public Color orange;
     private void Awake()
     {
         if(Instance == null)
@@ -22,25 +23,5 @@ public class Map : MonoBehaviour
         }
         
         DontDestroyOnLoad(this);
-    }
-
-    private void OnEnable()
-    {
-        MapChamois.SetActive(false);
-        MapChasseur.SetActive(false);
-        MapRando.SetActive(false);
-
-        switch (Global.Personnage)
-        {
-            case "Chamois":
-                MapChamois.SetActive(true);
-                break;
-            case "Chasseur":
-                MapChasseur.SetActive(true);
-                break;
-            case "Randonneur":
-                MapRando.SetActive(true);
-                break;
-        }
     }
 }
