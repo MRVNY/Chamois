@@ -27,47 +27,51 @@ public class ItemActivator : MonoBehaviour
 
    IEnumerator CheckActivation()
    {
-      List<ActivatorItem> removeList = new List<ActivatorItem>();
-      if (ActivatorItems.Count > 0)
+      if (GOPointer.currentPlayer != null)
       {
-         foreach (ActivatorItem item in ActivatorItems)
+         List<ActivatorItem> removeList = new List<ActivatorItem>();
+         if (ActivatorItems.Count > 0)
          {
-            if (Vector3.Distance(GOPointer.currentPlayer.transform.position, item.ItemPos) > distanceFromPlayer)
+            foreach (ActivatorItem item in ActivatorItems)
             {
-               if (item.Item == null)
+               if (Vector3.Distance(GOPointer.currentPlayer.transform.position, item.ItemPos) > distanceFromPlayer)
                {
-                  removeList.Add(item);
+                  if (item.Item == null)
+                  {
+                     removeList.Add(item);
+                  }
+                  else
+                  {
+                     item.Item.SetActive(false);
+                  }
                }
                else
                {
-                  item.Item.SetActive(false);
-               }
-            }
-            else
-            {
-               if (item.Item == null)
-               {
-                  removeList.Add(item);
-               }
-               else
-               {
-                  item.Item.SetActive(true);
+                  if (item.Item == null)
+                  {
+                     removeList.Add(item);
+                  }
+                  else
+                  {
+                     item.Item.SetActive(true);
+                  }
                }
             }
          }
-      }
-      yield return new WaitForSeconds(0.01f);
 
-      if (removeList.Count > 0)
-      {
-         foreach (ActivatorItem item in removeList)
+         yield return new WaitForSeconds(0.01f);
+
+         if (removeList.Count > 0)
          {
-            ActivatorItems.Remove(item);
+            foreach (ActivatorItem item in removeList)
+            {
+               ActivatorItems.Remove(item);
+            }
          }
+
+         yield return new WaitForSeconds(0.01f);
+         StartCoroutine("CheckActivation");
       }
-      
-      yield return new WaitForSeconds(0.01f);
-      StartCoroutine("CheckActivation");
    }
 }
 

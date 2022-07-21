@@ -83,7 +83,7 @@ namespace RPGM.Gameplay
                 ev.gameObject = gameObject;
                 ev.conversationItemKey = firstNode;
                 
-                SaveLoad.SaveState();
+                //SaveLoad.SaveState();
             }
         }
         

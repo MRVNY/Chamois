@@ -78,7 +78,8 @@ public static class SaveLoad
         string path = savePath + "/saves/";
         DirectoryInfo dir = new DirectoryInfo(path);
         dir.Delete(true);
-        Directory.CreateDirectory(path); 
+        Directory.CreateDirectory(path);
+        PlayerPrefs.DeleteAll();
     }
 
     public async static Task SaveState()

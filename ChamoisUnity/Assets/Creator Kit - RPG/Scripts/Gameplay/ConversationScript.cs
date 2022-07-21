@@ -20,7 +20,6 @@ namespace RPGM.Gameplay
 
         public ConversationPiece Get(string id)
         {
-            //GOPointer.UIManager.GetComponent<UIManager>().startVisualNovel();
             return index[id];
         }
 

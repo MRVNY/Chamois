@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -8,24 +9,35 @@ public class GuideManager : MonoBehaviour
 {
 
     public TextMeshProUGUI guideText;
-    public GameObject guideCanvas;
+    public static GuideManager Instance;
 
 
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         //Debug.Log("boolean help : " + PlayerPrefs.GetFloat("inGameHelp"));
         if(PlayerPrefs.GetInt("inGameHelp") == 1 && PlayerPrefs.GetInt(Global.Personnage)!=1)
         {
             GOPointer.MenuManager.GetComponent<PauseMenu>().Pause();
-            guideCanvas.SetActive(true);
+            gameObject.SetActive(true);
             Time.timeScale = 0;
             guideText.SetText(Global.guide[Global.Personnage]);
         }
         else
         {
-            guideCanvas.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
@@ -44,7 +56,7 @@ public class GuideManager : MonoBehaviour
     public async void fermerGuide()
     {
         GOPointer.MenuManager.GetComponent<PauseMenu>().Resume();
-        guideCanvas.SetActive(false);
+        gameObject.SetActive(false);
         //GOPointer.CanvasGuideJeu.SetActive(false);
         //wait(1000);
         await Task.Delay(2000);
@@ -55,7 +67,7 @@ public class GuideManager : MonoBehaviour
     {
         GOPointer.MenuManager.GetComponent<PauseMenu>().Pause();
         GOPointer.CanvasGuideJeu.SetActive(true);
-        guideCanvas.SetActive(true);
+        gameObject.SetActive(true);
         guideText.SetText(text);
     }
 }

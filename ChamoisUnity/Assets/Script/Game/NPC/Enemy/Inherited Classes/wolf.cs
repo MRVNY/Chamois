@@ -50,7 +50,7 @@ public class wolf : ia_aggro
     // Update is called once per frame
     void FixedUpdate()
     {
-        if ((target.position - transform.position).magnitude < 100)
+        if (Time.timeScale>0 && (target.position - transform.position).magnitude < 100)
         {
             switch (Global.Personnage)
             {

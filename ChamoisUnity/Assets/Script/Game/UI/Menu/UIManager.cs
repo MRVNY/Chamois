@@ -72,6 +72,7 @@ public class UIManager : MonoBehaviour
     public void startVisualNovel(SpriteRenderer left)
     {
         UIPause();
+        GuideManager.Instance.gameObject.SetActive(false);
         GOPointer.EncyclopedieManager.SetActive(false);
         GOPointer.VisualNovel.gameObject.SetActive(true);
         GOPointer.VisualNovel.setImages(left);
@@ -79,6 +80,8 @@ public class UIManager : MonoBehaviour
     
     public void endVisualNovel()
     {
+        GuideManager.Instance.gameObject.SetActive(true);
+        GuideManager.Instance.Start();
         GOPointer.EncyclopedieManager.SetActive(true);
         GOPointer.VisualNovel.gameObject.SetActive(false);
         UIResume();
