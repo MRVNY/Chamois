@@ -18,13 +18,10 @@ public class Init : MonoBehaviour
     public NPCController guide;
     public NPCController chamois;
 
-    public GameObject loadScreen;
     public static Task loading;
     public static Task convo;
     void Awake()
     {
-        loadScreen.SetActive(true);
-        
         gp.Link();
         
         GOPointer.CanvasGuideJeu.SetActive(true);
@@ -44,8 +41,6 @@ public class Init : MonoBehaviour
 
     async void Start() 
     {
-        loadScreen.SetActive(true);
-        
         if(gp==null) Awake();
         if (GOPointer.linking!=null) await GOPointer.linking;
         
@@ -130,8 +125,6 @@ public class Init : MonoBehaviour
         {
             PauseMenu.instance.Resume();
         }
-        
-        loadScreen.SetActive(false);
     }
 
 }
