@@ -1,4 +1,4 @@
-﻿Shader "FogOfWar"
+﻿Shader "Hidden/NewImageEffectShader"
 {
     Properties
     {
@@ -10,8 +10,6 @@
         Tags
         {
             "Queue" = "Transparent+1"
-            "RenderPipeline" = "UniversalPipeline"
-            //"LightMode" = "Lit"
         }
         Pass
         {
