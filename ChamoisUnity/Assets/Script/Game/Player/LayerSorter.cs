@@ -17,20 +17,28 @@ public class LayerSorter : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        float myRoot = layerSorter.bounds.center.y - layerSorter.bounds.size.y / 2;
-        float otherRoot = collision.bounds.center.y - collision.bounds.size.y / 2;
-        if (collision.tag == "Obstacle" && myRoot > otherRoot)
+        SpriteRenderer otherRenderer = collision.GetComponent<SpriteRenderer>();
+        if (collision.CompareTag("Obstacle") && otherRenderer != null)
         {
-            renderer.sortingOrder = 0;
-        }
-        else
-        {
-            renderer.sortingOrder = 100;
+            float myRoot = layerSorter.bounds.center.y - layerSorter.bounds.size.y / 2;
+            float otherRoot = collision.bounds.center.y - collision.bounds.size.y / 2;
+            if (myRoot > otherRoot)
+            {
+                otherRenderer.sortingLayerName = "Front";
+            }
+            else
+            {
+                otherRenderer.sortingLayerName = "Default";
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        renderer.sortingOrder = 100;
+        SpriteRenderer otherRenderer = collision.GetComponent<SpriteRenderer>();
+        if (collision.CompareTag("Obstacle") && otherRenderer != null)
+        {
+            otherRenderer.sortingLayerName = "Default";
+        }
     }
 }

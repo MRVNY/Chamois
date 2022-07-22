@@ -13,7 +13,6 @@ public class GOPointer : MonoBehaviour
     public GameObject _PlayerRandonneur;
 
     public GameObject _JoystickCanvas;
-    public GameObject _CameraReg;
 
     public GameObject _MiniMap;
 
@@ -58,7 +57,6 @@ public class GOPointer : MonoBehaviour
     public static GameObject PlayerRandonneur;
 
     public static GameObject JoystickCanvas;
-    public static GameObject CameraReg;
     
     public static GameObject MiniMap;
     
@@ -130,7 +128,6 @@ public class GOPointer : MonoBehaviour
         PlayerRandonneur = _PlayerRandonneur;
 
         JoystickCanvas = _JoystickCanvas;
-        CameraReg = _CameraReg;
         
         MiniMap = _MiniMap;
 

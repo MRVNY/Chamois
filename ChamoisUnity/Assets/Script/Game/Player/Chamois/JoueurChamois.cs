@@ -22,6 +22,11 @@ public class JoueurChamois : Joueur
 
     public DataStorerChamois dataStorer = new DataStorerChamois();
 
+    private void Awake()
+    {
+        dataStorer = new DataStorerChamois();
+    }
+
     new void Start()
     {
         GameEvents.SaveInitiated += Save;

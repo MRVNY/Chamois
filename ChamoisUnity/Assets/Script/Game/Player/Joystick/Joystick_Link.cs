@@ -30,7 +30,7 @@ public class Joystick_Link : MonoBehaviour
             var hori = Input.GetAxis("Horizontal");
             var verti = Input.GetAxis("Vertical");
 
-            if (Global.sliding)
+            if (Rocks.sliding)
                 rigidbody.velocity = new Vector2(hori * 6, verti * 6)
                                      + Vector2.down * Global.difficulty;
             else
@@ -39,14 +39,14 @@ public class Joystick_Link : MonoBehaviour
 
             if (joystick.Horizontal != 0 || joystick.Vertical != 0)
             {
-                if (Global.sliding)
+                if (Rocks.sliding)
                     rigidbody.velocity = new Vector2(joystick.Horizontal * speed, joystick.Vertical * speed)
                                          + Vector2.down * Global.difficulty;
                 else
                     rigidbody.velocity = new Vector2(joystick.Horizontal * speed, joystick.Vertical * speed);
             }
 
-            if (hori == 0 && verti == 0 && joystick.Horizontal == 0 && joystick.Vertical == 0 && Global.sliding)
+            if (hori == 0 && verti == 0 && joystick.Horizontal == 0 && joystick.Vertical == 0 && Rocks.sliding)
                 rigidbody.velocity = Vector2.down * Global.difficulty;
         }
     }

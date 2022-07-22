@@ -8,6 +8,7 @@ public class Map : MonoBehaviour
 {
     public GameObject MainMap;
     public static Map Instance;
+    public GameObject Colliders;
 
     public Color green;
     public Color blue;
@@ -29,8 +30,10 @@ public class Map : MonoBehaviour
 
     public void ChangeColor()
     { 
+        Colliders.SetActive(false);
+        
         Color currentColor = Color.white;
-
+        
         switch (Global.Personnage)
         {
             case "Chamois":
@@ -48,5 +51,7 @@ public class Map : MonoBehaviour
         {
             img.color = currentColor;
         }
+        
+        Colliders.SetActive(true);
     }
 }

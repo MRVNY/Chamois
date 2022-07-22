@@ -85,7 +85,7 @@ public static class SaveLoad
     public async static Task SaveState()
     {
         //pos
-        var vect = Joueur.currentPlayer.transform.position;
+        var vect = GOPointer.currentPlayer.transform.position;
         float pos1 = vect.x;
         float pos2 = vect.y;
 
@@ -161,7 +161,7 @@ public static class SaveLoad
         //pos
         float pos1 = Load<float>("pos1"+Global.Personnage);
         float pos2 = Load<float>("pos2"+Global.Personnage);
-        if(pos1!=0 && pos2!=0) Joueur.currentPlayer.transform.position = new Vector3(pos1, pos2, 0);
+        if(pos1!=0 && pos2!=0) GOPointer.currentPlayer.transform.position = new Vector3(pos1, pos2, 0);
         
         //Debug.Log("Load pos: " + (DateTime.Now - start));
         // start = DateTime.Now;

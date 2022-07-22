@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 
 public class JoueurChasseur : Joueur
@@ -30,6 +31,11 @@ public class JoueurChasseur : Joueur
     Munitions munitions;
 
     public DataStorerChasseur dataStorer = new DataStorerChasseur();
+
+    private void Awake()
+    {
+        dataStorer = new DataStorerChasseur();
+    }
 
     new void Start()
     {
