@@ -20,7 +20,6 @@ public class FogOfWar : MonoBehaviour
     
     private int prc;
 
-    public GameObject area;
     public Dictionary<RectTransform,int> rectsPrc = new Dictionary<RectTransform, int>();
 
     public static FogOfWar Instance;
@@ -38,7 +37,7 @@ public class FogOfWar : MonoBehaviour
     private void Start()
     {
         
-        rects = area.GetComponentsInChildren<RectTransform>();
+        rects = Map.Instance.Area.GetComponentsInChildren<RectTransform>(false);
         foreach (var rect in rects)
         {
             rectsPrc.Add(rect,0);

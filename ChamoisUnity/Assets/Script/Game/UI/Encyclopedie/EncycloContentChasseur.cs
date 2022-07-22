@@ -119,7 +119,7 @@ public class EncycloContentChasseur : Encyclopedie
         dynamicInfo.Add("horsChasse",               new EncycloInfos(null, "En période hors chasse, le chasseur peut faire du comptage ou encore de la chasse photographique.", 4));
         dynamicInfo.Add("typesChasse",              new EncycloInfos(null, "Il existe plusieurs types de chasse, comme par exemple la chasse en battue, ou la chasse en billebaude.", 5));
         dynamicInfo.Add("chasseurJumelles",         new EncycloInfos(null, "Pour chasser, le chasseur utilise des jumelles, afin d'identifier les animaux.", 6));*/
-
+        
         staticInfo.Add(new EncycloInfos(null, "En tant que chasseur, votre objectif principal est d'aider à la régulation des espèces. N'hésitez pas à converser avec tous les perosnnages afin d'obtenir des informations ou d'obtenir des quêtes de chasse.", 6));
 
         staticInfo.Add( new EncycloInfos(null, "Votre rôle est de chasser, de traquer et de prélever des cibles potentiellement dangereuses", 4));

@@ -2582,11 +2582,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 21816953}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 232, y: -267, z: 0}
+  m_LocalPosition: {x: 392, y: -285, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1922308984}
+  - {fileID: 1580871190661795385}
+  - {fileID: 1938700842963065990}
+  - {fileID: 8317460558543244532}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15289,7 +15291,6 @@ GameObject:
   - component: {fileID: 545001292}
   - component: {fileID: 545001295}
   - component: {fileID: 545001294}
-  - component: {fileID: 545001293}
   m_Layer: 5
   m_Name: RawCount
   m_TagString: Untagged
@@ -15317,24 +15318,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 600, y: 600}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &545001293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545001291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a187735adc854648baa3c4033fee7c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 1435998825}
-  rawShow: {fileID: 728386826}
-  rawCount: {fileID: 545001294}
-  camShow: {fileID: 1830370484}
-  camCount: {fileID: 1441177572}
-  area: {fileID: 1163808238}
 --- !u!114 &545001294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16979,6 +16962,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 578338428}
+  - component: {fileID: 578338429}
   m_Layer: 0
   m_Name: FogOfWar
   m_TagString: Untagged
@@ -17003,6 +16987,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &578338429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578338427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a187735adc854648baa3c4033fee7c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1435998825}
+  rawShow: {fileID: 728386826}
+  rawCount: {fileID: 545001294}
+  camShow: {fileID: 1830370484}
+  camCount: {fileID: 1441177572}
 --- !u!1 &582317556
 GameObject:
   m_ObjectHideFlags: 0
@@ -35891,6 +35892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainMap: {fileID: 2799900607306456109}
   Colliders: {fileID: 7313860536713988967}
+  Area: {fileID: 1163808238}
   green: {r: 0.81960785, g: 1, b: 0.81960785, a: 1}
   blue: {r: 0.7877358, g: 0.93378913, b: 1, a: 1}
   orange: {r: 1, g: 0.8661321, b: 0.7971698, a: 1}
@@ -49919,40 +49921,6 @@ MonoBehaviour:
   randonneur: {fileID: 1293802948}
   buttons: {fileID: 1515623667}
   achi: {fileID: 5157798649331561389}
---- !u!1 &1922308983
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1922308984}
-  m_Layer: 0
-  m_Name: Players
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1922308984
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1922308983}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1580871190661795385}
-  - {fileID: 1938700842963065990}
-  - {fileID: 8317460558543244532}
-  m_Father: {fileID: 21816954}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1927680497
 GameObject:
   m_ObjectHideFlags: 0
@@ -55715,6 +55683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -66108,7 +66077,7 @@ Transform:
   m_Children:
   - {fileID: 7893920339737450143}
   - {fileID: 392244712574572996}
-  m_Father: {fileID: 1922308984}
+  m_Father: {fileID: 21816954}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1588682078372618689
@@ -67445,7 +67414,7 @@ Transform:
   m_Children:
   - {fileID: 7223652093216163500}
   - {fileID: 2070877730778856633}
-  m_Father: {fileID: 1922308984}
+  m_Father: {fileID: 21816954}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1944201481366022677
@@ -94386,7 +94355,7 @@ Transform:
   m_Children:
   - {fileID: 917777429705193363}
   - {fileID: 7422421503947711023}
-  m_Father: {fileID: 1922308984}
+  m_Father: {fileID: 21816954}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &8317460558543244534

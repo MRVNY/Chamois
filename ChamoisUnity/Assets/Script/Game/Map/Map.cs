@@ -9,6 +9,7 @@ public class Map : MonoBehaviour
     public GameObject MainMap;
     public static Map Instance;
     public GameObject Colliders;
+    public GameObject Area;
 
     public Color green;
     public Color blue;

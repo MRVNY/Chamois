@@ -68,7 +68,7 @@ public class Encyclopedie : MonoBehaviour
            }
            page.Add(i);
         }
-        //pagesStatic.Add(page);
+        pagesStatic.Add(page);
     }
 
     protected void CurrentPage(int pageActuelle, List<ContenuPages> pages)
@@ -81,10 +81,10 @@ public class Encyclopedie : MonoBehaviour
         else if ( pages.Count > pageGauche )
         {
             formatagePage(pageGauche, pages, pG);
-            formatagePage(pageGauche, pages, pD);
+            formatagePage(pageGauche+1, pages, pD);
         }
         leftButton.SetActive(pageActuelle >= 2);
-        rightButton.SetActive(pages.Count - pageActuelle > 2);
+        rightButton.SetActive(pages.Count - pageActuelle >= 2);
     }
 
     protected void formatagePage(int indexe, List<ContenuPages> pages, GameObject gm)
@@ -97,12 +97,16 @@ public class Encyclopedie : MonoBehaviour
                 if (!string.IsNullOrEmpty(i.getImage()))
                 {
                     Sprite sprite = Resources.Load<Sprite>(i.getImage());
-                    GameObject image = new GameObject("image_" + id.ToString());
-                    image.transform.SetParent(gm.transform);
-                    image.AddComponent<Image>();
-                    Image img = image.GetComponent<Image>();
-                    img.sprite = sprite;
-                    img.rectTransform.sizeDelta = new Vector2(img.sprite.rect.width/2, img.sprite.rect.height/2);
+                    if (sprite != null)
+                    {
+                        GameObject image = new GameObject("image_" + id.ToString());
+                        image.transform.SetParent(gm.transform);
+                        image.AddComponent<Image>();
+                        Image img = image.GetComponent<Image>();
+                        img.sprite = sprite;
+                        img.rectTransform.sizeDelta =
+                            new Vector2(img.sprite.rect.width / 2, img.sprite.rect.height / 2);
+                    }
                 }
 
                 if (!string.IsNullOrEmpty(i.getText()))
