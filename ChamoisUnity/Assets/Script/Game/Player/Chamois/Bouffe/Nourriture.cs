@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CaracNouriture : MonoBehaviour
+public class Nourriture : MonoBehaviour
 {
     public int id;
 
@@ -21,6 +21,8 @@ public class CaracNouriture : MonoBehaviour
     private Hashtable h = new Hashtable();
     void Start()
     {
+        id = gameObject.GetInstanceID();
+        
         enabled = false;
         playerManagement = GOPointer.Jauges;
 

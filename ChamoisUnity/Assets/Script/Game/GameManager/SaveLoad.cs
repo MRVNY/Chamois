@@ -125,13 +125,24 @@ public static class SaveLoad
         Save<List<ContenuPages>>(GOPointer.currentEncy.pagesDynamic, "ency"+Global.Personnage);
         
         //achi
-        foreach (KeyValuePair<string, Achievment> achi in GOPointer.AchievementManager.achievments)
+        foreach (KeyValuePair<string, Achievement> achi in GOPointer.AchievementManager.achievements)
         {
             Save<bool>(achi.Value.unlocked, achi.Key);
         }
         
         //DS
-        
+        switch (Global.Personnage)
+        {
+            case "Chamois":
+                Save<DataStorerChamois>(DataStorerChamois.Instance,"DSChamois");
+                break;
+            case "Randonneur":
+                Save<DataStorerRandonneur>(DataStorerRandonneur.Instance,"DSRandonneur");
+                break;
+            case "Chasseur":
+                Save<DataStorerChasseur>(DataStorerChasseur.Instance,"DSChasseur");
+                break;
+        }
         
     }
 
@@ -239,12 +250,31 @@ public static class SaveLoad
         //Debug.Log("Load ency: " + (DateTime.Now - start));
         
         //achi
-        foreach (KeyValuePair<string, Achievment> achi in GOPointer.AchievementManager.achievments)
+        foreach (KeyValuePair<string, Achievement> achi in GOPointer.AchievementManager.achievements)
         {
             bool tmp = false;
             tmp = Load<bool>(achi.Key);
             achi.Value.unlocked = tmp;
         }
+        
+        //DS
+        switch (Global.Personnage)
+        {
+            case "Chamois":
+                var tmp = Load<DataStorerChamois>("DSChamois");
+                if (tmp != null) DataStorerChamois.Instance = tmp;
+                break;
+            case "Randonneur":
+                var tmp2 = Load<DataStorerRandonneur>("DSRandonneur");
+                if (tmp2 != null) DataStorerRandonneur.Instance = tmp2;
+                break;
+            case "Chasseur":
+                var tmp3 = Load<DataStorerChasseur>("DSChasseur");
+                if (tmp3 != null) DataStorerChasseur.Instance = tmp3;
+                break;
+        }
+        
+        
     }
 
     static Texture2D toTexture2D(RenderTexture texture)

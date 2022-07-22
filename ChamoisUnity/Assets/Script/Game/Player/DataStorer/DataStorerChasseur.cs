@@ -43,11 +43,18 @@ public class DataStorerChasseur : DataStorer
     public int score;
     public int nbInfos;
     
-    //private Hashtable h;
-
-    // Start is called before the first frame update
+    public static DataStorerChasseur Instance;
+    
     void Start()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         base.Start();
 
         nbQuetes = PlayerPrefs.GetInt("nbQuetes");
@@ -79,7 +86,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (nbQuetes > 1)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Quête Chasse I");
+                    GOPointer.AchievementManager.EarnAchievement("Quête Chasse I");
                     quete1 = true;
                 }
             }
@@ -88,7 +95,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (nbPhotoMemePartie > 4)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Chasse Photographique I");
+                    GOPointer.AchievementManager.EarnAchievement("Chasse Photographique I");
                     photo5 = true;
                 }
             }
@@ -97,7 +104,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (nbPhotoMemePartie > 9)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Chasse Photographique II");
+                    GOPointer.AchievementManager.EarnAchievement("Chasse Photographique II");
                     photo10 = true;
                 }
             }
@@ -106,7 +113,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (nbPhotoMemePartie > 14)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Chasse Photographique III");
+                    GOPointer.AchievementManager.EarnAchievement("Chasse Photographique III");
                     photo15 = true;
                 }
             }
@@ -115,7 +122,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (abattus > 0)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Prélèvement I");
+                    GOPointer.AchievementManager.EarnAchievement("Prélèvement I");
                     abattre1 = true;
                 }
             }
@@ -124,7 +131,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (abattus > 1)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Prélèvement II");
+                    GOPointer.AchievementManager.EarnAchievement("Prélèvement II");
                     abattre2 = true;
                 }
             }
@@ -133,7 +140,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (abattus > 2)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Prélèvement III");
+                    GOPointer.AchievementManager.EarnAchievement("Prélèvement III");
                     abattre3 = true;
                 }
             }
@@ -142,7 +149,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (score > 999)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Score Chasseur I");
+                    GOPointer.AchievementManager.EarnAchievement("Score Chasseur I");
                     score1000 = true;
                 }
             }
@@ -151,7 +158,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (abattus > 2999)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Score Chasseur II");
+                    GOPointer.AchievementManager.EarnAchievement("Score Chasseur II");
                     score3000 = true;
                 }
             }
@@ -160,7 +167,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (score > 4999)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Score Chasseur III");
+                    GOPointer.AchievementManager.EarnAchievement("Score Chasseur III");
                     score5000 = true;
                 }
             }
@@ -169,7 +176,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (nbInfos > 4)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Chasse I");
+                    GOPointer.AchievementManager.EarnAchievement("Connaissances en Chasse I");
                     nbInfos5 = true;
                 }
             }
@@ -178,7 +185,7 @@ public class DataStorerChasseur : DataStorer
             {
                 if (nbInfos > 9)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Chasse II");
+                    GOPointer.AchievementManager.EarnAchievement("Connaissances en Chasse II");
                     nbInfos10 = true;
                 }
             }

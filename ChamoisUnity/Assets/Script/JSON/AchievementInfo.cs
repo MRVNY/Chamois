@@ -1,5 +1,5 @@
 ﻿[System.Serializable]
-public class AchievmentInfo
+public class AchievementInfo
 {
     public string joueur;
     public string nomAch;

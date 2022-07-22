@@ -43,11 +43,20 @@ public class DataStorerChamois : DataStorer
     private Boolean nbInfos5 = false;
     private Boolean nbInfos10 = false;
 
-
-    //private Hashtable h;
-
+    
+    public static DataStorerChamois Instance;
+    
     void Start()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
         base.Start();
         
         nourritureMangee = 0;
@@ -95,7 +104,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (tempsSurvecu > 60.0)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Survivre I");
+                    GOPointer.AchievementManager.EarnAchievement("Survivre I");
                     temps1minute = true;
                 }
             }
@@ -104,7 +113,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (tempsSurvecu > 180.0)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Survivre II");
+                    GOPointer.AchievementManager.EarnAchievement("Survivre II");
                     temps3minute = true;
                 }
             }
@@ -113,7 +122,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (tempsSurvecu > 300.0)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Survivre III");
+                    GOPointer.AchievementManager.EarnAchievement("Survivre III");
                     temps5minute = true;
                 }
             }
@@ -122,7 +131,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (tempsSurvecu > 600.0)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Survivre IV");
+                    GOPointer.AchievementManager.EarnAchievement("Survivre IV");
                     temps10minute = true;
                 }
             }
@@ -131,7 +140,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (naissance > 0)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Heureux Évènement I");
+                    GOPointer.AchievementManager.EarnAchievement("Heureux Évènement I");
                     naissance1 = true;
                 }
             }
@@ -140,7 +149,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (naissance > 1)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Heureux Évènement II");
+                    GOPointer.AchievementManager.EarnAchievement("Heureux Évènement II");
                     naissance2 = true;
                 }
             }
@@ -149,7 +158,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (nbInfos > 4)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Chamois I");
+                    GOPointer.AchievementManager.EarnAchievement("Connaissances en Chamois I");
                     nbInfos5 = true;
                 }
             }
@@ -158,7 +167,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (nbInfos > 9)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Chamois II");
+                    GOPointer.AchievementManager.EarnAchievement("Connaissances en Chamois II");
                     nbInfos10 = true;
                 }
             }
@@ -167,7 +176,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (score > 999)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Score Chamois I");
+                    GOPointer.AchievementManager.EarnAchievement("Score Chamois I");
                     score1000 = true;
                 }
             }
@@ -176,7 +185,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (score > 2999)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Score Chamois II");
+                    GOPointer.AchievementManager.EarnAchievement("Score Chamois II");
                     score3000 = true;
                 }
             }
@@ -185,7 +194,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (score > 4999)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Score Chamois III");
+                    GOPointer.AchievementManager.EarnAchievement("Score Chamois III");
                     score5000 = true;
                 }
             }
@@ -194,7 +203,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (nourritureMangee > 14)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Alimentation I");
+                    GOPointer.AchievementManager.EarnAchievement("Alimentation I");
                     nourriture15 = true;
                 }
             }
@@ -203,7 +212,7 @@ public class DataStorerChamois : DataStorer
             {
                 if (nourritureMangee > 29)
                 {
-                    GOPointer.AchievementManager.EarnAchievment("Alimentation II");
+                    GOPointer.AchievementManager.EarnAchievement("Alimentation II");
                     nourriture30 = true;
                 }
             }

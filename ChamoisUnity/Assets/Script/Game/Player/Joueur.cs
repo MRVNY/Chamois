@@ -7,11 +7,8 @@ using UnityEngine;
 /// </summary>
 public class Joueur : MonoBehaviour
 {
-    [Header("Vitesse de déplacement")]
     public float vitesse;
-
-    [Header("Caméra du personnage")]
-
+    
     [Header("Zoom Caméra si un évennement est appelé")]
     //zoom de la camera si et ssi un bouton est appuyé
     public float zoomSize;
@@ -19,16 +16,11 @@ public class Joueur : MonoBehaviour
     [Header("position de la caméra devant le joueur si cette valeur > 0")]
     public float inFrontOf;
 
-    [Header("Champ de vision")]
-    public float champ_de_vision;
-    public CircleCollider2D champ_de_vision_collider;
-
     [Header("Animator")]
     public Animator animator;
     public Animator animatorOmbre;
 
-    protected Rigidbody2D rb2d = new Rigidbody2D();
-    protected GameObject playerManager;
+    protected Rigidbody2D rb2d;
 
 
     protected float time;

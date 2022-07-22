@@ -70,7 +70,7 @@ public class Menu : MonoBehaviour
 
     private void Activate()
     {
-        saving = SaveLoad.SaveState();
+        //saving = SaveLoad.SaveState();
 
         resume.SetActive(true);
         menuIcon.enabled = false;
@@ -118,11 +118,13 @@ public class Menu : MonoBehaviour
     
     public void Home()
     {
+        saving = SaveLoad.SaveState();
         SceneManager.LoadScene("Menu");
     }
 
     public void Switch(string perso)
     {
+        saving = SaveLoad.SaveState();
         Global.Personnage = perso;
         SceneManager.LoadScene("Game");
     }

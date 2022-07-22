@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System;
 
 [Serializable]
-public class Achievment
+public class Achievement
 {
 
     private string name;
@@ -16,7 +16,7 @@ public class Achievment
     private Image background;
 
     private GameObject achievmentRef;
-    private List<Achievment> dependencies = new List<Achievment>();
+    private List<Achievement> dependencies = new List<Achievement>();
     private string child;
 
     public string Name { get => name; set => name = value; }
@@ -27,7 +27,7 @@ public class Achievment
     public string Child { get => child; set => child = value; }
     public GameObject AchievmentRef { get => achievmentRef; set => achievmentRef = value; }
 
-    public Achievment(string name, string description, int points, int spriteIndex, GameObject achievmentRef)
+    public Achievement(string name, string description, int points, int spriteIndex, GameObject achievmentRef)
     {
         this.name = name;
         this.description = description;
@@ -39,12 +39,12 @@ public class Achievment
         LoadAchievment();
     }
 
-    public void AddDependency(Achievment dependency)
+    public void AddDependency(Achievement dependency)
     {
         dependencies.Add(dependency);
     }
 
-    public bool EarnAchievment()
+    public bool EarnAchievement()
     {
         if (!unlocked && !dependencies.Exists(x => x.unlocked == false))
         {
@@ -53,7 +53,7 @@ public class Achievment
             
             if(child != null)
             {
-                GOPointer.AchievementManager.EarnAchievment(child);
+                GOPointer.AchievementManager.EarnAchievement(child);
             }
 
             return true;

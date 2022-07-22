@@ -28,7 +28,7 @@ public class RandoManager : MonoBehaviour
 
         if (Global.Personnage == "Randonneur")
         {
-            dataSt = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
+            dataSt = (DataStorerRandonneur)DataStorer.currentDS;
         }
 
         //dataEncy = JObject.Parse(jsonFileEncy.text);
@@ -93,36 +93,10 @@ public class RandoManager : MonoBehaviour
         totalPoints = -1;
         currentPoint = -1;
 
-        PlayerRandonneur player = GOPointer.PlayerRandonneur.GetComponent<PlayerRandonneur>();
-        player.epionCurrent = 1;
 
-
-        if (player.epion == false)
-        {
-            player.epion = true;
-            player.nbRando += 1;
-            player.epionScore = player.epionCurrent;
-            player.epionCurrent = 0 ;
-            dataSt.setData("epionScore", player.epionScore);
-
-        }
-        else
-        {
-            if(player.epionScore < player.epionCurrent)
-            {
-                player.epionScore = player.epionCurrent;
-                player.epionCurrent = 0;
-                dataSt.setData("epionScore", player.epionScore);
-            }
-            else
-            {
-                player.epionCurrent = 0;
-            }
-        }
-
-        // dataSt.nbRandos += 1;
+        dataSt.setData(randoName+"Score", 1);
+        dataSt.nbRandos += 1;
         // dataSt.nbRandosMemePartie += 1;
-        // PlayerPrefs.SetInt("nbRandos", (PlayerPrefs.GetInt("nbRandos") + 1));
     }
 
 }

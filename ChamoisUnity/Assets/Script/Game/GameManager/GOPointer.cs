@@ -25,7 +25,7 @@ public class GOPointer : MonoBehaviour
     public GameObject _CanvasGuideJeu;
 
     public GameObject _EncyclopedieManager;
-    public AchievmentManager _AchievementManager;
+    public AchievementManager _AchievementManager;
     public GameObject _PageGauche;
     public GameObject _PageDroite;
     public GameObject _Livre;
@@ -70,7 +70,7 @@ public class GOPointer : MonoBehaviour
     public static GameObject CanvasGuideJeu;
 
     public static GameObject EncyclopedieManager;
-    public static AchievmentManager AchievementManager;
+    public static AchievementManager AchievementManager;
     public static GameObject PageGauche;
     public static GameObject PageDroite;
     public static GameObject Livre;

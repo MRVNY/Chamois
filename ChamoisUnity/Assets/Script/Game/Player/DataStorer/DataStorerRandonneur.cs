@@ -10,32 +10,24 @@ using TMPro;
 [Serializable]
 public class DataStorerRandonneur : DataStorer
 {
-    private int epionScore;
-    private int batterieScore;
-    private int dentPortesScore;
-    private int grandRocScore;
-    private int pointesChauriondeScore;
-    private int morbierScore;
-    private int nivoletScore;
-    private int galoppazScore;
-    private int colombierScore;
-    private int arcalodScore;
-    private int trelodScore;
+    public int nbRando = 0;
+    public int maxRando = 3;
+    
+    public string currentRando = "";
     public int scoreTotal;
 
-    public int nbRandos;
-    public int nbRandosMemePartie;
-    public Boolean randoDif;
-    public int nbDechets;
-    public int nbDechetsMemePartie;
-    public int meilleureRando;
-    public int nbInfos;
-    public int score;
+    public int nbRandos = 0;
+    public int nbRandosMemePartie = 0;
+    public Boolean randoDif = false;
+    public int nbDechets = 0;
+    public int nbDechetsMemePartie = 0;
+    public int meilleureRando = 0;
+    public int nbInfos = 0;
+    public int score = 0;
     public TextMeshProUGUI textRando;
 
     private Boolean carteActive;
-
-
+    
     private Boolean rando1 = false;
     private Boolean rando5partie = false;
 
@@ -56,10 +48,19 @@ public class DataStorerRandonneur : DataStorer
     private Boolean score3000 = false;
     private Boolean score5000 = false;
 
-    //private Hashtable h;
-
+    public static DataStorerRandonneur Instance;
+    
     void Start()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
         base.Start();
         
         h.Add("epionScore",0);
@@ -74,184 +75,105 @@ public class DataStorerRandonneur : DataStorer
         h.Add("arcalodScore",0);
         h.Add("trelodScore",0);
         h.Add("scoreTotal",0);
-
-        h.Add("nbRandos", 0);
-        h.Add("nbRandosMemePartie", 0);
-        h.Add("randoDif", false);
-        h.Add("nbDechets", 0);
-        h.Add("nbDechetsMemePartie", 0);
-        h.Add("meilleureRando", 0);
-        h.Add("nbInfos", 0);
-        h.Add("score", 0);
-        
-        // nbRandos = PlayerPrefs.GetInt("nbRandos");
-        // nbRandosMemePartie = 0;
-        // randoDif = (PlayerPrefs.GetInt("randoDifficile", 1) != 1);
-        // nbDechets = PlayerPrefs.GetInt("nbDechets");
-        // nbDechetsMemePartie = 0;
-        // meilleureRando = PlayerPrefs.GetInt("meilleureRando");
-        // nbInfos = 0;
-        // score = 0;
-        // scoreTotal = 0;
     }
 
     void Update()
     {
         meilleureRando = PlayerPrefs.GetInt("meilleureRando");
 
-        //carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
+        textRando.SetText("Randonnées effectuées : \n{0} / 11", nbRandosMemePartie);
 
-        scoreTotal = epionScore + batterieScore + dentPortesScore + grandRocScore + pointesChauriondeScore + morbierScore + nivoletScore + galoppazScore + colombierScore + arcalodScore + trelodScore;
-
-        if(Global.Personnage == "Randonneur")
+        if (!rando1 && nbRandos > 0)
         {
-            textRando.SetText("Randonnées effectuées : \n{0} / 11", nbRandosMemePartie);
-
-            if (!rando1)
-            {
-                if (nbRandos > 0)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Jambes Solides I");
-                    rando1 = true;
-                }
-            }
-
-            if (!rando5partie)
-            {
-                if (nbRandosMemePartie > 4)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Jambes Solides II");
-                    rando5partie = true;
-                }
-            }
-
-            if (!randoDifficile)
-            {
-                if (randoDif == true)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Randonneur Aguéri I");
-                    randoDifficile = true;
-                }
-            }
-
-            if (!dechet10)
-            {
-                if (nbDechets > 9)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Ami de la Nature I");
-                    dechet10 = true;
-                }
-            }
-
-            if (!dechet20)
-            {
-                if (nbDechets > 19)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Ami de la Nature II");
-                    dechet20 = true;
-                }
-            }
-
-            if (!rando5000pts)
-            {
-                if (meilleureRando > 4999)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Randonnée Parfaite I");
-                    rando5000pts = true;
-                }
-            }
-
-            if (!rando7500pts)
-            {
-                if (meilleureRando > 7499)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Randonnée Parfaite II");
-                    rando7500pts = true;
-                }
-            }
-
-            if (!rando9000pts)
-            {
-                if (meilleureRando > 8999)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Randonnée Parfaite III");
-                    rando9000pts = true;
-                }
-            }
-
-            if (!rando9500pts)
-            {
-                if (meilleureRando > 9499)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Randonnée Parfaite IV");
-                    rando9500pts = true;
-                }
-            }
-
-            if (!nbInfos5)
-            {
-                if (nbInfos > 4)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Randonnée I");
-                    nbInfos5 = true;
-                }
-            }
-
-            if (!nbInfos10)
-            {
-                if (nbInfos > 9)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Connaissances en Randonnée II");
-                    nbInfos10 = true;
-                }
-            }
-
-            if (!score1000)
-            {
-                if (score > 999)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Score Randonneur I");
-                    score1000 = true;
-                }
-            }
-
-            if (!score3000)
-            {
-                if (score > 2999)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Score Randonneur II");
-                    score3000 = true;
-                }
-            }
-
-            if (!score5000)
-            {
-                if (score > 4999)
-                {
-                    GOPointer.AchievementManager.EarnAchievment("Score Randonneur III");
-                    score5000 = true;
-                }
-            }
+            AchievementManager.Instance.EarnAchievement("Jambes Solides I");
+            rando1 = true;
         }
 
+        if (!rando5partie && nbRandosMemePartie > 4)
+        {
+            AchievementManager.Instance.EarnAchievement("Jambes Solides II");
+            rando5partie = true;
+        }
+
+        if (!randoDifficile && randoDif == true)
+        {
+            AchievementManager.Instance.EarnAchievement("Randonneur Aguéri I");
+            randoDifficile = true;
+        }
+
+        if (!dechet10 && nbDechets > 9)
+        {
+            AchievementManager.Instance.EarnAchievement("Ami de la Nature I");
+            dechet10 = true;
+        }
+
+        if (!dechet20 && nbDechets > 19)
+        {
+            AchievementManager.Instance.EarnAchievement("Ami de la Nature II");
+            dechet20 = true;
+        }
+
+        if (!rando5000pts && meilleureRando > 4999)
+        {
+            AchievementManager.Instance.EarnAchievement("Randonnée Parfaite I");
+            rando5000pts = true;
+        }
+
+        if (!rando7500pts && meilleureRando > 7499)
+        {
+            AchievementManager.Instance.EarnAchievement("Randonnée Parfaite II");
+            rando7500pts = true;
+        }
+
+        if (!rando9000pts && meilleureRando > 8999)
+        {
+            AchievementManager.Instance.EarnAchievement("Randonnée Parfaite III");
+            rando9000pts = true;
+        }
+
+        if (!rando9500pts && meilleureRando > 9499)
+        {
+            AchievementManager.Instance.EarnAchievement("Randonnée Parfaite IV");
+            rando9500pts = true;
+        }
+
+        if (!nbInfos5 && nbInfos > 4)
+        {
+            AchievementManager.Instance.EarnAchievement("Connaissances en Randonnée I");
+            nbInfos5 = true;
+        }
+
+        if (!nbInfos10 && nbInfos > 9)
+        {
+            AchievementManager.Instance.EarnAchievement("Connaissances en Randonnée II");
+            nbInfos10 = true;
+        }
+
+        if (!score1000 && score > 999)
+        {
+            AchievementManager.Instance.EarnAchievement("Score Randonneur I");
+            score1000 = true;
+        }
+
+        if (!score3000 && score > 2999)
+        {
+            AchievementManager.Instance.EarnAchievement("Score Randonneur II");
+            score3000 = true;
+        }
+
+        if (!score5000 && score > 4999)
+        {
+            AchievementManager.Instance.EarnAchievement("Score Randonneur III");
+            score5000 = true;
+        }
+
+        if(nbRando >= maxRando) sendData();
         
     }
 
     public void sendData()
     {
-        h.Clear();
-        h.Add("epionScore", epionScore);
-        h.Add("batterieScore", batterieScore);
-        h.Add("dentPortesScore", dentPortesScore);
-        h.Add("grandRocScore", grandRocScore);
-        h.Add("pointesChauriondeScore", pointesChauriondeScore);
-        h.Add("morbierScore", morbierScore);
-        h.Add("nivoletScore", nivoletScore);
-        h.Add("galoppazScore", galoppazScore);
-        h.Add("colombierScore", colombierScore);
-        h.Add("arcalodScore", arcalodScore);
-        h.Add("trelodScore", trelodScore);
-        h.Add("scoreTotal", scoreTotal);
+        h["scoreTotal"] = scoreTotal;
 
         GOPointer.GameManager.GetComponent<FinPartie>().receiveDataRandonneur(h);
         enabled = false;
@@ -259,62 +181,6 @@ public class DataStorerRandonneur : DataStorer
 
     public void setData(string type, int var)
     {
-        switch (type)
-        {
-            case "epionScore":
-                epionScore = var;
-                break;
-            case "batterieScore":
-                batterieScore = var;
-                break;
-            case "dentPortesScore":
-                dentPortesScore = var;
-                break;
-            case "grandRocScore":
-                grandRocScore = var;
-                break;
-            case "pointesChauriondeScore":
-                pointesChauriondeScore = var;
-                break;
-            case "morbierScore":
-                morbierScore = var;
-                break;
-            case "nivoletScore":
-                nivoletScore = var;
-                break;
-            case "galoppazScore":
-                galoppazScore = var;
-                break;
-            case "colombierScore":
-                colombierScore = var;
-                break;
-            case "arcalodScore":
-                arcalodScore = var;
-                break;
-            case "trelodScore":
-                trelodScore = var;
-                break;
-            default:
-                break;
-        }
-        /*switch(type)
-        {
-            case "nourriture":
-            nourritureMangee ++;
-            score += var;
-            scBouffe += var;
-            break;
-
-            case "blessure":
-            blessure++;
-            scBlessure += var;
-            score += var;
-            break;
-
-
-
-            default:
-            break;
-        }*/
+        h[type] = var;
     }
 }

@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class AchievmentButton : MonoBehaviour
+public class AchievementButton : MonoBehaviour
 {
 
-    public GameObject achievmentList;
+    [FormerlySerializedAs("achievmentList")] public GameObject achievementList;
     public Sprite neutral, highlight;
 
     private Image sprite;
@@ -21,12 +22,12 @@ public class AchievmentButton : MonoBehaviour
         if(sprite.sprite == neutral)
         {
             sprite.sprite = highlight;
-            achievmentList.SetActive(true);
+            achievementList.SetActive(true);
         }
         else
         {
             sprite.sprite = neutral;
-            achievmentList.SetActive(false);
+            achievementList.SetActive(false);
 
         }
     }
