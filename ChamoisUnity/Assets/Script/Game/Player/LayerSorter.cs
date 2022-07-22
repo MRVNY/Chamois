@@ -24,10 +24,12 @@ public class LayerSorter : MonoBehaviour
             float otherRoot = collision.bounds.center.y - collision.bounds.size.y / 2;
             if (myRoot > otherRoot)
             {
+                otherRenderer.sortingOrder = 20;
                 otherRenderer.sortingLayerName = "Front";
             }
             else
             {
+                otherRenderer.sortingOrder = 10;
                 otherRenderer.sortingLayerName = "Default";
             }
         }
@@ -38,6 +40,7 @@ public class LayerSorter : MonoBehaviour
         SpriteRenderer otherRenderer = collision.GetComponent<SpriteRenderer>();
         if (collision.CompareTag("Obstacle") && otherRenderer != null)
         {
+            otherRenderer.sortingOrder = 10;
             otherRenderer.sortingLayerName = "Default";
         }
     }

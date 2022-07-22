@@ -13,7 +13,7 @@ public class Joystick_Link : MonoBehaviour
 
 
     // Start is called before the first frame update
-    async void Start()
+    async void OnEnable()
     {
         Instance = this;
         if (Init.loading!=null) await Init.loading;

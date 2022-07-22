@@ -117,9 +117,23 @@ namespace RPGM.UI
 
         public void setImages(SpriteRenderer left)
         {
-            if(Global.Personnage == "Chamois") rightImg.sprite = ChamoisImg;
-            if(Global.Personnage == "Chasseur") rightImg.sprite = ChasseurImg;
-            if(Global.Personnage == "Randonneur") rightImg.sprite = RandonneurImg;
+            if (Global.Personnage == "Chamois")
+            {
+                rightImg.sprite = ChamoisImg;
+                rightImg.color = Map.Instance.green;
+            }
+
+            if (Global.Personnage == "Chasseur")
+            {
+                rightImg.sprite = ChasseurImg;
+                rightImg.color = Map.Instance.orange;
+            }
+
+            if (Global.Personnage == "Randonneur")
+            {
+                rightImg.sprite = RandonneurImg;
+                rightImg.color = Map.Instance.blue;
+            }
             
             leftImg.sprite = left.sprite;
         }
