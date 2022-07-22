@@ -1,0 +1,422 @@
+fileFormatVersion: 2
+guid: 49a7a4f15b7266342922a22e3b2186a8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4326453364084643933
+    second: bleuclair_0
+  - first:
+      213: 5073482403033546916
+    second: bleuclair_1
+  - first:
+      213: 3661437867451306688
+    second: bleuclair_2
+  - first:
+      213: -2228721596122738414
+    second: bleuclair_3
+  - first:
+      213: -7691451130540816038
+    second: bleuclair_4
+  - first:
+      213: -8387365408312597213
+    second: bleuclair_5
+  - first:
+      213: 8886223907604171102
+    second: bleuclair_6
+  - first:
+      213: 6168478153804120389
+    second: bleuclair_7
+  - first:
+      213: -1493564086475260405
+    second: bleuclair_8
+  - first:
+      213: 2811353863981404872
+    second: bleuclair_9
+  - first:
+      213: 8334172285880369166
+    second: bleuclair_10
+  - first:
+      213: -8221518048541959025
+    second: bleuclair_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bleuclair_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d581f8f7966aa0c30800000000000000
+      internalID: 4326453364084643933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleuclair_1
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a082077d51a86640800000000000000
+      internalID: 5073482403033546916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleuclair_2
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c25990675a00d230800000000000000
+      internalID: 3661437867451306688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleuclair_3
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 211dcdf348df111e0800000000000000
+      internalID: -2228721596122738414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleuclair_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5986d4a2f9724590800000000000000
+      internalID: -7691451130540816038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleuclair_5
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325e02c69971a9b80800000000000000
+      internalID: -8387365408312597213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleuclair_6
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59845f0095325b70800000000000000
+      internalID: 8886223907604171102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleuclair_7
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541804ae236da9550800000000000000
+      internalID: 6168478153804120389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleuclair_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e7c58606bc54be0800000000000000
+      internalID: -1493564086475260405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleuclair_9
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c29880b17fe30720800000000000000
+      internalID: 2811353863981404872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleuclair_10
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e000ec4a98de8a370800000000000000
+      internalID: 8334172285880369166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleuclair_11
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c9132f4ec47ed80800000000000000
+      internalID: -8221518048541959025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bleuclair_0: 4326453364084643933
+      bleuclair_4: -7691451130540816038
+      bleuclair_8: -1493564086475260405
+      bleuclair_7: 6168478153804120389
+      bleuclair_11: -8221518048541959025
+      bleuclair_10: 8334172285880369166
+      bleuclair_3: -2228721596122738414
+      bleuclair_1: 5073482403033546916
+      bleuclair_9: 2811353863981404872
+      bleuclair_2: 3661437867451306688
+      bleuclair_5: -8387365408312597213
+      bleuclair_6: 8886223907604171102
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

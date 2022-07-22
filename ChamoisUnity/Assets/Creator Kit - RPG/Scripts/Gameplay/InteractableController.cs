@@ -34,7 +34,7 @@ namespace RPGM.Gameplay
             if (type != "NPC")
             {
                 Buttons = GOPointer.interactiveButtons.GetComponent<InteractiveButtons>();
-                camera = GOPointer.CameraReg.GetComponentInChildren<Camera>();
+                camera = CameraControllerJoy.Instance.GetComponent<Camera>();
             }
 
             if (type == "Recharge" && Global.Personnage == "Chasseur")

@@ -1,0 +1,422 @@
+fileFormatVersion: 2
+guid: 1828602b385465f408fce6a6e5acafac
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1602816945371718
+    second: bleu_0
+  - first:
+      213: -626629072463982658
+    second: bleu_1
+  - first:
+      213: -7133440828386466080
+    second: bleu_2
+  - first:
+      213: -6673132775882621890
+    second: bleu_3
+  - first:
+      213: -1771668427716122660
+    second: bleu_4
+  - first:
+      213: -671868770058861081
+    second: bleu_5
+  - first:
+      213: -3470395994690514961
+    second: bleu_6
+  - first:
+      213: 1603705129113237543
+    second: bleu_7
+  - first:
+      213: -736452210407130513
+    second: bleu_8
+  - first:
+      213: -748494957993989474
+    second: bleu_9
+  - first:
+      213: 3068585971496009081
+    second: bleu_10
+  - first:
+      213: 1566779718278109871
+    second: bleu_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bleu_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64a3ba6e0c1b50000800000000000000
+      internalID: 1602816945371718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleu_1
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf0ad9bd24cd47f0800000000000000
+      internalID: -626629072463982658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleu_2
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6a1c57c5de00d90800000000000000
+      internalID: -7133440828386466080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleu_3
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 4160.667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3cff7a98154463a0800000000000000
+      internalID: -6673132775882621890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleu_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd7a432a3f4c967e0800000000000000
+      internalID: -1771668427716122660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleu_5
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e586f0d9ea0da6f0800000000000000
+      internalID: -671868770058861081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleu_6
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fef8882da3da6dfc0800000000000000
+      internalID: -3470395994690514961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleu_7
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 2080.6667
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72834417151814610800000000000000
+      internalID: 1603705129113237543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleu_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6ab1a4dd9897c5f0800000000000000
+      internalID: -736452210407130513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleu_9
+      rect:
+        serializedVersion: 2
+        x: 2080
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ae8982dcfcc95f0800000000000000
+      internalID: -748494957993989474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleu_10
+      rect:
+        serializedVersion: 2
+        x: 4160
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d34c9deaec59a20800000000000000
+      internalID: 3068585971496009081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bleu_11
+      rect:
+        serializedVersion: 2
+        x: 6240
+        y: 0.66674805
+        width: 2080.5
+        height: 2080.3333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faad0454ad15eb510800000000000000
+      internalID: 1566779718278109871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bleu_5: -671868770058861081
+      bleu_4: -1771668427716122660
+      bleu_10: 3068585971496009081
+      bleu_8: -736452210407130513
+      bleu_7: 1603705129113237543
+      bleu_2: -7133440828386466080
+      bleu_1: -626629072463982658
+      bleu_9: -748494957993989474
+      bleu_3: -6673132775882621890
+      bleu_0: 1602816945371718
+      bleu_11: 1566779718278109871
+      bleu_6: -3470395994690514961
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

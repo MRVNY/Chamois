@@ -4,7 +4,7 @@ using UnityEngine;
 public class ListProie : MonoBehaviour
 {
     public int rdn;
-    public List<GameObject>listDeProie;
+    public List<GameObject> listDeProie;
 
     public static ListProie Instance;
     void Start()

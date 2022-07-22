@@ -61,7 +61,7 @@ public class JaugesController : MonoBehaviour
             if (h.ContainsKey("score"))
             {
                 int sc = (int)h["score"];
-                player.GetComponent<DataStorer>().setData("nourriture", sc);
+                player.GetComponent<DataStorerChamois>().setData("nourriture", sc);
             }
 
 

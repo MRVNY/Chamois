@@ -23,7 +23,7 @@ namespace RPGM.Gameplay
 
         public void Start()
         {
-            camera = GOPointer.CameraReg.GetComponentInChildren<Camera>();
+            camera = CameraControllerJoy.Instance.GetComponent<Camera>();
             actionButton = GOPointer.interactiveButtons.GetComponent<InteractiveButtons>().talk;
             
             if(jsonFile != null){

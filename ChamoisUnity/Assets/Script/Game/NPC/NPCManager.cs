@@ -22,7 +22,7 @@ public class NPCManager : MonoBehaviour
     private JObject JPerso;
 
     private DataStorerRandonneur dataRando;
-    private DataStorer dataChamois;
+    private DataStorerChamois dataChamois;
     private DataStorerChasseur dataChasseur;
 
     EncycloContentRandonneur encyRando;
@@ -90,7 +90,7 @@ public class NPCManager : MonoBehaviour
         }
 
         dataRando = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
-        dataChamois = GOPointer.PlayerChamois.GetComponent<DataStorer>();
+        dataChamois = GOPointer.PlayerChamois.GetComponent<DataStorerChamois>();
         dataChasseur = GOPointer.PlayerChasseur.GetComponent<DataStorerChasseur>();
         
         encyRando = GOPointer.EncyclopedieManager.GetComponent<EncycloContentRandonneur>();

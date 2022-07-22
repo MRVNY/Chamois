@@ -1,0 +1,758 @@
+fileFormatVersion: 2
+guid: 95224b90872e97c4c8d6ddeeaeedfb50
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1527492924636464026
+    second: Plan de travail 25n_0
+  - first:
+      213: 3499678814222713990
+    second: Plan de travail 25n_1
+  - first:
+      213: 4557217934905513896
+    second: Plan de travail 25n_2
+  - first:
+      213: -2647334843978265991
+    second: Plan de travail 25n_3
+  - first:
+      213: -4718275590703760612
+    second: Plan de travail 25n_4
+  - first:
+      213: -2235260420299495105
+    second: Plan de travail 25n_5
+  - first:
+      213: -6977019749517036817
+    second: Plan de travail 25n_6
+  - first:
+      213: 3986500716050274527
+    second: Plan de travail 25n_7
+  - first:
+      213: -694359975686183850
+    second: Plan de travail 25n_8
+  - first:
+      213: -1113661753306668300
+    second: Plan de travail 25n_9
+  - first:
+      213: -5313652199450661762
+    second: Plan de travail 25n_10
+  - first:
+      213: 2704300545517681503
+    second: Plan de travail 25n_11
+  - first:
+      213: 2171219125883474376
+    second: Plan de travail 25n_12
+  - first:
+      213: -1401138710666607756
+    second: Plan de travail 25n_13
+  - first:
+      213: -6311966933318873749
+    second: Plan de travail 25n_14
+  - first:
+      213: 5555792042447409915
+    second: Plan de travail 25n_15
+  - first:
+      213: -316781054448113272
+    second: Plan de travail 25n_16
+  - first:
+      213: 1290189886054229857
+    second: Plan de travail 25n_17
+  - first:
+      213: -849003470600453015
+    second: Plan de travail 25n_18
+  - first:
+      213: -779475648163968219
+    second: Plan de travail 25n_19
+  - first:
+      213: -7336861276449742981
+    second: Plan de travail 25n_20
+  - first:
+      213: 5522721369518735129
+    second: Plan de travail 25n_21
+  - first:
+      213: 2514036343208477958
+    second: Plan de travail 25n_22
+  - first:
+      213: -8773339844112141841
+    second: Plan de travail 25n_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 0
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Plan de travail 25n_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6237.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9301e1d8beb23510800000000000000
+      internalID: 1527492924636464026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_1
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 6237.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68484b5e65b519030800000000000000
+      internalID: 3499678814222713990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_2
+      rect:
+        serializedVersion: 2
+        x: 4162
+        y: 6237.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7151e019d7e3f30800000000000000
+      internalID: 4557217934905513896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_3
+      rect:
+        serializedVersion: 2
+        x: 6243
+        y: 6237.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a492f4cf6c24bd0800000000000000
+      internalID: -2647334843978265991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_4
+      rect:
+        serializedVersion: 2
+        x: 8324
+        y: 6237.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1bb4b74951558eb0800000000000000
+      internalID: -4718275590703760612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_5
+      rect:
+        serializedVersion: 2
+        x: 10405
+        y: 6209
+        width: 2082
+        height: 2079
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f39ee8b9d72caf0e0800000000000000
+      internalID: -2235260420299495105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4158.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe2f62fe085ac2f90800000000000000
+      internalID: -6977019749517036817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_7
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 4158.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd85405a745e25730800000000000000
+      internalID: 3986500716050274527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_8
+      rect:
+        serializedVersion: 2
+        x: 4162
+        y: 4159
+        width: 2082
+        height: 2079
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 654e9fee7432d56f0800000000000000
+      internalID: -694359975686183850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_9
+      rect:
+        serializedVersion: 2
+        x: 6243
+        y: 4158.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f2a73a298a7b80f0800000000000000
+      internalID: -1113661753306668300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_10
+      rect:
+        serializedVersion: 2
+        x: 8324
+        y: 4158.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c25cf3a7d1246b0800000000000000
+      internalID: -5313652199450661762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_11
+      rect:
+        serializedVersion: 2
+        x: 10405
+        y: 4158.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5bf975a40b978520800000000000000
+      internalID: 2704300545517681503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2079.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c191d79a48b12e10800000000000000
+      internalID: 2171219125883474376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_13
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 2079.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4730ba524c72e8ce0800000000000000
+      internalID: -1401138710666607756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_14
+      rect:
+        serializedVersion: 2
+        x: 4162
+        y: 2079.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6d448134836768a0800000000000000
+      internalID: -6311966933318873749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_15
+      rect:
+        serializedVersion: 2
+        x: 6243
+        y: 2079.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf215004d632a1d40800000000000000
+      internalID: 5555792042447409915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_16
+      rect:
+        serializedVersion: 2
+        x: 8324
+        y: 2080
+        width: 2082
+        height: 2079
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889eb023f419a9bf0800000000000000
+      internalID: -316781054448113272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_17
+      rect:
+        serializedVersion: 2
+        x: 10405
+        y: 2079.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167601b9ddca7e110800000000000000
+      internalID: 1290189886054229857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96449c977dbb734f0800000000000000
+      internalID: -849003470600453015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_19
+      rect:
+        serializedVersion: 2
+        x: 2081
+        y: 0.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b8e10270fbe25f0800000000000000
+      internalID: -779475648163968219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_20
+      rect:
+        serializedVersion: 2
+        x: 4162
+        y: 0.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7fd4ea9a8b3e2a90800000000000000
+      internalID: -7336861276449742981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_21
+      rect:
+        serializedVersion: 2
+        x: 6243
+        y: 0.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f7f9f23d5a4ac40800000000000000
+      internalID: 5522721369518735129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_22
+      rect:
+        serializedVersion: 2
+        x: 8324
+        y: 0.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6050d55fbb6a3e220800000000000000
+      internalID: 2514036343208477958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plan de travail 25n_23
+      rect:
+        serializedVersion: 2
+        x: 10405
+        y: 0.75
+        width: 2081.5
+        height: 2079.25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe13ae915e5de3680800000000000000
+      internalID: -8773339844112141841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Plan de travail 25n_1: 3499678814222713990
+      Plan de travail 25n_6: -6977019749517036817
+      Plan de travail 25n_17: 1290189886054229857
+      Plan de travail 25n_12: 2171219125883474376
+      Plan de travail 25n_11: 2704300545517681503
+      Plan de travail 25n_14: -6311966933318873749
+      Plan de travail 25n_3: -2647334843978265991
+      Plan de travail 25n_4: -4718275590703760612
+      Plan de travail 25n_5: -2235260420299495105
+      Plan de travail 25n_8: -694359975686183850
+      Plan de travail 25n_13: -1401138710666607756
+      Plan de travail 25n_0: 1527492924636464026
+      Plan de travail 25n_9: -1113661753306668300
+      Plan de travail 25n_19: -779475648163968219
+      Plan de travail 25n_20: -7336861276449742981
+      Plan de travail 25n_2: 4557217934905513896
+      Plan de travail 25n_16: -316781054448113272
+      Plan de travail 25n_22: 2514036343208477958
+      Plan de travail 25n_21: 5522721369518735129
+      Plan de travail 25n_23: -8773339844112141841
+      Plan de travail 25n_15: 5555792042447409915
+      Plan de travail 25n_10: -5313652199450661762
+      Plan de travail 25n_7: 3986500716050274527
+      Plan de travail 25n_18: -849003470600453015
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

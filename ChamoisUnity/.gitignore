@@ -112,3 +112,5 @@ sysinfo.txt
 /Builds/
 /Logs/
 /UserSettings/
+
+.DS_Store

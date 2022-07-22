@@ -44,6 +44,8 @@ public class Init : MonoBehaviour
         if(gp==null) Awake();
         if (GOPointer.linking!=null) await GOPointer.linking;
         
+        Map.Instance.ChangeColor();
+
         // Init convo if player start the character the first time
         convo = npcManager.loadConvo();
         
@@ -88,7 +90,7 @@ public class Init : MonoBehaviour
                 break;
         }
         
-        GOPointer.CameraReg.GetComponentInChildren<CameraControllerJoy>().ManualStart();
+        CameraControllerJoy.Instance.ManualStart();
 
         if (!PlayerPrefs.HasKey(Global.Personnage))
         {

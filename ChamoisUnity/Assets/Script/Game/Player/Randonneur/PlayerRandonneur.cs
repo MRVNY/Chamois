@@ -8,9 +8,7 @@ public class PlayerRandonneur : Joueur
 {
     public int nbRando = 0;
     public int maxRando = 3;
-
-    private Hashtable h = new Hashtable();
-
+    
     public Boolean epion = false;
     public Boolean batterie = false;
     public Boolean dentPortes = false;
@@ -47,13 +45,12 @@ public class PlayerRandonneur : Joueur
     public int arcalodCurrent = 0;
     public int trelodCurrent = 0;
     
-    private DataStorerRandonneur dataStorer;
+    public DataStorerRandonneur dataStorer;
 
     new void Start()
     {
         base.Start();
         nbRando = 0;
-        //maxRando = 2;
         dataStorer = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
     }
 

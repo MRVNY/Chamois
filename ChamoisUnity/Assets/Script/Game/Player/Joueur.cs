@@ -32,7 +32,6 @@ public class Joueur : MonoBehaviour
 
 
     protected float time;
-    protected Joystick_Link joystick;
     protected CameraControllerJoy camerascript;
 
     ///<summary>
@@ -55,8 +54,7 @@ public class Joueur : MonoBehaviour
     {
         GameEvents.Pause += Pause;
 
-        camerascript = GOPointer.CameraReg.GetComponentInChildren<CameraControllerJoy>();
-        joystick = gameObject.GetComponent<Joystick_Link>();
+        camerascript = CameraControllerJoy.Instance;
         rb2d = gameObject.GetComponent<Rigidbody2D>();
 
         camerascript.infrontOf = inFrontOf;
@@ -66,7 +64,7 @@ public class Joueur : MonoBehaviour
 
     protected void Update()
     {
-        v = joystick.getPosition();
+        v = Joystick_Link.Instance.getPosition();
 
         if (lockPosition)
         {
@@ -77,7 +75,7 @@ public class Joueur : MonoBehaviour
             currentSpeed = Mathf.Clamp(v.magnitude, 0.0f, 1.0f);
 
         Animate();
-        joystick.setSpeed(currentSpeed * vitesse);
+        Joystick_Link.Instance.setSpeed(currentSpeed * vitesse);
     }
 
     /// <summary>

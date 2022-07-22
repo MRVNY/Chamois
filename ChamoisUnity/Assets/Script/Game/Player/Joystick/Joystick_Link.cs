@@ -8,12 +8,18 @@ public class Joystick_Link : MonoBehaviour
     public float speed = 100f;
 
     protected Joystick joystick;
+    Rigidbody2D rigidbody;
+    public static Joystick_Link Instance;
+
+
     // Start is called before the first frame update
     async void Start()
     {
+        Instance = this;
         if (Init.loading!=null) await Init.loading;
-        joystick = GOPointer.JoystickCanvas.GetComponentInChildren<Joystick>();
+        joystick = Joystick.Instance;
         GameEvents.Pause += Pause;
+        rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -21,8 +27,6 @@ public class Joystick_Link : MonoBehaviour
     {
         if (!Global.pause)
         {
-            var rigidbody = GetComponent<Rigidbody2D>();
-
             var hori = Input.GetAxis("Horizontal");
             var verti = Input.GetAxis("Vertical");
 

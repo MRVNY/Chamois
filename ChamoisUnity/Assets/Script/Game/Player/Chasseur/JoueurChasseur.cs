@@ -109,7 +109,7 @@ public class JoueurChasseur : Joueur
         {
             camerascript.setZoom(-zoomSize);
             camerascript.infrontOf = inFrontOf;
-            joystick.setSpeed(vitesse);
+            Joystick_Link.Instance.setSpeed(vitesse);
             crossSprite.enabled = false;
             pew.SetActive(false);
         }
