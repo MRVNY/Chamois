@@ -17,11 +17,11 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject date = null;
     
     private bool notifActive;
-    public static PauseMenu instance;
+    public static PauseMenu Instance;
     
     private void Awake()
     {
-        instance = this;
+        Instance = this;
     }
 
     public void Pause()

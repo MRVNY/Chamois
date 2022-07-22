@@ -6941,7 +6941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 6a9f944c7b7e94f67814a795e8ff3be4, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -22944,7 +22944,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 4c8f9692157c24304a43ca37a5d83f0c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -66419,7 +66419,6 @@ GameObject:
   - component: {fileID: 1580871190338818314}
   - component: {fileID: 1580871190338818317}
   - component: {fileID: 1580871190338818318}
-  - component: {fileID: 3131428077922058634}
   m_Layer: 8
   m_Name: PlayerChamois
   m_TagString: Player
@@ -66468,6 +66467,13 @@ MonoBehaviour:
   tempBoost: 3
   boost: 2
   boostTimer: 0
+  dataStorer:
+    nourritureMangee: 0
+    tempsSurvecu: 0
+    score: 0
+    nbInfos: 0
+    naissance: 0
+    nourritureTotale: 0
 --- !u!114 &1580871190338818318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66489,7 +66495,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580871190338818304}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 388.5, y: -276, z: 0}
+  m_LocalPosition: {x: 386, y: -276, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -67771,7 +67777,6 @@ GameObject:
   - component: {fileID: 1938700842963065988}
   - component: {fileID: 1938700842963065985}
   - component: {fileID: 5149861279698229382}
-  - component: {fileID: 7411737479339346218}
   - component: {fileID: 353898512938067856}
   - component: {fileID: 2573364708876571062}
   - component: {fileID: 150308044}
@@ -70287,7 +70292,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 600, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2799900607306456106
 MonoBehaviour:
@@ -74748,24 +74753,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3131428077922058634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1580871190338818304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 712ef886d4c75094aab13212019f5836, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nourritureMangee: 0
-  tempsSurvecu: 0
-  score: 0
-  nbInfos: 0
-  naissance: 0
-  nourritureTotale: 0
 --- !u!222 &3135074528014794579
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -77896,31 +77883,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4149070283091056335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8317460558543244530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed9ac72e08b134643845b49f52cc1171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nbRando: 0
-  maxRando: 3
-  currentRando: 
-  scoreTotal: 0
-  nbRandos: 0
-  nbRandosMemePartie: 0
-  randoDif: 0
-  nbDechets: 0
-  nbDechetsMemePartie: 0
-  meilleureRando: 0
-  nbInfos: 0
-  score: 0
-  textRando: {fileID: 731863197}
 --- !u!4 &4155223152777372470
 Transform:
   m_ObjectHideFlags: 0
@@ -80090,7 +80052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73083fd1d75af4556b657d8b54188810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bigMap: {fileID: 0}
+  bigMap: {fileID: 2799900607306456105}
   miniMap: {fileID: 136607908}
   chamoisIcon: {fileID: 1929247888}
   chasseurIcon: {fileID: 1577688894}
@@ -81309,6 +81271,20 @@ MonoBehaviour:
   bullet: {fileID: 7260146162576144264, guid: be558080999e4f24d94176dcab484d80, type: 3}
   bulletForce: 20
   vision: 0
+  dataStorer:
+    nbQuetes: 0
+    nbPhoto: 0
+    scDechets: 0
+    dechets: 0
+    mauvaisChamois: 0
+    bonChamois: 0
+    scmauvaisChamois: 0
+    scbonChamois: 0
+    nbPhotoMemePartie: 0
+    abattus: 0
+    abattusMemePartie: 0
+    score: 0
+    nbInfos: 0
 --- !u!60 &5150220916372798281
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -89237,7 +89213,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7774be72e403046a3866a063877523eb, type: 2}
+  - {fileID: 2100000, guid: 628d6026486124dbaa44adbaa6aae92c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90029,7 +90005,19 @@ MonoBehaviour:
   inFrontOf: 0
   animator: {fileID: 2314948971366108520}
   animatorOmbre: {fileID: 2314948971366108520}
-  dataStorer: {fileID: 0}
+  dataStorer:
+    nbRando: 0
+    maxRando: 3
+    currentRando: 
+    scoreTotal: 0
+    nbRandos: 0
+    nbRandosMemePartie: 0
+    randoDif: 0
+    nbDechets: 0
+    nbDechetsMemePartie: 0
+    meilleureRando: 0
+    nbInfos: 0
+    score: 0
 --- !u!23 &6865642046902074086
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -91806,31 +91794,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &7411737479339346218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1938700842963065984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4abf2c55e408eda47b16a02deb21b7eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nbQuetes: 0
-  nbPhoto: 0
-  scDechets: 0
-  dechets: 0
-  mauvaisChamois: 0
-  bonChamois: 0
-  scmauvaisChamois: 0
-  scbonChamois: 0
-  nbPhotoMemePartie: 0
-  abattus: 0
-  abattusMemePartie: 0
-  score: 0
-  nbInfos: 0
 --- !u!114 &7414639498302877657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94717,7 +94680,6 @@ GameObject:
   - component: {fileID: 8317460558543244532}
   - component: {fileID: 8317460558543244534}
   - component: {fileID: 8317460558543244531}
-  - component: {fileID: 4149070283091056335}
   - component: {fileID: 6838907560128700513}
   - component: {fileID: 4428091176348144642}
   m_Layer: 0

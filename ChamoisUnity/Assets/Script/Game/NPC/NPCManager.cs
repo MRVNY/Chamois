@@ -89,9 +89,9 @@ public class NPCManager : MonoBehaviour
             npc.gameObject.SetActive(false);
         }
 
-        dataRando = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
-        dataChamois = GOPointer.PlayerChamois.GetComponent<DataStorerChamois>();
-        dataChasseur = GOPointer.PlayerChasseur.GetComponent<DataStorerChasseur>();
+        dataRando = DataStorerRandonneur.Instance;
+        dataChamois = DataStorerChamois.Instance;
+        dataChasseur = DataStorerChasseur.Instance;
         
         encyRando = GOPointer.EncyclopedieManager.GetComponent<EncycloContentRandonneur>();
         encyChamois = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>();
@@ -186,7 +186,7 @@ public class NPCManager : MonoBehaviour
 
         foreach (var npc in currentNPCList)
         {
-            if(npc.isActiveAndEnabled && npc.name == npcName)
+            if(npc != null && npc.isActiveAndEnabled && npc.name == npcName)
             {
                 npc.setFirstNode(node);
             }

@@ -118,7 +118,7 @@ public class Init : MonoBehaviour
         }
         else
         {
-            PauseMenu.instance.Resume();
+            PauseMenu.Instance.Resume();
         }
     }
 

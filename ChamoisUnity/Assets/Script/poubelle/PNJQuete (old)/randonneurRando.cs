@@ -150,7 +150,7 @@
 //
 //         if (Global.Personnage == "Randonneur")
 //         {
-//             dataSt = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
+//             dataSt = DataStorerRandonneur.Instance;
 //
 //         }
 //         // Récupération des données dans le JSON, lié dans le GameObject "NPC Collection"

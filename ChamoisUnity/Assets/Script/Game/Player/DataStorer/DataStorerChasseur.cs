@@ -45,25 +45,20 @@ public class DataStorerChasseur : DataStorer
     
     public static DataStorerChasseur Instance;
     
-    void Start()
+    public DataStorerChasseur()
     {
         if(Instance == null)
         {
             Instance = this;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
-        base.Start();
+        
+        nbQuetes = 0;
 
-        nbQuetes = PlayerPrefs.GetInt("nbQuetes");
-
-        nbPhoto = PlayerPrefs.GetInt("nbPhoto");
+        nbPhoto = 0;
 
         nbPhotoMemePartie = 0;
 
-        abattus = PlayerPrefs.GetInt("abattus");
+        abattus = 0;
 
         abattusMemePartie = 0;
 
@@ -77,118 +72,76 @@ public class DataStorerChasseur : DataStorer
     // Update is called once per frame
     void Update()
     {
-        //carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
-        carteActive = false;
-
-        if (Global.Personnage == "Chasseur")
+        if (!quete1 && nbQuetes > 1)
         {
-            if (!quete1 && carteActive == false)
-            {
-                if (nbQuetes > 1)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Quête Chasse I");
-                    quete1 = true;
-                }
-            }
+                GOPointer.AchievementManager.EarnAchievement("Quête Chasse I");
+                quete1 = true;
+        }
 
-            if (!photo5 && carteActive == false)
-            {
-                if (nbPhotoMemePartie > 4)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Chasse Photographique I");
-                    photo5 = true;
-                }
-            }
+        if (!photo5 && nbPhotoMemePartie > 4)
+        {
+                GOPointer.AchievementManager.EarnAchievement("Chasse Photographique I");
+                photo5 = true;
+        }
 
-            if (!photo10 && carteActive == false)
-            {
-                if (nbPhotoMemePartie > 9)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Chasse Photographique II");
-                    photo10 = true;
-                }
-            }
+        if (!photo10 && nbPhotoMemePartie > 9)
+        {
+                GOPointer.AchievementManager.EarnAchievement("Chasse Photographique II");
+                photo10 = true;
+        }
 
-            if (!photo15 && carteActive == false)
-            {
-                if (nbPhotoMemePartie > 14)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Chasse Photographique III");
-                    photo15 = true;
-                }
-            }
+        if (!photo15 && nbPhotoMemePartie > 14)
+        {
+                GOPointer.AchievementManager.EarnAchievement("Chasse Photographique III");
+                photo15 = true;
+        }
 
-            if (!abattre1 && carteActive == false)
-            {
-                if (abattus > 0)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Prélèvement I");
-                    abattre1 = true;
-                }
-            }
+        if (!abattre1 && abattus > 0)
+        {
+                GOPointer.AchievementManager.EarnAchievement("Prélèvement I");
+                abattre1 = true;
+        }
 
-            if (!abattre2 && carteActive == false)
-            {
-                if (abattus > 1)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Prélèvement II");
-                    abattre2 = true;
-                }
-            }
+        if (!abattre2 && abattus > 1)
+        {
+                GOPointer.AchievementManager.EarnAchievement("Prélèvement II");
+                abattre2 = true;
+        }
 
-            if (!abattre3 && carteActive == false)
-            {
-                if (abattus > 2)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Prélèvement III");
-                    abattre3 = true;
-                }
-            }
+        if (!abattre3 && abattus > 2)
+        {
+                GOPointer.AchievementManager.EarnAchievement("Prélèvement III");
+                abattre3 = true;
+        }
 
-            if (!score1000 && carteActive == false)
-            {
-                if (score > 999)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Score Chasseur I");
-                    score1000 = true;
-                }
-            }
+        if (!score1000 && score > 999)
+        {
+                GOPointer.AchievementManager.EarnAchievement("Score Chasseur I");
+                score1000 = true;
+        }
 
-            if (!score3000 && carteActive == false)
-            {
-                if (abattus > 2999)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Score Chasseur II");
-                    score3000 = true;
-                }
-            }
+        if (!score3000 && abattus > 2999)
+        {
+                GOPointer.AchievementManager.EarnAchievement("Score Chasseur II");
+                score3000 = true;
+        }
 
-            if (!score5000 && carteActive == false)
-            {
-                if (score > 4999)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Score Chasseur III");
-                    score5000 = true;
-                }
-            }
+        if (!score5000 && score > 4999)
+        {
+                GOPointer.AchievementManager.EarnAchievement("Score Chasseur III");
+                score5000 = true;
+        }
 
-            if (!nbInfos5 && carteActive == false)
-            {
-                if (nbInfos > 4)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Connaissances en Chasse I");
-                    nbInfos5 = true;
-                }
-            }
+        if (!nbInfos5 && nbInfos > 4)
+        {
+                GOPointer.AchievementManager.EarnAchievement("Connaissances en Chasse I");
+                nbInfos5 = true;
+        }
 
-            if (!nbInfos10 && carteActive == false)
-            {
-                if (nbInfos > 9)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Connaissances en Chasse II");
-                    nbInfos10 = true;
-                }
-            }
+        if (!nbInfos10 && nbInfos > 9)
+        {
+                GOPointer.AchievementManager.EarnAchievement("Connaissances en Chasse II");
+                nbInfos10 = true;
         }
     }
 
@@ -203,7 +156,6 @@ public class DataStorerChasseur : DataStorer
             h.Add("scbonChamois", scbonChamois);
 
             GOPointer.GameManager.GetComponent<FinPartie>().receiveData(h);
-            enabled = false;
     }
     
     public void setData(string type, int var)

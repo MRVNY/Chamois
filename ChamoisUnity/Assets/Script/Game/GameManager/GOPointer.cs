@@ -124,6 +124,7 @@ public class GOPointer : MonoBehaviour
     public async Task LinkAync()
     {
         if(linking!=null) await linking;
+        
         PlayerChamois = _PlayerChamois;
         PlayerChasseur = _PlayerChasseur;
         PlayerRandonneur = _PlayerRandonneur;

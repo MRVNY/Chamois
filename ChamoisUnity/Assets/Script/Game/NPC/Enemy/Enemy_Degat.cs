@@ -39,7 +39,7 @@ public class Enemy_Degat : Enemy
             
             vie = GOPointer.Jauges.GetComponentInChildren<Vie>();
             joueur = GOPointer.PlayerChamois.GetComponent<JoueurChamois>();
-            data = pm.GetComponent<DataStorerChamois>();
+            data = DataStorerChamois.Instance;
         }
     }
 

@@ -12,7 +12,6 @@ public class Menu : MonoBehaviour
     public GameObject resume;
     public Image menuIcon;
     public GameObject pasueIcon;
-    private PauseMenu pause;
     private Notifier notifier;
     
     public GameObject NotifMenuDeroulant ;
@@ -42,12 +41,10 @@ public class Menu : MonoBehaviour
         if(GOPointer.GameControl==null) GOPointer.Instance.Link();
         if (Init.loading!=null) await Init.loading;
         if (GOPointer.linking!=null) await GOPointer.linking;
-
-        pause = GetComponent<PauseMenu>();
         
         notifier = GOPointer.GameControl.GetComponent<Notifier>();
         Deactivate();
-        pause.Resume();
+        PauseMenu.Instance.Resume();
     }
 
     public void ActiveMain()
@@ -55,7 +52,7 @@ public class Menu : MonoBehaviour
         NotifMenuDeroulant.SetActive(false);
         if (menuIcon.enabled)
         {
-            pause.Pause();
+            PauseMenu.Instance.Pause();
             Activate();
         }
         else
@@ -113,7 +110,7 @@ public class Menu : MonoBehaviour
         }
 
         menuOuvre = false;
-        pause.Resume();
+        PauseMenu.Instance.Resume();
     }
     
     public void Home()

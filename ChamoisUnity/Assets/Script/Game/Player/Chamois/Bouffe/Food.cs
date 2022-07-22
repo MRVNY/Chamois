@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nourriture : MonoBehaviour
+public class Food : MonoBehaviour
 {
     public int id;
-
     public int nourissant = 20;
     public int destressant = 10;
     public int sante = 30;

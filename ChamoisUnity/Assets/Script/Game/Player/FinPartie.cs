@@ -55,7 +55,7 @@ public class FinPartie : MonoBehaviour
 
         if (!score1000)
         {
-            if (GOPointer.PlayerChamois.GetComponent<DataStorerChamois>().score > 1000)
+            if (DataStorerChamois.Instance.score > 1000)
             {
                 GOPointer.AchievementManager.GetComponent<AchievementManager>().EarnAchievement("Score Chamois I");
                 score1000 = true;
@@ -64,7 +64,7 @@ public class FinPartie : MonoBehaviour
 
         if (!score3000)
         {
-            if (GOPointer.PlayerChamois.GetComponent<DataStorerChamois>().score > 3000)
+            if (DataStorerChamois.Instance.score > 3000)
             {
                 GOPointer.AchievementManager.GetComponent<AchievementManager>().EarnAchievement("Score Chamois II");
                 score3000 = true;
@@ -73,7 +73,7 @@ public class FinPartie : MonoBehaviour
 
         if (!score5000)
         {
-            if (GOPointer.PlayerChamois.GetComponent<DataStorerChamois>().score > 5000)
+            if (DataStorerChamois.Instance.score > 5000)
             {
                 GOPointer.AchievementManager.GetComponent<AchievementManager>().EarnAchievement("Score Chamois III");
                 score5000 = true;
@@ -82,7 +82,7 @@ public class FinPartie : MonoBehaviour
 
         if (!nourriture15)
         {
-            if (GOPointer.PlayerChamois.GetComponent<DataStorerChamois>().nourritureMangee > 14)
+            if (DataStorerChamois.Instance.nourritureMangee > 14)
             {
                 GOPointer.AchievementManager.GetComponent<AchievementManager>().EarnAchievement("Alimentation I");
                 nourriture15 = true;
@@ -91,7 +91,7 @@ public class FinPartie : MonoBehaviour
 
         if (!nourriture30)
         {
-            if (GOPointer.PlayerChamois.GetComponent<DataStorerChamois>().nourritureMangee > 29)
+            if (DataStorerChamois.Instance.nourritureMangee > 29)
             {
                 GOPointer.AchievementManager.GetComponent<AchievementManager>().EarnAchievement("Alimentation II");
                 nourriture30 = true;
@@ -100,7 +100,7 @@ public class FinPartie : MonoBehaviour
 
         if (!infos5)
         {
-            if (GOPointer.PlayerChamois.GetComponent<DataStorerChamois>().nbInfos > 4)
+            if (DataStorerChamois.Instance.nbInfos > 4)
             {
                 GOPointer.AchievementManager.GetComponent<AchievementManager>().EarnAchievement("Connaissances en Chamois I");
                 infos5 = true;
@@ -109,7 +109,7 @@ public class FinPartie : MonoBehaviour
 
         if (!infos10)
         {
-            if (GOPointer.PlayerChamois.GetComponent<DataStorerChamois>().nbInfos > 9)
+            if (DataStorerChamois.Instance.nbInfos > 9)
             {
                 GOPointer.AchievementManager.GetComponent<AchievementManager>().EarnAchievement("Connaissances en Chamois II");
                 infos10 = true;

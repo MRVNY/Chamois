@@ -24,9 +24,6 @@ public class DataStorerRandonneur : DataStorer
     public int meilleureRando = 0;
     public int nbInfos = 0;
     public int score = 0;
-    public TextMeshProUGUI textRando;
-
-    private Boolean carteActive;
     
     private Boolean rando1 = false;
     private Boolean rando5partie = false;
@@ -50,18 +47,12 @@ public class DataStorerRandonneur : DataStorer
 
     public static DataStorerRandonneur Instance;
     
-    void Start()
+    public DataStorerRandonneur()
     {
         if(Instance == null)
         {
             Instance = this;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
-        
-        base.Start();
         
         h.Add("epionScore",0);
         h.Add("batterieScore",0);
@@ -81,7 +72,7 @@ public class DataStorerRandonneur : DataStorer
     {
         meilleureRando = PlayerPrefs.GetInt("meilleureRando");
 
-        textRando.SetText("Randonnées effectuées : \n{0} / 11", nbRandosMemePartie);
+        //GOPointer.textRando.SetText("Randonnées effectuées : \n{0} / 11", nbRandosMemePartie);
 
         if (!rando1 && nbRandos > 0)
         {
@@ -176,7 +167,6 @@ public class DataStorerRandonneur : DataStorer
         h["scoreTotal"] = scoreTotal;
 
         GOPointer.GameManager.GetComponent<FinPartie>().receiveDataRandonneur(h);
-        enabled = false;
     }
 
     public void setData(string type, int var)

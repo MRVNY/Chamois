@@ -16,7 +16,6 @@ public class NourritureMangee : MonoBehaviour
         GameEvents.SaveInitiated += Save;
         nourMangee.Clear();
         Load();
-        
     }
 
     public void Start()

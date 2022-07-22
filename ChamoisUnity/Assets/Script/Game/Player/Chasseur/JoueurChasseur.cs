@@ -29,6 +29,8 @@ public class JoueurChasseur : Joueur
     GameObject pew;
     Munitions munitions;
 
+    public DataStorerChasseur dataStorer = new DataStorerChasseur();
+
     new void Start()
     {
         base.Start();

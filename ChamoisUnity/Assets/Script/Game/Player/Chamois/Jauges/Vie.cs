@@ -108,7 +108,7 @@ public class Vie : JaugesController
 
         if (vieActuelle <= 0)
         {
-            player.GetComponent<DataStorerChamois>().sendData();
+            DataStorerChamois.Instance.sendData();
 
             GameEvents.onPause();
 

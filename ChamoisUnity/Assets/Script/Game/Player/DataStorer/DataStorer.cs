@@ -8,12 +8,12 @@ using System;
 ///</summary>
 
 [Serializable]
-public class DataStorer : MonoBehaviour
+public class DataStorer
 {
     public static DataStorer currentDS;
     protected Hashtable h;
 
-    protected void Start()
+    public DataStorer()
     {
         currentDS = this;
         h = new Hashtable();

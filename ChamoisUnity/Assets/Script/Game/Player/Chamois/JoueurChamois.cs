@@ -20,6 +20,8 @@ public class JoueurChamois : Joueur
 
     static Boolean activateOnce2 = false;
 
+    public DataStorerChamois dataStorer = new DataStorerChamois();
+
     new void Start()
     {
         GameEvents.SaveInitiated += Save;
@@ -27,8 +29,6 @@ public class JoueurChamois : Joueur
         Physics2D.IgnoreLayerCollision(8,9, true);
         base.Start();
         stress = GOPointer.Jauges.GetComponent<Stress>();
-
-        //Load();
     }
 
     new void Update()

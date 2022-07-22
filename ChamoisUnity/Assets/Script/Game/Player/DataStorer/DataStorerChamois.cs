@@ -42,22 +42,15 @@ public class DataStorerChamois : DataStorer
 
     private Boolean nbInfos5 = false;
     private Boolean nbInfos10 = false;
-
     
     public static DataStorerChamois Instance;
     
-    void Start()
+    public DataStorerChamois()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
-        
-        base.Start();
         
         nourritureMangee = 0;
 
@@ -79,16 +72,13 @@ public class DataStorerChamois : DataStorer
 
         tempsInf = 0f;
 
-        naissance = PlayerPrefs.GetInt("naissance");
+        naissance = 0;
 
-        nourritureTotale = PlayerPrefs.GetInt("nourritureTotale");
+        nourritureTotale = 0;
     }
 
     void Update()
-    {
-        //carteActive = GOPointer.MiniMap.GetComponent<SwitchPlayerMap>().isActive;
-        carteActive = false;
-        
+    {   
         tempsSurvecu += Time.deltaTime;
         tempsInf += Time.deltaTime;
         if(tempsInf >= tempsSup)
@@ -98,124 +88,95 @@ public class DataStorerChamois : DataStorer
             tempsInf = 0f;
         }
 
-        if (Global.Personnage == "Chamois")
+
+        if (!temps1minute && tempsSurvecu > 60.0)
         {
-            if (!temps1minute && carteActive == false)
-            {
-                if (tempsSurvecu > 60.0)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Survivre I");
-                    temps1minute = true;
-                }
-            }
+            GOPointer.AchievementManager.EarnAchievement("Survivre I");
+            temps1minute = true;
+        }
 
-            if (!temps3minute && carteActive == false)
-            {
-                if (tempsSurvecu > 180.0)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Survivre II");
-                    temps3minute = true;
-                }
-            }
 
-            if (!temps5minute && carteActive == false)
-            {
-                if (tempsSurvecu > 300.0)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Survivre III");
-                    temps5minute = true;
-                }
-            }
+        if (!temps3minute && tempsSurvecu > 180.0)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Survivre II");
+            temps3minute = true;
+        }
 
-            if (!temps10minute && carteActive == false)
-            {
-                if (tempsSurvecu > 600.0)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Survivre IV");
-                    temps10minute = true;
-                }
-            }
 
-            if (!naissance1 && carteActive == false)
-            {
-                if (naissance > 0)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Heureux Évènement I");
-                    naissance1 = true;
-                }
-            }
+        if (!temps5minute && tempsSurvecu > 300.0)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Survivre III");
+            temps5minute = true;
+        }
 
-            if (!naissance2 && carteActive == false)
-            {
-                if (naissance > 1)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Heureux Évènement II");
-                    naissance2 = true;
-                }
-            }
 
-            if (!nbInfos5 && carteActive == false)
-            {
-                if (nbInfos > 4)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Connaissances en Chamois I");
-                    nbInfos5 = true;
-                }
-            }
+        if (!temps10minute && tempsSurvecu > 600.0)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Survivre IV");
+            temps10minute = true;
+        }
 
-            if (!nbInfos10 && carteActive == false)
-            {
-                if (nbInfos > 9)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Connaissances en Chamois II");
-                    nbInfos10 = true;
-                }
-            }
 
-            if (!score1000 && carteActive == false)
-            {
-                if (score > 999)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Score Chamois I");
-                    score1000 = true;
-                }
-            }
+        if (!naissance1 && naissance > 0)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Heureux Évènement I");
+            naissance1 = true;
+        }
 
-            if (!score3000 && carteActive == false)
-            {
-                if (score > 2999)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Score Chamois II");
-                    score3000 = true;
-                }
-            }
 
-            if (!score5000 && carteActive == false)
-            {
-                if (score > 4999)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Score Chamois III");
-                    score5000 = true;
-                }
-            }
+        if (!naissance2 && naissance > 1)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Heureux Évènement II");
+            naissance2 = true;
+        }
 
-            if (!nourriture15 && carteActive == false)
-            {
-                if (nourritureMangee > 14)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Alimentation I");
-                    nourriture15 = true;
-                }
-            }
 
-            if (!nourriture30 && carteActive == false)
-            {
-                if (nourritureMangee > 29)
-                {
-                    GOPointer.AchievementManager.EarnAchievement("Alimentation II");
-                    nourriture30 = true;
-                }
-            }
+        if (!nbInfos5 && nbInfos > 4)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Connaissances en Chamois I");
+            nbInfos5 = true;
+        }
+
+
+        if (!nbInfos10 && nbInfos > 9)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Connaissances en Chamois II");
+            nbInfos10 = true;
+        }
+
+
+        if (!score1000 && score > 999)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Score Chamois I");
+            score1000 = true;
+        }
+
+
+        if (!score3000 && score > 2999)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Score Chamois II");
+            score3000 = true;
+        }
+
+
+        if (!score5000 && score > 4999)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Score Chamois III");
+            score5000 = true;
+        }
+
+
+        if (!nourriture15 && nourritureMangee > 14)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Alimentation I");
+            nourriture15 = true;
+        }
+
+
+        if (!nourriture30 && nourritureMangee > 29)
+        {
+            GOPointer.AchievementManager.EarnAchievement("Alimentation II");
+            nourriture30 = true;
         }
     }
 
@@ -231,7 +192,6 @@ public class DataStorerChamois : DataStorer
         h.Add("scoreTps", scoreTps);
 
         GOPointer.GameManager.GetComponent<FinPartie>().receiveData(h);
-        enabled = false;
     }
 
     public void setData(string type, int var)

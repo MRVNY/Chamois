@@ -27,7 +27,7 @@ namespace RPGM.Events
         NPCManager NPCManager = GOPointer.NPCCollection.GetComponent<NPCManager>();
 
         public ShowConversation(){
-            dataStorer = GOPointer.PlayerRandonneur.GetComponent<DataStorerRandonneur>();
+            dataStorer = DataStorerRandonneur.Instance;
         }
 
         public override void Execute()
