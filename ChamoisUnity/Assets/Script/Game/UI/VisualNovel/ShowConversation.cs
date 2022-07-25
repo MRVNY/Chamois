@@ -49,49 +49,57 @@ namespace RPGM.Events
             }
 
             //if this item contains an unstarted quest, schedule a start quest event for the quest.
-            if (ci.quest != null)
-            {
-                if (!ci.quest.isStarted)
-                {
-                    var ev = Schedule.Add<StartQuest>(1);
-                    ev.quest = ci.quest;
-                    ev.npc = npc;
-                }
-                if (ci.quest.isFinished && ci.quest.questCompletedConversation != null)
-                {
-                    ci = ci.quest.questCompletedConversation.items[0];
-                }
-            }
+            // if (ci.quest != null)
+            // {
+            //     if (!ci.quest.isStarted)
+            //     {
+            //         var ev = Schedule.Add<StartQuest>(1);
+            //         //ev.quest = ci.quest;
+            //         ev.npc = npc;
+            //     }
+            //     if (ci.quest.isFinished && ci.quest.questCompletedConversation != null)
+            //     {
+            //         ci = ci.quest.questCompletedConversation.items[0];
+            //     }
+            // }
 
             /// <summary>
             /// Voir le script ConversationPiece, et l'utilisation de hint
             /// </summary>
             if (!string.IsNullOrEmpty(ci.hint))
             {
-                if (ci.hint.Length>4 && ci.hint.Substring(0, 4)=="node")
+                foreach (var hint in ci.hint.Split(";"))
                 {
-                    NPCManager.switchNode(ci.hint);
-                }
-                
-                if(Global.Personnage == "Chasseur")
-                { 
-                    NPCManager.actionChasseur(ci.hint);
-                }
-
-                if (Global.Personnage == "Chamois")
-                {
-                    NPCManager.actionChamois(ci.hint);
-                }
-
-                if (Global.Personnage == "Randonneur")
-                {
-                    if(ci.hint.Length>3 && ci.hint.Substring(0, 3)=="ran"){
-                        RandoManager randoManager = GOPointer.RandoManager;
-                        randoManager.startRando(ci.hint.Substring(4));
-                    }
-                    else
+                    if (hint.Length>4 && hint.Substring(0, 4)=="node")
                     {
-                        NPCManager.actionRando(ci.hint);
+                        NPCManager.switchNode(hint);
+                    }
+                    
+                    else if (hint.Length>5 && hint.Substring(0, 5)=="quest")
+                    {
+                        NPCManager.questAction(hint);
+                    }
+                
+                    else if(Global.Personnage == "Chasseur")
+                    { 
+                        NPCManager.actionChasseur(hint);
+                    }
+
+                    else if (Global.Personnage == "Chamois")
+                    {
+                        NPCManager.actionChamois(hint);
+                    }
+
+                    else if (Global.Personnage == "Randonneur")
+                    {
+                        if(hint.Length>3 && hint.Substring(0, 3)=="ran"){
+                            RandoManager randoManager = GOPointer.RandoManager;
+                            randoManager.startRando(hint.Substring(4));
+                        }
+                        else
+                        {
+                            NPCManager.actionRando(hint);
+                        }
                     }
                 }
             }

@@ -6,7 +6,7 @@ using System;
 
 public class JoueurRandonneur : Joueur
 {
-    public DataStorerRandonneur dataStorer = new DataStorerRandonneur();
+    [NonSerialized] public DataStorerRandonneur dataStorer = new DataStorerRandonneur();
 
     private void Awake()
     {

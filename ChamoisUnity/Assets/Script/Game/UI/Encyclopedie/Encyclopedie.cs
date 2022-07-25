@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using RPGM.Gameplay;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class Encyclopedie : MonoBehaviour
     public List<ContenuPages> pagesStatic = new List<ContenuPages>();
     public List<ContenuPages> pagesDynamic = new List<ContenuPages>();
     public List<ContenuPages> quete = new List<ContenuPages>();
+    public List<PlayerQuest> questList = new List<PlayerQuest>();
 
     private Encyclopedie showing;
 
@@ -125,7 +127,7 @@ public class Encyclopedie : MonoBehaviour
 
     protected void addInfoToList(string action, List<ContenuPages> liste, Dictionary<string, EncycloInfos> dico)
     {
-        
+        if(liste==pagesDynamic) Notifier.Instance.NewNotes();
         if (!dico.ContainsKey(action))
             return;
         ContenuPages page = new ContenuPages();
@@ -199,7 +201,7 @@ public class Encyclopedie : MonoBehaviour
         onPageChanged(pD);
         GOPointer.Livre.SetActive(false);
         encyButtons.SetActive(false);
-        GOPointer.MenuManager.GetComponent<Menu>().endEncy();
+        UIManager.Instance.endEncy();
     }
 
     private void onPageChanged(GameObject gm)

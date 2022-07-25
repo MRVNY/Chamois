@@ -47,6 +47,16 @@ namespace RPGM.Gameplay
                 actionButton = Buttons.validate;
             }
             
+            if(type == "Trash" && Global.Personnage == "Chasseur")
+            {
+                actionButton = Buttons.pickUp;
+            }
+            
+            if(type == "TrashCan" && Global.Personnage == "Chasseur")
+            {
+                actionButton = Buttons.throwTrash;
+            }
+            
             if (actionButton != null)
             {
                 actionButton.SetActive(false);
@@ -108,6 +118,20 @@ namespace RPGM.Gameplay
                     GOPointer.RandoManager.nextRando(this);
                 }
             }
+
+            if (type == "Trash")
+            {
+                chasseurDechet.dechetsMain++;
+                Destroy(gameObject);
+                chasseurDechet.updateView();
+            }
+            
+            if(type == "TrashCan")
+            {
+                chasseurDechet.dechetsMain = 0;
+                chasseurDechet.updateView();
+            }
+            
         }
 
         public void CompleteQuest(Quest q)

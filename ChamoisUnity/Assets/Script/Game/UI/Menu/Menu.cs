@@ -126,27 +126,13 @@ public class Menu : MonoBehaviour
         Global.Personnage = perso;
         SceneManager.LoadScene("Game");
     }
-
-    public void EncyOnClick()
+    
+    public void clearSave()
     {
-        Vibrate.vibration();
-        //GOPointer.Ouvre.SetActive(false);
-        notifier.setFalse();
-        if (GOPointer.EncyMenu.activeSelf)
-        {
-            GOPointer.EncyMenu.SetActive(false);
-            pasueIcon.SetActive(true);
-        }
-        else
-        {
-            GOPointer.EncyMenu.SetActive(true);
-            pasueIcon.SetActive(false);
-        }
-    }
+        SaveLoad.DeleteAllSaveFiles();
+        
+        PlayerPrefs.DeleteAll();
 
-    public void endEncy()
-    {
-        NotifMenuDeroulant.SetActive(false);
-        Deactivate();
+        SceneManager.LoadScene("Menu");
     }
 }

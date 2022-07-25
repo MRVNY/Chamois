@@ -45,6 +45,8 @@ public class AchievementManager : MonoBehaviour
 
     private Dictionary<string, GameObject> parents;
 
+    public GameObject EarnCanvas;
+
     public static AchievementManager Instance;
 
     // Start is called before the first frame update
@@ -67,6 +69,7 @@ public class AchievementManager : MonoBehaviour
         parents.Add("Chamois",scrollRect.transform.Find("Chamois").gameObject);
         parents.Add("Chasseur",scrollRect.transform.Find("Chasseur").gameObject);
         parents.Add("Randonneur",scrollRect.transform.Find("Randonneur").gameObject);
+        parents.Add("EarnCanvas",EarnCanvas);
 
         // Récupération des données dans le JSON, lié dans le GameObject ""
         AchievementInfoList infosInJson = JsonUtility.FromJson<AchievementInfoList>(jsonFile.text);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
 using Unity.Burst;
@@ -144,6 +145,8 @@ public static class SaveLoad
                 break;
         }
         
+        //Quest
+        Save<List<PlayerQuest>>(QuestManager.Instance.foundQuests,"Quest"+Global.Personnage);
     }
 
     public static async Task LoadState()
@@ -274,6 +277,13 @@ public static class SaveLoad
                 break;
         }
         
+        //Quest
+        var tmpQuest = Load<List<PlayerQuest>>("Quest"+Global.Personnage);
+        if (tmpQuest != null)
+        {
+            QuestManager.Instance.foundQuests = tmpQuest;
+            QuestManager.Instance.currentQuest = QuestManager.Instance.foundQuests.Last();
+        }
         
     }
 

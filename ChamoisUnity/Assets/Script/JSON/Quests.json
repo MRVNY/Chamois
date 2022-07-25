@@ -1,0 +1,71 @@
+{
+    "Randonneur" :
+    {
+        "randoEpion" : {
+            "description" : "Informations sur la randonnée choisie :\nNom : Randonnée de l'Épion.                      \nDifficulté : Facile       \nDénivelé : 500m     \nTemps : 3h30      \nLongueur : 7.5km",
+            "hints" : {}
+        },
+        "randoBatterie" : {
+            "description" : "Informations sur la randonnée choisie :\nNom : Randonnée du Fort de la Batterie.          \nDifficulté : Facile       \nDénivelé : 650m     \nTemps : 3h30      \nLongueur : 5.6km",
+            "hints" : {}
+        },
+        "randoDentPortes" : {
+            "description" : "Informations sur la randonnée choisie :\nNom : Randonnée de la Dent des Portes.           \nDifficulté : Moyen        \nDénivelé : 900m     \nTemps : 7h        \nLongueur : 16km",
+            "hints" : {}
+        },
+        "randoGrandRoc" : {
+            "description" : "Informations sur la randonnée choisie :\nNom : Randonnée du Grand Roc.                    \nDifficulté : Moyen        \nDénivelé : 1140m    \nTemps : 4h30      \nLongueur : 11km",
+            "hints" : {}
+        },
+        "randoPointeChaurionde" : {
+            "description" : "Informations sur la randonnée choisie :\nNom : Randonnée de la Pointe de la Chaurionde.   \nDifficulté : Moyen        \nDénivelé : 1300m    \nTemps : 1 jour    \nLongueur : 16km",
+            "hints" : {}
+        },
+        "randoMorbier" : {
+            "description" : "Informations sur la randonnée choisie :\nNom : Randonnée du Mont Morbier.                 \nDifficulté : Moyen        \nDénivelé : 690m     \nTemps : 4h30      \nLongueur : 11km",
+            "hints" : {}
+        },
+        "randoNivolet" : {
+            "description" : "Informations sur la randonnée choisie :\nNom : Randonnée de la Croix du Nivolet.          \nDifficulté : Moyen        \nDénivelé : 620m     \nTemps : 4h        \nLongueur : 9km",
+            "hints" : {}
+        },
+        "randoGaloppaz" : {
+            "description" : "Informations sur la randonnée choisie :\nNom : Randonnée de la Pointe de la Galoppaz.     \nDifficulté : Moyen        \nDénivelé : 762m     \nTemps : 5h        \nLongueur : 11km",
+            "hints" : {}
+        },
+        "randoColombier" : {
+            "description" : "Informations sur la randonnée choisie :\nNom : Randonnée du Mont Colombier.               \nDifficulté : Difficile    \nDénivelé : 1500m    \nTemps : 10h       \nLongueur : 18km",
+            "hints" : {}
+        },
+        "randoArcalod" : {
+            "description" : "Informations sur la randonnée choisie :\nNom : Randonnée de la Pointe de l'Arcalod.       \nDifficulté : Difficile    \nDénivelé : 1220m    \nTemps : 1 jour    \nLongueur : 16.5km",
+            "hints" : {}
+        },
+        "randoTrelod" : {
+            "description" : "Informations sur la randonnée choisie :\nNom : Randonnée du Mont Trélod.                  \nDifficulté : Difficile    \nDénivelé : 1400m    \nTemps : 1 jour    \nLongueur : 14km",
+            "hints" : {}
+        }
+    },
+
+    "Chamois" : 
+    {
+        "trouverTroupeau" : {
+            "description" : "Je suis perdue dans les montagnes, je dois trouver mon troupeau...",
+            "hints" : {}
+        }
+    },
+
+    "Chasseur" :
+    {
+        "UnChamoisMalade" : {
+            "description" : "J'ai entendu parler un chamois qui est malade, qui pourrait devenir un danger pour les autres, je dois le trouver et l'éliminer",
+            "hints" : {
+                "DonneurDeQuete": "Je dois trouver un garde forestier vers les alentour pour plus d'info",
+                "GardeForestier": "Apparemment, le chamois malade à la peau rouge...",
+                "Randonneur": "Je dois investiguer le chamois rouge dans le massif a votre nord...",
+                "Photographe": "Le chamois rouge se trouve à la Tour de l'angle Est, je devrais probablement m'y rendre..."
+            },
+            "participants" : "GardeForestier,Randonneur,Photographe"
+        }
+    }
+}

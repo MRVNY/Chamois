@@ -35,7 +35,6 @@ public class NPCManager : MonoBehaviour
 
     //Chasseur
     public NPCController[] ChasseurNPCList;
-    private string[] npcHint = { "debutQuete", "suiteForestier", "suiteRandonneur", "suitePhotographe" };
 
     //Chamois
     public NPCController[] chamoisNPCList;
@@ -45,6 +44,7 @@ public class NPCManager : MonoBehaviour
     public GameObject DonneursInfos;
     
     [NonSerialized] public NPCController[] currentNPCList;
+    [NonSerialized] public Hashtable currentNPCTable;
     
     //Donneurs
     public NPCController[] listDonneurs;
@@ -125,11 +125,15 @@ public class NPCManager : MonoBehaviour
                 listDonneurs = DonneursInfos.GetComponentsInChildren<NPCController>();
                 break;
         }
+
+        currentNPCTable = new Hashtable();
         
         foreach (var npc in currentNPCList)
         {
+            currentNPCTable.Add(npc.name, npc);
             npc.gameObject.SetActive(true);
             npc.setConvo((JObject)JPerso[npc.name]);
+            //npc.setFirstNode(Global.persoNum[Global.Personnage]);
         }
         
         foreach (var don in listDonneurs)
@@ -147,29 +151,7 @@ public class NPCManager : MonoBehaviour
     public void actionChasseur(string hint)
     {
         dataChasseur.nbInfos++;
-
-        if (npcHint.Contains(hint))
-        {
-            switch (hint)
-            {
-                case "debutQuete":
-                    ChasseurNPCList[0].setFirstNode("3");
-                    break;
-                case "suiteForestier":
-                    ChasseurNPCList[1].setFirstNode("3");
-                    break;
-                case "suiteRandonneur":
-                    ChasseurNPCList[2].setFirstNode("3");
-                    break;
-                case "suitePhotographe":
-                    ChasseurNPCList[3].setFirstNode("3");
-                    break;
-            }
-        }
-        else
-        {
-            encyChasseur.addInfoToList(hint,encyChasseur.pagesDynamic);
-        }
+        encyChasseur.addInfoToList(hint, encyChasseur.pagesDynamic);
     }
     
     public void actionChamois(string hint)
@@ -183,13 +165,26 @@ public class NPCManager : MonoBehaviour
         var tmp = hint.Split(",");
         var npcName = tmp[1];
         var node = tmp[2];
+        
+        ((NPCController)currentNPCTable[npcName])?.setFirstNode(node);
+    }
 
-        foreach (var npc in currentNPCList)
+    public void questAction(string hint)
+    {
+        var tmp = hint.Split(",");
+        string from = tmp[1];
+        string to = tmp[2];
+        string questName = tmp[3];
+        
+        ((NPCController)currentNPCTable[to])?.setFirstNode(questName);
+        ((NPCController)currentNPCTable[from])?.setFirstNode("asked");
+
+        if (QuestManager.Instance.foundQuests[0].title != questName)
         {
-            if(npc != null && npc.isActiveAndEnabled && npc.name == npcName)
-            {
-                npc.setFirstNode(node);
-            }
+            QuestManager.Instance.addQuest(questName);
         }
+        
+        QuestManager.Instance.currentQuest.hintName = from;
+        Notifier.Instance.NewQuest();
     }
 }

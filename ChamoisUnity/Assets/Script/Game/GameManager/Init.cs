@@ -53,7 +53,7 @@ public class Init : MonoBehaviour
         
         //Screen.SetResolution(1280, 720, false);
         
-        gameObject.GetComponent<FinPartie>().enabled = false;
+        //FinPartie.Instance.enabled = false;
 
         GOPointer.EncyButton.SetActive(false);
         GOPointer.MenuManager.SetActive(true);
@@ -89,6 +89,9 @@ public class Init : MonoBehaviour
                 GOPointer.ListeChamoisSauvages.SetActive(false);
                 break;
         }
+        
+        QuestManager.Instance.Start();
+        QuestManager.Instance.gameObject.SetActive(false);
         
         CameraControllerJoy.Instance.ManualStart();
 

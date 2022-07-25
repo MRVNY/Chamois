@@ -2,21 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FinPartie : MonoBehaviour
 {
-    public GameObject finChamois;
-    public GameObject finChasseur;
-    public GameObject finChasseurBonChamois;
-    public GameObject finChasseurMauvaisChamois;
-    public GameObject finRandonneur; 
-
-    public Text textChamois;
-    public Text textChasseurMunitions;
-    public Text textChasseurBonChamois;
-    public Text textChasseurMauvaisChamois;
-    public Text textRandonneur;
+    public Text recap;
 
     private Boolean score1000;
     private Boolean score3000;
@@ -32,14 +23,29 @@ public class FinPartie : MonoBehaviour
     
     private DataStorerChasseur data;
     
-    void Start()
+    public static FinPartie Instance;
+
+    private void Awake()
     {
-        finChamois.SetActive(false);
-        finChasseur.SetActive(false);
-        finRandonneur.SetActive(false);
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        gameObject.SetActive(false);
+
     }
 
-
+    private void OnEnable()
+    {
+        switch (Global.Personnage)
+        {
+            
+        }
+    }
 
     public void receiveData(Hashtable h)
     {
@@ -51,7 +57,7 @@ public class FinPartie : MonoBehaviour
         int blessure = (int)h["blessure"];
         int scoreTps = (int)h["scoreTps"];
 
-        textChamois.text = "Vous avez survécu pendant " + (int)tps + " secondes\net vous avez Mangé " + nouriture + " repas" + "\n\n Votre score est de : " + score + "pts" + "\n (Repas : " + nouriture + " --> " + scBouffe + "pts)" + "\n (Blessures : " + blessure + " --> " + scBlessure + "pts)" + "\n (Temps de jeu : " + (int)tps + "s --> " + scoreTps + "pts)";
+        recap.text = "Vous avez survécu pendant " + (int)tps + " secondes\net vous avez Mangé " + nouriture + " repas" + "\n\n Votre score est de : " + score + "pts" + "\n (Repas : " + nouriture + " --> " + scBouffe + "pts)" + "\n (Blessures : " + blessure + " --> " + scBlessure + "pts)" + "\n (Temps de jeu : " + (int)tps + "s --> " + scoreTps + "pts)";
 
         if (!score1000)
         {
@@ -118,15 +124,15 @@ public class FinPartie : MonoBehaviour
 
         Time.timeScale = 0f;
 
-        finChamois.SetActive(true);
+        gameObject.SetActive(true);
         fin = true;
     }
     
     public void receiveDataChasseur(Hashtable h)
     {
         //int score = (int)h["score"];
-        textChasseurMunitions.text = "Vous n'avez plus de munitions"; //, votre score actuel est de: " + score;
-        finChasseur.SetActive(true);
+        recap.text = "Vous n'avez plus de munitions"; //, votre score actuel est de: " + score;
+        gameObject.SetActive(true);
         fin = true;
     }
     
@@ -140,8 +146,8 @@ public class FinPartie : MonoBehaviour
         int mauvaisChamois = (int)h["mauvaisChamois"];
         int scmauvaisChamois = (int)h["scmauvaisChamois"];
         int score = (int)h["score"];*/
-        textChasseurBonChamois.text = "Bravo, vous avez tué le bon chamois ";// vous avez un score final de: " + score + "pts" + "\n (Dechets Ramassés : " + dechets + " --> " + scDechets + "pts)" + "\n (Mauvais Chamois tué : " + mauvaisChamois + " --> " + scmauvaisChamois + "pts)" + "\n (Bon Chamois tué : " + bonChamois + " : --> " + scbonChamois + "pts)";
-        finChasseurBonChamois.SetActive(true);
+        recap.text = "Bravo, vous avez tué le bon chamois ";// vous avez un score final de: " + score + "pts" + "\n (Dechets Ramassés : " + dechets + " --> " + scDechets + "pts)" + "\n (Mauvais Chamois tué : " + mauvaisChamois + " --> " + scmauvaisChamois + "pts)" + "\n (Bon Chamois tué : " + bonChamois + " : --> " + scbonChamois + "pts)";
+        gameObject.SetActive(true);
         fin = true;
     }
     
@@ -153,8 +159,8 @@ public class FinPartie : MonoBehaviour
         int mauvaisChamois = (int)h["mauvaisChamois"];
         int scmauvaisChamois = (int)h["scmauvaisChamois"];
         int score = (int)h["score"];*/
-        textChasseurMauvaisChamois.text = "Aïe, vous avez tué le mauvais chamois, peut être que vous voulez réessayer ?";// Vous avez un score actuel de:" + score + "pts" + "\n (Dechets Ramassés : " + dechets + " --> " + scDechets + "pts)" + "\n (Mauvais Chamois tué : " + mauvaisChamois + " --> " + scmauvaisChamois + "pts)";
-        finChasseurMauvaisChamois.SetActive(true);
+        recap.text = "Aïe, vous avez tué le mauvais chamois, peut être que vous voulez réessayer ?";// Vous avez un score actuel de:" + score + "pts" + "\n (Dechets Ramassés : " + dechets + " --> " + scDechets + "pts)" + "\n (Mauvais Chamois tué : " + mauvaisChamois + " --> " + scmauvaisChamois + "pts)";
+        gameObject.SetActive(true);
         fin = true;
     }
     
@@ -173,14 +179,27 @@ public class FinPartie : MonoBehaviour
         int trelodScore = (int)h["trelodScore"];
         int scoreTotal = (int)h["scoreTotal"];
 
-        textRandonneur.text = "Vous avez effectué un score de " + scoreTotal + "pts" + "\n\n (L'Épion --> " + epionScore + "pts)    " + "(Fort de la Batterie --> " + batterieScore + "pts)    " + "(Dent des Portes-- > " + dentPortesScore + "pts)    " + "\n (Grand Roc-- > " + grandRocScore + "pts)    " + "(Pointes de la Chaurionde --> " + pointesChauriondeScore + "pts)    " + "(Mont Morbier --> " + morbierScore + "pts)    " + "\n (Croix du Nivolet -- > " + nivoletScore + "pts)    " + "(Pointe de la Galoppaz-- > " + galoppazScore + "pts)    " + "(Mont Colombier --> " + colombierScore + "pts)    " + "\n (Pointe de l'Arcalod --> " + arcalodScore + "pts)    " + "(Mont Trélod --> " + trelodScore + "pts)";
-        finRandonneur.SetActive(true);
+        recap.text = "Vous avez effectué un score de " + scoreTotal + "pts" + "\n\n (L'Épion --> " + epionScore + "pts)    " + "(Fort de la Batterie --> " + batterieScore + "pts)    " + "(Dent des Portes-- > " + dentPortesScore + "pts)    " + "\n (Grand Roc-- > " + grandRocScore + "pts)    " + "(Pointes de la Chaurionde --> " + pointesChauriondeScore + "pts)    " + "(Mont Morbier --> " + morbierScore + "pts)    " + "\n (Croix du Nivolet -- > " + nivoletScore + "pts)    " + "(Pointe de la Galoppaz-- > " + galoppazScore + "pts)    " + "(Mont Colombier --> " + colombierScore + "pts)    " + "\n (Pointe de l'Arcalod --> " + arcalodScore + "pts)    " + "(Mont Trélod --> " + trelodScore + "pts)";
+        gameObject.SetActive(true);
         fin = true;
     }
 
     public void setChasseur(Boolean b)
     {
-        finChasseur.SetActive(b);
-        finChasseurMauvaisChamois.SetActive(b);
+        //b is always false it seems
+        
+        // finChasseur.SetActive(b);
+        // finChasseurMauvaisChamois.SetActive(b);
+    }
+    
+    public void backToMenu()
+    {
+        SceneManager.LoadScene("Menu") ;
+    }
+    
+    public void restartGame()
+    {
+        SaveLoad.DeleteAllSaveFiles();
+        SceneManager.LoadScene("Game");
     }
 }

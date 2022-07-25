@@ -19,17 +19,17 @@ namespace RPGM.Gameplay
         private ConversationScript conversations;
         public string firstNode;
         private JObject convoTree;
-        public TextAsset jsonFile;
+        // private TextAsset jsonFile;
 
         public void Start()
         {
             camera = CameraControllerJoy.Instance.GetComponent<Camera>();
             actionButton = GOPointer.interactiveButtons.GetComponent<InteractiveButtons>().talk;
             
-            if(jsonFile != null){
-                convoTree = JObject.Parse(jsonFile.text);
-                constructConvoTree();
-            }
+            // if(jsonFile != null){
+            //     convoTree = JObject.Parse(jsonFile.text);
+            //     constructConvoTree();
+            // }
             
             actionButton.SetActive(false);
             

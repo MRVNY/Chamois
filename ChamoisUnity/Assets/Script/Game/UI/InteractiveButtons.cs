@@ -10,6 +10,8 @@ public class InteractiveButtons : MonoBehaviour
     public GameObject talk;
     public GameObject recharge;
     public GameObject validate;
+    public GameObject pickUp;
+    public GameObject throwTrash;
 
     private void Awake()
     {

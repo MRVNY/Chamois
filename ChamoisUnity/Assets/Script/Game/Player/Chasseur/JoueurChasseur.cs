@@ -30,7 +30,7 @@ public class JoueurChasseur : Joueur
     GameObject pew;
     Munitions munitions;
 
-    public DataStorerChasseur dataStorer = new DataStorerChasseur();
+    [NonSerialized] public DataStorerChasseur dataStorer = new DataStorerChasseur();
 
     private void Awake()
     {

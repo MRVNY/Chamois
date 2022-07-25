@@ -1,0 +1,156 @@
+    {
+      "encyinfos":
+      [
+        {
+          "hint": "donneurQuete",
+          "texte": "Vous devez trouver un garde forestier vers les alentours...",
+          "taille": 3
+        },
+        {
+          "hint": "gardeForestier",
+          "texte": "Apparemment, le chamois malade à la peau rouge...",
+          "taille": 4
+        },
+        {
+          "hint": "randonneur",
+          "texte": "L'animal pourrait devenir un danger pour les autres, vous devez la trouver. Vous devriez investiguer dans le massif a votre nord...",
+          "taille": 5
+        },
+        {
+          "hint": "photographe",
+          "texte": "Votre proie se trouve à la Tour de l'angle Est, vous devriez probablement vous y rendre...",
+          "taille": 4
+        },
+        {
+          "hint": "poidsChevreuil",
+          "texte": "Chez les chevreuils, la femelle pèse environ 24kg, alors qu'un mâle pose environ 26kg",
+          "taille": 4
+        },
+        {
+          "hint": "predateursPresents",
+          "texte": "Dans le Massif des Bauges, vous pouvez trouver des prédateurs, comme des loups, lynxs, vautours, renards ou des aigles",
+          "taille": 6
+        },
+        {
+          "hint": "periodeChasse",
+          "texte": "La période de chasse du chamois est de septembre à février, il existe une période d'interdiction fin novemmbre, pendant la période de rut",
+          "taille": 6
+        },
+        {
+          "hint": "regulationChasseChamois",
+          "texte": "Un quota de chamois prélevable est défini par communes",
+          "taille": 3
+        },
+        {
+          "hint": "habitatChamois",
+          "texte": "Les chamois ont pour habitude de vivre dans les alpages",
+          "taille": 3
+        },
+        {
+          "hint": "sociabiliteChamois",
+          "texte": "En termes de sociabilité, le chamois a pour habitude d'être social",
+          "taille": 4
+        },
+                {
+          "hint": "regimeChamois",
+          "texte": "Pour se nourrir, le chamois va cueillir ou bien brouter sa nourriture",
+          "taille": 4
+        },
+        {
+          "hint": "poidsChamois",
+          "texte": "Chez les chamois, la femelle pèse environ 26kg, alors qu'un mâle pèse environ 39kg",
+          "taille": 4
+        },
+        {
+          "hint": "faunePresente",
+          "texte": "Dans le Massif des Bauges, vous pouvez trouver sangliers, cerfs, mouflons, lagopèdes, tétras lyre, lièvres, chevreuils et chamois",
+          "taille": 6
+        },
+        {
+          "hint": "chasseurTelemetre",
+          "texte": "Pour chasser, le chasseur utilise un télémètre, afin d'estimer la distance à laquelle se trouve une cible, et d'adapter son matériel en fonction",
+          "taille": 6
+        },
+        {
+          "hint": "utiliteChasse",
+          "texte": "La chasse est un loisir, qui n'a pas que pour but de chasser pour manger, elle a aussi pour but de réguler les espèces",
+          "taille": 6
+        },
+        {
+          "hint": "loupRegulation",
+          "texte": "Le loup, comme le chasseur, permet la régulation des populations de gibier",
+          "taille": 4
+        },
+        {
+          "hint": "habitatChevreuil",
+          "texte": "Les chevreuils ont pour habitude de vivre dans les forêts",
+          "taille": 3
+        },
+        {
+          "hint": "sociabiliteChevreuil",
+          "texte": "En termes de sociabilité, le chevreuil a pour habitude d'être de solitaire à social",
+          "taille": 4
+        },
+        {
+          "hint": "regimeChevreuil",
+          "texte": "Pour se nourrir, le chevreuil va cueillir sa nourriture",
+          "taille": 3
+        },
+        {
+          "hint": "poidsMouflon",
+          "texte": "Chez les mouflons, la femelle pèse environ 30kg, alors qu'un mâle pèse environ 43kg",
+          "taille": 4
+        },
+        {
+          "hint": "habitatMouflon",
+          "texte": "Les mouflons ont pour habitude de vivre dans les alpages et les forêts",
+          "taille": 4
+        },
+        {
+          "hint": "sociabiliteMouflon",
+          "texte": "En termes de sociabilité, le mouflon a pour habitude d'être social",
+          "taille": 4
+        },
+        {
+          "hint": "regimeMouflon",
+          "texte": "Pour se nourrir, le mouflon va brouter sa nourriture",
+          "taille": 3
+        },
+        {
+          "hint": "domaines",
+          "texte": "Les animaux possèdent des domaines. L'usage de ces derniers par l'homme va perturber la faune",
+          "taille": 4
+        },
+        {
+          "hint": "chamoisRaces",
+          "texte": "Il n'y a pas de races de chamois, pour les différencier, il existe des différences de taille entre mâles et femelles, ainsi que des tailles de cornes en fonction de l'âge",
+          "taille": 6
+        },
+        {
+          "hint": "presencePredateur",
+          "texte": "La présence de prédateurs a des effets comportementaux sur la faune",
+          "taille": 4
+        },
+        {
+          "hint": "chasseurChien",
+          "texte": "Un chasseur doit dresser ses chiens à chasser un gibier précis afin d'éviter que ce dernier ne court après tout et n'importe quoi",
+          "taille": 6
+        },
+        {
+          "hint": "horsChasse",
+          "texte": "En période hors chasse, le chasseur peut faire du comptage ou encore de la chasse photographique",
+          "taille": 4
+        },
+        {
+          "hint": "typesChasse",
+          "texte": "Il existe plusieurs types de chasse, comme par exemple la chasse en battue, ou la chasse en billebaude",
+          "taille": 5
+        },
+        {
+          "hint": "chasseurJumelles",
+          "texte": "Pour chasser, le chasseur utilise des jumelles, afin d'identifier les animaux",
+          "taille": 6
+        }
+      ]
+    }
+      

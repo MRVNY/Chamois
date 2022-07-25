@@ -15,12 +15,19 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject buttons;
     
     [SerializeField] private GameObject achi;
-    
+    [SerializeField] private GameObject achiMenu;
+
     private PauseMenu pause;
+    public static UIManager Instance;
     
 
     private void Awake()
     {
+        if(Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+        
         foreach (var panel in panels)
         {
             //panel.anchoredPosition = new Vector2(Screen.currentResolution.width, Screen.currentResolution.height);
@@ -39,6 +46,7 @@ public class UIManager : MonoBehaviour
     public void Start()
     {
         pause = GOPointer.MenuManager.GetComponent<PauseMenu>();
+        achiMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -86,17 +94,55 @@ public class UIManager : MonoBehaviour
         GOPointer.VisualNovel.gameObject.SetActive(false);
         UIResume();
     }
+    
+    public void startEncy()
+    {
+        UIPause();
+        //GOPointer.Ouvre.SetActive(false);
+        //.setFalse();
+        if (GOPointer.EncyMenu.activeSelf)
+        {
+            GOPointer.EncyMenu.SetActive(false);
+        }
+        else
+        {
+            GOPointer.EncyMenu.SetActive(true);
+        }
+    }
+
+    public void endEncy()
+    {
+        Notifier.Instance.SeenNotes();
+        UIResume();
+    }
 
     public void startAchi()
     {
         UIPause();
+        achi.SetActive(false);
+        achiMenu.SetActive(true);
+        QuestManager.Instance.gameObject.SetActive(false);
+    }
+
+    public void openArchi()
+    {
         achi.SetActive(true);
+        achiMenu.SetActive(false);
+    }
+
+    public void openQuest()
+    {
+        achiMenu.SetActive(false);
+        QuestManager.Instance.gameObject.SetActive(true);
+        Notifier.Instance.SeenQuest();
     }
     
     public void endAchi()
     {
         //pause.Resume();
         achi.SetActive(false);
+        achiMenu.SetActive(false);
+        QuestManager.Instance.gameObject.SetActive(false);
         UIResume();
     }
 

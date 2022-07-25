@@ -15,14 +15,6 @@ public class EncycloContentRandonneur : Encyclopedie
     public void addInfoToList(string action, List<ContenuPages> liste)
     {
         base.addInfoToList(action, liste, dynamicInfo);
-        if (Global.Personnage == "Randonneur")
-        {
-            notifier.setTrue();
-        }
-        else
-        {
-            notifier.setFalse();
-        }
     }
 
     public void initList()

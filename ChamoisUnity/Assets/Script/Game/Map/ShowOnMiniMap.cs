@@ -59,6 +59,7 @@ public class ShowOnMiniMap : MonoBehaviour
     private void UpdatePos()
     {
         Vector2 playerPos = player.transform.position;
+        bigMap = Map.Instance.MainMap.GetComponent<RectTransform>();
         playerIcon.transform.position = translatePosition(playerPos);
     }
 

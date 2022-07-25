@@ -17,6 +17,8 @@ TagManager:
   - Detector
   - Terrain
   - NPC
+  - Bullet
+  - Target
   layers:
   - Default
   - TransparentFX

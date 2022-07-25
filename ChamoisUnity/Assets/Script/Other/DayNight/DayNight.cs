@@ -18,11 +18,8 @@ public class DayNight : MonoBehaviour
     public TextMeshProUGUI jourText;
     public TextMeshProUGUI moisText;
     public TextMeshProUGUI anneeText;
-
-    public bool finPartie = false;
-
+    
     private Color sra;
-    private GameObject PanelFinPartie;
 
     // Start is called before the first frame update
     void Start()
@@ -58,12 +55,12 @@ public class DayNight : MonoBehaviour
 
     IEnumerator changerDate()
     {
-        while (GOPointer.GameManager.GetComponent<FinPartie>().fin == false)
+        while (FinPartie.Instance.fin == false)
         {
             yield return new WaitForSeconds(3.0f);
             jour++;
             nbJours++;
-            if(Global.Personnage == "Chamois" && GOPointer.GameManager.GetComponent<FinPartie>().fin == false)
+            if(Global.Personnage == "Chamois" && FinPartie.Instance.fin == false)
             {
                 //GOPointer.Jauges.GetComponent<Experience>().addExperience(GOPointer.Jauges.GetComponent<Experience>().palierExp);
             }

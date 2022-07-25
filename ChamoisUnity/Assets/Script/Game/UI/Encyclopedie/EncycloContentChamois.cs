@@ -15,14 +15,6 @@ public class EncycloContentChamois : Encyclopedie
     public void addInfoToList(string action, List<ContenuPages> liste) 
     {
         base.addInfoToList(action, liste, dynamicInfo);
-        if (Global.Personnage == "Chamois")
-        {
-            notifier.setTrue();
-        }
-        else
-        {
-            notifier.setFalse();
-        }
     }
 
     public void initList()

@@ -34,25 +34,34 @@ public class Bullet : MonoBehaviour
         }*/
 
         //if(col.gameObject.tag == "Danger" || col.gameObject.tag == "Faune" || col.gameObject.tag == "ProiePrincipale" || col.gameObject.tag == "Pnj" || col.gameObject.tag == "PnjImportant")
-        if(col.gameObject.GetComponent<Killable>() != null)
+
+        switch (col.collider.tag)
         {
-            switch(col.gameObject)
-            {
-                default:
-                    Destroy(col.gameObject);
+            case "NPC":
+                FinPartie.Instance.recap.text =
+                    "Vous venez d'abattre froidement un être-humain, qui était important dans le déroulement de votre quête, peut-être devriez-vous recommencer une partie ?";
+                FinPartie.Instance.gameObject.SetActive(true);
+                FinPartie.Instance.fin = true;
                 break;
-            }
-
-            if(col.gameObject.GetComponent<Killable>().typeTuable == "PnjImportant" && PlayerPrefs.GetInt("inGameHelp") == 1)
-            {
+            
+            case "Target":
                 GOPointer.CanvasGuideJeu.SetActive(true);
-                GOPointer.CanvasGuideJeu.GetComponent<GuideManager>().guideText.SetText("Vous venez d'abattre froidement un être-humain, qui était important dans le déroulement de votre quête, peut-être devriez-vous recommencer une partie ?");
-
-            }
-
+                GuideManager.Instance.guideText.SetText("Bravo, tu as trouvé le bon chamois!");
+                QuestManager.Instance.endKillQuest();
+                break;
+            
+            case "Danger":
+                GOPointer.CanvasGuideJeu.SetActive(true);
+                GuideManager.Instance.guideText.SetText("Contrairement à ce que tu as cru, les loups sont très rares en France, ils sont essentiels pour l'équilibre, j'espère que tu n'es pas une chasseuse de trophes.");
+                break;
+            
+            case "Faune":
+                GOPointer.CanvasGuideJeu.SetActive(true);
+                GuideManager.Instance.guideText.SetText("Non ce n'est pas le bon chamois :/");
+                break;
         }
+
+        Destroy(col.gameObject);
         Destroy(gameObject);
-
-
     }
 }

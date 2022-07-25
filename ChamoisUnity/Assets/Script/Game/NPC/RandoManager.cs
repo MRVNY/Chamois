@@ -21,6 +21,8 @@ public class RandoManager : MonoBehaviour
     public static int totalPoints = -1;
     public static int currentPoint = -1;
     private string randoName;
+    
+    private PlayerQuest currentQuest;
 
 
     void Start()
@@ -52,7 +54,7 @@ public class RandoManager : MonoBehaviour
 
     public void startRando(string rando){
         randoName = rando;
-        ency.addInfoToList("rando"+rando, ency.quete);
+        //ency.addInfoToList("rando"+rando, ency.quete);
 
         int i = Global.randoNum[rando]-1;
         randosList[i].gameObject.SetActive(true);
@@ -68,11 +70,15 @@ public class RandoManager : MonoBehaviour
         currentRoute[0].setMessage("Youpi! Tu as trouvé le point de départ! Le point suivant est proche!");
         totalPoints = currentRoute.Length;
         currentPoint = -1;
+        QuestManager.Instance.addQuest("rando"+rando, totalPoints);
+        currentQuest = QuestManager.Instance.currentQuest;
+        QuestManager.Instance.currentQuest.currentStep = currentPoint;
     }
 
     public void nextRando(InteractableController point){
         if(currentRoute[currentPoint+1]==point){
             currentPoint++;
+            QuestManager.Instance.currentQuest.currentStep = currentPoint;
             if(currentPoint==0) ency.addInfoToList("start"+randoName, ency.pagesDynamic);
             currentRoute[currentPoint].setMessage("T'as déjà validé ce point, cherche le point suivant!");
             if(currentPoint == totalPoints-2){
@@ -92,8 +98,8 @@ public class RandoManager : MonoBehaviour
         ency.addInfoToList("end"+randoName, ency.pagesDynamic);
         totalPoints = -1;
         currentPoint = -1;
-
-
+        
+        QuestManager.Instance.currentQuest.isFinished= true;
         dataSt.setData(randoName+"Score", 1);
         dataSt.nbRandos += 1;
         // dataSt.nbRandosMemePartie += 1;
