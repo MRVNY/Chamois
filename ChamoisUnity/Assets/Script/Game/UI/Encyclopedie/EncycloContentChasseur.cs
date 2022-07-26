@@ -52,10 +52,10 @@ public class EncycloContentChasseur : Encyclopedie
             
 
 
-        string path = "Image/IMGEncy/Chasseur/";
+        string path = "Visuals/UI/Ency/Chasseur/";
 
-        string pathPecloz = "Image/IMGEncy/Chasseur/chassePhotographique/montpecloz/";
-        string pathChaurionde = "Image/IMGEncy/Chasseur/chassePhotographique/pointechaurionde/";
+        string pathPecloz = "Visuals/UI/Ency/Chasseur/chassePhotographique/montpecloz/";
+        string pathChaurionde = "Visuals/UI/Ency/Chasseur/chassePhotographique/montpecloz/";
 
         dynamicInfo.Add("photoChaurionde", new EncycloInfos(pathChaurionde + "pointechaurionde", null, 6));
         dynamicInfo.Add("photoPecloz", new EncycloInfos(pathPecloz + "montpecloz", null, 6));

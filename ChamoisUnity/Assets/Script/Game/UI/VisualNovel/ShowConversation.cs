@@ -41,11 +41,11 @@ namespace RPGM.Events
             else
             {
                 ci = conversation.Get(conversationItemKey);
-                if (conversationItemKey.Length == 1)
-                {
-                    GOPointer.VisualNovel.nextButton.enabled = false;
-                    GOPointer.VisualNovel.nextButtonImage.enabled = false;
-                }
+                // if (conversationItemKey.Length == 1)
+                // {
+                //     GOPointer.VisualNovel.nextButton.enabled = false;
+                //     GOPointer.VisualNovel.nextButtonImage.enabled = false;
+                // }
             }
 
             //if this item contains an unstarted quest, schedule a start quest event for the quest.
@@ -131,8 +131,8 @@ namespace RPGM.Events
             //setup conversation choices, if any.
             if (ci.options.Count == 0)
             {
-                GOPointer.VisualNovel.nextButton.enabled = true;
-                GOPointer.VisualNovel.nextButtonImage.enabled = true;
+                dialog.dialogLayout.fullScreenButton.Nullify();
+                dialog.dialogLayout.fullScreenButton.gameObject.SetActive(false);
             }
             else if (ci.options.Count == 1 && ci.options[0].text == "")
             { //if there's no buttons but we need to jump to a node

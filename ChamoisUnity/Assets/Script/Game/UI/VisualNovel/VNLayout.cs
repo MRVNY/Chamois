@@ -25,6 +25,9 @@ namespace RPGM.UI
         public SpriteButton fullScreenButton;
 
         [NonSerialized] public SpriteButton[] buttons;
+        
+        private Coroutine tmpCoroutine;
+        private bool rolling = false;
 
         void Awake()
         {
@@ -67,6 +70,7 @@ namespace RPGM.UI
 
         private void setDialog()
         {
+            fullScreenButton.gameObject.SetActive(false);
             if (fullText.Length > 3)
             {
                 currentText = fullText[0] + "\n" + fullText[1] + "\n" + fullText[2];
@@ -75,9 +79,10 @@ namespace RPGM.UI
             else
             {
                 currentText = String.Join("\n", fullText);
-                fullText = new string[0];
+                fullText = Array.Empty<string>();
             }
-            StartCoroutine("PlayText");
+            rolling = true;
+            tmpCoroutine = StartCoroutine("PlayText");
         }
         
         IEnumerator PlayText()
@@ -89,21 +94,26 @@ namespace RPGM.UI
                 textMeshPro.text += c;
                 yield return new WaitForSecondsRealtime(0.02f);
             }
-            if(fullText.Length==0) SetButtons();
+            if (fullText.Length==0) SetButtons();
+            
+            rolling = false;
         }
 
         public void skip()
         {
-            if(currentText == textMeshPro.text && optionText.Count==0) GOPointer.VisualNovel.End();
-            
-            if (currentText != textMeshPro.text)
+            if (rolling)
             {
-                StopCoroutine("PlayText");
+                rolling = false;
+                StopCoroutine(tmpCoroutine);
                 textMeshPro.text = currentText;
+                if (fullText.Length==0) SetButtons();
             }
-            else if (fullText.Length!=0) setDialog();
-            
-            if(currentText == textMeshPro.text && fullText.Length==0) SetButtons();
+            else
+            {
+                if (fullText.Length>0) setDialog();
+                else if (optionText.Count==0) GOPointer.VisualNovel.End();
+                else SetButtons();
+            }
         }
     }
 }

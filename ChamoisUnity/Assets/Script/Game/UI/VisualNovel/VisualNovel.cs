@@ -33,7 +33,6 @@ namespace RPGM.UI
 
         SpriteButton[] buttons;
         Camera mainCamera;
-        GameModel model = Schedule.GetModel<GameModel>();
         //SpriteUIElement spriteUIElement;
 
         // Start is called before the first frame update
@@ -136,6 +135,7 @@ namespace RPGM.UI
             }
             
             leftImg.sprite = left.sprite;
+            leftImg.color = left.color;
         }
     }
 }

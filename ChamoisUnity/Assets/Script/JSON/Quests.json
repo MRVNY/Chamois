@@ -49,9 +49,16 @@
 
     "Chamois" : 
     {
-        "trouverTroupeau" : {
+        "TrouverTroupeau" : {
             "description" : "Je suis perdue dans les montagnes, je dois trouver mon troupeau...",
-            "hints" : {}
+            "hints" : {
+                "NordEst" : "Le troupeau est dans le nord est"
+            },
+            "nextQuest" : "Survivre"
+        },
+
+        "Survivre" : {
+            "description" : "Bon, j'ai trouvé mon troupeau, maintenant il faut que je survis jusqu'à mai pour..."
         }
     },
 

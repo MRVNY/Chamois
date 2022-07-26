@@ -89,6 +89,8 @@ public class JoueurChamois : Joueur
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        base.OnTriggerEnter2D(col);
+        
         if (col.CompareTag("Danger"))
         {
             stress.danger(true);

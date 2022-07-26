@@ -103,11 +103,9 @@ public class Encyclopedie : MonoBehaviour
                     {
                         GameObject image = new GameObject("image_" + id.ToString());
                         image.transform.SetParent(gm.transform);
-                        image.AddComponent<Image>();
-                        Image img = image.GetComponent<Image>();
+                        Image img = image.AddComponent<Image>();
                         img.sprite = sprite;
-                        img.rectTransform.sizeDelta =
-                            new Vector2(img.sprite.rect.width / 2, img.sprite.rect.height / 2);
+                        img.preserveAspect = true;
                     }
                 }
 

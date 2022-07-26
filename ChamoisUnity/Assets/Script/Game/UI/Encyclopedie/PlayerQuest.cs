@@ -14,6 +14,7 @@ public class PlayerQuest
     public int currentStep = 0;
     
     public string[] participants;
+    public string nextQuest;
 
     public bool isFinished = false;
     

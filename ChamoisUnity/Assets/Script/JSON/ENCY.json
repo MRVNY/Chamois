@@ -13,58 +13,7 @@
         "infoRecFaune" : "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, il est recommandé de respecter la faune et la flore",
         "infoRecBalise" : "Dans la Réserve Nationale de Chasse et de Faune Sauvage des Bauges, il est recommandé de privilégier les sentiers balisés",
         "infoConsPrevenir" : "Avant d'effectuer une randonnée dans le Massif des Bauges, il est conseillé de prévenir ses proches de son itinéraire, afin de réagir au plus vite en cas de problème",
-        "poubelles" : "Il n'y a pas de poubelles sur les sentiers, vous devez vous organiser et gérer vos déchets seul",
-        
-        "randoEpion" : "Informations sur la randonnée choisie :\n\nNom : Randonnée de l'Épion.                      \nDifficulté : Facile       \nDénivelé : 500m     \nTemps : 3h30      \nLongueur : 7.5km     \n\nDirigez vous vers le Sud-Est du Massif des Bauges pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
-        "randoBatterie" : "Informations sur la randonnée choisie :\n\nNom : Randonnée du Fort de la Batterie.          \nDifficulté : Facile       \nDénivelé : 650m     \nTemps : 3h30      \nLongueur : 5.6km     \n\nDirigez vous vers le Nord d'Albertville pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
-        "randoDentPortes" : "Informations sur la randonnée choisie :\n\nNom : Randonnée de la Dent des Portes.           \nDifficulté : Moyen        \nDénivelé : 900m     \nTemps : 7h        \nLongueur : 16km      \n\nDirigez vous vers l'Est de Lescheraines pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
-        "randoGrandRoc" : "Informations sur la randonnée choisie :\n\nNom : Randonnée du Grand Roc.                    \nDifficulté : Moyen        \nDénivelé : 1140m    \nTemps : 4h30      \nLongueur : 11km      \n\nDirigez vous vers le Sud-Ouest d'Albertville pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
-        "randoPointeChaurionde" : "Informations sur la randonnée choisie :\n\nNom : Randonnée de la Pointe de la Chaurionde.   \nDifficulté : Moyen        \nDénivelé : 1300m    \nTemps : 1 jour    \nLongueur : 16km      \n\nDirigez vous vers l'Ouest d'Albertville pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
-        "randoMorbier" : "Informations sur la randonnée choisie :\n\nNom : Randonnée du Mont Morbier.                 \nDifficulté : Moyen        \nDénivelé : 690m     \nTemps : 4h30      \nLongueur : 11km      \n\nDirigez vous vers le Sud du Massif des Bauges pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
-        "randoNivolet" : "Informations sur la randonnée choisie :\n\nNom : Randonnée de la Croix du Nivolet.          \nDifficulté : Moyen        \nDénivelé : 620m     \nTemps : 4h        \nLongueur : 9km       \n\nDirigez vous vers le Nord de Chambéry pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
-        "randoGaloppaz" : "Informations sur la randonnée choisie :\n\nNom : Randonnée de la Pointe de la Galoppaz.     \nDifficulté : Moyen        \nDénivelé : 762m     \nTemps : 5h        \nLongueur : 11km      \n\nDirigez vous vers le Nord-Est de Chambéry pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
-        "randoColombier" : "Informations sur la randonnée choisie :\n\nNom : Randonnée du Mont Colombier.               \nDifficulté : Difficile    \nDénivelé : 1500m    \nTemps : 10h       \nLongueur : 18km      \n\nDirigez vous vers le Sud de Lescheraines pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
-        "randoArcalod" : "Informations sur la randonnée choisie :\n\nNom : Randonnée de la Pointe de l'Arcalod.       \nDifficulté : Difficile    \nDénivelé : 1220m    \nTemps : 1 jour    \nLongueur : 16.5km    \n\nDirigez vous vers le Sud de Faverges pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
-        "randoTrelod" : "Informations sur la randonnée choisie :\n\nNom : Randonnée du Mont Trélod.                  \nDifficulté : Difficile    \nDénivelé : 1400m    \nTemps : 1 jour    \nLongueur : 14km      \n\nDirigez vous vers l'Est de Lescheraines pour démarrer la randonnée...\n Arrivée dans 3 points de contrôle",
-
-
-        "startEpion" : "Vous avez commencé la randonnée : Randonnée de l'Épion\n Arrivée dans 2 points de contrôle",
-        "startBatterie" : "Vous avez commencé la randonnée : Randonnée du Fort de la Batterie\n Arrivée dans 2 points de contrôle",
-        "startDentPortes" : "Vous avez commencé la randonnée : Randonnée de la Dent des Portes\n Arrivée dans 2 points de contrôle",
-        "startGrandRoc" : "Vous avez commencé la randonnée : Randonnée du Grand Roc\n Arrivée dans 2 points de contrôle",
-        "startPointeChaurionde" : "Vous avez commencé la randonnée : Randonnée de la Pointe de la Chaurionde\n Arrivée dans 2 points de contrôle",
-        "startMorbier" : "Vous avez commencé la randonnée : Randonnée du Mont Morbier\n Arrivée dans 2 points de contrôle",
-        "startNivolet" : "Vous avez commencé la randonnée : Randonnée de la Croix du Nivolet\n Arrivée dans 2 points de contrôle",
-        "startGaloppaz" : "Vous avez commencé la randonnée : Randonnée de la Pointe de la Galoppaz\n Arrivée dans 2 points de contrôle",
-        "startColombier" : "Vous avez commencé la randonnée : Randonnée du Mont Colombier\n Arrivée dans 2 points de contrôle",
-        "startArcalod" : "Vous avez commencé la randonnée : Randonnée de la Pointe de l'Arcalod\n Arrivée dans 2 points de contrôle",
-        "startTrelod" : "Vous avez commencé la randonnée : Randonnée du Mont Trélod\n Arrivée dans 2 points de contrôle",
-
-
-        "suiteEpion" : "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
-        "suiteBatterie" : "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
-        "suiteDentPortes" : "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
-        "suiteGrandRoc" : "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
-        "suitePointeChaurionde" : "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
-        "suiteMorbier" : "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
-        "suiteNivolet" : "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
-        "suiteGaloppaz" : "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
-        "suiteColombier" : "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
-        "suiteArcalod" : "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
-        "suiteTrelod" : "Vous avez atteint le checkpoint de la randonnée...\n Arrivée dans 1 point de contrôle",
-
-        
-        "endEpion" : "Vous avez terminé la randonnée : Randonnée de l'Épion",
-        "endBatterie" : "Vous avez terminé la randonnée : Randonnée du Fort de la Batterie",
-        "endDentPortes" : "Vous avez terminé la randonnée : Randonnée de la Dent des Portes",
-        "endGrandRoc" : "Vous avez terminé la randonnée : Randonnée du Grand Roc",
-        "endPointeChaurionde" : "Vous avez terminé la randonnée : Randonnée de la Pointe de la Chaurionde",
-        "endMorbier" : "Vous avez terminé la randonnée : Randonnée du Mont Morbier",
-        "endNivolet" : "Vous avez terminé la randonnée : Randonnée de la Croix du Nivolet",
-        "endGaloppaz" : "Vous avez terminé la randonnée : Randonnée de la Pointe de la Galoppaz",
-        "endColombier" : "Vous avez terminé la randonnée : Randonnée du Mont Colombier",
-        "endArcalod" : "Vous avez terminé la randonnée : Randonnée de la Pointe de l'Arcalod",
-        "endTrelod" : "Vous avez terminé la randonnée : Randonnée du Mont Trélod"
+        "poubelles" : "Il n'y a pas de poubelles sur les sentiers, vous devez vous organiser et gérer vos déchets seul"
     },
 
     "Chamois" : 
@@ -85,10 +34,6 @@
 
     "Chasseur" :
     {
-        "debutQuete": "Vous devez trouver un garde forestier vers les alentours...",
-        "suiteForestier": "Apparemment, le chamois malade à la peau rouge...",
-        "suiteRandonneur": "L'animal pourrait devenir un danger pour les autres, vous devez la trouver. Vous devriez investiguer dans le massif a votre nord...",
-        "suitePhotographe": "Votre proie se trouve à la Tour de l'angle Est, vous devriez probablement vous y rendre...",
         "reponsePoidsChevreuil": "Chez les chevreuils, la femelle pèse environ 24kg, alors qu'un mâle pose environ 26kg",
         "predateursPresents": "Dans le Massif des Bauges, vous pouvez trouver des prédateurs, comme des loups, lynxs, vautours, renards ou des aigles",
         "periodeChasse": "La période de chasse du chamois est de septembre à février, il existe une période d'interdiction fin novemmbre, pendant la période de rut",

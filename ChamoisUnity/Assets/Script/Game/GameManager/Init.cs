@@ -103,13 +103,15 @@ public class Init : MonoBehaviour
             switch (Global.Personnage)
             {
                 case "Chamois":
-                    
+                    chamois.gameObject.SetActive(true);
+                    chamois.Start();
+                    chamois.onclick("init");
                     break;
                 
                 case "Chasseur":
                     papa.gameObject.SetActive(true);
                     papa.Start();
-                    papa.onclick("3");
+                    papa.onclick("init");
                     break;
                 
                 case "Randonneur":

@@ -101,4 +101,11 @@ public class Joueur : MonoBehaviour
             animatorOmbre.SetFloat("Speed", currentSpeed);
         }
     }
+
+    protected void OnTriggerEnter2D(Collider2D col) {
+        if (col.CompareTag("Target"))
+        {
+            QuestManager.Instance.endZoneQuest();
+        }
+    }
 }

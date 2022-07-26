@@ -51,18 +51,25 @@ public class QuestManager : MonoBehaviour
             foreach (JProperty obj in objs.OfType<JProperty>())
             {
                 PlayerQuest tmp = new PlayerQuest(obj.Name, obj.Value["description"]?.ToString());
-                foreach (JProperty hint in obj.Value["hints"]!)
-                {
-                    tmp.hints.Add(hint.Name, hint.Value.ToString());
-                }
                 
+                if (obj.Value["hints"] != null)
+                {
+                    foreach (JProperty hint in obj.Value["hints"])
+                    {
+                        tmp.hints.Add(hint.Name, hint.Value.ToString());
+                    }
+                }
+
                 tmp.participants = ((string)obj.Value["participants"])?.Split(',');
+
+                tmp.nextQuest = obj.Value["nextQuest"]?.ToString();
 
                 allQuests.Add(obj.Name, tmp);
             }
             
             empty = new PlayerQuest("Pas de quête en cours", "Baladez dans les Baugues pour en touver !");
-            foundQuests.Add(empty);
+            empty.isFinished = true;
+            foundQuests.Insert(0,empty);
         }
     }
 
@@ -73,7 +80,7 @@ public class QuestManager : MonoBehaviour
             Start();
         }
         
-        currentQuest = foundQuests.Last();
+        currentQuest = foundQuests[0];
         onPage = 0;
         LoadPage(currentQuest);
     }
@@ -89,23 +96,35 @@ public class QuestManager : MonoBehaviour
         {
             foundQuests.Remove(empty);
         }
-        
-        if (allQuests.ContainsKey(title))
-        {
-            PlayerQuest tmp = (PlayerQuest)allQuests[title];
-            tmp.totalSteps = steps;
-            foundQuests.Add(tmp);
-            currentQuest = tmp;
-        }
-        
-        Notifier.Instance.NewQuest();
 
-        switch (title)
+        if (currentQuest.isFinished)
         {
-            case "UnChamoisMalade":
-                startKillQuest();
-                break;
+            if (allQuests.ContainsKey(title))
+            {
+                PlayerQuest tmp = (PlayerQuest)allQuests[title];
+                tmp.totalSteps = steps;
+                foundQuests.Insert(0,tmp);
+                currentQuest = tmp;
+            }
+        
+            Notifier.Instance.NewQuest();
+
+            switch (title)
+            {
+                case "UnChamoisMalade":
+                    startKillQuest();
+                    break;
+                case "TrouverTroupeau":
+                    startZoneQuest("Troupeau");
+                    break;
+            }
         }
+        else
+        {
+            GOPointer.CanvasGuideJeu.SetActive(true);
+            GuideManager.Instance.guideText.SetText("Vous avez déjà une quête en cours !");
+        }
+        
     }
 
     public void LoadPage(PlayerQuest quest)
@@ -156,12 +175,46 @@ public class QuestManager : MonoBehaviour
     public void endKillQuest()
     {
         target.GetComponent<SpriteRenderer>().color = Color.white;
+        endQuest();
+    }
+
+    public void startZoneQuest(string zoneName)
+    {
+        //ZoneManager.Instance.Start();
+        target = ((Collider2D)ZoneManager.Instance.zones[zoneName])?.gameObject;
+        if(target!=null)
+        {
+            oldTag = target.tag;
+            target.tag = "Target";
+        }
+    }
+
+    public void endZoneQuest()
+    {
+        endQuest();
+    }
+
+    void endQuest()
+    {
         target.tag = oldTag;
         currentQuest.isFinished = true;
-        foreach (var npc in currentQuest.participants)
+        
+        if(currentQuest.participants!=null)
         {
-            ((NPCController)NPCManager.Instance.currentNPCTable[npc]).setFirstNode("");
+            foreach (var npc in currentQuest.participants)
+            {
+                ((NPCController)NPCManager.Instance.currentNPCTable[npc]).setFirstNode("");
+            }
         }
+        
+        if(currentQuest.nextQuest!=null)
+        {
+            addQuest(currentQuest.nextQuest);
+        }
+        
+        GOPointer.CanvasGuideJeu.SetActive(true);
+        GuideManager.Instance.guideText.SetText("Vous avez fini la quête !");
+
         Notifier.Instance.NewQuest();
     }
 

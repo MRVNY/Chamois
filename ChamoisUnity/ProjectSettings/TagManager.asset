@@ -19,6 +19,7 @@ TagManager:
   - NPC
   - Bullet
   - Target
+  - Zone
   layers:
   - Default
   - TransparentFX

@@ -48,19 +48,6 @@ public class NPCManager : MonoBehaviour
     
     //Donneurs
     public NPCController[] listDonneurs;
-    
-    // Start is called before the first frame update
-    // private void Start()
-    // {
-    //     if(Instance == null)
-    //     {
-    //         Instance = this;
-    //     }
-    //     else
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
 
     public async Task loadConvo()
     {
@@ -172,8 +159,8 @@ public class NPCManager : MonoBehaviour
     public void questAction(string hint)
     {
         var tmp = hint.Split(",");
-        string from = tmp[1];
-        string to = tmp[2];
+        string from = tmp[1]; //from can be the hint or the NPC name (or both)
+        string to = tmp[2]; //to is the NPC that you have to talk to next
         string questName = tmp[3];
         
         ((NPCController)currentNPCTable[to])?.setFirstNode(questName);
