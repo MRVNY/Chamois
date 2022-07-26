@@ -135,13 +135,13 @@ public static class SaveLoad
         switch (Global.Personnage)
         {
             case "Chamois":
-                Save<DataStorerChamois>(DataStorerChamois.Instance,"DSChamois");
+                Save<DSChamois>(DSChamois.Instance,"DSChamois");
                 break;
             case "Randonneur":
-                Save<DataStorerRandonneur>(DataStorerRandonneur.Instance,"DSRandonneur");
+                Save<DSRandonneur>(DSRandonneur.Instance,"DSRandonneur");
                 break;
             case "Chasseur":
-                Save<DataStorerChasseur>(DataStorerChasseur.Instance,"DSChasseur");
+                Save<DSChasseur>(DSChasseur.Instance,"DSChasseur");
                 break;
         }
         
@@ -264,16 +264,16 @@ public static class SaveLoad
         switch (Global.Personnage)
         {
             case "Chamois":
-                var tmp = Load<DataStorerChamois>("DSChamois");
-                if (tmp != null) DataStorerChamois.Instance = tmp;
+                var tmp = Load<DSChamois>("DSChamois");
+                if (tmp != null) DSChamois.Instance = tmp;
                 break;
             case "Randonneur":
-                var tmp2 = Load<DataStorerRandonneur>("DSRandonneur");
-                if (tmp2 != null) DataStorerRandonneur.Instance = tmp2;
+                var tmp2 = Load<DSRandonneur>("DSRandonneur");
+                if (tmp2 != null) DSRandonneur.Instance = tmp2;
                 break;
             case "Chasseur":
-                var tmp3 = Load<DataStorerChasseur>("DSChasseur");
-                if (tmp3 != null) DataStorerChasseur.Instance = tmp3;
+                var tmp3 = Load<DSChasseur>("DSChasseur");
+                if (tmp3 != null) DSChasseur.Instance = tmp3;
                 break;
         }
         

@@ -8,7 +8,7 @@ using TMPro;
 ///</summary>
 
 [Serializable]
-public class DataStorerRandonneur : DataStorer
+public class DSRandonneur : DataStorer
 {
     public int nbRando = 0;
     public int maxRando = 3;
@@ -45,9 +45,9 @@ public class DataStorerRandonneur : DataStorer
     private Boolean score3000 = false;
     private Boolean score5000 = false;
 
-    public static DataStorerRandonneur Instance;
+    public static DSRandonneur Instance;
     
-    public DataStorerRandonneur()
+    public DSRandonneur()
     {
         if(Instance == null)
         {

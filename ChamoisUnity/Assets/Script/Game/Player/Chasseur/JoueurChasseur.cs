@@ -30,11 +30,11 @@ public class JoueurChasseur : Joueur
     GameObject pew;
     Munitions munitions;
 
-    [NonSerialized] public DataStorerChasseur dataStorer = new DataStorerChasseur();
+    [NonSerialized] public DSChasseur DS = new DSChasseur();
 
     private void Awake()
     {
-        dataStorer = new DataStorerChasseur();
+        DS = new DSChasseur();
     }
 
     new void Start()
@@ -90,7 +90,7 @@ public class JoueurChasseur : Joueur
         if (!munitions.aDesMunitions())
         {
             PewPewMode();
-            GameObject.Find("Boutons/ModePewPew").SetActive(false);
+            GOPointer.Pew.SetActive(false);
         }
         if (PlayerPrefs.GetInt("soundEffects") == 1)
         {

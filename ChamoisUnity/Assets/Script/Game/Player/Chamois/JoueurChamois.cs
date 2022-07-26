@@ -20,11 +20,11 @@ public class JoueurChamois : Joueur
 
     static Boolean activateOnce2 = false;
 
-    [NonSerialized] public DataStorerChamois dataStorer = new DataStorerChamois();
+    [NonSerialized] public DSChamois DS = new DSChamois();
 
     private void Awake()
     {
-        dataStorer = new DataStorerChamois();
+        DS = new DSChamois();
     }
 
     new void Start()

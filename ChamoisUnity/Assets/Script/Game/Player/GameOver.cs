@@ -43,8 +43,8 @@ public class GameOver : MonoBehaviour
 
     public void receiveDataChamois(string msg)
     {
-        DataStorerChamois.Instance.sendData();
-        Hashtable h = DataStorerChamois.Instance.h;
+        DSChamois.Instance.sendData();
+        Hashtable h = DSChamois.Instance.h;
         float tps = (float) h["tps"];
         int nouriture = (int) h["nouriture"];
         int score = (int)h["score"];
@@ -60,8 +60,8 @@ public class GameOver : MonoBehaviour
     
     public void receiveDataChasseur(string msg)
     {
-        DataStorerChasseur.Instance.sendData();
-        Hashtable h = DataStorerChasseur.Instance.h;
+        DSChasseur.Instance.sendData();
+        Hashtable h = DSChasseur.Instance.h;
         int dechets = (int)h["Dechets"];
         int scDechets = (int)h["scDechets"];
         int bonChamois = (int)h["bonChamois"];
@@ -79,8 +79,8 @@ public class GameOver : MonoBehaviour
 
     public void receiveDataRandonneur(string msg)
     {
-        DataStorerRandonneur.Instance.sendData();
-        Hashtable h = DataStorerRandonneur.Instance.h;
+        DSRandonneur.Instance.sendData();
+        Hashtable h = DSRandonneur.Instance.h;
         int epionScore = (int)h["epionScore"];
         int batterieScore = (int)h["batterieScore"];
         int dentPortesScore = (int)h["dentPortesScore"];

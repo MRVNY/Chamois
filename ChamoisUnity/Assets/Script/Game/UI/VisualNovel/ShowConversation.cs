@@ -22,12 +22,10 @@ namespace RPGM.Events
         public ConversationScript conversation;
         public string conversationItemKey;
 
-        private DataStorerRandonneur dataStorer;
+        private DSRandonneur _ds;
         
-        NPCManager NPCManager = GOPointer.NPCCollection.GetComponent<NPCManager>();
-
         public ShowConversation(){
-            dataStorer = DataStorerRandonneur.Instance;
+            _ds = DSRandonneur.Instance;
         }
 
         public override void Execute()
@@ -70,35 +68,35 @@ namespace RPGM.Events
             {
                 foreach (var hint in ci.hint.Split(";"))
                 {
-                    if (hint.Length>4 && hint.Substring(0, 4)=="node")
+                    if (hint.Length > 4 && hint.Substring(0, 4) == "node")
                     {
-                        NPCManager.switchNode(hint);
+                        NPCManager.Instance.switchNode(hint);
                     }
-                    
-                    else if (hint.Length>5 && hint.Substring(0, 5)=="quest")
+
+                    else if (hint.Length > 5 && hint.Substring(0, 5) == "quest")
                     {
-                        NPCManager.questAction(hint);
+                        NPCManager.Instance.questAction(hint);
                     }
-                
-                    else if(Global.Personnage == "Chasseur")
-                    { 
-                        NPCManager.actionChasseur(hint);
+
+                    else if (Global.Personnage == "Chasseur")
+                    {
+                        NPCManager.Instance.actionChasseur(hint);
                     }
 
                     else if (Global.Personnage == "Chamois")
                     {
-                        NPCManager.actionChamois(hint);
+                        NPCManager.Instance.actionChamois(hint);
                     }
 
                     else if (Global.Personnage == "Randonneur")
                     {
-                        if(hint.Length>3 && hint.Substring(0, 3)=="ran"){
-                            RandoManager randoManager = GOPointer.RandoManager;
-                            randoManager.startRando(hint.Substring(4));
+                        if (hint.Length > 3 && hint.Substring(0, 3) == "ran")
+                        {
+                            RandoManager.Instance.startRando(hint.Substring(4));
                         }
                         else
                         {
-                            NPCManager.actionRando(hint);
+                            NPCManager.Instance.actionRando(hint);
                         }
                     }
                 }
@@ -107,14 +105,6 @@ namespace RPGM.Events
             //show the dialog
             VisualNovel dialog = model.getDialog();
             dialog.Show(ci.text, ci.options);
-
-            // var animator = gameObject.GetComponent<Animator>();
-            // if (animator != null)
-            // {
-            //     animator.SetBool("Talk", true);
-            //     var ev = Schedule.Add<StopTalking>(2);
-            //     ev.animator = animator;
-            // }
 
             if (ci.audio != null)
             {
@@ -127,7 +117,7 @@ namespace RPGM.Events
             //if this conversation item has an id, register it in the model.
             if (!string.IsNullOrEmpty(ci.id))
                 model.RegisterConversation(gameObject, ci.id);
-            
+
             //setup conversation choices, if any.
             if (ci.options.Count == 0)
             {
@@ -135,7 +125,8 @@ namespace RPGM.Events
                 dialog.dialogLayout.fullScreenButton.gameObject.SetActive(false);
             }
             else if (ci.options.Count == 1 && ci.options[0].text == "")
-            { //if there's no buttons but we need to jump to a node
+            {
+                //if there's no buttons but we need to jump to a node
                 dialog.dialogLayout.fullScreenButton.Nullify();
                 dialog.dialogLayout.fullScreenButton.onClickEvent += () =>
                 {
@@ -159,7 +150,7 @@ namespace RPGM.Events
                 for (int i = 0; i < ci.options.Count; i++)
                 {
                     //dialog.SetButton(i, ci.options[i].text);
-                    
+
                     dialog.dialogLayout.buttons[i].Nullify();
                     dialog.dialogLayout.buttons[i].onClickEvent += () =>
                     {
@@ -186,39 +177,7 @@ namespace RPGM.Events
                         }
                     };
                 }
-                
-
-                /*
-                //if user pickes this option, schedule an event to show the new option.
-                model.getDialog().onButton += (index) =>
-                {
-                    //hide the old text, so we can display the new.
-                    model.getDialog().Hide();
-
-                    //This is the id of the next conversation piece.
-                    var next = ci.options[index].targetId;
-
-                    //Make sure it actually exists!
-                    if (conversation.ContainsKey(next))
-                    {
-                        //find the conversation piece object and setup a new event with correct parameters.
-                        var c = conversation.Get(next);
-                        var ev = Schedule.Add<ShowConversation>();
-                        ev.conversation = conversation;
-                        ev.gameObject = gameObject;
-                        ev.conversationItemKey = next;
-                    }
-                    else
-                    {
-                        Debug.LogError($"No conversation with ID:{next}");
-                    }
-                };*/
-
             }
-
-            //if conversation has an icon associated, this will display it.
-            //dialog.SetIcon(ci.image);
         }
-
     }
 }

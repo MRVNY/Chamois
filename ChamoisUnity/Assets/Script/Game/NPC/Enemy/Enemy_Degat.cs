@@ -18,7 +18,7 @@ public class Enemy_Degat : Enemy
 
     private Vie vie;
     private JoueurChamois joueur;
-    private DataStorerChamois data;
+    private DSChamois data;
     private GameObject pm;
     public int sc = -100;
     public int tpsGriffure;
@@ -39,7 +39,7 @@ public class Enemy_Degat : Enemy
             
             vie = GOPointer.Jauges.GetComponentInChildren<Vie>();
             joueur = GOPointer.PlayerChamois.GetComponent<JoueurChamois>();
-            data = DataStorerChamois.Instance;
+            data = DSChamois.Instance;
         }
     }
 

@@ -30,8 +30,8 @@ public class Photographier : MonoBehaviour
             //ajouter dans l'ency
             ency.addInfoToList("photoChaurionde", ency.pagesDynamic);
             //ency.addInfoToList("mange", ency.pagesDynamic);
-            DataStorerChasseur.Instance.nbPhoto += 1;
-            DataStorerChasseur.Instance.nbPhotoMemePartie += 1;
+            DSChasseur.Instance.nbPhoto += 1;
+            DSChasseur.Instance.nbPhotoMemePartie += 1;
             chauriondePrise = true;
         }
         else if(GOPointer.PlayerChasseur.GetComponent<TriggerZonePhoto>().dansPecloz == true && peclozPrise == false)
@@ -39,8 +39,8 @@ public class Photographier : MonoBehaviour
             Debug.Log("PHOTO PECLOZ");
             // ajouter dans l'ency
             ency.addInfoToList("photoPecloz", ency.pagesDynamic);
-            DataStorerChasseur.Instance.nbPhoto += 1;
-            DataStorerChasseur.Instance.nbPhotoMemePartie += 1;
+            DSChasseur.Instance.nbPhoto += 1;
+            DSChasseur.Instance.nbPhotoMemePartie += 1;
             peclozPrise = true;
         }
     }

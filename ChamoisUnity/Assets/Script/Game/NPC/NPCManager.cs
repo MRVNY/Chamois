@@ -21,9 +21,9 @@ public class NPCManager : MonoBehaviour
     private JObject JENCY;
     private JObject JPerso;
 
-    private DataStorerRandonneur dataRando;
-    private DataStorerChamois dataChamois;
-    private DataStorerChasseur dataChasseur;
+    private DSRandonneur dataRando;
+    private DSChamois dataChamois;
+    private DSChasseur dataChasseur;
 
     EncycloContentRandonneur encyRando;
     EncycloContentChamois encyChamois;
@@ -47,9 +47,9 @@ public class NPCManager : MonoBehaviour
     [NonSerialized] public Hashtable currentNPCTable;
     
     //Donneurs
-    public NPCController[] listDonneurs;
+    [NonSerialized] public NPCController[] listDonneurs;
 
-    public async Task loadConvo()
+    private void Awake()
     {
         if(Instance == null)
         {
@@ -59,7 +59,10 @@ public class NPCManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
+    }
+
+    public async Task loadConvo()
+    {
         ChamoisInfos.SetActive(false);
         DonneursInfos.SetActive(false);
         
@@ -76,9 +79,9 @@ public class NPCManager : MonoBehaviour
             npc.gameObject.SetActive(false);
         }
 
-        dataRando = DataStorerRandonneur.Instance;
-        dataChamois = DataStorerChamois.Instance;
-        dataChasseur = DataStorerChasseur.Instance;
+        dataRando = DSRandonneur.Instance;
+        dataChamois = DSChamois.Instance;
+        dataChasseur = DSChasseur.Instance;
         
         encyRando = GOPointer.EncyclopedieManager.GetComponent<EncycloContentRandonneur>();
         encyChamois = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChamois>();
@@ -155,7 +158,8 @@ public class NPCManager : MonoBehaviour
         var tmp = hint.Split(",");
         var npcName = tmp[1];
         var node = tmp[2];
-        
+
+        if (!currentNPCTable.ContainsKey(npcName)) await loadConvo();
         ((NPCController)currentNPCTable[npcName])?.setFirstNode(node);
     }
 

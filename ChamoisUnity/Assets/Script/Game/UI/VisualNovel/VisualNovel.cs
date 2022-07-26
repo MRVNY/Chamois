@@ -21,9 +21,6 @@ namespace RPGM.UI
         public Image leftImg;
         public Image rightImg;
 
-        [NonSerialized] public Button nextButton;
-        [NonSerialized] public Image nextButtonImage;
-        
         private new TextMeshPro name;
         private TextMeshPro dialog;
 
@@ -33,23 +30,15 @@ namespace RPGM.UI
 
         SpriteButton[] buttons;
         Camera mainCamera;
-        //SpriteUIElement spriteUIElement;
-
-        // Start is called before the first frame update
         
         void Awake()
         {
-            nextButton = GetComponent<Button>();
-            nextButtonImage = GetComponent<Image>();
-            //dialogLayout = GetComponent<VNLayout>();
             buttons = dialogLayout.buttons;
             for(int j=0; j<buttons.Length; j++)
             {
                 dialogLayout.buttons[j].onClickEvent += () => OnButton(j);
             }
             dialogLayout.gameObject.SetActive(false);
-            //spriteUIElement = GetComponent<SpriteUIElement>();
-            //mainCamera = GameObject.Find("Camera" + Global.Personnage).GetComponent<Camera>();
         }
         
         void Start()

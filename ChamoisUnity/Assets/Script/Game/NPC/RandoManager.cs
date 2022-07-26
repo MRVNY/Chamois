@@ -8,29 +8,36 @@ using System.Linq;
 
 public class RandoManager : MonoBehaviour
 {
-    //PnJ donneur de randonnées
-    //public NPCController guide;
-    private DataStorerRandonneur dataSt;
-    // Start is called before the first frame update
+    private DSRandonneur dataSt;
     EncycloContentRandonneur ency;
-    //public TextAsset jsonFileEncy;
-    //private JObject dataEncy;
+
 
     private List<Transform> randosList;
     private InteractableController[] currentRoute;
     public static int totalPoints = -1;
     public static int currentPoint = -1;
     private string randoName;
-    
-    private PlayerQuest currentQuest;
 
+    public static RandoManager Instance;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start()
     {
 
         if (Global.Personnage == "Randonneur")
         {
-            dataSt = (DataStorerRandonneur)DataStorer.currentDS;
+            dataSt = (DSRandonneur)DataStorer.currentDS;
         }
 
         //dataEncy = JObject.Parse(jsonFileEncy.text);
@@ -71,7 +78,6 @@ public class RandoManager : MonoBehaviour
         totalPoints = currentRoute.Length;
         currentPoint = -1;
         QuestManager.Instance.addQuest("rando"+rando, totalPoints);
-        currentQuest = QuestManager.Instance.currentQuest;
         QuestManager.Instance.currentQuest.currentStep = currentPoint;
     }
 

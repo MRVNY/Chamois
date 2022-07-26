@@ -8,7 +8,7 @@ using System;
 ///</summary>
 
 [Serializable]
-public class DataStorerChamois : DataStorer
+public class DSChamois : DataStorer
 {    
     public int nourritureMangee;
     public float tempsSurvecu;
@@ -43,9 +43,9 @@ public class DataStorerChamois : DataStorer
     private Boolean nbInfos5 = false;
     private Boolean nbInfos10 = false;
     
-    public static DataStorerChamois Instance;
+    public static DSChamois Instance;
     
-    public DataStorerChamois()
+    public DSChamois()
     {
         if (Instance == null)
         {

@@ -8,7 +8,7 @@ using System;
 ///</summary>
 
 [Serializable]
-public class DataStorerChasseur : DataStorer
+public class DSChasseur : DataStorer
 {
     private Boolean carteActive;
 
@@ -43,9 +43,9 @@ public class DataStorerChasseur : DataStorer
     public int score;
     public int nbInfos;
     
-    public static DataStorerChasseur Instance;
+    public static DSChasseur Instance;
     
-    public DataStorerChasseur()
+    public DSChasseur()
     {
         if(Instance == null)
         {

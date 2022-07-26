@@ -61,7 +61,7 @@ public class JaugesController : MonoBehaviour
             if (h.ContainsKey("score"))
             {
                 int sc = (int)h["score"];
-                DataStorerChamois.Instance.setData("nourriture", sc);
+                DSChamois.Instance.setData("nourriture", sc);
             }
 
 
