@@ -220,7 +220,7 @@ public class QuestManager : MonoBehaviour
 
         Notifier.Instance.NewQuest();
         
-        if(!foundQuests.Contains(empty) && foundQuests.Count==allQuests.Count)
+        if(!foundQuests.Contains(empty) && foundQuests.Count==allQuests.Count && currentQuest.isFinished)
         {
             GameOver.Instance.End("Vous avez fini toutes les quêtes !");
         }

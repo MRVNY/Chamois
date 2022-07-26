@@ -27,18 +27,16 @@ public class GuideManager : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        //Debug.Log("boolean help : " + PlayerPrefs.GetFloat("inGameHelp"));
-        if(PlayerPrefs.GetInt("inGameHelp") == 1 && PlayerPrefs.GetInt(Global.Personnage)!=1)
-        {
-            GOPointer.MenuManager.GetComponent<PauseMenu>().Pause();
-            gameObject.SetActive(true);
-            Time.timeScale = 0;
-            guideText.SetText(Global.guide[Global.Personnage]);
-        }
-        else
-        {
+        // //Debug.Log("boolean help : " + PlayerPrefs.GetFloat("inGameHelp"));
+        // if(PlayerPrefs.GetInt("inGameHelp") == 1 && PlayerPrefs.GetInt(Global.Personnage)!=1)
+        // {
+        //     GOPointer.MenuManager.GetComponent<PauseMenu>().Pause();
+        //     gameObject.SetActive(true);
+        //     Time.timeScale = 0;
+        //     guideText.SetText(Global.guide[Global.Personnage]);
+        // }
+        // else
             gameObject.SetActive(false);
-        }
     }
 
 
