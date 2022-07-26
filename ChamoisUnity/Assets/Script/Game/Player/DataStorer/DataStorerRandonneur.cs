@@ -158,15 +158,13 @@ public class DataStorerRandonneur : DataStorer
             score5000 = true;
         }
 
-        if(nbRando >= maxRando) sendData();
+        if(nbRando >= maxRando) GameOver.Instance.End("Bravo, vous avez fait toutes les randonnées !");
         
     }
 
     public void sendData()
     {
         h["scoreTotal"] = scoreTotal;
-
-        GOPointer.GameManager.GetComponent<FinPartie>().receiveDataRandonneur(h);
     }
 
     public void setData(string type, int var)

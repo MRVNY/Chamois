@@ -8,16 +8,16 @@ public class GameEvents
 {
 
     public static System.Action         SaveInitiated;
-    public static System.Action<int>    FoodEaten;
+    public static System.Action         FoodEaten;
     public static System.Action         SwitchCamera;
     public static System.Action         Pause;
 
     private List<int> idNourritureDetruite = new List<int>();
     // Start is called before the first frame update
 
-    public static void onFoodEaten(int id)
+    public static void onFoodEaten()
     {
-        FoodEaten?.Invoke(id);
+        FoodEaten?.Invoke();
         NourritureMangee.addToEncy();
     }
 

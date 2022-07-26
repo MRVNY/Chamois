@@ -100,7 +100,6 @@ public class Vie : JaugesController
                 Time.timeScale = 0;
                 guide.SetActive(true);
 
-                //guide.SetActive(true);
                 GOPointer.CanvasGuideJeu.GetComponent<GuideManager>().guideText.SetText("ATTENTION ! Votre vie est tombée en dessous de 10% ! Votre état est critique, restez donc éloigné des prédateurs, et essayez de maintenir un niveau d'alientation élevé afin de régénérer votre vie !");
             }
 
@@ -108,7 +107,7 @@ public class Vie : JaugesController
 
         if (vieActuelle <= 0)
         {
-            DataStorerChamois.Instance.sendData();
+            GameOver.Instance.End("Vous êtes mort...");
 
             GameEvents.onPause();
 

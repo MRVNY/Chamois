@@ -11,7 +11,7 @@ using System;
 public class DataStorer
 {
     public static DataStorer currentDS;
-    protected Hashtable h;
+    public Hashtable h;
 
     public DataStorer()
     {

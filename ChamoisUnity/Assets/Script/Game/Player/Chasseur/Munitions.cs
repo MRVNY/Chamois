@@ -26,8 +26,7 @@ public class Munitions : MonoBehaviour
     {
         if (nbBalles == 0)
         {
-            GOPointer.GameManager.GetComponent<FinPartie>().receiveDataChasseur(h);
-
+            GameOver.Instance.End("Vous avez plus de munitions");
             return false;
         }
 

@@ -38,10 +38,7 @@ public class Bullet : MonoBehaviour
         switch (col.collider.tag)
         {
             case "NPC":
-                FinPartie.Instance.recap.text =
-                    "Vous venez d'abattre froidement un être-humain, qui était important dans le déroulement de votre quête, peut-être devriez-vous recommencer une partie ?";
-                FinPartie.Instance.gameObject.SetActive(true);
-                FinPartie.Instance.fin = true;
+                GameOver.Instance.End("Vous venez d'abattre froidement un être-humain, qui était important dans le déroulement de votre quête, peut-être devriez-vous recommencer une partie ?");
                 break;
             
             case "Target":

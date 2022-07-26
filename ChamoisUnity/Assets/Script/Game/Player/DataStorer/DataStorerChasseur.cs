@@ -154,8 +154,7 @@ public class DataStorerChasseur : DataStorer
             h.Add("scmauvaisChamois", scmauvaisChamois);
             h.Add("bonChamois", bonChamois);
             h.Add("scbonChamois", scbonChamois);
-
-            GOPointer.GameManager.GetComponent<FinPartie>().receiveData(h);
+            h.Add("score", score);
     }
     
     public void setData(string type, int var)

@@ -117,6 +117,9 @@ public class QuestManager : MonoBehaviour
                 case "TrouverTroupeau":
                     startZoneQuest("Troupeau");
                     break;
+                case "Survivre":
+                    startTimeQuest(new DateTime(2022,5,1));
+                    break;
             }
         }
         else
@@ -180,23 +183,23 @@ public class QuestManager : MonoBehaviour
 
     public void startZoneQuest(string zoneName)
     {
-        //ZoneManager.Instance.Start();
         target = ((Collider2D)ZoneManager.Instance.zones[zoneName])?.gameObject;
-        if(target!=null)
+        if(target != null)
         {
             oldTag = target.tag;
             target.tag = "Target";
         }
     }
 
-    public void endZoneQuest()
+    void startTimeQuest(DateTime endDate)
     {
-        endQuest();
+        DayNight.Instance.goalDate = endDate;
     }
 
-    void endQuest()
+    public void endQuest()
     {
-        target.tag = oldTag;
+        if(target!=null) target.tag = oldTag;
+        target = null;
         currentQuest.isFinished = true;
         
         if(currentQuest.participants!=null)
@@ -216,6 +219,11 @@ public class QuestManager : MonoBehaviour
         GuideManager.Instance.guideText.SetText("Vous avez fini la quête !");
 
         Notifier.Instance.NewQuest();
+        
+        if(!foundQuests.Contains(empty) && foundQuests.Count==allQuests.Count)
+        {
+            GameOver.Instance.End("Vous avez fini toutes les quêtes !");
+        }
     }
 
 }

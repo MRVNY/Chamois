@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
         
     }
 
-    void UIPause()
+    public void UIPause()
     {
         pause.Pause();
         GOPointer.MenuManager.SetActive(false);
@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
         buttons.SetActive(false);
     }
 
-    void UIResume()
+    public void UIResume()
     {
         pause.Resume();
         buttons.SetActive(true);

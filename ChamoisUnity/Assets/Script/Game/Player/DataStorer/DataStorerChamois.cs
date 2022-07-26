@@ -190,8 +190,6 @@ public class DataStorerChamois : DataStorer
         h.Add("scBouffe", scBouffe);
         h.Add("scBlessure", scBlessure);
         h.Add("scoreTps", scoreTps);
-
-        GOPointer.GameManager.GetComponent<FinPartie>().receiveData(h);
     }
 
     public void setData(string type, int var)
