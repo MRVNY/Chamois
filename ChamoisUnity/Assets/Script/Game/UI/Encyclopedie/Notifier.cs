@@ -23,6 +23,12 @@ public class Notifier : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+        notifAchi.SetActive(false);
+        notifEncy.SetActive(false);
+        notifNotes.SetActive(false);
+        notifQuest.SetActive(false);
+        notifMenu.SetActive(false);
     }
 
     private void Start()
@@ -33,27 +39,6 @@ public class Notifier : MonoBehaviour
         notifQuest.SetActive(false);
         notifMenu.SetActive(false);
     }
-    // void Update()
-    // {
-    //     if(Time.timeScale == 1)
-    //     {
-    //         if ((notifEnabledEncyclopedie) && (Menu.menuOuvre == false))
-    //         {
-    //             notifToEnableMenuDeroulant.SetActive(true);
-    //             notifToEnableEncyclopedie.SetActive(false);
-    //         }
-    //         else if ((notifEnabledEncyclopedie) && (Menu.menuOuvre))
-    //         {
-    //             notifToEnableMenuDeroulant.SetActive(true);
-    //             notifToEnableEncyclopedie.SetActive(false);
-    //         }
-    //         else
-    //         {
-    //             notifToEnableMenuDeroulant.SetActive(false);
-    //             notifToEnableEncyclopedie.SetActive(false);
-    //         }
-    //     }
-    // }
 
     public void NewNotes()
     {

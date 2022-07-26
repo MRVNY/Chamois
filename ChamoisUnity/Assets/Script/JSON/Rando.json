@@ -72,7 +72,8 @@
         },
 
         "2.0" : {
-            "text": "OK A bientôt !"
+            "text": "OK A bientôt !",
+            "hint" : "node,GuideRando,2"
         },
         
 

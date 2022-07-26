@@ -85,6 +85,8 @@ public class NPCManager : MonoBehaviour
         encyChasseur = GOPointer.EncyclopedieManager.GetComponent<EncycloContentChasseur>();
         
         JENCY = (JObject)JObject.Parse(ENCY.text)[Global.Personnage];
+
+        currentNPCList = null;
         
         switch (Global.Personnage)
         {
@@ -147,8 +149,9 @@ public class NPCManager : MonoBehaviour
         encyChamois.addInfoToList(hint,encyChamois.pagesDynamic);
     }
 
-    public void switchNode(string hint)
+    public async void switchNode(string hint)
     {
+        if (Init.convo != null) await Init.convo;
         var tmp = hint.Split(",");
         var npcName = tmp[1];
         var node = tmp[2];
@@ -156,8 +159,9 @@ public class NPCManager : MonoBehaviour
         ((NPCController)currentNPCTable[npcName])?.setFirstNode(node);
     }
 
-    public void questAction(string hint)
+    public async void questAction(string hint)
     {
+        if (Init.convo != null) await Init.convo;
         var tmp = hint.Split(",");
         string from = tmp[1]; //from can be the hint or the NPC name (or both)
         string to = tmp[2]; //to is the NPC that you have to talk to next
