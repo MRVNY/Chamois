@@ -83,3 +83,15 @@ Game Design
 # Start of week 5 (11 Jul 2022)
 Game Design
 Construct 1 quest for each perso
+More save&load data
+
+# End of week 5 (15 Jul 2022)
+
+
+# Start of week 6 (18 Jul 2022)
+More save&load data
+Optimisation for mobile performance
+fixing bugs
+
+# End of internship (27 Jul 2022)
+Quest
