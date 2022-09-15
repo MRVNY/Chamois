@@ -1,4 +1,4 @@
-# End of week 1 (10/06/2022)
+## End of week 1 (10/06/2022)
 Main Menu: MenuManager
 Easier debug: DebugManager & added keyboard controller
 Optimisation: GameObjectPointer
@@ -15,7 +15,7 @@ Corrected and added colliders zone by zone
 
 UI: little fix of the Achievement UI
 
-# Start of week 2 (13/06/2022)
+## Start of week 2 (13/06/2022)
 Adapt for hunter and hiker
 Explore percentage (Fog)
 Correct interaction with objects
@@ -29,7 +29,7 @@ start game design
 DisableIfFarAway (done)
 Reduce Awake()
 
-# End of week 2 (17/06/2022)
+## End of week 2 (17/06/2022)
 - [x] Adapt for hunter and hiker
 - [x] Explore percentage (Fog)
 - [ ] Correct interaction with objects
@@ -44,9 +44,9 @@ If time allows:
 - [ ] Reduce Awake()
 
 
-# Start of week 3 (20/06/2022)
-Enhancing VisualNovel system 
-Adapt interaction button with other objects
+## Start of week 3 (20/06/2022)
+Enhancing VisualNovel system
+Adapt interaction button with other objects\
 Understand quests and how they're added in encyclopedia
 Save more data
 Path Finding
@@ -55,7 +55,7 @@ Game Design
 Keep fixing collision/sorting layer bugs
 Look into Job System / ECS ?
 
-# End of week 3 (24/06/2022)
+## End of week 3 (24/06/2022)
 - [x] Enhancing VisualNovel system
 - [ ] Adapt interaction button with other objects
 - [x] Understand quests and how they're added in encyclopedia
@@ -69,29 +69,60 @@ Extras:
 - [x] Interactables Controller 
 - [x] VN for all NPC
 
-# Start of week 4 (27/06/2022)
+## Start of week 4 (27/06/2022)
 Path-Finding
 Minimap
 Game Design
 
-# End of week 4 (08/07/2022)
+## End of week 4 (08/07/2022)
 - [x] Path-Finding
 - [x] Minimap
 - [x] Game Design
 - [x] Generate .apk
 
-# Start of week 5 (11 Jul 2022)
+## Start of week 5 (11 Jul 2022)
 Game Design
 Construct 1 quest for each perso
 More save&load data
 
-# End of week 5 (15 Jul 2022)
+## End of week 5 (15 Jul 2022)
+- [ ] Game Design
+- [x] Inital VN for Hunter
+- [x] Inital VN for Hiker
+- [ ] Inital VN for Chamois
+- [x] Async for Path-Finding
+- [ ] Save&Load FogOfWar
 
 
-# Start of week 6 (18 Jul 2022)
+## Start of week 6 (18 Jul 2022)
 More save&load data
 Optimisation for mobile performance
-fixing bugs
+Quests structure and first quest for each character
 
-# End of internship (27 Jul 2022)
+## End of internship (27 Jul 2022)
+Optimisations
+- [x] More usage of async
+- [x] DontDestroyOnLoad Map
+- [x] Instance
+
+Save&Load
+- [x] Save&Load FogOfWar
+- [x] Save&Load First Node for each character
+- [x] Save&Load Envy & Achi
+- [x] Save&Load Quests
+- [x] Restructure and Save&Load DataStorer
+
+
 Quest
+- [x] Quest & QuestManager class
+- [x] First quest for each character
+
+
+Finishing touches
+- [x] Game Design
+- [x] UI fixes in general 
+- [x] Sorting Layer bug
+- [x] Endgame triggers
+- [ ] Better color
+- [x] Exports to Android & Mac
+

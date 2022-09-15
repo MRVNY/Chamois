@@ -80,10 +80,10 @@ Now I need to add a button on the top of the person to start conversation and ch
 # 16/06/2022
 
 ## Fog of War Optimisation
-For the Fog Of War to work enve faster, I reduced the pixels to count at 100x100 as we only need the Fog Texture to be precise visually, but not when counting.
+For the Fog Of War to work even faster, I reduced the pixels to count at 100x100 as we only need the Fog Texture to be precise visually, but not when counting.
 
-## Reorganising panels
-There are too many canvas conponent gathered together on the same place (can't separate canvas), so I've decided to keep only one for most Menu related interface and put each interface on a panel, which allows me to move it to anywhere
+## Reorganizing panels
+There are too many canvas component gathered together on the same place (can't separate canvas), so I've decided to keep only one for most Menu related interface and put each interface on a panel, which allows me to move it to anywhere
 
 ## Ency
 Stuck on ency: too many repetitive elements (buttons, interface, submenu, etc.), but there're closely linked with a repetitive code and not-so-automated buttons
