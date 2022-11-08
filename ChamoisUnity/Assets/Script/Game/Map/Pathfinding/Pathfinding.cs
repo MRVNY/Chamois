@@ -48,8 +48,6 @@ public class Pathfinding : MonoBehaviour {
             Destroy(gameObject);
         }
         
-        DontDestroyOnLoad(this.gameObject);
-        
         reading = readWalkables();
         
         //Baking

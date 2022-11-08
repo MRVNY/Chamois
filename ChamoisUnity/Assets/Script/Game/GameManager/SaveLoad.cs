@@ -297,12 +297,5 @@ public static class SaveLoad
 
         return texture2D;
     }
-
-
-    private struct LoadJob : IJob
-    {
-        public async void Execute()
-        {
-        }
-    }
+    
 }

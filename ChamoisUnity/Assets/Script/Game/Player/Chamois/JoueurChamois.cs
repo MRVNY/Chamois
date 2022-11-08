@@ -87,7 +87,7 @@ public class JoueurChamois : Joueur
         hit = b;
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    protected void OnTriggerEnter2D(Collider2D col)
     {
         base.OnTriggerEnter2D(col);
         

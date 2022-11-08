@@ -8,7 +8,7 @@ public class Joystick_Link : MonoBehaviour
     public float speed = 100f;
 
     protected Joystick joystick;
-    Rigidbody2D rigidbody;
+    protected Rigidbody2D rigidbody;
     public static Joystick_Link Instance;
 
 

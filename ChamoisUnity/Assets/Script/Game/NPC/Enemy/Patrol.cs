@@ -212,7 +212,7 @@ public class Patrol : wolf
         }
     }
 
-    private async void ChangeGoal()
+    private void ChangeGoal()
     {
         currentPathIndex = 0;
         pathVectorList = null;

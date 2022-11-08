@@ -25,9 +25,7 @@ namespace RPGM.UI
         private TextMeshPro dialog;
 
         public System.Action<int> onButton;
-
-        private int selectedButton = 0;
-
+        
         SpriteButton[] buttons;
         Camera mainCamera;
         
@@ -68,7 +66,6 @@ namespace RPGM.UI
             UserInterfaceAudio.OnShowDialog();
             dialogLayout.SetLayout(text, options);
             //model.input.ChangeState(InputController.State.DialogControl);
-            selectedButton = -1;
         }
         
 

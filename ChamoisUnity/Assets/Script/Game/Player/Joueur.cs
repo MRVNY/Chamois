@@ -102,7 +102,7 @@ public class Joueur : MonoBehaviour
         }
     }
 
-    protected void OnTriggerEnter2D(Collider2D col) {
+    public void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Target"))
         {
             QuestManager.Instance.endQuest();

@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject joystick = null;
     [SerializeField] private GameObject boutonTir = null;
 
     [SerializeField] private GameObject notifRegroup = null;

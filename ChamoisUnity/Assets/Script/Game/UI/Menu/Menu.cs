@@ -33,7 +33,6 @@ public class Menu : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(this);
     }
 
     async void Start()

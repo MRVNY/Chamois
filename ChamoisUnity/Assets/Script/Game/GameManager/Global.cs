@@ -42,7 +42,7 @@ public static class Global
 
     static Global()
     {
-        personnageJoue = "Chamois";
+        personnageJoue = "Randonneur";
         // encychapter.Add("Chamois", (GOPointer.ChapitreChamois));
         // encychapter.Add("Chasseur", (GOPointer.ChapitreChasseur));
         // encychapter.Add("Randonneur", (GOPointer.ChapitreRandonneur));

@@ -14,7 +14,7 @@ public class Food : MonoBehaviour
 
     private GameObject playerManagement;
     private JaugesController j;
-    private Collider2D collider;
+    protected Collider2D collider;
     private SpriteRenderer spriteRenderer;
 
     private bool isEaten = false;

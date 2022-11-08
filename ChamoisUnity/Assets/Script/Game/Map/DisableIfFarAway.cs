@@ -9,7 +9,7 @@ public class DisableIfFarAway : MonoBehaviour
     private ItemActivator _activationScript;
 
     // Start is called before the first frame update
-    async void Start()
+    void Start()
     {
         _activationScript = ItemActivator.currentActivator;
         StartCoroutine(AddToList());
